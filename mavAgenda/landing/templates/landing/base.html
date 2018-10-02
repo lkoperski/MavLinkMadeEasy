@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- fonts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:700" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300,400,400i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:302,300i" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
@@ -13,19 +16,21 @@
     <title>MavLink Made Easy</title>
 </head>
 <body>
-<div class="container">
+<div>
     <a href="{% url 'landing:login' %}">
-        <img src="{% static 'landing/img/MMElogo.JPG' %}" alt="Logo" width="190" height="170" class="center" style="margin-top: -10px"/>
+        <img src="{% static 'landing/img/MMElogo.JPG' %}" alt="Logo" width="190" height="170" style="margin-top: -10px"/>
     </a>
-    <hr>
 {% block content %}
 {% endblock %}
     <br>
-    <hr>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="icons">
         <a href="{% url 'landing:login' %}"><i class="fas fa-bars fa-x"></i></a>
     </div>
-    <p align="right"><i>a 2018 project party project | <a href="https://github.com/lkoperski/MavLinkMadeEasy">github</a></i></p>
+    <p align="right"><i>After PyParty 2018 | <a href="https://github.com/lkoperski/MavLinkMadeEasy">github</a></i></p>
 </div>
 </body>
 </html>

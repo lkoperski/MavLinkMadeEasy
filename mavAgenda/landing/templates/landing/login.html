@@ -1,40 +1,32 @@
 {% extends 'landing/base.html' %}
 {% block content %}
 <br>
-<div class="container" id="register">
+<div id="register" class="row">
+    <form class="email" id = "email" method="post">
+        {% csrf_token %}
 
-    <h3>Login</h3>
-    <p align="center">
-        with your e-mail
-    </p>
+        <p class="errormessage" id="errormessage">{{message}}</p>
+        <p id="emailbox" name="emailbox" class="submissionBox">Email:<input id="email-input" name="email-input"
+               minlength="1" required
+               placeholder="Email" />
+        </p>
 
-<form class="email" id = "email" method="post">
-
-    {% csrf_token %}
-
-    <p class="errormessage" id="errormessage">{{message}}</p>
-    <p name="emailbox" >
         {{emailForm.email}}
-        <br><br><input type="submit" value="login" class="MAVbutton"/>
-    </p>
+            <br>
+            <input type="submit" value="login" class="MAVbutton"/>
+        </p>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p style="text-align: center">Don't have an account yet?</p>
+    <br>
+    <form class="joinnow" id = "joinnow" action="{% url 'landing:createuser' %}" method="get">
+        {% csrf_token %}
 
-</form>
-
-</br>
-</br>
-
-    <h3>Register</h3>
-
-<form class="joinnow" id = "joinnow" action="{% url 'landing:createuser' %}" method="post">
-
-    {% csrf_token %}
-
-    <p align="center">
-        create an account
-    <br><br><input type="submit" value="sign up!" class="MAVbutton"/>
-    </p>
-
-</form>
+        <input type="submit" value="register" class="MAVbutton"/>
+    </form>
 </div>
 
 {% endblock %}

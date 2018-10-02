@@ -1,202 +1,118 @@
 from django.db import models
+from django.contrib.auth.models import User
 
+#class User(models.Model):
+    #userPK = models.IntegerField()
+    #username = models.CharField(max_length=75)
+    #password = models.CharField(max_length=75)
 
-# Models for static course backend data
-'''
-@Course collection of fields corresponding to attributes
-@param models.Model: associated data within fields
-'''
+class Degree(models.Model):
+    BS = 'Bachelor of Science'
+    MS = 'Master of Science'
+    PhDS = 'Doctor of Science'
+    DIPLOMA_CHOICE = (
+        (BS, 'Bachelor of Science'),
+        (MS, 'Master of Science'),
+        (PhDS, 'Doctor of Science'),
+    )
+    degree_diploma = models.CharField( max_length=50, choices=DIPLOMA_CHOICE, default=BS)
+    MAJ = 'Major'
+    MIN = 'Minor'
+    CON = 'Concentration'
+    TYPE_CHOICE = (
+        (MAJ, 'Major'),
+        (MIN, 'Minor'),
+        (CON, 'Concentration'),
+    )
+    degree_type = models.CharField( max_length=50, choices=TYPE_CHOICE, default=MAJ )
+    CSCI = 'Computer Science'
+    MIS = 'Management Information Systems'
+    BIOI = 'Bioinformatics'
+    ITIN = 'IT Innovation'
+    CYBR = 'Cybersecurity'
+    TRACK_CHOICE = (
+        (CSCI, 'Computer Science'),
+        (MIS, 'Management Information Systems'),
+        (BIOI, 'Bioinformatics'),
+        (ITIN, 'IT Innovation'),
+        (CYBR, 'Cybersecurity'),
+    )
+    degree_track = models.CharField( max_length=50, choices=TRACK_CHOICE, default=CSCI )
+    degree_users = models.ManyToManyField(User)
+
+class Requirement(models.Model):
+    #req_pk = models.IntegerField()
+    req_name = models.CharField(max_length=50)
+    req_credits = models.IntegerField()
+    req_degrees = models.ManyToManyField(Degree)
+
 class Course(models.Model):
-    name = models.CharField(max_length=75)
-    num = models.CharField(max_length=75)
-
+    #course_pk = models.IntegerField()
+    course_name = models.CharField(max_length=75)
+    course_num = models.CharField(max_length=15)
     A = "All"
     S = "Spring"
     F = "Fall"
     M = "Summer"
-
     SEM_CHOICE = (
         (A, "All"),
         (S, "Spring"),
         (F, "Fall"),
         (M, "Summer"),
     )
-
-    semester = models.CharField(max_length=15,
-                                choices=SEM_CHOICE,
-                                default=A)
-
-    credits = models.IntegerField()
-    prereqs = models.ManyToManyField('Prereq', related_name="needed", blank=True)
-
+    course_semester = models.CharField(max_length=10, choices=SEM_CHOICE, default=A)
+    course_credits = models.IntegerField()
     N = "No"
     Y = "Lab"
     W = "Waiver"
-
     SPECIAL_TYPE_CHOICE = (
         (N, "No"),
         (Y, "Lab"),
         (W, "Waiver"),
     )
+    course_special = models.CharField(max_length=15, choices=SPECIAL_TYPE_CHOICE, default=N)
+    course_comment = models.CharField(max_length=200, blank=True)
+    course_requirements = models.ForeignKey(Requirement, on_delete=models.CASCADE)
 
-    special = models.CharField(max_length=15,
-                               choices=SPECIAL_TYPE_CHOICE,
-                               default=N)
-
-    comment = models.CharField(max_length=200, blank=True)
-
-    def display_prereqs(self):
-        return ', '.join([prereq.num for prereq in self.prereqs.all()])
-
-    display_prereqs.short_description = 'Prereqs'
-
-    def display_dept(self):
-        return "%s" % (str.split(self.num)[0])
-
-    def display_no(self):
-        return "%s" % (str.split(self.num)[1])
-
-    def __str__(self):
-        return "%s | %s" % (self.num, self.name)
-
-'''
-@Prereq collection of fields corresponding to attributes
-@param models.Model: associated data within fields
-'''
 class Prereq(models.Model):
-    prereq = models.ForeignKey('Course', on_delete=models.CASCADE)
-    this_or = models.ForeignKey('Course', null=True, blank=True, related_name="synonymous", on_delete=models.CASCADE)
-
+    #prereq_pk = models.IntegerField
     C = "Corequisite"
     P = "Prerequisite"
-
     REQ_CHOICE = (
         (C, "Corequisite"),
         (P, "Prerequisite"),
     )
+    prereq_type = models.CharField(max_length=20, choices=REQ_CHOICE, null=True)
+    prereq_courses = models.ManyToManyField(Course)
 
-    req_type = models.CharField(max_length=20,
-                                choices=REQ_CHOICE,
-                                null=True)
-
-    def display_recursive(self):
-        return "%s -> " % (self.prereq.prereqs)
-
-    def __str__(self):
-        return "%s - %s / %s" % (self.req_type, self.prereq, self.this_or)
-
-'''
-@Req collection of fields corresponding to attributes
-Static degree type and associated requirements
-@param models.Model: associated data within fields
-'''
-class Req(models.Model):
-    name = models.CharField(max_length=100)
-    credits = models.IntegerField()
-    course = models.ManyToManyField(Course, related_name="required")
-
-    GENE = 'General Education Requirements'
-    DEPT = 'Department Requirements'
-    ELEC = 'Electives'
-
-    REQ_CHOICE = (
-        (GENE, 'General Education Requirements'),
-        (DEPT, 'Department Requirements'),
-        (ELEC, 'Electives'),
-    )
-
-    req_type = models.CharField(max_length=50,
-                                choices=REQ_CHOICE,
-                                default=DEPT)
-
-    def display_degrees(self):
-        me = self.id
-        return ', '.join([degree.major for degree in Degree.objects.filter(req=me)])
-
-    def __str__(self):
-        return "%s - %s" % (self.req_type, self.name)
-
-'''
-@Degree collection of fields corresponding to attributes
-@param models.Model: associated data within fields
-'''
-class Degree(models.Model):
-    BS = 'Bachelor of Science'
-    BA = 'Bachelor of Arts'
-    GR = "Master's"
-
-    DEGREE_CHOICE = (
-        (BS, 'Bachelor of Science'),
-        (BA, 'Bachelor of Arts'),
-        (GR, "Master's"),
-    )
-
-    degree = models.CharField(max_length=50,
-                              choices=DEGREE_CHOICE,
-                              default=BS)
-
-    major = models.CharField(max_length=75)
-
-    req = models.ManyToManyField(Req, blank=True, related_name="categories")
-
-    def display_course_reqs(self):
-        return ', '.join([req.name for req in self.req.all()])
-
-    display_course_reqs.short_description = 'Requirements'
-
-    def __str__(self):
-        return "%s | %s" % (self.degree, self.major)
-
-
-'''
-@Degree collection of fields corresponding to attributes
-Dynamic tables for users and associated courses needed/taken 
-@param models.Model: associated data within fields
-'''
-class User(models.Model):
-    email = models.CharField(max_length=75)
-    degree = models.ForeignKey(Degree, on_delete=models.PROTECT)
-
-    def display_degree(self):
-        return "%s" % (self.degree)
-
-    def __str__(self):
-        return "%s" % (self.email)
-
-'''
-@Complete collection of fields corresponding to attributes
-@param models.Model: associated data within fields
-'''
 class Complete(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    complete = models.ManyToManyField(Course, related_name="taken")
+    complete_user = models.ForeignKey(User, on_delete=models.CASCADE)
+    complete_courses = models.ManyToManyField(Course)
 
-    def display_degree(self):
-        return "%s - %s" % (self.user.degree.major, self.user.degree.degree)
+class UserPreferences(models.Model):
+    pref_minCredits = models.IntegerField()
+    pref_maxCredits = models.IntegerField()
+    pref_summer = models.BooleanField()
+    pref_summerMinCredits = models.IntegerField()
+    pref_summerMaxCredits = models.IntegerField()
+    pref_user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    def display_courses_completed(self):
-        return ', '.join([complete.name for complete in self.complete.all()])
+#class UserDegree(models.Model):
+    #user_pk = models.ForeignKey(User, primary_key=True, on_delete=models.CASCADE)
+    #degree_pk = models.ForeignKey(Degree, on_delete=models.CASCADE)
 
-    def display_credits_earned(self):
-        x = 0
-        for e in self.complete.all():
-            x += e.credits
-        return x
+#class DegreeReq(models.Model):
+    #degree_pk = models.ForeignKey(Degree, primary_key=True,on_delete=models.CASCADE)
+    #requirement_pk = models.ForeignKey(Requirement, primary_key=True, on_delete=models.CASCADE)
 
-    display_credits_earned.short_description = 'Credits Earned'
+#class RequirementCourse(models.Model):
+    #requirement_pk=models.ForeignKey(Requirement, primary_key=True, on_delete=models.CASCADE)
+    #course_pk=models.ForeignKey(Course, primary_key=True, on_delete=models.CASCADE)
 
-    def display_credits_needed(self):
-        y = 0
-        for b in self.user.degree.req.all():
-            y += b.credits
-        return y
+#class CoursePreqreq(models.Model):
+    #course_pk=models.ForeignKey(Course, primary_key=True, on_delete=models.CASCADE)
+    #prereq_pk=models.ForeignKey(Prereq, primary_key=True, on_delete=models.CASCADE)
 
-    display_credits_needed.short_description = 'Credits Needed (Total)'
-
-    def display_courses_needed(self):
-        return '\n'.join([req.course.all() for req in self.user.degree.req.all()])
-
-    display_courses_completed.short_description = 'Completed'
-
-    def __str__(self):
-        return "%s" % (self.user)
+#class PrereqCourse(models.Model):
+    #prereq_pk = models.ForeignKey(Prereq, primary_key=True, on_delete=models.CASCADE)
+    #course_pk = models.ForeignKEey(Course, preimary_key=True, on_delete=models.CASCADE)

@@ -1,27 +1,300 @@
 {% extends 'landing/base.html' %}
 {% block content %}
 
+<script>
+function removeInfo(divID) {
+    var select = document.getElementById(divID);
+    select.removeChild(select.lastChild);
+    return false;
+}
+function notSelected( idBase, searchFor, num ) {
+    var previousSelected  = false
+    for ( var i =1; i<=num; i++ ){
+        var id = idBase + i
+        var select = document.getElementById(id);
+        if ( select.value == searchFor ) {
+            previousSelected = true;
+            break;
+        }
+    }
+    return !previousSelected;
+}
+function showSummerInfo() {
+    document.getElementById("summer-info").style.display = "block";
+}
+function hideSummerInfo() {
+    document.getElementById("summer-info").style.display = "none";
+}
+function showMajorInfo( diplomas, majors, num ) {
+    var container = document.getElementById("major-info");
+    var line = document.createElement("p");
+    var dipHeader = document.createTextNode("Desired Diploma");
+    var dip = document.createElement("select");
+    var space = document.createElement("nbsp");
+    dip.id = "id_d-diploma-" + (num+1);
+    dip.name = "id_d-diploma-" + (num+1);
+    for (i=0; i<diplomas.length; i++ ) {
+            var dipChoice = document.createElement("option");
+            dipChoice.value = diplomas[i];
+            dipChoice.text = diplomas[i];
+            dip.appendChild(dipChoice);
+    }
+    var majHeader = document.createTextNode("Major:");
+    var maj = document.createElement("select");
+    maj.id = "id_d-major-" + (num+1);
+    maj.name = "id_d-major-" + (num+1);
+    for (i=0; i<majors.length; i++ ) {
+        if ( notSelected("id_d-major-", majors[i], num) ) {
+            var majChoice = document.createElement("option");
+            majChoice.value = majors[i];
+            majChoice.text = majors[i];
+            maj.appendChild(majChoice);
+        }
+    }
+    var removeButton = document.createElement("button");
+    removeButton.setAttribute( "onclick", "removeInfo('major-info')");
+    removeButton.innerHTML = "Remove Major";
+    line.appendChild(dipHeader);
+    line.appendChild(dip);
+    line.appendChild(space);
+    line.appendChild(majHeader);
+    line.appendChild(maj);
+    line.appendChild(space);
+    line.appendChild(removeButton)
+    container.appendChild(line);
+    return false;
+}
+function showMinorInfo(minors, num) {
+    var container = document.getElementById("minor-info");
+    var line = document.createElement("p");
+    var minHeader = document.createTextNode("Desired Minor");
+    var min = document.createElement("select");
+    var space = document.createElement("nbsp");
+    min.id = "id_d-minor-" + (num+1);
+    min.name = "id_d-minor-" + (num+1);
+    for (i=0; i<minors.length; i++ ) {
+        if (notSelected("id_d-minor-", minors[i], num)) {
+            var minChoice = document.createElement("option");
+            minChoice.value = minors[i];
+            minChoice.text = minors[i];
+            min.appendChild(minChoice);
+        }
+    }
+    var removeButton = document.createElement("button");
+    removeButton.setAttribute( "onclick", "removeInfo('minor-info')");
+    removeButton.innerHTML = "Remove Minor";
+    line.appendChild(minHeader);
+    line.appendChild(min);
+    line.appendChild(space);
+    line.appendChild(removeButton)
+    container.appendChild(line);
+    return false;
+}
+function showConcentrationInfo(concentrations, num) {
+    var container = document.getElementById("concentration-info");
+    var line = document.createElement("p");
+    var conHeader = document.createTextNode("Desired Concentration");
+    var con = document.createElement("select");
+    var space = document.createElement("nbsp");
+    con.id = "id_d-concentration-" + (num+1);
+    con.name = "id_d-concentration-" + (num+1);
+    for (i=0; i<concentrations.length; i++ ) {
+        if (notSelected("id_d-concentration-", concentrations[i], num)) {
+            var conChoice = document.createElement("option");
+            conChoice.value = concentrations[i];
+            conChoice.text = concentrations[i];
+            con.appendChild(conChoice);
+        }
+    }
+    var removeButton = document.createElement("button");
+    removeButton.setAttribute( "onclick", "removeInfo('concentration-info')");
+    removeButton.innerHTML = "Remove Concentration";
+    line.appendChild(conHeader);
+    line.appendChild(con);
+    line.appendChild(space);
+    line.appendChild(removeButton);
+    container.appendChild(line);
+    return false;
+}
+</script>
+
 <form method="POST" class="email" id = "email">
 
     {% csrf_token %}
     <br>
     <div class="select" id="selectMajor">
 
+        <h3>User information</h3>
+
         <p class="errormessage" id="errormessage">{{message}}</p>
 
-        <h3 id="emailbox" name="emailbox" class="MAVselect">Email: {{emailForm.email}}</h3>
+        <p id="emailbox" name="emailbox" class="MAVselect">Email:<input id="email-input" name="email-input"
+               minlength="1" required
+               placeholder="Email" />
+        </p>
 
-        <h3 name ="degreedd" class="MAVselect">Degree: {{degreeForm.degree}}</h3>
+        <p name ="password" class="MAVselect">Password: <input type="password" id="password-input" name="password-input"
+               minlength="1" required
+               placeholder="Password" />
+        </p>
 
-        <h3 name ="majordd" class="MAVselect">Major:
-        <!-- please leave this name and id as is... django backend related (see Lauren for questions) -->
-        <select name="d-major" id="id_d-major">
-            {% for m in majors %}
-                <option value="{{m}}">{{ m }}</option>
-            {% endfor %}
+        <br><br>
+
+        <h3>Select Your Major</h3>
+
+        <div id="major-info" display="block">
+
+            <p name="major-opts" class="MAVselect">
+                Desired Diploma:
+                <select name="d-diploma" name="id_d-diploma-1" id="id_d-diploma-1">
+                    <option selected disabled>Choose here</option>
+                    {% for d in diplomas %}
+                        <option value="{{d}}">{{ d }}</option>
+                    {% endfor %}
+                </select>
+
+                <nbsp></nbsp>
+                Major:
+                <!-- please leave this name and id as is... django backend related (see Lauren for questions) -->
+                <select name="d-major" name="id_d-major-1" id="id_d-major-1">
+                    <option selected disabled>Choose here</option>
+                    {% for m in majors %}
+                        <option value="{{m}}">{{ m }}</option>
+                    {% endfor %}
+                </select>
+            </p>
+
+        </div>
+
+        <button type="button" name="add-major-button" class="MAVbutton" onclick="showMajorInfo( {{diplomas}}, {{majors}}, 1 )">add major</button>
+
+        <br><br>
+
+        <h3>Minors</h3>
+
+        <div id="minor-info" display="block"></div>
+
+        <button type="button" name="add-minor-button" onclick="showMinorInfo( {{minors}}, 0 )">add minor</button>
+
+        <br><br>
+
+        <h3>Concentrations</h3>
+
+        <div id="concentration-info" display="block"></div>
+
+        <button type="button" name="add-concentration-button" onclick="showConcentrationInfo( {{concentrations}}, 0 )">add concentration</button>
+
+        <br><br>
+
+        <h3>Preferences</h3>
+
+        <p name ="fall-spring-credits" class="MAVselect">Please enter default values for fall and spring semesters</p>
+
+        <p name="FSmax" class="MAVselect">Minimum number of credit hours:
+        <select>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="1">5</option>
+            <option value="2">6</option>
+            <option value="3">7</option>
+            <option value="4">8</option>
+            <option value="1">9</option>
+            <option value="2">10</option>
+            <option value="3">11</option>
+            <option value="4" selected>12</option>
+            <option value="3">13</option>
+            <option value="4">14</option>
+            <option value="1">15</option>
+            <option value="2">16</option>
+            <option value="3">17</option>
+            <option value="4">18</option>
         </select>
-            <br><br>
-        </h3>
+        </p>
+
+        <p name="FSmax" class="MAVselect">Maximum number of credit hours:
+        <select>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="1">5</option>
+            <option value="2">6</option>
+            <option value="3">7</option>
+            <option value="4">8</option>
+            <option value="1">9</option>
+            <option value="2">10</option>
+            <option value="3">11</option>
+            <option value="4">12</option>
+            <option value="3">13</option>
+            <option value="4">14</option>
+            <option value="1">15</option>
+            <option value="2">16</option>
+            <option value="3">17</option>
+            <option value="4" selected>18</option>
+        </select>
+        </p>
+
+        <br>
+
+        <p name ="summer-credits" class="MAVselect">Do you prefer to take summer classes in general?
+            <input type="radio" name="summer-course" checked="checked" value="yes" onclick="showSummerInfo()"> Yes
+            <input type="radio" name="summer-course" value="no" onclick="hideSummerInfo()"> No
+        </p>
+
+        <div id="summer-info">
+
+            <p name="Summax" class="MAVselect">Minimum number of credit hours:
+            <select>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+                <option value="1">5</option>
+                <option value="2">6</option>
+                <option value="3">7</option>
+                <option value="4">8</option>
+                <option value="1">9</option>
+                <option value="2">10</option>
+                <option value="3">11</option>
+                <option value="4">12</option>
+                <option value="3">13</option>
+                <option value="4">14</option>
+                <option value="1">15</option>
+                <option value="2">16</option>
+                <option value="3">17</option>
+                <option value="4">18</option>
+            </select>
+            </p>
+
+            <p name="Summax" class="MAVselect">Maximum number of credit hours:
+            <select>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="1">5</option>
+                <option value="2" selected>6</option>
+                <option value="3">7</option>
+                <option value="4">8</option>
+                <option value="1">9</option>
+                <option value="2">10</option>
+                <option value="3">11</option>
+                <option value="4">12</option>
+                <option value="3">13</option>
+                <option value="4">14</option>
+                <option value="1">15</option>
+                <option value="2">16</option>
+                <option value="3">17</option>
+                <option value="4">18</option>
+            </select>
+            </p>
+
+        </div>
+
         <button type="submit" name="submit" value="submit" class="MAVbutton">submit</button>
     </div>
 

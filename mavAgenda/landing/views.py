@@ -3,6 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 
 from .forms import *
+from .models import *
+from django.contrib.auth.models import User
 
 from datetime import datetime
 
@@ -13,7 +15,7 @@ from datetime import datetime
 def getUserByEmail(e):
     userTable = User.objects.all()
     for cu in userTable:
-        if cu.email == e:
+        if cu.username == e:
             return cu
 
 '''
@@ -242,9 +244,33 @@ def generateMajorDD():
     allDegrees = Degree.objects.all()
     majors = []
     for d in allDegrees:
-        if d.major not in majors:
-            majors.append(d.major)
+        if d.degree_type == "MAJ" and d.degree_track not in majors:
+            majors.append(d.degree_track)
     return majors
+
+def generateMinorDD():
+    allDegrees = Degree.objects.all()
+    minors = []
+    for d in allDegrees:
+        if d.degree_type == "MIN" and d.degree_track not in minors:
+            minors.append(d.degree_track)
+    return minors
+
+def generateConcentrationsDD():
+    allDegrees = Degree.objects.all()
+    concentrations = []
+    for d in allDegrees:
+        if d.degree_type == "CON" and d.degree_track not in concentrations:
+            concentrations.append(d.degree_track)
+    return concentrations
+
+def generateDiplomaDD():
+    allDegrees = Degree.objects.all()
+    diplomas = []
+    for d in allDegrees:
+        if d.degree_diploma not in diplomas:
+            diplomas.append(d.degree_diploma)
+    return diplomas
 
 '''
 @emailFound provides feedback if the email is already in the User database table
@@ -296,20 +322,16 @@ def removeUserCompletedEnteries(uID):
 '''
 def login(request):
     if request.method == "POST":
-        emailForm = EmailForm(request.POST, prefix = "e")
-        if emailForm.is_valid():
-            eF = emailForm.save(commit=False)
-            if emailFound(eF.email):
-                u = getUserByEmail(eF.email)
-                userID = u.id
-                return HttpResponseRedirect(reverse('landing:schedule', args=(userID,)))
-            else:
-                emailForm = EmailForm(prefix="e")
-                message = "Email not found"
-                return render(request, 'landing/login.html', {'emailForm': emailForm, 'message':message})
+        e = request.POST['email-input']
+        if emailFound(e):
+            u = getUserByEmail(e)
+            userID = u.id
+            return HttpResponseRedirect(reverse('landing:schedule', args=(userID,)))
+        else:
+            message = "Email not found"
+            return render(request, 'landing/login.html', {'message':message})
     else:
-        emailForm = EmailForm(prefix="e")
-    return render(request, 'landing/login.html', {'emailForm': emailForm, })
+        return render(request, 'landing/login.html' )
 
 '''
 @selectcourses send a request to render the selectcourses.html page
@@ -341,26 +363,39 @@ def schedule(request, pk):
 '''
 def createuser(request):
     if request.method == "POST":
-        emailForm = EmailForm(request.POST, prefix = "e")
-        degreeForm = DegreeForm( request.POST, prefix = "d")
-        if emailForm.is_valid() and degreeForm.is_valid():
-            dF = degreeForm.save(commit=False)
-            eF = emailForm.save(commit=False)
-            selectedMajor = request.POST['d-major']
-            deg = getDegree(dF.degree, selectedMajor)
-            if emailFound(eF.email):
-                message = "Email already active"
-                emailForm = EmailForm(prefix="e")
-                degreeForm = DegreeForm(prefix="d")
-                majors = generateMajorDD()
-                return render(request, 'landing/createuser.html', {'emailForm': emailForm, 'degreeForm':degreeForm, 'message': message, 'majors':majors})
+        e = request.POST['email-input']
+        p = request.POST['password-input']
+        u = User(username=e, password=p)
+        u.save()
+        userID = u.id
+        i = 1
+        while True:
+            diploma = 'id_d-diploma' + str(i)
+            major = 'id_d-major-' + str(i)
+            if major in request.POST:
+                    print(diploma)
+                    print(major) #this is where we will actually update the db
+                    i+=1
             else:
-                u = User(email = eF.email, degree=deg)
-                u.save()
-                userID = u.id
-                return HttpResponseRedirect(reverse('landing:selectcourses', args=(userID,)))
+                break
+        i = 1
+        while True:
+            minor = 'id_d-minor' + str(i)
+            if minor in request.POST:
+                    print(minor) #this is where we will actually update the db
+                    i+=1
+            else:
+                break
+        i = 1
+        while True:
+            concentration = 'id_d-concentration' + str(i)
+            if concentration in request.POST:
+                print(concentration)  # this is where we will actually update the db
+                i += 1
+            else:
+                break
+        return HttpResponseRedirect(reverse('landing:selectcourses', args=(userID,)))
     else:
-        emailForm = EmailForm(prefix="e")
-        degreeForm = DegreeForm(prefix="d")
-        majors = generateMajorDD()
-    return render(request, 'landing/createuser.html', {'emailForm': emailForm, 'degreeForm':degreeForm, 'majors':generateMajorDD()})
+        return render(request, 'landing/createuser.html',
+                      {'diplomas':generateDiplomaDD(), 'majors':generateMajorDD(), 'minors':generateMinorDD(), 'concentrations':generateConcentrationsDD() }
+                      )
