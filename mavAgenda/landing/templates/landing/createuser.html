@@ -53,6 +53,7 @@ function showMajorInfo( diplomas, majors, num ) {
     }
     var removeButton = document.createElement("button");
     removeButton.setAttribute( "onclick", "removeInfo('major-info')");
+    removeButton.setAttribute( "class", "MAVbuttonsmall");
     removeButton.innerHTML = "Remove Major";
     line.appendChild(dipHeader);
     line.appendChild(dip);
@@ -82,6 +83,7 @@ function showMinorInfo(minors, num) {
     }
     var removeButton = document.createElement("button");
     removeButton.setAttribute( "onclick", "removeInfo('minor-info')");
+    removeButton.setAttribute( "class", "MAVbuttonsmall");
     removeButton.innerHTML = "Remove Minor";
     line.appendChild(minHeader);
     line.appendChild(min);
@@ -108,6 +110,7 @@ function showConcentrationInfo(concentrations, num) {
     }
     var removeButton = document.createElement("button");
     removeButton.setAttribute( "onclick", "removeInfo('concentration-info')");
+    removeButton.setAttribute( "class", "MAVbuttonsmall");
     removeButton.innerHTML = "Remove Concentration";
     line.appendChild(conHeader);
     line.appendChild(con);
@@ -166,7 +169,7 @@ function showConcentrationInfo(concentrations, num) {
 
         </div>
 
-        <button type="button" name="add-major-button" class="MAVbutton" onclick="showMajorInfo( {{diplomas}}, {{majors}}, 1 )">add major</button>
+        <button type="button" name="add-major-button" class="MAVbuttonsmall" onclick="showMajorInfo( {{diplomas}}, {{majors}}, 1 )">add major</button>
 
         <br><br>
 
@@ -174,7 +177,7 @@ function showConcentrationInfo(concentrations, num) {
 
         <div id="minor-info" display="block"></div>
 
-        <button type="button" name="add-minor-button" onclick="showMinorInfo( {{minors}}, 0 )">add minor</button>
+        <button type="button" name="add-minor-button" class="MAVbuttonsmall" onclick="showMinorInfo( {{minors}}, 0 )">add minor</button>
 
         <br><br>
 
@@ -182,7 +185,7 @@ function showConcentrationInfo(concentrations, num) {
 
         <div id="concentration-info" display="block"></div>
 
-        <button type="button" name="add-concentration-button" onclick="showConcentrationInfo( {{concentrations}}, 0 )">add concentration</button>
+        <button type="button" name="add-concentration-button" class="MAVbuttonsmall" onclick="showConcentrationInfo( {{concentrations}}, 0 )">add concentration</button>
 
         <br><br>
 

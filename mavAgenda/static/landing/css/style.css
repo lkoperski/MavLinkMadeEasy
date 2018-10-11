@@ -30,7 +30,8 @@
         p {
             margin: 8px;
             font-size: 12pt;
-            font-family: "Trebuchet MS", Helvetica, sans-serif;        }
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+        }
 
         h1 {
             font-size: 20pt;
@@ -123,6 +124,20 @@
 
         .MAVbutton:hover {
             font-size: 24px;
+            background-color: #f71313;
+            color: white;
+        }
+
+        .MAVbuttonsmall {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            font-size: 12px;
+            background-color: white;
+            padding: 2px 22px 2px 22px;
+            border: 1px solid black;
+        }
+
+        .MAVbuttonsmall:hover {
+            font-size: 12px;
             background-color: #f71313;
             color: white;
         }
