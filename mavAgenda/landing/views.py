@@ -216,11 +216,24 @@ def createSchedule(uID):
     return schedule
 
 '''
+@getDegreeRegs returns a list of requirements for all degrees a user has selected
+@param degrees: a list of degrees associated with the user
+'''
+def getDegreeReqs(degrees):
+    requirements = []
+    for d in degrees:
+        requirement = d.req.all()
+        if requirement not in requirements:
+            requirements.append(requirement)
+    return requirements
+
+'''
 @generateCheckBoxEntities creates a list of tuples of requirements, course names and numbers for the selectcourses page
 @param uID: primary key corresponding to the active user
 '''
 def generateCheckBoxEntities(uID):
-    reqs = Degree.objects.get(user=uID).req.all()
+    degrees = Degree.objects.get(degree_users=uID).all()
+    reqs = getDegreeReqs(degrees)
     checkBoxEntities = []
     for r in reqs:
         req_id = r.id
