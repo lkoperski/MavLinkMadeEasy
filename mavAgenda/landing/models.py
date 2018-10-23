@@ -64,7 +64,7 @@ class Course(models.Model):
         (Y, "Lab"),
         (W, "Waiver"),
     )
-    course_special = models.CharField(max_length=15, choices=SPECIAL_TYPE_CHOICE, default=N)
+    course_special = models.CharField(max_length=15, choices=SPECIAL_TYPE_CHOICE, default=None)
     course_comment = models.CharField(max_length=200, blank=True)
     course_requirements = models.ForeignKey(Requirement, on_delete=models.CASCADE)
 
@@ -76,7 +76,7 @@ class Campus(models.Model):
 class Building(models.Model):
     building_name = models.CharField(max_length=45)
     building_roomNumber = models.CharField(max_length=8)
-    building_campus = models.ManyToManyField(Campus, on_delete=models.CASCADE)
+    building_campus = models.ManyToManyField(Campus)
 
 class Instructor(models.Model):
     instructor_firstName = models.CharField(max_length=20)
