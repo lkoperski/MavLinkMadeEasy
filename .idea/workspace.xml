@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6a63500-b22f-4d8b-ae80-cbe995352251" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/mavAgenda/landing/degreeData/Class List.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mavAgenda/landing/degreeData/Course Requirements.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mavAgenda/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,11 +29,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="445" column="11" selection-start-line="445" selection-start-column="11" selection-end-line="445" selection-end-column="11" />
+            <state relative-caret-position="232">
+              <caret line="435" column="49" lean-forward="true" selection-start-line="435" selection-start-column="49" selection-end-line="435" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-184">
+              <caret line="82" column="27" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -102,13 +109,13 @@
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/usersettings.html" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/admin.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/forms.py" />
-        <option value="$PROJECT_DIR$/mavAgenda/landing/models.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/base.html" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/tests/test_logic.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html" />
         <option value="$PROJECT_DIR$/mavAgenda/static/landing/css/style.css" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/views.py" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/models.py" />
       </list>
     </option>
   </component>
@@ -121,11 +128,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="142" />
-    <option name="y" value="63" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -513,11 +519,19 @@
       <option name="project" value="LOCAL" />
       <updated>1539283611479</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="added data from registrar's office to the project">
+      <created>1539877556796</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1539877556796</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="114" y="51" width="782" height="831" extended-state="0" />
+    <frame x="-6" y="0" width="781" height="830" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5033557" side_tool="true" weight="0.2827688" />
@@ -525,8 +539,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986577" weight="0.3298969" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32935917" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.2797619" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.45290858" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.28017884" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17198336" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -549,7 +563,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="determine Req credit quota logic for scheduling" />
     <MESSAGE value="accounting for non-req-specific courses needed in schedule" />
     <MESSAGE value="updated db for reqs and applied tracking to reqs" />
     <MESSAGE value="clean up some of the printing/extraneous work in the logic" />
@@ -574,7 +587,8 @@
     <MESSAGE value="update logic for if user email already taken" />
     <MESSAGE value="combine Coltin's test coverage for updated logic" />
     <MESSAGE value="Update CSS for create user page buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update CSS for create user page buttons" />
+    <MESSAGE value="added data from registrar's office to the project" />
+    <option name="LAST_COMMIT_MESSAGE" value="added data from registrar's office to the project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -864,13 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-16">
@@ -894,8 +901,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="445" column="11" selection-start-line="445" selection-start-column="11" selection-end-line="445" selection-end-column="11" />
+        <state relative-caret-position="232">
+          <caret line="435" column="49" lean-forward="true" selection-start-line="435" selection-start-column="49" selection-end-line="435" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-184">
+          <caret line="82" column="27" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
         </state>
       </provider>
     </entry>
