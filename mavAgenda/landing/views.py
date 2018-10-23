@@ -431,11 +431,22 @@ def selectcourses(request, pk):
         removeUserCompletedEnteries(pk)
         classesChecked = request.POST.getlist('chexmix')
         saveClassesToUser(classesChecked, pk)
-        return HttpResponseRedirect(reverse('landing:schedule', args=(pk,)))
+        return HttpResponseRedirect(reverse('landing:nextsemesterschedule', args=(pk,)))
     else:
         checkBoxes = generateCheckBoxEntities(pk)
         # might need to write some logic here to determine if boxes have already been checked :)
     return render(request, 'landing/selectcourses.html', {'checkBoxes': generateCheckBoxEntities(pk)})
+
+'''
+@nextsemesterpreferences send a request to render the nextsemesterpreferences.html page
+@param request: generates the response
+@param pk: primary key corresponding to active user
+'''
+def nextsemesterpreferences(request, pk):
+    if request.method == "POST":
+        return HttpResponseRedirect(reverse('landing:schedule', args=(pk,)))
+    else:
+        return render(request, 'landing/nextsemesterpreferences.html')
 
 '''
 @schedule send a request to render the schedule.html page

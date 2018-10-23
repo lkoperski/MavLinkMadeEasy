@@ -66,7 +66,7 @@ class Course(models.Model):
     )
     course_special = models.CharField(max_length=15, choices=SPECIAL_TYPE_CHOICE, default=None)
     course_comment = models.CharField(max_length=200, blank=True)
-    course_requirements = models.ForeignKey(Requirement, on_delete=models.CASCADE)
+    course_requirements = models.ForeignKey(Requirement, on_delete=models.CASCADE, null=True)
 
 class Campus(models.Model):
     N = "North Campus"
@@ -113,6 +113,7 @@ class Offering(models.Model):
     offering_time = models.CharField(max_length=20)
     offering_location = models.ForeignKey(Building, on_delete=models.CASCADE)
     offering_days = models.ManyToManyField(Weekday)
+    offering_sectionNum = models.IntegerField()
     offering_instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
 
 class Prereq(models.Model):
@@ -135,7 +136,8 @@ class UserPreferences(models.Model):
     pref_summer = models.BooleanField()
     pref_summerMinCredits = models.IntegerField()
     pref_summerMaxCredits = models.IntegerField()
-    pref_nextSSF = models.CharField(max_length=10)
-    pref_nextYear = models.IntegerField()
-    pref_nextSemCredit = models.IntegerField()
+    pref_nextSSF = models.CharField(max_length=10, null=True)
+    pref_nextYear = models.IntegerField(null=True)
+    pref_nextSemMinCredit = models.IntegerField(null=True)
+    pref_nextSemMaxCredit = models.IntegerField(null=True)
     pref_user = models.ForeignKey(User, on_delete=models.CASCADE)

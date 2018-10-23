@@ -1,0 +1,101 @@
+{% extends 'landing/base.html' %}
+{% block content %}
+
+<script>
+function upcomingYears() {
+    var container = document.getElementById("id_d-year");
+    var currentYear = (new Date()).getFullYear()
+    for (i = currentYear; i < currentYear + 4; i++) {
+        var yearChoice = document.createElement("option");
+        yearChoice.value = i;
+        yearChoice.text = i;
+        container.appendChild(yearChoice);
+    }
+    return false;
+}
+</script>
+
+<form method="POST" class="email" id = "email">
+
+    {% csrf_token %}
+    <br>
+    <div class="select" id="selectMajor">
+
+        <h3>Preferences for your next semester</h3>
+
+        <div id="term-info" display="block">
+
+            <p name="term-opts" class="MAVselect">
+                Next Semester:
+                <select name="id_d-ssf" id="id_d-ssf">
+                    <option selected disabled>Term</option>
+                    <option>Fall</option>
+                    <option>Summer</option>
+                    <option>Spring</option>
+                </select>
+
+                <nbsp></nbsp>
+
+                <select name="id_d-year" id="id_d-year" onclick="upcomingYears()">
+                    <option selected disabled>Year</option>
+                </select>
+            </p>
+
+        </div>
+
+        <br><br>
+
+        <h3>Prefered credits for this coming semester</h3>
+
+        <p class="MAVselect">Minimum number of credit hours:
+        <select name="FSmin">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12" selected>12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+        </select>
+        </p>
+
+        <p class="MAVselect">Maximum number of credit hours:
+        <select name="FSmax">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18" selected>18</option>
+        </select>
+
+        <button type="submit" name="submit" value="submit" class="MAVbutton">submit</button>
+    </div>
+
+</form>
+
+
+{% endblock %}
