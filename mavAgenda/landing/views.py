@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 
+import _datetime
+
 from .forms import *
 from .models import *
 from django.contrib.auth.models import User
@@ -285,6 +287,16 @@ def generateDiplomaDD():
             diplomas.append(d.degree_diploma)
     return diplomas
 
+def generateYearDD():
+    years = []
+    date = datetime.now()
+    currentYear = date.year
+    years.append(currentYear)
+    years.append(currentYear+1)
+    years.append(currentYear+2)
+    years.append(currentYear+3)
+    return years
+
 '''
 @emailFound provides feedback if the email is already in the User database table
 @param email: email under test
@@ -444,9 +456,16 @@ def selectcourses(request, pk):
 '''
 def nextsemesterpreferences(request, pk):
     if request.method == "POST":
+        cu = User.objects.get(pk=pk)
+        up = UserPreferences.objects.get(pref_user=cu)
+        up.pref_nextSSF = request.POST['id_d-ssf']
+        up.pref_nextYear = request.POST['id_d-year']
+        up.pref_nextSemMinCredit = request.POST['nextSemMin']
+        up.pref_nextSemMaxCredit = request.POST['nextSemMax']
+        up.save()
         return HttpResponseRedirect(reverse('landing:schedule', args=(pk,)))
     else:
-        return render(request, 'landing/nextsemesterpreferences.html')
+        return render(request, 'landing/nextsemesterpreferences.html', {'years': generateYearDD()})
 
 '''
 @schedule send a request to render the schedule.html page
