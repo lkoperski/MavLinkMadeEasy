@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c6a63500-b22f-4d8b-ae80-cbe995352251" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mavAgenda/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mavAgenda/landing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,8 +40,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-184">
-              <caret line="82" column="27" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
+            <state relative-caret-position="391">
+              <caret line="71" column="22" lean-forward="true" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -128,9 +127,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
-    <option name="width" value="977" />
+    <option name="width" value="803" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
@@ -162,41 +161,7 @@
               <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
               <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
               <item name="landing" type="462c0819:PsiDirectoryNode" />
-              <item name="degreeData" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="landing" type="462c0819:PsiDirectoryNode" />
               <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="landing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="landing" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -526,12 +491,25 @@
       <option name="project" value="LOCAL" />
       <updated>1539877556796</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="update database models for additional future functionality :)">
+      <created>1540316090070</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1540316090070</updated>
+    </task>
+    <task id="LOCAL-00043" summary="update database models for additional future functionality :)">
+      <created>1540316404277</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1540316404277</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="781" height="830" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5033557" side_tool="true" weight="0.2827688" />
@@ -539,8 +517,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986577" weight="0.3298969" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32935917" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.28017884" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17198336" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.27982327" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.42214766" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -555,6 +533,29 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.4226804" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986577" weight="0.3298969" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32935917" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.28017884" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5033557" side_tool="true" weight="0.2827688" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -563,7 +564,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="accounting for non-req-specific courses needed in schedule" />
     <MESSAGE value="updated db for reqs and applied tracking to reqs" />
     <MESSAGE value="clean up some of the printing/extraneous work in the logic" />
     <MESSAGE value="eliminate blank semester at end of schedule" />
@@ -588,7 +588,8 @@
     <MESSAGE value="combine Coltin's test coverage for updated logic" />
     <MESSAGE value="Update CSS for create user page buttons" />
     <MESSAGE value="added data from registrar's office to the project" />
-    <option name="LAST_COMMIT_MESSAGE" value="added data from registrar's office to the project" />
+    <MESSAGE value="update database models for additional future functionality :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="update database models for additional future functionality :)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -908,8 +909,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-184">
-          <caret line="82" column="27" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
+        <state relative-caret-position="391">
+          <caret line="71" column="22" lean-forward="true" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
         </state>
       </provider>
     </entry>

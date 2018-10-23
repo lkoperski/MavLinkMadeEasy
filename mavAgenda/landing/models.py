@@ -72,6 +72,12 @@ class Campus(models.Model):
     N = "North Campus"
     S = "Scott (South) Campus"
     B = "Center Street Campus"
+    SPECIAL_TYPE_CHOICE = (
+        (N, "North Campus"),
+        (S, "Scott (South) Campus"),
+        (B, "Center Street Campus"),
+    )
+    campus_name = models.CharField(max_length=30, choices=SPECIAL_TYPE_CHOICE, default=None)
 
 class Building(models.Model):
     building_name = models.CharField(max_length=45)
