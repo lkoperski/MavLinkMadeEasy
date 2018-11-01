@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c6a63500-b22f-4d8b-ae80-cbe995352251" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Doxyfile" beforeDir="false" afterPath="$PROJECT_DIR$/Doxyfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mavAgenda/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/templates/landing/nextsemesterpreferences.html" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/templates/landing/nextsemesterpreferences.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mavAgenda/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,73 +31,59 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="218">
-                  <caret line="464" column="17" selection-start-line="464" selection-start-column="17" selection-end-line="464" selection-end-column="17" />
-                  <folding>
-                    <element signature="e#0#54#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="createuser.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="137">
-                  <caret line="251" column="32" selection-start-line="251" selection-start-column="26" selection-end-line="251" selection-end-column="32" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/base.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="nextsemesterpreferences.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/nextsemesterpreferences.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="133">
-                  <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1598">
-                  <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="270" column="59" selection-start-line="270" selection-start-column="59" selection-end-line="270" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-119">
+              <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createuser.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4267">
+              <caret line="251" column="32" selection-start-line="251" selection-start-column="26" selection-end-line="251" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nextsemesterpreferences.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/nextsemesterpreferences.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -106,7 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>createSched</find>
       <find>createSchedule</find>
       <find>createsc</find>
       <find>getCour</find>
@@ -136,6 +123,7 @@
       <find>generateY</find>
       <find>datetime</find>
       <find>Summin</find>
+      <find>getDegreeReq</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,9 +149,9 @@
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html" />
         <option value="$PROJECT_DIR$/mavAgenda/static/landing/css/style.css" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/admin.py" />
-        <option value="$PROJECT_DIR$/mavAgenda/landing/models.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/urls.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/nextsemesterpreferences.html" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/models.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/views.py" />
       </list>
     </option>
@@ -187,6 +175,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,27 +199,12 @@
               <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
               <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
               <item name="landing" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="landing" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="landing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -609,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540324215508</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="updated year for next semester prefs and save user's next sem prefs">
+      <created>1540338329609</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1540338329609</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -621,8 +602,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986577" weight="0.3298969" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32935917" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.2827688" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13624161" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.4138439" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.118791945" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -637,29 +618,6 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14147018" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.28614008" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5033557" side_tool="true" weight="0.2827688" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986577" weight="0.3298969" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32935917" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -668,7 +626,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="clean up some of the printing/extraneous work in the logic" />
     <MESSAGE value="eliminate blank semester at end of schedule" />
     <MESSAGE value="update so prereqs for course and course aren't concurrent" />
     <MESSAGE value="update test suite, provide test for new checkPrereqsMet signature" />
@@ -693,7 +650,8 @@
     <MESSAGE value="added data from registrar's office to the project" />
     <MESSAGE value="update database models for additional future functionality :)" />
     <MESSAGE value="added view for next semester preferences" />
-    <option name="LAST_COMMIT_MESSAGE" value="added view for next semester preferences" />
+    <MESSAGE value="updated year for next semester prefs and save user's next sem prefs" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated year for next semester prefs and save user's next sem prefs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -990,31 +948,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
+        <state relative-caret-position="4267">
           <caret line="251" column="32" selection-start-line="251" selection-start-column="26" selection-end-line="251" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/nextsemesterpreferences.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+        <state relative-caret-position="323">
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="464" column="17" selection-start-line="464" selection-start-column="17" selection-end-line="464" selection-end-column="17" />
+        <state relative-caret-position="228">
+          <caret line="270" column="59" selection-start-line="270" selection-start-column="59" selection-end-line="270" selection-end-column="59" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>

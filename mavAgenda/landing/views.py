@@ -222,34 +222,53 @@ def createSchedule(uID):
 @param degrees: a list of degrees associated with the user
 '''
 def getDegreeReqs(degrees):
+    print("Inside getDegreeReqs")
     requirements = []
-    for d in degrees:
-        requirement = d.req.all()
-        if requirement not in requirements:
-            requirements.append(requirement)
+    for r in Requirement.objects.all():
+        rSet = r.req_degrees.all()
+        for rs in rSet:
+            if rs in degrees and rs not in requirements:
+                requirements.append(r)
     return requirements
+
+'''
+@getDegreeRegs returns a list of requirements for all degrees a user has selected
+@param degrees: a list of degrees associated with the user
+'''
+def getReqCourses(reqs):
+    courses = []
+    for c in Course.objects.all():
+        cSet = c.course_requirements.all()
+        for cs in cSet:
+            if cs in reqs and cs not in courses:
+                courses.append(c)
+    return courses
 
 '''
 @generateCheckBoxEntities creates a list of tuples of requirements, course names and numbers for the selectcourses page
 @param uID: primary key corresponding to the active user
 '''
 def generateCheckBoxEntities(uID):
-    degrees = Degree.objects.get(degree_users=uID).all()
+    degrees = Degree.objects.filter(degree_users=uID)
+    print( "Degrees:" )
+    print ( degrees )
+    print( "\nRequirements:")
     reqs = getDegreeReqs(degrees)
+    print ( reqs )
     checkBoxEntities = []
     for r in reqs:
-        req_id = r.id
-        req_name = r.name
-        req_type = r.req_type
-        req_creds = r.credits
-        catalog = r.course.all()
+        reqID = r.id
+        reqName = r.req_name
+        reqCredits = r.req_credits
+        catalog = getReqCourses(r)
         courseList = []
-        for g in catalog:
-            number = g.num
-            name = g.name
-            creds = g.credits
-            courseList.append([number,name,creds])
-        checkBoxEntities.append([req_id, req_name, req_type, req_creds, courseList])
+        for c in catalog:
+            number = c.course_num
+            subject = c.course_subject
+            name = c.course_name
+            creds = c.course_credits
+            courseList.append([subject,number,name,creds])
+        checkBoxEntities.append([reqID, reqName, reqCredits, courseList])
     return checkBoxEntities
 
 '''

@@ -48,11 +48,17 @@ class Course(models.Model):
     S = "Spring"
     F = "Fall"
     M = "Summer"
+    Y = "Year-Only"
+    P = "Spring/Summer"
+    H = "Fall/Summer"
     SEM_CHOICE = (
         (A, "All"),
         (S, "Spring"),
         (F, "Fall"),
         (M, "Summer"),
+        (Y, "Year-Only"),
+        (P, "Spring/Summer"),
+        (H, "Fall/Summer"),
     )
     course_semester = models.CharField(max_length=10, choices=SEM_CHOICE, default=A)
     course_credits = models.IntegerField()
@@ -66,7 +72,7 @@ class Course(models.Model):
     )
     course_special = models.CharField(max_length=15, choices=SPECIAL_TYPE_CHOICE, default=None)
     course_comment = models.CharField(max_length=200, blank=True)
-    course_requirements = models.ForeignKey(Requirement, on_delete=models.CASCADE, null=True)
+    course_requirements = models.ManyToManyField(Requirement)
 
 class Campus(models.Model):
     N = "North Campus"
