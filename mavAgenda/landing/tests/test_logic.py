@@ -3,14 +3,17 @@ from django.test import TestCase
 from ..views import *
 from ..models import *
 
-
+'''
+@YourTestClass set up and tear down test fixture 
+@param TestCase implements the interface to drive the tests and check for failure
+'''
 class YourTestClass(TestCase):
 
     def setUp(self):
         # Setup run before every test method.
         pass
 
-    def tearDown(cself):
+    def tearDown(self):
         # Clean up run after every test method.
         pass
 
@@ -189,6 +192,12 @@ class YourTestClass(TestCase):
     # @param e: the email being searched for
     # '''
 
+    '''
+    @test_getUserByEmail creates a user account and checks that the account is stored in the SQLite3 database
+    @param self references current instance of the class
+    @var email sample username string to store in SQLite3 database
+    @var p  sample password string to store in SQLite3 database
+    '''
     def test_getUserByEmail(self):
         email = "cdog@test"
         p = "secure"
@@ -203,6 +212,10 @@ class YourTestClass(TestCase):
     # @param m: major attribute of Degree being searched for
     # '''
     #    def getDegree(diploma, type, track):
+    '''
+    @test_getDegree creates a degree object and checks that the degree is stored in the SQLite3 database
+    @param self references current instance of the class
+    '''
     def test_getDegree(self):
         newDegree = Degree(degree_diploma='Master of Science', degree_type='Major', degree_track='Computer Science')
         newDegree.save()
@@ -254,6 +267,11 @@ class YourTestClass(TestCase):
     # @param classesTaken: a list of Course (objects) that the User has already completed
     # '''
     #    def removeCoursesTaken( requiredClasses, classesTaken ):
+
+    '''
+    @test_removeCoursesTaken tests the correctness of the computed list of classes a user still needs to take in order to graduate
+    @param self references current instance of the class
+    '''
     def test_removeCoursesTaken(self):
         needed = []
         taken = []
@@ -322,6 +340,10 @@ class YourTestClass(TestCase):
     # @param m: current month
     # '''
 
+    '''
+    @test_get_semester_by_month_year tests if the correct semester is calculated
+    @param self references current instance of the class
+    '''
     def test_get_semester_by_month_year(self):
         Spring = getSemesterByMonthYear(4)
         Summer = getSemesterByMonthYear(7)
@@ -335,6 +357,10 @@ class YourTestClass(TestCase):
     # @param semester: previous semester list
     # '''
     #    def generateNewSemester(semester):
+    '''
+        @test_generate_new_semester tests if a semester is created and stored correctly
+        @param self references current instance of the class
+    '''
     def test_generate_new_semester(self):
         currentMonth = datetime.now().month
         currentYear = datetime.now().year
@@ -350,6 +376,10 @@ class YourTestClass(TestCase):
     # @param courseList: list of Course (objects) the user is scheduled to take during current semester
     # '''
     #    def isFull(courseList):
+    '''
+        @test_is_full tests if the semester has hit the maximum number of credits allowable
+        @param self references current instance of the class
+    '''
     def test_is_full(self):
         currentMonth = datetime.now().month
         currentYear = datetime.now().year
@@ -381,7 +411,10 @@ class YourTestClass(TestCase):
     # if d.degree_type == "MAJ" and d.degree_track not in majors:
     # majors.append(d.degree_track)
     # return majors
-
+    '''
+    @test_generateMajorDD creates a list of possible majors for use on the createuser page
+    @param self references current instance of the class
+    '''
     def test_generateMajorDD(self):
         newDegree = Degree(degree_diploma='Master of Science', degree_type="MAJ", degree_track='Computer Science')
         newDegree.save()
@@ -397,6 +430,11 @@ class YourTestClass(TestCase):
     # if d.degree_type == "MIN" and d.degree_track not in minors:
     # minors.append(d.degree_track)
     # return minors
+
+    '''
+    @test_generateMinorDD creates a list of possible minors for use on the createuser page
+    @param self references current instance of the class
+    '''
     def test_generateMinorDD(self):
         newDegree = Degree(degree_diploma='Master of Science', degree_type="MIN", degree_track='Computer Science')
         newDegree.save()
@@ -406,6 +444,10 @@ class YourTestClass(TestCase):
         self.assertTrue(testList == testCase)
 
     #    def generateConcentrationsDD():
+    '''
+    @test_generateConcentrationsDD creates a list of possible concentrations for use on the createuser page
+    @param self references current instance of the class
+    '''
     def test_generateConcentrationsDD(self):
         newDegree = Degree(degree_diploma='Master of Science', degree_type="CON", degree_track='Computer Science')
         newDegree.save()
@@ -415,6 +457,10 @@ class YourTestClass(TestCase):
         self.assertTrue(testList == testCase)
 
     #    def generateDiplomaDD():
+    '''
+    @test_generateDiplomaDD creates a list of possible diplomas for use on the createuser page
+    @param self references current instance of the class
+    '''
     def test_generateDiplomaDD(self):
         newDegree = Degree(degree_diploma='Master of Science', degree_type="CON", degree_track='Computer Science')
         newDegree.save()
@@ -428,6 +474,10 @@ class YourTestClass(TestCase):
     # @param email: email under test
     # '''
     #    def emailFound(email):
+    '''
+    @test_emailFound stores a user into the database and checks that the email is found in the database
+    @param self references current instance of the class
+    '''
     def test_emailFound(self):
         email = "cdog@test"
         p = "secure"

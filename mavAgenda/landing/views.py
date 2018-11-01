@@ -22,8 +22,9 @@ def getUserByEmail(e):
 
 '''
 @getDegree searches the Degree table to find the Degree object with corresponding degree and major
-@param d: degree attribute of Degree being searched for
-@param m: major attribute of Degree being searched for
+@param diploma: degree attribute of Degree being searched for (bachelors, masters, doctorate)
+@param type: degree attribute of Degree being searched for (science, art)
+@param track: major attribute of Degree being searched for (computer science, MIS, etc)
 '''
 def getDegree(diploma, type, track):
     degreeTable = Degree.objects.all()
@@ -76,7 +77,7 @@ def removeCoursesTaken( requiredClasses, classesTaken ):
 @checkPrereqsMet determines if the User has met all Prereqs for a particular Course
 @param prereqs: a list of Course (objects) corresponding to Prereqs for a given Course
 @param classesTaken: a list of Course (objects) that the User has already completed
-@parm scheduledClasses: a list of Course (objects) the scheduling algorithm has accounted for already
+@parm currentSemester: a list of Course (objects) the scheduling algorithm has accounted for already
 '''
 def checkPrereqsMet(preqreqs, classesTaken, currentSemester):
     met = True

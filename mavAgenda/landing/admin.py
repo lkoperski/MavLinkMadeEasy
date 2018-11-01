@@ -22,6 +22,9 @@ admin.site.register(Requirement)
 @DegreeAdmin creates an easily editable form to add
  information to the degree model from the admin page
 @param: admin.ModelAdmin representation of a model in the admin interface
+@var display 
+@var filter
+@var fields
 '''
 #class DegreeAdmin(admin.ModelAdmin):
     #list_display = ('degree', 'major')
@@ -34,6 +37,9 @@ admin.site.register(Requirement)
 @CourseAdmin creates an easily editable form to add
  information to the course model from the admin page
 @param: admin.ModelAdmin representation of a model in the admin interface
+@var display 
+@var filter
+@var fields
 '''
 #class CourseAdmin(admin.ModelAdmin):
     #list_display = ('num', 'name', 'special', 'credits')
