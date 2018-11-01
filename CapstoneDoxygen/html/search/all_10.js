@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['s',['S',['../classlanding_1_1models_1_1Course.html#a91e4bb24a46ec40f82d0d1c8bb1f5705',1,'landing.models.Course.S()'],['../classlanding_1_1models_1_1Campus.html#ad81ec129890560554391f01ce266beaa',1,'landing.models.Campus.S()'],['../classlanding_1_1models_1_1Weekday.html#afa57d936d921fb3d04172f0a7d690487',1,'landing.models.Weekday.S()']]],
+  ['saveclassestouser',['saveClassesToUser',['../namespacelanding_1_1views.html#a474931c0129efca17c6aa8ba314af9e5',1,'landing::views']]],
+  ['schedule',['schedule',['../namespacelanding_1_1views.html#acbb94e571697e7b28ad35bf2996fe01f',1,'landing::views']]],
+  ['schedule_2ehtml',['schedule.html',['../schedule_8html.html',1,'']]],
+  ['scrape',['scrape',['../namespacescrape.html',1,'']]],
+  ['scrape_2epy',['scrape.py',['../scrape_8py.html',1,'']]],
+  ['secret_5fkey',['SECRET_KEY',['../namespacemavAgenda_1_1settings.html#a62ddce1502d30dbbeec3818fcaf9eeda',1,'mavAgenda::settings']]],
+  ['select2_2ecss',['select2.css',['../select2_8css.html',1,'']]],
+  ['select2_2emin_2ecss',['select2.min.css',['../select2_8min_8css.html',1,'']]],
+  ['selectcourses',['selectcourses',['../namespacelanding_1_1views.html#a36b36778d06e5903c4854cb15d5ac297',1,'landing::views']]],
+  ['selectcourses_2ehtml',['selectcourses.html',['../selectcourses_8html.html',1,'']]],
+  ['selectdegree',['selectdegree',['../namespacemavAgenda_1_1views.html#a64ca2f2eecfd09c44da85271651c9af2',1,'mavAgenda::views']]],
+  ['selenium',['selenium',['../classlanding_1_1tests_1_1test__UI_1_1UITests.html#a71f844dbde9cf4cf3b0a74dcbe13bdd9',1,'landing::tests::test_UI::UITests']]],
+  ['sem_5fchoice',['SEM_CHOICE',['../classlanding_1_1models_1_1Course.html#af5c611e98c1a5fc7ee9c7f072af17631',1,'landing::models::Course']]],
+  ['settings_2epy',['settings.py',['../settings_8py.html',1,'']]],
+  ['setup',['setUp',['../classlanding_1_1tests_1_1test__logic_1_1YourTestClass.html#a8fc08e836ba1d71ef27e4fb442f9bf07',1,'landing::tests::test_logic::YourTestClass']]],
+  ['setupclass',['setUpClass',['../classlanding_1_1tests_1_1test__UI_1_1UITests.html#a63dc03589cdac58df8716fbb1fb3279b',1,'landing::tests::test_UI::UITests']]],
+  ['special_5ftype_5fchoice',['SPECIAL_TYPE_CHOICE',['../classlanding_1_1models_1_1Course.html#ac0a930e2ca556697d478cb97a894568b',1,'landing.models.Course.SPECIAL_TYPE_CHOICE()'],['../classlanding_1_1models_1_1Campus.html#a7db95941da37de92bae99b10b9cdda5e',1,'landing.models.Campus.SPECIAL_TYPE_CHOICE()']]],
+  ['static_5froot',['STATIC_ROOT',['../namespacemavAgenda_1_1settings.html#a22094b6f2b02c5fe2c669169df0df2c1',1,'mavAgenda::settings']]],
+  ['static_5furl',['STATIC_URL',['../namespacemavAgenda_1_1settings.html#ad7fe7173caa4166bb75d132316ea1a88',1,'mavAgenda::settings']]],
+  ['style_2ecss',['style.css',['../style_8css.html',1,'']]]
+];

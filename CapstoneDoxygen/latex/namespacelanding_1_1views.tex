@@ -1,0 +1,541 @@
+\hypertarget{namespacelanding_1_1views}{}\section{landing.\+views Namespace Reference}
+\label{namespacelanding_1_1views}\index{landing.\+views@{landing.\+views}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_adba23e76d333670361090c476505a965}{check\+Course\+Valid}} (course, classes\+Taken, semester\+Courses, ssf)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a2f54a8ff8d9bcec3589d12b6e7fb9b73}{check\+Offered\+Semester}} (course, ssf)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_aebd6e45208c4d8a81796c95fa03c029a}{check\+Prereqs\+Met}} (preqreqs, classes\+Taken, current\+Semester)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_aa4736d3c8ed65938a640bd054c1fb588}{create\+Schedule}} (u\+ID)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_acd4507dea8fb635a81455db7918ee43c}{createuser}} (request)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a54774f163c70feb2df73511f76bfd877}{email\+Found}} (email)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a0d4c1e9d73373e8f2956340085eb50b2}{generate\+Check\+Box\+Entities}} (u\+ID)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a3c3b157bf08697962286a0b17eff2d59}{generate\+Concentrations\+DD}} ()
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a30457ad7655375a7be248dc4b36d2194}{generate\+Diploma\+DD}} ()
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_acee7a550e05650013c2b9205bf9a2a88}{generate\+Major\+DD}} ()
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_ab124c7ee183d054b2316ae213be19b21}{generate\+Minor\+DD}} ()
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a219fcf8f07fa2eeaf2f31ad6d7fc6905}{generate\+New\+Semester}} (semester)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a07d432deb07b33da6ab263caafabb819}{generate\+Year\+DD}} ()
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_ab8699575ba0ef576f40bd71e73a8530f}{get\+Completed\+By\+User}} (u\+ID)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a35d744b4e891af5594e09cc3d0ed42bf}{get\+Courses\+For\+User}} (u\+ID)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a58f59d9cfdce67b9f2c7f59d99e39e4e}{get\+Degree}} (diploma, type, track)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_adf4b5d99c41ac39f87a359bdd86b2b02}{get\+Degree\+Reqs}} (degrees)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a205b22bd62d9457694957d93b53f35af}{get\+Semester\+By\+Month\+Year}} (m)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a8d5dc6aa494a2a455d00898fe7c1a994}{get\+User\+By\+Email}} (e)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a0c2f89f5183919eb35499eea63f159a1}{is\+Full}} (course\+List)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a7b08070340297551acfaafde9d9376bb}{login}} (request)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_ae0ecf1d0ea604a47a4617911d02051aa}{nextsemesterpreferences}} (request, pk)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a0c09aa6ffb498dba6bae2f61fac3a37d}{remove\+Courses\+Taken}} (required\+Classes, classes\+Taken)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a15788f148f992f964f914e41cca3563a}{remove\+User\+Completed\+Enteries}} (u\+ID)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a474931c0129efca17c6aa8ba314af9e5}{save\+Classes\+To\+User}} (classes\+Checked, u\+ID)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_acbb94e571697e7b28ad35bf2996fe01f}{schedule}} (request, pk)
+\item 
+def \mbox{\hyperlink{namespacelanding_1_1views_a36b36778d06e5903c4854cb15d5ac297}{selectcourses}} (request, pk)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacelanding_1_1views_adba23e76d333670361090c476505a965}\label{namespacelanding_1_1views_adba23e76d333670361090c476505a965}} 
+\index{landing\+::views@{landing\+::views}!check\+Course\+Valid@{check\+Course\+Valid}}
+\index{check\+Course\+Valid@{check\+Course\+Valid}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{check\+Course\+Valid()}{checkCourseValid()}}
+{\footnotesize\ttfamily def landing.\+views.\+check\+Course\+Valid (\begin{DoxyParamCaption}\item[{}]{course,  }\item[{}]{classes\+Taken,  }\item[{}]{semester\+Courses,  }\item[{}]{ssf }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@checkCourseValid determines if a given Course can be taken during a given semester
+@param course: the Course under test
+@param classesTaken: a list of Course (objects) that the User has already completed
+@parm scheduledClasses: a list of Course (objects) the scheduling algorithm has accounted for already
+@param ssf: the Spring, Summer, Fall, offering attribute of the Course
+\end{DoxyVerb}
+ 
+
+Definition at line 106 of file views.\+py.
+
+
+
+References landing.\+views.\+check\+Offered\+Semester(), and landing.\+views.\+check\+Prereqs\+Met().
+
+
+
+Referenced by landing.\+views.\+create\+Schedule().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a2f54a8ff8d9bcec3589d12b6e7fb9b73}\label{namespacelanding_1_1views_a2f54a8ff8d9bcec3589d12b6e7fb9b73}} 
+\index{landing\+::views@{landing\+::views}!check\+Offered\+Semester@{check\+Offered\+Semester}}
+\index{check\+Offered\+Semester@{check\+Offered\+Semester}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{check\+Offered\+Semester()}{checkOfferedSemester()}}
+{\footnotesize\ttfamily def landing.\+views.\+check\+Offered\+Semester (\begin{DoxyParamCaption}\item[{}]{course,  }\item[{}]{ssf }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@checkOfferedSemester determines if a given Course if offered during the current semester
+@param course: the Course under test
+@param ssf: the Spring, Summer, Fall, offering attribute of the Course
+\end{DoxyVerb}
+ 
+
+Definition at line 95 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+check\+Course\+Valid().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_aebd6e45208c4d8a81796c95fa03c029a}\label{namespacelanding_1_1views_aebd6e45208c4d8a81796c95fa03c029a}} 
+\index{landing\+::views@{landing\+::views}!check\+Prereqs\+Met@{check\+Prereqs\+Met}}
+\index{check\+Prereqs\+Met@{check\+Prereqs\+Met}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{check\+Prereqs\+Met()}{checkPrereqsMet()}}
+{\footnotesize\ttfamily def landing.\+views.\+check\+Prereqs\+Met (\begin{DoxyParamCaption}\item[{}]{preqreqs,  }\item[{}]{classes\+Taken,  }\item[{}]{current\+Semester }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@checkPrereqsMet determines if the User has met all Prereqs for a particular Course
+@param prereqs: a list of Course (objects) corresponding to Prereqs for a given Course
+@param classesTaken: a list of Course (objects) that the User has already completed
+@parm currentSemester: a list of Course (objects) the scheduling algorithm has accounted for already
+\end{DoxyVerb}
+ 
+
+Definition at line 76 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+check\+Course\+Valid().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_aa4736d3c8ed65938a640bd054c1fb588}\label{namespacelanding_1_1views_aa4736d3c8ed65938a640bd054c1fb588}} 
+\index{landing\+::views@{landing\+::views}!create\+Schedule@{create\+Schedule}}
+\index{create\+Schedule@{create\+Schedule}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{create\+Schedule()}{createSchedule()}}
+{\footnotesize\ttfamily def landing.\+views.\+create\+Schedule (\begin{DoxyParamCaption}\item[{}]{u\+ID }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@createSchedule generates semester-by-semester schedule for User's needed Courses according to Degree
+@param uID: primary key associated with active user
+\end{DoxyVerb}
+ 
+
+Definition at line 168 of file views.\+py.
+
+
+
+References landing.\+views.\+check\+Course\+Valid(), landing.\+views.\+generate\+New\+Semester(), landing.\+views.\+get\+Completed\+By\+User(), landing.\+views.\+get\+Courses\+For\+User(), landing.\+views.\+get\+Semester\+By\+Month\+Year(), landing.\+views.\+is\+Full(), and landing.\+views.\+remove\+Courses\+Taken().
+
+
+
+Referenced by landing.\+views.\+schedule().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_acd4507dea8fb635a81455db7918ee43c}\label{namespacelanding_1_1views_acd4507dea8fb635a81455db7918ee43c}} 
+\index{landing\+::views@{landing\+::views}!createuser@{createuser}}
+\index{createuser@{createuser}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{createuser()}{createuser()}}
+{\footnotesize\ttfamily def landing.\+views.\+createuser (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@createuser send a request to render the createuser.html page
+@param request: generates the response
+\end{DoxyVerb}
+ 
+
+Definition at line 374 of file views.\+py.
+
+
+
+References landing.\+views.\+email\+Found(), landing.\+views.\+generate\+Concentrations\+D\+D(), landing.\+views.\+generate\+Diploma\+D\+D(), landing.\+views.\+generate\+Major\+D\+D(), landing.\+views.\+generate\+Minor\+D\+D(), and landing.\+views.\+get\+Degree().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a54774f163c70feb2df73511f76bfd877}\label{namespacelanding_1_1views_a54774f163c70feb2df73511f76bfd877}} 
+\index{landing\+::views@{landing\+::views}!email\+Found@{email\+Found}}
+\index{email\+Found@{email\+Found}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{email\+Found()}{emailFound()}}
+{\footnotesize\ttfamily def landing.\+views.\+email\+Found (\begin{DoxyParamCaption}\item[{}]{email }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@emailFound provides feedback if the email is already in the User database table
+@param email: email under test
+\end{DoxyVerb}
+ 
+
+Definition at line 313 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+createuser(), landing.\+views.\+login(), and landing.\+tests.\+test\+\_\+logic.\+Your\+Test\+Class.\+test\+\_\+email\+Found().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a0d4c1e9d73373e8f2956340085eb50b2}\label{namespacelanding_1_1views_a0d4c1e9d73373e8f2956340085eb50b2}} 
+\index{landing\+::views@{landing\+::views}!generate\+Check\+Box\+Entities@{generate\+Check\+Box\+Entities}}
+\index{generate\+Check\+Box\+Entities@{generate\+Check\+Box\+Entities}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{generate\+Check\+Box\+Entities()}{generateCheckBoxEntities()}}
+{\footnotesize\ttfamily def landing.\+views.\+generate\+Check\+Box\+Entities (\begin{DoxyParamCaption}\item[{}]{u\+ID }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@generateCheckBoxEntities creates a list of tuples of requirements, course names and numbers for the selectcourses page
+@param uID: primary key corresponding to the active user
+\end{DoxyVerb}
+ 
+
+Definition at line 233 of file views.\+py.
+
+
+
+References landing.\+views.\+get\+Degree\+Reqs().
+
+
+
+Referenced by landing.\+views.\+selectcourses().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a3c3b157bf08697962286a0b17eff2d59}\label{namespacelanding_1_1views_a3c3b157bf08697962286a0b17eff2d59}} 
+\index{landing\+::views@{landing\+::views}!generate\+Concentrations\+DD@{generate\+Concentrations\+DD}}
+\index{generate\+Concentrations\+DD@{generate\+Concentrations\+DD}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{generate\+Concentrations\+D\+D()}{generateConcentrationsDD()}}
+{\footnotesize\ttfamily def landing.\+views.\+generate\+Concentrations\+DD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@generateConcentrationsDD creates a list of possible concentrations for use on the createuser page
+\end{DoxyVerb}
+ 
+
+Definition at line 278 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+createuser(), and landing.\+tests.\+test\+\_\+logic.\+Your\+Test\+Class.\+test\+\_\+generate\+Concentrations\+D\+D().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a30457ad7655375a7be248dc4b36d2194}\label{namespacelanding_1_1views_a30457ad7655375a7be248dc4b36d2194}} 
+\index{landing\+::views@{landing\+::views}!generate\+Diploma\+DD@{generate\+Diploma\+DD}}
+\index{generate\+Diploma\+DD@{generate\+Diploma\+DD}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{generate\+Diploma\+D\+D()}{generateDiplomaDD()}}
+{\footnotesize\ttfamily def landing.\+views.\+generate\+Diploma\+DD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@generateDiplomaDD creates a list of possible diplomas for use on the createuser page
+\end{DoxyVerb}
+ 
+
+Definition at line 289 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+createuser(), and landing.\+tests.\+test\+\_\+logic.\+Your\+Test\+Class.\+test\+\_\+generate\+Diploma\+D\+D().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_acee7a550e05650013c2b9205bf9a2a88}\label{namespacelanding_1_1views_acee7a550e05650013c2b9205bf9a2a88}} 
+\index{landing\+::views@{landing\+::views}!generate\+Major\+DD@{generate\+Major\+DD}}
+\index{generate\+Major\+DD@{generate\+Major\+DD}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{generate\+Major\+D\+D()}{generateMajorDD()}}
+{\footnotesize\ttfamily def landing.\+views.\+generate\+Major\+DD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@generateMajorDD creates a list of possible majors for use on the createuser page
+\end{DoxyVerb}
+ 
+
+Definition at line 256 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+createuser(), and landing.\+tests.\+test\+\_\+logic.\+Your\+Test\+Class.\+test\+\_\+generate\+Major\+D\+D().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_ab124c7ee183d054b2316ae213be19b21}\label{namespacelanding_1_1views_ab124c7ee183d054b2316ae213be19b21}} 
+\index{landing\+::views@{landing\+::views}!generate\+Minor\+DD@{generate\+Minor\+DD}}
+\index{generate\+Minor\+DD@{generate\+Minor\+DD}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{generate\+Minor\+D\+D()}{generateMinorDD()}}
+{\footnotesize\ttfamily def landing.\+views.\+generate\+Minor\+DD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@generateMinorDD creates a list of possible minors for use on the createuser page
+\end{DoxyVerb}
+ 
+
+Definition at line 267 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+createuser(), and landing.\+tests.\+test\+\_\+logic.\+Your\+Test\+Class.\+test\+\_\+generate\+Minor\+D\+D().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a219fcf8f07fa2eeaf2f31ad6d7fc6905}\label{namespacelanding_1_1views_a219fcf8f07fa2eeaf2f31ad6d7fc6905}} 
+\index{landing\+::views@{landing\+::views}!generate\+New\+Semester@{generate\+New\+Semester}}
+\index{generate\+New\+Semester@{generate\+New\+Semester}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{generate\+New\+Semester()}{generateNewSemester()}}
+{\footnotesize\ttfamily def landing.\+views.\+generate\+New\+Semester (\begin{DoxyParamCaption}\item[{}]{semester }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@generateNewSemester creates a new logical semester
+@param semester: previous semester list
+\end{DoxyVerb}
+ 
+
+Definition at line 135 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+create\+Schedule(), landing.\+tests.\+test\+\_\+logic.\+Your\+Test\+Class.\+test\+\_\+generate\+\_\+new\+\_\+semester(), and landing.\+tests.\+test\+\_\+logic.\+Your\+Test\+Class.\+test\+\_\+is\+\_\+full().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a07d432deb07b33da6ab263caafabb819}\label{namespacelanding_1_1views_a07d432deb07b33da6ab263caafabb819}} 
+\index{landing\+::views@{landing\+::views}!generate\+Year\+DD@{generate\+Year\+DD}}
+\index{generate\+Year\+DD@{generate\+Year\+DD}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{generate\+Year\+D\+D()}{generateYearDD()}}
+{\footnotesize\ttfamily def landing.\+views.\+generate\+Year\+DD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@generateYearDD creates a list of upcoming years for use on the createuser page
+\end{DoxyVerb}
+ 
+
+Definition at line 300 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+nextsemesterpreferences().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_ab8699575ba0ef576f40bd71e73a8530f}\label{namespacelanding_1_1views_ab8699575ba0ef576f40bd71e73a8530f}} 
+\index{landing\+::views@{landing\+::views}!get\+Completed\+By\+User@{get\+Completed\+By\+User}}
+\index{get\+Completed\+By\+User@{get\+Completed\+By\+User}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{get\+Completed\+By\+User()}{getCompletedByUser()}}
+{\footnotesize\ttfamily def landing.\+views.\+get\+Completed\+By\+User (\begin{DoxyParamCaption}\item[{}]{u\+ID }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@getCompletedByUser provides a list of Course (objects) the user has taken
+@param uID: the primary key corresponding to the active user
+\end{DoxyVerb}
+ 
+
+Definition at line 35 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+create\+Schedule().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a35d744b4e891af5594e09cc3d0ed42bf}\label{namespacelanding_1_1views_a35d744b4e891af5594e09cc3d0ed42bf}} 
+\index{landing\+::views@{landing\+::views}!get\+Courses\+For\+User@{get\+Courses\+For\+User}}
+\index{get\+Courses\+For\+User@{get\+Courses\+For\+User}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{get\+Courses\+For\+User()}{getCoursesForUser()}}
+{\footnotesize\ttfamily def landing.\+views.\+get\+Courses\+For\+User (\begin{DoxyParamCaption}\item[{}]{u\+ID }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@getCoursesForUser provides a list of Course (objects) the user must complete for their respective Degree
+@param uID: the primary key corresponding to the active user
+\end{DoxyVerb}
+ 
+
+Definition at line 46 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+create\+Schedule().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a58f59d9cfdce67b9f2c7f59d99e39e4e}\label{namespacelanding_1_1views_a58f59d9cfdce67b9f2c7f59d99e39e4e}} 
+\index{landing\+::views@{landing\+::views}!get\+Degree@{get\+Degree}}
+\index{get\+Degree@{get\+Degree}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{get\+Degree()}{getDegree()}}
+{\footnotesize\ttfamily def landing.\+views.\+get\+Degree (\begin{DoxyParamCaption}\item[{}]{diploma,  }\item[{}]{type,  }\item[{}]{track }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@getDegree searches the Degree table to find the Degree object with corresponding degree and major
+@param diploma: degree attribute of Degree being searched for (bachelors, masters, doctorate)
+@param type: degree attribute of Degree being searched for (science, art)
+@param track: major attribute of Degree being searched for (computer science, MIS, etc)
+\end{DoxyVerb}
+ 
+
+Definition at line 23 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+createuser(), and landing.\+tests.\+test\+\_\+logic.\+Your\+Test\+Class.\+test\+\_\+get\+Degree().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_adf4b5d99c41ac39f87a359bdd86b2b02}\label{namespacelanding_1_1views_adf4b5d99c41ac39f87a359bdd86b2b02}} 
+\index{landing\+::views@{landing\+::views}!get\+Degree\+Reqs@{get\+Degree\+Reqs}}
+\index{get\+Degree\+Reqs@{get\+Degree\+Reqs}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{get\+Degree\+Reqs()}{getDegreeReqs()}}
+{\footnotesize\ttfamily def landing.\+views.\+get\+Degree\+Reqs (\begin{DoxyParamCaption}\item[{}]{degrees }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@getDegreeRegs returns a list of requirements for all degrees a user has selected
+@param degrees: a list of degrees associated with the user
+\end{DoxyVerb}
+ 
+
+Definition at line 221 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+generate\+Check\+Box\+Entities().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a205b22bd62d9457694957d93b53f35af}\label{namespacelanding_1_1views_a205b22bd62d9457694957d93b53f35af}} 
+\index{landing\+::views@{landing\+::views}!get\+Semester\+By\+Month\+Year@{get\+Semester\+By\+Month\+Year}}
+\index{get\+Semester\+By\+Month\+Year@{get\+Semester\+By\+Month\+Year}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{get\+Semester\+By\+Month\+Year()}{getSemesterByMonthYear()}}
+{\footnotesize\ttfamily def landing.\+views.\+get\+Semester\+By\+Month\+Year (\begin{DoxyParamCaption}\item[{}]{m }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@getSemesterByMonthYear determines semester (Spring, Summer, Fall) according to current month
+@param m: current month
+\end{DoxyVerb}
+ 
+
+Definition at line 122 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+create\+Schedule(), landing.\+tests.\+test\+\_\+logic.\+Your\+Test\+Class.\+test\+\_\+generate\+\_\+new\+\_\+semester(), landing.\+tests.\+test\+\_\+logic.\+Your\+Test\+Class.\+test\+\_\+get\+\_\+semester\+\_\+by\+\_\+month\+\_\+year(), and landing.\+tests.\+test\+\_\+logic.\+Your\+Test\+Class.\+test\+\_\+is\+\_\+full().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a8d5dc6aa494a2a455d00898fe7c1a994}\label{namespacelanding_1_1views_a8d5dc6aa494a2a455d00898fe7c1a994}} 
+\index{landing\+::views@{landing\+::views}!get\+User\+By\+Email@{get\+User\+By\+Email}}
+\index{get\+User\+By\+Email@{get\+User\+By\+Email}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{get\+User\+By\+Email()}{getUserByEmail()}}
+{\footnotesize\ttfamily def landing.\+views.\+get\+User\+By\+Email (\begin{DoxyParamCaption}\item[{}]{e }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@getUserByEmail searches the User table to find the User object with a corresponding email
+@param e: the email being searched for
+\end{DoxyVerb}
+ 
+
+Definition at line 13 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+login(), and landing.\+tests.\+test\+\_\+logic.\+Your\+Test\+Class.\+test\+\_\+get\+User\+By\+Email().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a0c2f89f5183919eb35499eea63f159a1}\label{namespacelanding_1_1views_a0c2f89f5183919eb35499eea63f159a1}} 
+\index{landing\+::views@{landing\+::views}!is\+Full@{is\+Full}}
+\index{is\+Full@{is\+Full}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{is\+Full()}{isFull()}}
+{\footnotesize\ttfamily def landing.\+views.\+is\+Full (\begin{DoxyParamCaption}\item[{}]{course\+List }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@isFull determines if a semester has hit the maximum number of credits allowable
+@param courseList: list of Course (objects) the user is scheduled to take during current semester
+\end{DoxyVerb}
+ 
+
+Definition at line 155 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+create\+Schedule(), and landing.\+tests.\+test\+\_\+logic.\+Your\+Test\+Class.\+test\+\_\+is\+\_\+full().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a7b08070340297551acfaafde9d9376bb}\label{namespacelanding_1_1views_a7b08070340297551acfaafde9d9376bb}} 
+\index{landing\+::views@{landing\+::views}!login@{login}}
+\index{login@{login}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily def landing.\+views.\+login (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@login send a request to render the login.html page
+@param request: generates the response
+\end{DoxyVerb}
+ 
+
+Definition at line 357 of file views.\+py.
+
+
+
+References landing.\+views.\+email\+Found(), and landing.\+views.\+get\+User\+By\+Email().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_ae0ecf1d0ea604a47a4617911d02051aa}\label{namespacelanding_1_1views_ae0ecf1d0ea604a47a4617911d02051aa}} 
+\index{landing\+::views@{landing\+::views}!nextsemesterpreferences@{nextsemesterpreferences}}
+\index{nextsemesterpreferences@{nextsemesterpreferences}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{nextsemesterpreferences()}{nextsemesterpreferences()}}
+{\footnotesize\ttfamily def landing.\+views.\+nextsemesterpreferences (\begin{DoxyParamCaption}\item[{}]{request,  }\item[{}]{pk }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@nextsemesterpreferences send a request to render the nextsemesterpreferences.html page
+@param request: generates the response
+@param pk: primary key corresponding to active user
+\end{DoxyVerb}
+ 
+
+Definition at line 465 of file views.\+py.
+
+
+
+References landing.\+views.\+generate\+Year\+D\+D().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a0c09aa6ffb498dba6bae2f61fac3a37d}\label{namespacelanding_1_1views_a0c09aa6ffb498dba6bae2f61fac3a37d}} 
+\index{landing\+::views@{landing\+::views}!remove\+Courses\+Taken@{remove\+Courses\+Taken}}
+\index{remove\+Courses\+Taken@{remove\+Courses\+Taken}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{remove\+Courses\+Taken()}{removeCoursesTaken()}}
+{\footnotesize\ttfamily def landing.\+views.\+remove\+Courses\+Taken (\begin{DoxyParamCaption}\item[{}]{required\+Classes,  }\item[{}]{classes\+Taken }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@removeCoursesTaken provides a list of Course (objects) the user must still take (required, but not completed classes)
+@param requiredClasses: a list of Course (objects) required for the User's Degree
+@param classesTaken: a list of Course (objects) that the User has already completed
+\end{DoxyVerb}
+ 
+
+Definition at line 64 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+create\+Schedule(), and landing.\+tests.\+test\+\_\+logic.\+Your\+Test\+Class.\+test\+\_\+remove\+Courses\+Taken().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a15788f148f992f964f914e41cca3563a}\label{namespacelanding_1_1views_a15788f148f992f964f914e41cca3563a}} 
+\index{landing\+::views@{landing\+::views}!remove\+User\+Completed\+Enteries@{remove\+User\+Completed\+Enteries}}
+\index{remove\+User\+Completed\+Enteries@{remove\+User\+Completed\+Enteries}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{remove\+User\+Completed\+Enteries()}{removeUserCompletedEnteries()}}
+{\footnotesize\ttfamily def landing.\+views.\+remove\+User\+Completed\+Enteries (\begin{DoxyParamCaption}\item[{}]{u\+ID }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@removeUserCompletedEntries updates database to remove courses completed from a particular user
+@param uID: pk of the associated active user
+\end{DoxyVerb}
+ 
+
+Definition at line 342 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+selectcourses().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a474931c0129efca17c6aa8ba314af9e5}\label{namespacelanding_1_1views_a474931c0129efca17c6aa8ba314af9e5}} 
+\index{landing\+::views@{landing\+::views}!save\+Classes\+To\+User@{save\+Classes\+To\+User}}
+\index{save\+Classes\+To\+User@{save\+Classes\+To\+User}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{save\+Classes\+To\+User()}{saveClassesToUser()}}
+{\footnotesize\ttfamily def landing.\+views.\+save\+Classes\+To\+User (\begin{DoxyParamCaption}\item[{}]{classes\+Checked,  }\item[{}]{u\+ID }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@saveClassesToUser updates database with a list of the user has taken
+@param classesChecked: list of courses the user specified as having taken
+@param uID: pk of the associated active user
+\end{DoxyVerb}
+ 
+
+Definition at line 325 of file views.\+py.
+
+
+
+Referenced by landing.\+views.\+selectcourses().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_acbb94e571697e7b28ad35bf2996fe01f}\label{namespacelanding_1_1views_acbb94e571697e7b28ad35bf2996fe01f}} 
+\index{landing\+::views@{landing\+::views}!schedule@{schedule}}
+\index{schedule@{schedule}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{schedule()}{schedule()}}
+{\footnotesize\ttfamily def landing.\+views.\+schedule (\begin{DoxyParamCaption}\item[{}]{request,  }\item[{}]{pk }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@schedule send a request to render the schedule.html page
+@param request: generates the response
+@param pk: primary key corresponding to active user
+\end{DoxyVerb}
+ 
+
+Definition at line 483 of file views.\+py.
+
+
+
+References landing.\+views.\+create\+Schedule().
+
+\mbox{\Hypertarget{namespacelanding_1_1views_a36b36778d06e5903c4854cb15d5ac297}\label{namespacelanding_1_1views_a36b36778d06e5903c4854cb15d5ac297}} 
+\index{landing\+::views@{landing\+::views}!selectcourses@{selectcourses}}
+\index{selectcourses@{selectcourses}!landing\+::views@{landing\+::views}}
+\subsubsection{\texorpdfstring{selectcourses()}{selectcourses()}}
+{\footnotesize\ttfamily def landing.\+views.\+selectcourses (\begin{DoxyParamCaption}\item[{}]{request,  }\item[{}]{pk }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@selectcourses send a request to render the selectcourses.html page
+@param request: generates the response
+@param pk: primary key corresponding to active user
+\end{DoxyVerb}
+ 
+
+Definition at line 449 of file views.\+py.
+
+
+
+References landing.\+views.\+generate\+Check\+Box\+Entities(), landing.\+views.\+remove\+User\+Completed\+Enteries(), and landing.\+views.\+save\+Classes\+To\+User().
+

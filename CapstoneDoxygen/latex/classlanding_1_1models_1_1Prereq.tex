@@ -1,0 +1,97 @@
+\hypertarget{classlanding_1_1models_1_1Prereq}{}\section{landing.\+models.\+Prereq Class Reference}
+\label{classlanding_1_1models_1_1Prereq}\index{landing.\+models.\+Prereq@{landing.\+models.\+Prereq}}
+Inheritance diagram for landing.\+models.\+Prereq\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlanding_1_1models_1_1Prereq}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classlanding_1_1models_1_1Prereq_ab8f9e1e86370dc76c689d122c2910982}{C}} = \char`\"{}Corequisite\char`\"{}
+\item 
+string \mbox{\hyperlink{classlanding_1_1models_1_1Prereq_ab99082a563d5a9e30793d92d38cf4b5a}{P}} = \char`\"{}Prerequisite\char`\"{}
+\item 
+\mbox{\hyperlink{classlanding_1_1models_1_1Prereq_a4e83c57d21589b742a3bd537e64c9263}{prereq\+\_\+courses}} = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classlanding_1_1models_1_1Course}{Course}})
+\item 
+\mbox{\hyperlink{classlanding_1_1models_1_1Prereq_a32ccec77ab248409d6aecb58de5d57bb}{prereq\+\_\+type}} = models.\+Char\+Field(max\+\_\+length=20, choices=\mbox{\hyperlink{classlanding_1_1models_1_1Prereq_a04e7ec750245a108149ff8680c846509}{R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE}}, null=True)
+\item 
+tuple \mbox{\hyperlink{classlanding_1_1models_1_1Prereq_a04e7ec750245a108149ff8680c846509}{R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}@Prereq  holds classes that are prerequisites to other classes,
+        this includes the type (i.e Corequisite or Prerequisite) and a foreign key reference
+        back to the Course table.
+\end{DoxyVerb}
+ 
+
+Definition at line 160 of file models.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classlanding_1_1models_1_1Prereq_ab8f9e1e86370dc76c689d122c2910982}\label{classlanding_1_1models_1_1Prereq_ab8f9e1e86370dc76c689d122c2910982}} 
+\index{landing\+::models\+::\+Prereq@{landing\+::models\+::\+Prereq}!C@{C}}
+\index{C@{C}!landing\+::models\+::\+Prereq@{landing\+::models\+::\+Prereq}}
+\subsubsection{\texorpdfstring{C}{C}}
+{\footnotesize\ttfamily string landing.\+models.\+Prereq.\+C = \char`\"{}Corequisite\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 166 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Prereq_ab99082a563d5a9e30793d92d38cf4b5a}\label{classlanding_1_1models_1_1Prereq_ab99082a563d5a9e30793d92d38cf4b5a}} 
+\index{landing\+::models\+::\+Prereq@{landing\+::models\+::\+Prereq}!P@{P}}
+\index{P@{P}!landing\+::models\+::\+Prereq@{landing\+::models\+::\+Prereq}}
+\subsubsection{\texorpdfstring{P}{P}}
+{\footnotesize\ttfamily string landing.\+models.\+Prereq.\+P = \char`\"{}Prerequisite\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 167 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Prereq_a4e83c57d21589b742a3bd537e64c9263}\label{classlanding_1_1models_1_1Prereq_a4e83c57d21589b742a3bd537e64c9263}} 
+\index{landing\+::models\+::\+Prereq@{landing\+::models\+::\+Prereq}!prereq\+\_\+courses@{prereq\+\_\+courses}}
+\index{prereq\+\_\+courses@{prereq\+\_\+courses}!landing\+::models\+::\+Prereq@{landing\+::models\+::\+Prereq}}
+\subsubsection{\texorpdfstring{prereq\+\_\+courses}{prereq\_courses}}
+{\footnotesize\ttfamily landing.\+models.\+Prereq.\+prereq\+\_\+courses = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classlanding_1_1models_1_1Course}{Course}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 173 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Prereq_a32ccec77ab248409d6aecb58de5d57bb}\label{classlanding_1_1models_1_1Prereq_a32ccec77ab248409d6aecb58de5d57bb}} 
+\index{landing\+::models\+::\+Prereq@{landing\+::models\+::\+Prereq}!prereq\+\_\+type@{prereq\+\_\+type}}
+\index{prereq\+\_\+type@{prereq\+\_\+type}!landing\+::models\+::\+Prereq@{landing\+::models\+::\+Prereq}}
+\subsubsection{\texorpdfstring{prereq\+\_\+type}{prereq\_type}}
+{\footnotesize\ttfamily landing.\+models.\+Prereq.\+prereq\+\_\+type = models.\+Char\+Field(max\+\_\+length=20, choices=\mbox{\hyperlink{classlanding_1_1models_1_1Prereq_a04e7ec750245a108149ff8680c846509}{R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE}}, null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 172 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Prereq_a04e7ec750245a108149ff8680c846509}\label{classlanding_1_1models_1_1Prereq_a04e7ec750245a108149ff8680c846509}} 
+\index{landing\+::models\+::\+Prereq@{landing\+::models\+::\+Prereq}!R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE@{R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE}}
+\index{R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE@{R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE}!landing\+::models\+::\+Prereq@{landing\+::models\+::\+Prereq}}
+\subsubsection{\texorpdfstring{R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE}{REQ\_CHOICE}}
+{\footnotesize\ttfamily tuple landing.\+models.\+Prereq.\+R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=  (
+        (C, \textcolor{stringliteral}{"Corequisite"}),
+        (P, \textcolor{stringliteral}{"Prerequisite"}),
+    )
+\end{DoxyCode}
+
+
+Definition at line 168 of file models.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mav\+Agenda/landing/\mbox{\hyperlink{models_8py}{models.\+py}}\end{DoxyCompactItemize}

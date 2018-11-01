@@ -1,0 +1,102 @@
+\hypertarget{classlanding_1_1models_1_1Offering}{}\section{landing.\+models.\+Offering Class Reference}
+\label{classlanding_1_1models_1_1Offering}\index{landing.\+models.\+Offering@{landing.\+models.\+Offering}}
+Inheritance diagram for landing.\+models.\+Offering\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlanding_1_1models_1_1Offering}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlanding_1_1models_1_1Offering_a61ee20a63d849a004c9aaa3b8aa00a42}{offering\+\_\+course}} = models.\+Foreign\+Key(\mbox{\hyperlink{classlanding_1_1models_1_1Course}{Course}}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)
+\item 
+\mbox{\hyperlink{classlanding_1_1models_1_1Offering_a2680068b2c5f2feb7fe159f59a642d20}{offering\+\_\+days}} = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classlanding_1_1models_1_1Weekday}{Weekday}})
+\item 
+\mbox{\hyperlink{classlanding_1_1models_1_1Offering_a40e7638869d600e27b2d8395f2c0a56b}{offering\+\_\+instructor}} = models.\+Foreign\+Key(\mbox{\hyperlink{classlanding_1_1models_1_1Instructor}{Instructor}}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)
+\item 
+\mbox{\hyperlink{classlanding_1_1models_1_1Offering_a4f1b030e6eaefa7b1c869621b4a37f61}{offering\+\_\+location}} = models.\+Foreign\+Key(\mbox{\hyperlink{classlanding_1_1models_1_1Building}{Building}}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)
+\item 
+\mbox{\hyperlink{classlanding_1_1models_1_1Offering_a89639b4a5b945918bb4f8a4c08cf8247}{offering\+\_\+section\+Num}} = models.\+Integer\+Field()
+\item 
+\mbox{\hyperlink{classlanding_1_1models_1_1Offering_a546aca2445d9fabd2dac01b7230f93f5}{offering\+\_\+time}} = models.\+Char\+Field(max\+\_\+length=20)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}@Offering holds the specific class scheduling information labeled above.
+        This is not implemented due to time limits given in the Capstone class,
+        however, it is coded to show that the application is extensible.
+\end{DoxyVerb}
+ 
+
+Definition at line 147 of file models.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classlanding_1_1models_1_1Offering_a61ee20a63d849a004c9aaa3b8aa00a42}\label{classlanding_1_1models_1_1Offering_a61ee20a63d849a004c9aaa3b8aa00a42}} 
+\index{landing\+::models\+::\+Offering@{landing\+::models\+::\+Offering}!offering\+\_\+course@{offering\+\_\+course}}
+\index{offering\+\_\+course@{offering\+\_\+course}!landing\+::models\+::\+Offering@{landing\+::models\+::\+Offering}}
+\subsubsection{\texorpdfstring{offering\+\_\+course}{offering\_course}}
+{\footnotesize\ttfamily landing.\+models.\+Offering.\+offering\+\_\+course = models.\+Foreign\+Key(\mbox{\hyperlink{classlanding_1_1models_1_1Course}{Course}}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 153 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Offering_a2680068b2c5f2feb7fe159f59a642d20}\label{classlanding_1_1models_1_1Offering_a2680068b2c5f2feb7fe159f59a642d20}} 
+\index{landing\+::models\+::\+Offering@{landing\+::models\+::\+Offering}!offering\+\_\+days@{offering\+\_\+days}}
+\index{offering\+\_\+days@{offering\+\_\+days}!landing\+::models\+::\+Offering@{landing\+::models\+::\+Offering}}
+\subsubsection{\texorpdfstring{offering\+\_\+days}{offering\_days}}
+{\footnotesize\ttfamily landing.\+models.\+Offering.\+offering\+\_\+days = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classlanding_1_1models_1_1Weekday}{Weekday}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 156 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Offering_a40e7638869d600e27b2d8395f2c0a56b}\label{classlanding_1_1models_1_1Offering_a40e7638869d600e27b2d8395f2c0a56b}} 
+\index{landing\+::models\+::\+Offering@{landing\+::models\+::\+Offering}!offering\+\_\+instructor@{offering\+\_\+instructor}}
+\index{offering\+\_\+instructor@{offering\+\_\+instructor}!landing\+::models\+::\+Offering@{landing\+::models\+::\+Offering}}
+\subsubsection{\texorpdfstring{offering\+\_\+instructor}{offering\_instructor}}
+{\footnotesize\ttfamily landing.\+models.\+Offering.\+offering\+\_\+instructor = models.\+Foreign\+Key(\mbox{\hyperlink{classlanding_1_1models_1_1Instructor}{Instructor}}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 158 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Offering_a4f1b030e6eaefa7b1c869621b4a37f61}\label{classlanding_1_1models_1_1Offering_a4f1b030e6eaefa7b1c869621b4a37f61}} 
+\index{landing\+::models\+::\+Offering@{landing\+::models\+::\+Offering}!offering\+\_\+location@{offering\+\_\+location}}
+\index{offering\+\_\+location@{offering\+\_\+location}!landing\+::models\+::\+Offering@{landing\+::models\+::\+Offering}}
+\subsubsection{\texorpdfstring{offering\+\_\+location}{offering\_location}}
+{\footnotesize\ttfamily landing.\+models.\+Offering.\+offering\+\_\+location = models.\+Foreign\+Key(\mbox{\hyperlink{classlanding_1_1models_1_1Building}{Building}}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 155 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Offering_a89639b4a5b945918bb4f8a4c08cf8247}\label{classlanding_1_1models_1_1Offering_a89639b4a5b945918bb4f8a4c08cf8247}} 
+\index{landing\+::models\+::\+Offering@{landing\+::models\+::\+Offering}!offering\+\_\+section\+Num@{offering\+\_\+section\+Num}}
+\index{offering\+\_\+section\+Num@{offering\+\_\+section\+Num}!landing\+::models\+::\+Offering@{landing\+::models\+::\+Offering}}
+\subsubsection{\texorpdfstring{offering\+\_\+section\+Num}{offering\_sectionNum}}
+{\footnotesize\ttfamily landing.\+models.\+Offering.\+offering\+\_\+section\+Num = models.\+Integer\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 157 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Offering_a546aca2445d9fabd2dac01b7230f93f5}\label{classlanding_1_1models_1_1Offering_a546aca2445d9fabd2dac01b7230f93f5}} 
+\index{landing\+::models\+::\+Offering@{landing\+::models\+::\+Offering}!offering\+\_\+time@{offering\+\_\+time}}
+\index{offering\+\_\+time@{offering\+\_\+time}!landing\+::models\+::\+Offering@{landing\+::models\+::\+Offering}}
+\subsubsection{\texorpdfstring{offering\+\_\+time}{offering\_time}}
+{\footnotesize\ttfamily landing.\+models.\+Offering.\+offering\+\_\+time = models.\+Char\+Field(max\+\_\+length=20)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 154 of file models.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mav\+Agenda/landing/\mbox{\hyperlink{models_8py}{models.\+py}}\end{DoxyCompactItemize}

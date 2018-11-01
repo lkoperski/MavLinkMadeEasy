@@ -1,0 +1,272 @@
+\hypertarget{classlanding_1_1models_1_1Degree}{}\section{landing.\+models.\+Degree Class Reference}
+\label{classlanding_1_1models_1_1Degree}\index{landing.\+models.\+Degree@{landing.\+models.\+Degree}}
+Inheritance diagram for landing.\+models.\+Degree\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlanding_1_1models_1_1Degree}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classlanding_1_1models_1_1Degree_afc3f658c11fb395b63ec02dea12d73ff}{B\+I\+OI}} = \textquotesingle{}Bioinformatics\textquotesingle{}
+\item 
+string \mbox{\hyperlink{classlanding_1_1models_1_1Degree_a22b6e40d619611a02ecd1750b0cfcd22}{BS}} = \textquotesingle{}Bachelor of Science\textquotesingle{}
+\item 
+string \mbox{\hyperlink{classlanding_1_1models_1_1Degree_a648e73a8b3abcfe249775ca0e0902a46}{C\+ON}} = \textquotesingle{}Concentration\textquotesingle{}
+\item 
+string \mbox{\hyperlink{classlanding_1_1models_1_1Degree_a818c1f18f64c3529a2bfcb746efb6600}{C\+S\+CI}} = \textquotesingle{}Computer Science\textquotesingle{}
+\item 
+string \mbox{\hyperlink{classlanding_1_1models_1_1Degree_a6ce9e89d5029462e65272bc7b145d4dd}{C\+Y\+BR}} = \textquotesingle{}Cybersecurity\textquotesingle{}
+\item 
+\mbox{\hyperlink{classlanding_1_1models_1_1Degree_abe092b826ebd50d242cf880ca10e127b}{degree\+\_\+diploma}} = models.\+Char\+Field(max\+\_\+length=50, choices=\mbox{\hyperlink{classlanding_1_1models_1_1Degree_a7972b49cb5153c95f5a5d509de3b1135}{D\+I\+P\+L\+O\+M\+A\+\_\+\+C\+H\+O\+I\+CE}}, default=\mbox{\hyperlink{classlanding_1_1models_1_1Degree_a22b6e40d619611a02ecd1750b0cfcd22}{BS}})
+\item 
+\mbox{\hyperlink{classlanding_1_1models_1_1Degree_a5dbec6bcca9df5d74244218ef8e75a5b}{degree\+\_\+track}} = models.\+Char\+Field(max\+\_\+length=50, choices=\mbox{\hyperlink{classlanding_1_1models_1_1Degree_a63995a5c2aa1f03f1328238ebbd7ecd2}{T\+R\+A\+C\+K\+\_\+\+C\+H\+O\+I\+CE}}, default=\mbox{\hyperlink{classlanding_1_1models_1_1Degree_a818c1f18f64c3529a2bfcb746efb6600}{C\+S\+CI}})
+\item 
+\mbox{\hyperlink{classlanding_1_1models_1_1Degree_a15ee92cd794ad8c2dabf965723cfd949}{degree\+\_\+type}} = models.\+Char\+Field(max\+\_\+length=50, choices=\mbox{\hyperlink{classlanding_1_1models_1_1Degree_a2e0c65757b0f59ed5c62ee8b2d517300}{T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE}}, default=\mbox{\hyperlink{classlanding_1_1models_1_1Degree_ad19df1851aacc963e0bc67c2a7097aec}{M\+AJ}})
+\item 
+\mbox{\hyperlink{classlanding_1_1models_1_1Degree_ab548201fcb3ef2b2455ba7311fdfcb26}{degree\+\_\+users}} = models.\+Many\+To\+Many\+Field(User)
+\item 
+tuple \mbox{\hyperlink{classlanding_1_1models_1_1Degree_a7972b49cb5153c95f5a5d509de3b1135}{D\+I\+P\+L\+O\+M\+A\+\_\+\+C\+H\+O\+I\+CE}}
+\item 
+string \mbox{\hyperlink{classlanding_1_1models_1_1Degree_a0d92d2c83362111ad3cf7ee19d107897}{I\+T\+IN}} = \textquotesingle{}IT Innovation\textquotesingle{}
+\item 
+string \mbox{\hyperlink{classlanding_1_1models_1_1Degree_ad19df1851aacc963e0bc67c2a7097aec}{M\+AJ}} = \textquotesingle{}Major\textquotesingle{}
+\item 
+string \mbox{\hyperlink{classlanding_1_1models_1_1Degree_af38536acc307300df46363d93eb48b24}{M\+IN}} = \textquotesingle{}Minor\textquotesingle{}
+\item 
+string \mbox{\hyperlink{classlanding_1_1models_1_1Degree_a88793e29b02916081124dfba858b598e}{M\+IS}} = \textquotesingle{}Management Information Systems\textquotesingle{}
+\item 
+string \mbox{\hyperlink{classlanding_1_1models_1_1Degree_ae9b848406afe10cc7edb6dfcc4a78d1d}{MS}} = \textquotesingle{}Master of Science\textquotesingle{}
+\item 
+string \mbox{\hyperlink{classlanding_1_1models_1_1Degree_a324175b93dbc6add6feb3e954b2a7b6b}{Ph\+DS}} = \textquotesingle{}Doctor of Science\textquotesingle{}
+\item 
+tuple \mbox{\hyperlink{classlanding_1_1models_1_1Degree_a63995a5c2aa1f03f1328238ebbd7ecd2}{T\+R\+A\+C\+K\+\_\+\+C\+H\+O\+I\+CE}}
+\item 
+tuple \mbox{\hyperlink{classlanding_1_1models_1_1Degree_a2e0c65757b0f59ed5c62ee8b2d517300}{T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}@Degree holds the degree a user would have, this includes the
+        diploma (i.e Bachelor of Science), type (i.e. major),
+        and track (i.e. computer science).
+\end{DoxyVerb}
+ 
+
+Definition at line 4 of file models.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_afc3f658c11fb395b63ec02dea12d73ff}\label{classlanding_1_1models_1_1Degree_afc3f658c11fb395b63ec02dea12d73ff}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!B\+I\+OI@{B\+I\+OI}}
+\index{B\+I\+OI@{B\+I\+OI}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{B\+I\+OI}{BIOI}}
+{\footnotesize\ttfamily string landing.\+models.\+Degree.\+B\+I\+OI = \textquotesingle{}Bioinformatics\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 30 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_a22b6e40d619611a02ecd1750b0cfcd22}\label{classlanding_1_1models_1_1Degree_a22b6e40d619611a02ecd1750b0cfcd22}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!BS@{BS}}
+\index{BS@{BS}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{BS}{BS}}
+{\footnotesize\ttfamily string landing.\+models.\+Degree.\+BS = \textquotesingle{}Bachelor of Science\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 10 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_a648e73a8b3abcfe249775ca0e0902a46}\label{classlanding_1_1models_1_1Degree_a648e73a8b3abcfe249775ca0e0902a46}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!C\+ON@{C\+ON}}
+\index{C\+ON@{C\+ON}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{C\+ON}{CON}}
+{\footnotesize\ttfamily string landing.\+models.\+Degree.\+C\+ON = \textquotesingle{}Concentration\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 21 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_a818c1f18f64c3529a2bfcb746efb6600}\label{classlanding_1_1models_1_1Degree_a818c1f18f64c3529a2bfcb746efb6600}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!C\+S\+CI@{C\+S\+CI}}
+\index{C\+S\+CI@{C\+S\+CI}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{C\+S\+CI}{CSCI}}
+{\footnotesize\ttfamily string landing.\+models.\+Degree.\+C\+S\+CI = \textquotesingle{}Computer Science\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 28 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_a6ce9e89d5029462e65272bc7b145d4dd}\label{classlanding_1_1models_1_1Degree_a6ce9e89d5029462e65272bc7b145d4dd}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!C\+Y\+BR@{C\+Y\+BR}}
+\index{C\+Y\+BR@{C\+Y\+BR}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{C\+Y\+BR}{CYBR}}
+{\footnotesize\ttfamily string landing.\+models.\+Degree.\+C\+Y\+BR = \textquotesingle{}Cybersecurity\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 32 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_abe092b826ebd50d242cf880ca10e127b}\label{classlanding_1_1models_1_1Degree_abe092b826ebd50d242cf880ca10e127b}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!degree\+\_\+diploma@{degree\+\_\+diploma}}
+\index{degree\+\_\+diploma@{degree\+\_\+diploma}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{degree\+\_\+diploma}{degree\_diploma}}
+{\footnotesize\ttfamily landing.\+models.\+Degree.\+degree\+\_\+diploma = models.\+Char\+Field(max\+\_\+length=50, choices=\mbox{\hyperlink{classlanding_1_1models_1_1Degree_a7972b49cb5153c95f5a5d509de3b1135}{D\+I\+P\+L\+O\+M\+A\+\_\+\+C\+H\+O\+I\+CE}}, default=\mbox{\hyperlink{classlanding_1_1models_1_1Degree_a22b6e40d619611a02ecd1750b0cfcd22}{BS}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 18 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_a5dbec6bcca9df5d74244218ef8e75a5b}\label{classlanding_1_1models_1_1Degree_a5dbec6bcca9df5d74244218ef8e75a5b}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!degree\+\_\+track@{degree\+\_\+track}}
+\index{degree\+\_\+track@{degree\+\_\+track}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{degree\+\_\+track}{degree\_track}}
+{\footnotesize\ttfamily landing.\+models.\+Degree.\+degree\+\_\+track = models.\+Char\+Field(max\+\_\+length=50, choices=\mbox{\hyperlink{classlanding_1_1models_1_1Degree_a63995a5c2aa1f03f1328238ebbd7ecd2}{T\+R\+A\+C\+K\+\_\+\+C\+H\+O\+I\+CE}}, default=\mbox{\hyperlink{classlanding_1_1models_1_1Degree_a818c1f18f64c3529a2bfcb746efb6600}{C\+S\+CI}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 40 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_a15ee92cd794ad8c2dabf965723cfd949}\label{classlanding_1_1models_1_1Degree_a15ee92cd794ad8c2dabf965723cfd949}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!degree\+\_\+type@{degree\+\_\+type}}
+\index{degree\+\_\+type@{degree\+\_\+type}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{degree\+\_\+type}{degree\_type}}
+{\footnotesize\ttfamily landing.\+models.\+Degree.\+degree\+\_\+type = models.\+Char\+Field(max\+\_\+length=50, choices=\mbox{\hyperlink{classlanding_1_1models_1_1Degree_a2e0c65757b0f59ed5c62ee8b2d517300}{T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE}}, default=\mbox{\hyperlink{classlanding_1_1models_1_1Degree_ad19df1851aacc963e0bc67c2a7097aec}{M\+AJ}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 27 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_ab548201fcb3ef2b2455ba7311fdfcb26}\label{classlanding_1_1models_1_1Degree_ab548201fcb3ef2b2455ba7311fdfcb26}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!degree\+\_\+users@{degree\+\_\+users}}
+\index{degree\+\_\+users@{degree\+\_\+users}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{degree\+\_\+users}{degree\_users}}
+{\footnotesize\ttfamily landing.\+models.\+Degree.\+degree\+\_\+users = models.\+Many\+To\+Many\+Field(User)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 41 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_a7972b49cb5153c95f5a5d509de3b1135}\label{classlanding_1_1models_1_1Degree_a7972b49cb5153c95f5a5d509de3b1135}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!D\+I\+P\+L\+O\+M\+A\+\_\+\+C\+H\+O\+I\+CE@{D\+I\+P\+L\+O\+M\+A\+\_\+\+C\+H\+O\+I\+CE}}
+\index{D\+I\+P\+L\+O\+M\+A\+\_\+\+C\+H\+O\+I\+CE@{D\+I\+P\+L\+O\+M\+A\+\_\+\+C\+H\+O\+I\+CE}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{D\+I\+P\+L\+O\+M\+A\+\_\+\+C\+H\+O\+I\+CE}{DIPLOMA\_CHOICE}}
+{\footnotesize\ttfamily tuple landing.\+models.\+Degree.\+D\+I\+P\+L\+O\+M\+A\+\_\+\+C\+H\+O\+I\+CE\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=  (
+        (BS, \textcolor{stringliteral}{'Bachelor of Science'}),
+        (MS, \textcolor{stringliteral}{'Master of Science'}),
+        (PhDS, \textcolor{stringliteral}{'Doctor of Science'}),
+    )
+\end{DoxyCode}
+
+
+Definition at line 13 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_a0d92d2c83362111ad3cf7ee19d107897}\label{classlanding_1_1models_1_1Degree_a0d92d2c83362111ad3cf7ee19d107897}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!I\+T\+IN@{I\+T\+IN}}
+\index{I\+T\+IN@{I\+T\+IN}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{I\+T\+IN}{ITIN}}
+{\footnotesize\ttfamily string landing.\+models.\+Degree.\+I\+T\+IN = \textquotesingle{}IT Innovation\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 31 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_ad19df1851aacc963e0bc67c2a7097aec}\label{classlanding_1_1models_1_1Degree_ad19df1851aacc963e0bc67c2a7097aec}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!M\+AJ@{M\+AJ}}
+\index{M\+AJ@{M\+AJ}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{M\+AJ}{MAJ}}
+{\footnotesize\ttfamily string landing.\+models.\+Degree.\+M\+AJ = \textquotesingle{}Major\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 19 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_af38536acc307300df46363d93eb48b24}\label{classlanding_1_1models_1_1Degree_af38536acc307300df46363d93eb48b24}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!M\+IN@{M\+IN}}
+\index{M\+IN@{M\+IN}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{M\+IN}{MIN}}
+{\footnotesize\ttfamily string landing.\+models.\+Degree.\+M\+IN = \textquotesingle{}Minor\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 20 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_a88793e29b02916081124dfba858b598e}\label{classlanding_1_1models_1_1Degree_a88793e29b02916081124dfba858b598e}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!M\+IS@{M\+IS}}
+\index{M\+IS@{M\+IS}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{M\+IS}{MIS}}
+{\footnotesize\ttfamily string landing.\+models.\+Degree.\+M\+IS = \textquotesingle{}Management Information Systems\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 29 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_ae9b848406afe10cc7edb6dfcc4a78d1d}\label{classlanding_1_1models_1_1Degree_ae9b848406afe10cc7edb6dfcc4a78d1d}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!MS@{MS}}
+\index{MS@{MS}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{MS}{MS}}
+{\footnotesize\ttfamily string landing.\+models.\+Degree.\+MS = \textquotesingle{}Master of Science\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 11 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_a324175b93dbc6add6feb3e954b2a7b6b}\label{classlanding_1_1models_1_1Degree_a324175b93dbc6add6feb3e954b2a7b6b}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!Ph\+DS@{Ph\+DS}}
+\index{Ph\+DS@{Ph\+DS}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{Ph\+DS}{PhDS}}
+{\footnotesize\ttfamily string landing.\+models.\+Degree.\+Ph\+DS = \textquotesingle{}Doctor of Science\textquotesingle{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 12 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_a63995a5c2aa1f03f1328238ebbd7ecd2}\label{classlanding_1_1models_1_1Degree_a63995a5c2aa1f03f1328238ebbd7ecd2}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!T\+R\+A\+C\+K\+\_\+\+C\+H\+O\+I\+CE@{T\+R\+A\+C\+K\+\_\+\+C\+H\+O\+I\+CE}}
+\index{T\+R\+A\+C\+K\+\_\+\+C\+H\+O\+I\+CE@{T\+R\+A\+C\+K\+\_\+\+C\+H\+O\+I\+CE}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{T\+R\+A\+C\+K\+\_\+\+C\+H\+O\+I\+CE}{TRACK\_CHOICE}}
+{\footnotesize\ttfamily tuple landing.\+models.\+Degree.\+T\+R\+A\+C\+K\+\_\+\+C\+H\+O\+I\+CE\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=  (
+        (CSCI, \textcolor{stringliteral}{'Computer Science'}),
+        (MIS, \textcolor{stringliteral}{'Management Information Systems'}),
+        (BIOI, \textcolor{stringliteral}{'Bioinformatics'}),
+        (ITIN, \textcolor{stringliteral}{'IT Innovation'}),
+        (CYBR, \textcolor{stringliteral}{'Cybersecurity'}),
+    )
+\end{DoxyCode}
+
+
+Definition at line 33 of file models.\+py.
+
+\mbox{\Hypertarget{classlanding_1_1models_1_1Degree_a2e0c65757b0f59ed5c62ee8b2d517300}\label{classlanding_1_1models_1_1Degree_a2e0c65757b0f59ed5c62ee8b2d517300}} 
+\index{landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}!T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE@{T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE}}
+\index{T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE@{T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE}!landing\+::models\+::\+Degree@{landing\+::models\+::\+Degree}}
+\subsubsection{\texorpdfstring{T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE}{TYPE\_CHOICE}}
+{\footnotesize\ttfamily tuple landing.\+models.\+Degree.\+T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=  (
+        (MAJ, \textcolor{stringliteral}{'Major'}),
+        (MIN, \textcolor{stringliteral}{'Minor'}),
+        (CON, \textcolor{stringliteral}{'Concentration'}),
+    )
+\end{DoxyCode}
+
+
+Definition at line 22 of file models.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mav\+Agenda/landing/\mbox{\hyperlink{models_8py}{models.\+py}}\end{DoxyCompactItemize}
