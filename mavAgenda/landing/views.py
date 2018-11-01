@@ -1,45 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-
-import _datetime
-
-from .forms import *
 from .models import *
 from django.contrib.auth.models import User
-
 from datetime import datetime
-import csv
-
-path = "C:\\Users\\ekbuc\\Desktop\\Class List for Capstone v2.csv"
-'''
-@readCSV reads in csv data into model objects
-'''
-
-
-def readCSV():
-    with open(path) as f:
-        reader = csv.reader(f)
-        semester = 'A'
-        for row in reader:
-            print(row[1][3])
-            if row[1][3] == '1':
-                semester = 'S'
-            elif row[1][3] == '5':
-                semester = 'M'
-            elif row[1][3] == '8':
-                semester = 'F'
-
-            _, created = Course.objects.get_or_create(
-                course_name=row[6],
-                course_subject=row[4],
-                course_num=row[5],
-                course_semester=semester,
-                course_credits=3,
-                course_special='None',
-                course_comment='',
-            )
-
 
 '''
 @getUserByEmail searches the User table to find the User object with a corresponding email
@@ -457,7 +421,7 @@ def login(request):
 
 
 def createuser(request):
-    readCSV()
+    readCSVs()
     if request.method == "POST":  # TODO - need to confirm that at least one major was submitted!
         e = request.POST['email-input']
         if not emailFound(e):
@@ -520,7 +484,8 @@ def createuser(request):
         else:
             message = "Email already taken"
             return render(request, 'landing/createuser.html',
-                          {'diplomas': generateDiplomaDD(), 'majors': generateMajorDD(), 'minors': generateMinorDD(),
+                          {'diplomas': generateDiplomaDD(), 'majors': generateMajorDD(),
+                           'minors': generateMinorDD(),
                            'concentrations': generateConcentrationsDD(), 'message': message}
                           )
     else:

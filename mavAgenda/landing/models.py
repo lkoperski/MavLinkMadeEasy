@@ -48,11 +48,18 @@ class Course(models.Model):
     S = "Spring"
     F = "Fall"
     M = "Summer"
+    Y = "Year-Only"
+    P = "Spring/Summer"
+    H = "Fall/Summer"
+
     SEM_CHOICE = (
         (A, "All"),
         (S, "Spring"),
         (F, "Fall"),
         (M, "Summer"),
+        (Y, "Year-Only"),
+        (P, "Spring/Summer"),
+        (H, "Fall/Summer"),
     )
     course_semester = models.CharField(max_length=10, choices=SEM_CHOICE, default=A)
     course_credits = models.IntegerField()
@@ -72,10 +79,12 @@ class Campus(models.Model):
     N = "North Campus"
     S = "Scott (South) Campus"
     B = "Center Street Campus"
+    R = "Remote"
     SPECIAL_TYPE_CHOICE = (
         (N, "North Campus"),
         (S, "Scott (South) Campus"),
         (B, "Center Street Campus"),
+        (R, "Remote"),
     )
     campus_name = models.CharField(max_length=30, choices=SPECIAL_TYPE_CHOICE, default=None)
 
