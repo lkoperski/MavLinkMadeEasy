@@ -6,13 +6,13 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
-'''
-@ UITests contain all of the classes that relate to performing actions on UI elements (i.e. buttons)
-param: StaticLiveServerTestCase allows for automated testing 
-at execution time by launching a server in the background & 
-shuts it down on teardown
-'''
 class UITests(StaticLiveServerTestCase):
+    '''
+    @UITests contain all of the classes that relate to performing actions on UI elements (i.e. buttons)
+    param: StaticLiveServerTestCase allows for automated testing
+    at execution time by launching a server in the background &
+    shuts it down on teardown
+    '''
 
     @classmethod
     def setUpClass(cls):
