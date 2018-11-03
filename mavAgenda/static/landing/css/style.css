@@ -8,7 +8,6 @@
 
         h1, h2, h3 {
             font-family: "Trebuchet MS", Helvetica, sans-serif;
-            text-align: center;
             margin: 0px;
             padding: 4px;
         }
@@ -127,8 +126,34 @@
             color: white;
         }
 
+        .MAVbuttonSmall {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            font-size: 14px;
+            background-color: white;
+            padding: 5px 15px 5px 15px;
+            border: 1px solid black;
+        }
+
+        .MAVbuttonSmall:hover {
+            font-size: 14px;
+            background-color: lightgrey;
+        }
+
+        .MAVbuttonXSmall {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            font-size: 14px;
+            background-color: white;
+            padding: 1px 5px 1px 5px;
+            border: 1px solid black;
+        }
+
+        .MAVbuttonXSmall:hover {
+            font-size: 14px;
+            background-color: lightgrey;
+        }
+
         .MAVselect {
-            width: 60%;
+            width: 70%;
             padding: 10px;
             margin-left: auto;
             margin-right: auto;
@@ -146,6 +171,15 @@
             text-align: center;
         }
 
+        .list {
+            text-align: left;
+            padding-left: 33%;
+        }
+
+        .form-header {
+            text-align: left;
+            padding-left: 30%;
+        }
 
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
