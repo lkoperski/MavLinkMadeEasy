@@ -222,7 +222,6 @@ def getDegreeReqs(degrees):
     @getDegreeRegs returns a list of requirements for all degrees a user has selected
     @param degrees: a list of degrees associated with the user
     '''
-    print("Inside getDegreeReqs")
     requirements = []
     for r in Requirement.objects.all():
         rSet = r.req_degrees.all()
@@ -231,16 +230,16 @@ def getDegreeReqs(degrees):
                 requirements.append(r)
     return requirements
 
-def getReqCourses(reqs):
+def getReqCourses(req):
     '''
-    @getDegreeRegs returns a list of requirements for all degrees a user has selected
-    @param degrees: a list of degrees associated with the user
+    @getReqCourses returns a list of courses for all requireements related to a degree a user has selected
+    @param reqs: a list of requirements associated with the user's desired degree
     '''
     courses = []
     for c in Course.objects.all():
         cSet = c.course_requirements.all()
         for cs in cSet:
-            if cs in reqs and cs not in courses:
+            if cs.id is req.id and cs not in courses:
                 courses.append(c)
     return courses
 
@@ -250,11 +249,7 @@ def generateCheckBoxEntities(uID):
     @param uID: primary key corresponding to the active user
     '''
     degrees = Degree.objects.filter(degree_users=uID)
-    print( "Degrees:" )
-    print ( degrees )
-    print( "\nRequirements:")
     reqs = getDegreeReqs(degrees)
-    print ( reqs )
     checkBoxEntities = []
     for r in reqs:
         reqID = r.id
