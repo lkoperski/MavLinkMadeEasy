@@ -224,10 +224,15 @@ def getDegreeReqs(degrees):
     '''
     requirements = []
     for r in Requirement.objects.all():
-        rSet = r.req_degrees.all()
-        for rs in rSet:
-            if rs in degrees and rs not in requirements:
+        print("r:" ,r)
+        dSet = r.req_degrees.all()
+        print( "dSet:" ,dSet)
+        for d in dSet:
+            print( "d:" ,d)
+            if d in degrees and r not in requirements:
                 requirements.append(r)
+                print("new requirements:" ,requirements)
+    print( "final requirements:" ,requirements )
     return requirements
 
 def getReqCourses(req):
@@ -237,9 +242,9 @@ def getReqCourses(req):
     '''
     courses = []
     for c in Course.objects.all():
-        cSet = c.course_requirements.all()
-        for cs in cSet:
-            if cs.id is req.id and cs not in courses:
+        rSet = c.course_requirements.all()
+        for r in rSet:
+            if r.id is req.id and c not in courses:
                 courses.append(c)
     return courses
 
