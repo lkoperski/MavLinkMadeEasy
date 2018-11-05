@@ -224,15 +224,10 @@ def getDegreeReqs(degrees):
     '''
     requirements = []
     for r in Requirement.objects.all():
-        print("r:" ,r)
         dSet = r.req_degrees.all()
-        print( "dSet:" ,dSet)
         for d in dSet:
-            print( "d:" ,d)
             if d in degrees and r not in requirements:
                 requirements.append(r)
-                print("new requirements:" ,requirements)
-    print( "final requirements:" ,requirements )
     return requirements
 
 def getReqCourses(req):
@@ -347,15 +342,20 @@ def saveClassesToUser(classesChecked, uID):
     @param uID: pk of the associated active user
     '''
     u = User.objects.get(pk=uID)
-    if u in Complete.objects.all():
-        completed = Complete.objects.get(user_id=u)
+    if u in Complete.objects.all(): #TODO - this probably needs to be updated to get the actual user object instead of Complete
+        completed = Complete.objects.get(complete_user=u)
     else:
-        completed = Complete(user=u)
+        completed = Complete(complete_user=u)
         completed.save()
     for cc in classesChecked:
-        c = Course.objects.get(num=cc)
-        completed.complete.add(c)
-        completed.save()
+        course = cc.split()
+        print( course )
+        subject = course[0]
+        print( subject )
+        number = course[1]
+        print( number )
+        c = Course.objects.get(course_subject=subject, course_num=number)
+        completed.complete_courses.add(c)
 
 def removeUserCompletedEnteries(uID):
     '''
@@ -365,7 +365,7 @@ def removeUserCompletedEnteries(uID):
     u = User.objects.get(pk=uID)
     completedTable = Complete.objects.all()
     for ce in completedTable:
-        if ce.user == u:
+        if ce.complete_user == u:
             ce.delete()
 
 
@@ -474,7 +474,7 @@ def selectcourses(request, pk):
         removeUserCompletedEnteries(pk)
         classesChecked = request.POST.getlist('chexmix')
         saveClassesToUser(classesChecked, pk)
-        return HttpResponseRedirect(reverse('landing:nextsemesterschedule', args=(pk,)))
+        return HttpResponseRedirect(reverse('landing:nextsemesterpreferences', args=(pk,)))
     else:
         checkBoxes = generateCheckBoxEntities(pk)
         # might need to write some logic here to determine if boxes have already been checked :)
