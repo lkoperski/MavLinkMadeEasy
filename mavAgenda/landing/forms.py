@@ -2,11 +2,11 @@ from django import forms
 from .models import *
 
 
-'''
-@EmailForm collection of fields to allow for user login with email address
-@forms.Form: associated data within fields
-'''
 class UserForm(forms.ModelForm):
+    '''
+    @EmailForm collection of fields to allow for user login with email address
+    @forms.Form: associated data within fields
+    '''
     class Meta:
         model = User
         fields = ('username','password',)
