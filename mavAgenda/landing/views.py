@@ -249,7 +249,9 @@ def generateCheckBoxEntities(uID):
     @param uID: primary key corresponding to the active user
     '''
     degrees = Degree.objects.filter(degree_users=uID)
+    print( degrees )
     reqs = getDegreeReqs(degrees)
+    print( reqs )
     checkBoxEntities = []
     for r in reqs:
         reqID = r.id
@@ -402,6 +404,7 @@ def createuser(request):
             u.save()
             userID = u.id
             i = 1
+            print( "User's degrees:")
             while True:
                 diploma = 'id_d-diploma-' + str(i)
                 major = 'id_d-major-' + str(i)
@@ -409,6 +412,7 @@ def createuser(request):
                     dip = request.POST[diploma]
                     maj = request.POST[major]
                     desiredDegree = getDegree(dip,"MAJ",maj)
+                    print( desiredDegree )
                     desiredDegree.degree_users.add(u)
                     i+=1
                 else:

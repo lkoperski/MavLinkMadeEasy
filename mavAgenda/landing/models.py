@@ -100,10 +100,12 @@ class Campus(models.Model):
     N = "North Campus"
     S = "Scott (South) Campus"
     B = "Center Street Campus"
+    R = "Remote"
     SPECIAL_TYPE_CHOICE = (
         (N, "North Campus"),
         (S, "Scott (South) Campus"),
         (B, "Center Street Campus"),
+        (R, "Remote"),
     )
     campus_name = models.CharField(max_length=30, choices=SPECIAL_TYPE_CHOICE, default=None)
 

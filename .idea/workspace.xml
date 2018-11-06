@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6a63500-b22f-4d8b-ae80-cbe995352251" name="Default" comment="">
+    <list default="true" id="c6a63500-b22f-4d8b-ae80-cbe995352251" name="Default" comment="reestablished create user functionality">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mavAgenda/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/templates/landing/selectcourses.html" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/templates/landing/selectcourses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,8 +36,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3400">
-              <caret line="201" column="24" selection-start-line="201" selection-start-column="24" selection-end-line="201" selection-end-column="24" />
+            <state relative-caret-position="272">
+              <caret line="85" column="18" lean-forward="true" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -41,55 +45,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cleanup.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mavAgenda/cleanup.sh">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="createuser.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="255" column="12" lean-forward="true" selection-start-line="255" selection-start-column="12" selection-end-line="255" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mavAgenda/static/landing/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="129" column="50" selection-start-line="129" selection-start-column="50" selection-end-line="129" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="446" column="56" lean-forward="true" selection-start-line="446" selection-start-column="56" selection-end-line="446" selection-end-column="56" />
+            <state relative-caret-position="653">
+              <caret line="441" column="21" lean-forward="true" selection-start-line="441" selection-start-column="21" selection-end-line="441" selection-end-column="21" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createuser.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="159" column="32" lean-forward="true" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="selectcourses.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/selectcourses.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -105,13 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>req.all()</find>
-      <find>req</find>
-      <find>reqs.all</find>
-      <find>reqs.all()</find>
-      <find>checkPre</find>
-      <find>generateCheck</find>
-      <find>createSched</find>
       <find>createSchedule</find>
       <find>createsc</find>
       <find>getCour</find>
@@ -135,6 +109,13 @@
       <find>showminor</find>
       <find>row</find>
       <find>Summax</find>
+      <find>Campus</find>
+      <find>yes</find>
+      <find>getReq</find>
+      <find>selectCourse</find>
+      <find>generateCheck</find>
+      <find>createUser</find>
+      <find>id_d</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,18 +131,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/mavAgenda/landing/urls.py" />
-        <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/selectcourses.html" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/schedule.html" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/tests/test_UI.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/tests/test_logic.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/usersettings.html" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/admin.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/forms.py" />
-        <option value="$PROJECT_DIR$/mavAgenda/landing/models.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/base.html" />
-        <option value="$PROJECT_DIR$/mavAgenda/landing/views.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html" />
         <option value="$PROJECT_DIR$/mavAgenda/static/landing/css/style.css" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/models.py" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/selectcourses.html" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/views.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html" />
       </list>
     </option>
@@ -219,33 +200,6 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="landing" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="landing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="landing" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -257,6 +211,7 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs.jest.jest_package" value="" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -519,22 +474,28 @@
       <option name="project" value="LOCAL" />
       <updated>1541225983851</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="reestablished create user functionality">
+      <created>1541535297970</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1541535297970</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="781" height="830" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5048544" side_tool="true" visible="true" weight="0.2846498" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5048544" side_tool="true" weight="0.2846498" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986577" weight="0.3298969" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32935917" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49514562" visible="true" weight="0.2846498" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21914008" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49514562" visible="true" weight="0.2846498" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25797504" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -555,6 +516,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5033557" side_tool="true" weight="0.2827688" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -564,27 +526,28 @@
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32935917" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986577" weight="0.3298969" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22012103" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22012103" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32935917" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.28217822" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5033557" side_tool="true" weight="0.2827688" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986577" weight="0.3298969" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32935917" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +557,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updated doxygen documentation folder" />
     <MESSAGE value="strong basis for schedule page! yay!!!!" />
     <MESSAGE value="updated to account for update in classes completed" />
     <MESSAGE value="correct link for schedule -&gt; selectcourses; template for major" />
@@ -619,7 +581,8 @@
     <MESSAGE value="correct flow for login -&gt; createuser" />
     <MESSAGE value="updated login page to have email box and added CSS" />
     <MESSAGE value="Update CSS for Select Degree page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update CSS for Select Degree page" />
+    <MESSAGE value="reestablished create user functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="reestablished create user functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -627,13 +590,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5440">
-          <caret line="320" column="29" lean-forward="true" selection-start-line="320" selection-start-column="29" selection-end-line="320" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/selectcourses.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -850,13 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/selectcourses.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/usersettings.html" />
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/tests/test_UI.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -921,19 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3400">
-          <caret line="201" column="24" selection-start-line="201" selection-start-column="24" selection-end-line="201" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mavAgenda/cleanup.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -948,16 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="446" column="56" lean-forward="true" selection-start-line="446" selection-start-column="56" selection-end-line="446" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -965,10 +891,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/CSVPreprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/cleanup.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/selectcourses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="255" column="12" lean-forward="true" selection-start-line="255" selection-start-column="12" selection-end-line="255" selection-end-column="12" />
+        <state relative-caret-position="181">
+          <caret line="159" column="32" lean-forward="true" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="85" column="18" lean-forward="true" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="441" column="21" lean-forward="true" selection-start-line="441" selection-start-column="21" selection-end-line="441" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

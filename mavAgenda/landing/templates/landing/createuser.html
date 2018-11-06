@@ -153,7 +153,7 @@ function showConcentrationInfo(concentrations, num) {
 
             <p name="major-opts" class="MAVselect">
                 Desired Diploma:
-                <select name="d-diploma" name="id_d-diploma-1" id="id_d-diploma-1">
+                <select name="id_d-diploma-1" id="id_d-diploma-1">
                     <option selected disabled>Choose here</option>
                     {% for d in diplomas %}
                         <option value="{{d}}">{{ d }}</option>
@@ -163,7 +163,7 @@ function showConcentrationInfo(concentrations, num) {
                 <nbsp></nbsp>
                 Major:
                 <!-- please leave this name and id as is... django backend related (see Lauren for questions) -->
-                <select name="d-major" name="id_d-major-1" id="id_d-major-1">
+                <select name="id_d-major-1" id="id_d-major-1">
                     <option selected disabled>Choose here</option>
                     {% for m in majors %}
                         <option value="{{m}}">{{ m }}</option>
