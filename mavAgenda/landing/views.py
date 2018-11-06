@@ -5,6 +5,7 @@ from .models import *
 from django.contrib.auth.models import User
 from datetime import datetime
 
+
 '''
 @getUserByEmail searches the User table to find the User object with a corresponding email
 @param e: the email being searched for
@@ -421,7 +422,6 @@ def login(request):
 
 
 def createuser(request):
-    readCSVs()
     if request.method == "POST":  # TODO - need to confirm that at least one major was submitted!
         e = request.POST['email-input']
         if not emailFound(e):

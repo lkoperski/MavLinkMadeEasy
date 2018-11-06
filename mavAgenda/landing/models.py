@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Degree(models.Model):
     BS = 'Bachelor of Science'
     MS = 'Master of Science'
@@ -35,10 +36,12 @@ class Degree(models.Model):
     degree_track = models.CharField(max_length=50, choices=TRACK_CHOICE, default=CSCI)
     degree_users = models.ManyToManyField(User)
 
+
 class Requirement(models.Model):
     req_name = models.CharField(max_length=50)
     req_credits = models.IntegerField()
     req_degrees = models.ManyToManyField(Degree)
+
 
 class Course(models.Model):
     course_name = models.CharField(max_length=75)
@@ -75,6 +78,7 @@ class Course(models.Model):
     course_comment = models.CharField(max_length=200, blank=True)
     course_requirements = models.ForeignKey(Requirement, on_delete=models.CASCADE, null=True)
 
+
 class Campus(models.Model):
     N = "North Campus"
     S = "Scott (South) Campus"
@@ -88,14 +92,17 @@ class Campus(models.Model):
     )
     campus_name = models.CharField(max_length=30, choices=SPECIAL_TYPE_CHOICE, default=None)
 
+
 class Building(models.Model):
     building_name = models.CharField(max_length=45)
     building_roomNumber = models.CharField(max_length=8)
     building_campus = models.ManyToManyField(Campus)
 
+
 class Instructor(models.Model):
     instructor_firstName = models.CharField(max_length=20)
     instructor_lastName = models.CharField(max_length=30)
+
 
 class Weekday(models.Model):
     M = "Monday"
@@ -125,6 +132,7 @@ class Offering(models.Model):
     offering_sectionNum = models.IntegerField()
     offering_instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
 
+
 class Prereq(models.Model):
     C = "Corequisite"
     P = "Prerequisite"
@@ -135,9 +143,11 @@ class Prereq(models.Model):
     prereq_type = models.CharField(max_length=20, choices=REQ_CHOICE, null=True)
     prereq_courses = models.ManyToManyField(Course)
 
+
 class Complete(models.Model):
     complete_user = models.ForeignKey(User, on_delete=models.CASCADE)
     complete_courses = models.ManyToManyField(Course)
+
 
 class UserPreferences(models.Model):
     pref_minCredits = models.IntegerField()
