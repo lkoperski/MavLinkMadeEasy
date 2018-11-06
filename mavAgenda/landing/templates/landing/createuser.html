@@ -153,7 +153,7 @@ function showConcentrationInfo(concentrations, num) {
 
             <p name="major-opts" class="MAVselect">
                 Desired Diploma:
-                <select name="d-diploma" name="id_d-diploma-1" id="id_d-diploma-1">
+                <select name="id_d-diploma-1" id="id_d-diploma-1">
                     <option selected disabled>Choose here</option>
                     {% for d in diplomas %}
                         <option value="{{d}}">{{ d }}</option>
@@ -163,7 +163,7 @@ function showConcentrationInfo(concentrations, num) {
                 <nbsp></nbsp>
                 Major:
                 <!-- please leave this name and id as is... django backend related (see Lauren for questions) -->
-                <select name="d-major" name="id_d-major-1" id="id_d-major-1">
+                <select name="id_d-major-1" id="id_d-major-1">
                     <option selected disabled>Choose here</option>
                     {% for m in majors %}
                         <option value="{{m}}">{{ m }}</option>
@@ -196,8 +196,8 @@ function showConcentrationInfo(concentrations, num) {
             <p name ="fall-spring-credits" class="MAVselect"><i>Set default values for fall and spring semesters</i></p>
 
 
-            <p name="FSmax" class="MAVselect">Minimum number of credit hours:
-            <select>
+            <p class="MAVselect">Minimum number of credit hours:
+            <select name="FSmin">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -219,8 +219,8 @@ function showConcentrationInfo(concentrations, num) {
             </select>
             </p>
 
-            <p name="FSmax" class="MAVselect">Maximum number of credit hours:
-            <select>
+            <p class="MAVselect">Maximum number of credit hours:
+            <select name="FSmax">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -244,14 +244,14 @@ function showConcentrationInfo(concentrations, num) {
         <br>
 
         <p name ="summer-credits" class="MAVselect">In general, do you plan to take summer classes?
-            <input type="radio" name="summer-course" checked="checked" value="yes" onclick="showSummerInfo()"> Yes
+            <input type="radio" name="summer-course" checked="checked" value="True" onclick="showSummerInfo()"> Yes
             <input type="radio" name="summer-course" value="no" onclick="hideSummerInfo()"> No
         </p>
 
         <div id="summer-info">
 
-            <p name="Summax" class="MAVselect">Minimum number of credit hours:
-            <select>
+            <p class="MAVselect">Minimum number of credit hours:
+            <select name="Summin">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -274,8 +274,8 @@ function showConcentrationInfo(concentrations, num) {
             </select>
             </p>
 
-            <p name="Summax" class="MAVselect">Maximum number of credit hours:
-            <select>
+            <p class="MAVselect">Maximum number of credit hours:
+            <select name="Summax">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>

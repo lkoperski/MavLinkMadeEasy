@@ -7,11 +7,11 @@
 <form method="POST" class="usercompleted-form">
     {% csrf_token %}
     {% for r in checkBoxes %}
-    <p><b>{{ r.1 }}</b> | {{ r.2 }} | <i>{{ r.3 }} credits needed</i></p>
+    <p><b>{{ r.1 }}</b> | <i>{{ r.2 }} credits needed</i></p>
     <hr>
     <p>
-        {% for cb in r.4 %}
-        <input type="checkbox" name = "chexmix" value="{{cb.0}}"><b>{{cb.0}}</b> {{ cb.1 }}</input>
+        {% for cb in r.3 %}
+        <input type="checkbox" name ="chexmix" value="{{cb.0}} {{cb.1}}"><b>{{cb.0}} {{cb.1}}</b> {{ cb.2 }} <i>({{cb.3}} credits)</i></input>
         <br>
         {% endfor %}
         <br>

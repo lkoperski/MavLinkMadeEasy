@@ -7,10 +7,16 @@ from django.contrib.auth.models import User
 #admin.site.register(User)
 admin.site.register(UserPreferences)
 admin.site.register(Complete)
+admin.site.register(Campus)
+admin.site.register(Building)
+admin.site.register(Instructor)
+admin.site.register(Weekday)
+admin.site.register(Offering)
 admin.site.register(Course)
 admin.site.register(Degree)
 admin.site.register(Prereq)
 admin.site.register(Requirement)
+
 
 '''
 @DegreeAdmin creates an easily editable form to add
