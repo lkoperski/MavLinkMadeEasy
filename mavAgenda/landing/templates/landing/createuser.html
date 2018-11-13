@@ -33,6 +33,12 @@ function showMajorInfo( diplomas, majors, num ) {
     var space = document.createElement("nbsp");
     dip.id = "id_d-diploma-" + (num+1);
     dip.name = "id_d-diploma-" + (num+1);
+    var dipC = document.createElement("option");
+    dipC.value = "Choose here";
+    dipC.text = "Choose here";
+    dipC.setAttribute("selected", "");
+    dipC.setAttribute("disabled", "");
+    dip.appendChild(dipC);
     for (i=0; i<diplomas.length; i++ ) {
             var dipChoice = document.createElement("option");
             dipChoice.value = diplomas[i];
@@ -43,6 +49,12 @@ function showMajorInfo( diplomas, majors, num ) {
     var maj = document.createElement("select");
     maj.id = "id_d-major-" + (num+1);
     maj.name = "id_d-major-" + (num+1);
+    var majC = document.createElement("option");
+    majC.value = "Choose here";
+    majC.text = "Choose here";
+    majC.setAttribute("selected", "");
+    majC.setAttribute("disabled", "");
+    maj.appendChild(majC);
     for (i=0; i<majors.length; i++ ) {
         if ( notSelected("id_d-major-", majors[i], num) ) {
             var majChoice = document.createElement("option");
@@ -74,6 +86,12 @@ function showMinorInfo(minors, num) {
     var space = document.createElement("nbsp");
     min.id = "id_d-minor-" + (num+1);
     min.name = "id_d-minor-" + (num+1);
+    var minC = document.createElement("option");
+    minC.value = "Choose here";
+    minC.text = "Choose here";
+    minC.setAttribute("selected", "");
+    minC.setAttribute("disabled", "");
+    min.appendChild(minC);
     for (i=0; i<minors.length; i++ ) {
         if (notSelected("id_d-minor-", minors[i], num)) {
             var minChoice = document.createElement("option");
@@ -102,6 +120,12 @@ function showConcentrationInfo(concentrations, num) {
     var space = document.createElement("nbsp");
     con.id = "id_d-concentration-" + (num+1);
     con.name = "id_d-concentration-" + (num+1);
+    var conC = document.createElement("option");
+    conC.value = "Choose here";
+    conC.text = "Choose here";
+    conC.setAttribute("selected", "");
+    conC.setAttribute("disabled", "");
+    con.appendChild(conC);
     for (i=0; i<concentrations.length; i++ ) {
         if (notSelected("id_d-concentration-", concentrations[i], num)) {
             var conChoice = document.createElement("option");
