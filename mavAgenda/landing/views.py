@@ -38,7 +38,7 @@ def getCompletedByUser(uID):
     '''
     cu = User.objects.get(pk=uID)
     completedCourses = []
-    for cc in Complete.objects.get(user=cu).complete.all():
+    for cc in Complete.objects.get(complete_user=cu).complete_courses.all():
         completedCourses.append(cc)
     return completedCourses
 
@@ -48,16 +48,13 @@ def getCoursesForUser(uID):
     @param uID: the primary key corresponding to the active user
     '''
     requiredCourses = []
-    reqs = Degree.objects.get(user=uID).req.all()
+    degrees = Degree.objects.filter(degree_users=uID)
+    reqs = getDegreeReqs(degrees)
     for r in reqs:
-        catalog = r.course.all()
-        for g in catalog:
-            requiredCourses.append(g)
-            prereqs = Course.objects.get(id=g.id).prereqs.all()
-            for pr in prereqs:
-                additionalCourse = Course.objects.get(id=pr.prereq.id)
-                if additionalCourse not in requiredCourses:
-                    requiredCourses.append(additionalCourse)
+        catalog = getReqCourses(r)
+        for c in catalog:
+            if c not in requiredCourses:
+                requiredCourses.append([c.course_subject, c.course_num, c.course_name, c.course_credits])
     return requiredCourses
 
 def removeCoursesTaken( requiredClasses, classesTaken ):
@@ -68,7 +65,7 @@ def removeCoursesTaken( requiredClasses, classesTaken ):
     '''
     validCourses = []
     for rc in requiredClasses:
-        if rc not in classesTaken :
+        if rc not in classesTaken:
             validCourses.append(rc)
     return validCourses
 
@@ -111,7 +108,7 @@ def checkCourseValid(course, classesTaken, semesterCourses, ssf): #checkCourseVa
     @param ssf: the Spring, Summer, Fall, offering attribute of the Course
     '''
     valid = False
-    prereqs = course.prereqs.all()
+    prereqs = course.prereqs_courses.all()
     prereqsMet = checkPrereqsMet(prereqs, classesTaken, semesterCourses)
     offered = checkOfferedSemester(course, ssf)
     if prereqsMet and offered:
@@ -173,16 +170,18 @@ def createSchedule(uID):
     maxLoopCount = 35
     reqTracker = [] #used to track if Req credit quotas have been met
     requiredClasses = getCoursesForUser(uID)
-    reqs = Degree.objects.get(user=uID).req.all()
+    print( "requiredClasses:" % requiredClasses )
+    reqs = getDegreeReqs(Degree.objects.filter(degree_users=uID))
     for r in reqs:
-        req_id = r.id
-        req_name = r.name
-        req_type = r.req_type
-        req_creds = r.credits
-        req_start = 0
-        reqTracker.append([req_id, req_name, req_type, req_creds, req_start])
+        reqID = r.id
+        reqName = r.req_name
+        reqCredits = r.req_credits
+        reqStart = 0
+        reqTracker.append([reqID, reqName, reqCredits, reqStart])
     classesTaken = getCompletedByUser(uID)
+    print("classesTaken:" % classesTaken)
     neededClasses = removeCoursesTaken( requiredClasses, classesTaken )
+    print("preliminary neededCourses:" % neededClasses)
     schedule = []
     currentMonth = datetime.now().month
     currentYear = datetime.now().year
@@ -194,9 +193,11 @@ def createSchedule(uID):
         for r in reqTracker:  # determine which Req this course falls under
             if c in Req.objects.get(id=r[0]).course.all():
                 r[4] += c.credits  # increment the completed running total for that Req
+    print( "neededClasses:" % neededClasses)
     while neededClasses != [] and loopCount < maxLoopCount:
         loopCount+=1
         for nc in neededClasses:
+            print("nc:" % nc)
             if ( checkCourseValid( nc, classesTaken, currentSemester[2], ssfSemester ) ):
                 currentSemester[2].append(nc)
                 classesTaken.append(nc)
