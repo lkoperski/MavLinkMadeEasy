@@ -1,5 +1,8 @@
 # Created by https://www.gitignore.io/api/django,python
 
+### PyCharm Workspace ###
+workspace.xml
+
 ### Django ###
 *.log
 *.pot
