@@ -1,7 +1,7 @@
 # Created by https://www.gitignore.io/api/django,python
 
 ### PyCharm Workspace ###
-workspace.xml
+.idea/workspace.xml
 
 ### Django ###
 *.log
