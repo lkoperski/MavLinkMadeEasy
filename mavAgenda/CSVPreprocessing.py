@@ -180,7 +180,8 @@ def read_course_csv():
                     course_special='None',
                     course_comment='',
                 )
-                course_id_to_course[row[0]] = {'subject': row[4], 'num': row[5].lstrip('0')}
+
+                course_id_to_course[row[0].lstrip('0')] = {'subject': row[4], 'num': row[5]}
 
             # else, get Course object from QueryList course and change the semester info if needed
             else:
@@ -285,13 +286,15 @@ def read_reqs_csv():
         next(f)
         for row in reader:
             if row[5] == 'CRSE':
-                subject = course_id_to_course[row[0]][0]
-                num = course_id_to_course[row[0]][1].lstrip('0')
-                course = Course.objects.filter(course_subject=subject, course_num=num)
-                prereq = Prereq(
-                    prereq_type=row[8][0],
-                    prereq_courses=course,
-                )
-                prereq.save()
+                if row[0].lstrip('0') in course_id_to_course:
+                    subject = course_id_to_course[row[0].lstrip('0')]['subject']
+                    num = course_id_to_course[row[0].lstrip('0')]['num']
+                    course = Course.objects.filter(course_subject=subject, course_num=num)
+                    prereq = Prereq(
+                        prereq_type=row[8][0],
+                    )
+                    prereq.save()
+                    prereq.prereq_courses.set(course)
+                    prereq.save()
 
         f.close()
