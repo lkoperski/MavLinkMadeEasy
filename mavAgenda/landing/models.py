@@ -165,6 +165,9 @@ class Offering(models.Model):
     offering_sectionNum = models.IntegerField()
     offering_instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
 
+class PrereqCourse(models.Model):
+    prereqcourse_course = models.ManyToManyField(Course)
+
 class Prereq(models.Model):
     """
     @Prereq  holds classes that are prerequisites to other classes,
@@ -178,7 +181,8 @@ class Prereq(models.Model):
         (P, "Prerequisite"),
     )
     prereq_type = models.CharField(max_length=20, choices=REQ_CHOICE, null=True)
-    prereq_courses = models.ManyToManyField(Course)
+    prereq_course = models.ManyToManyField(Course)
+    prereq_prereqs = models.ManyToManyField(PrereqCourse)
 
 class Complete(models.Model):
     """
