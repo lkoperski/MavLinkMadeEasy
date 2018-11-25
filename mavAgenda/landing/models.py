@@ -166,11 +166,15 @@ class Offering(models.Model):
     offering_instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
 
 class PrereqCourse(models.Model):
+    """
+    @PrereqCourse  holds classes that are viable condition fulfilling options (prereq classes),
+            referring to the Course object itself
+    """
     prereqcourse_course = models.ManyToManyField(Course)
 
 class Prereq(models.Model):
     """
-    @Prereq  holds classes that are prerequisites to other classes,
+    @Prereq  holds conditions that are prerequisites to other classes,
             this includes the type (i.e Corequisite or Prerequisite) and a foreign key reference
             back to the Course table.
     """

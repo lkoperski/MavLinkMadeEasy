@@ -80,10 +80,7 @@ def checkPrereqsMet(preqreqs, classesTaken, currentSemester):
     for pr in preqreqs:
         notInClassesTaken = pr.prereq not in classesTaken and pr.this_or not in classesTaken
         inCurrentSemester = pr.prereq in currentSemester or pr.this_or in currentSemester
-        if notInClassesTaken:
-            met = False
-            break
-        elif inCurrentSemester:
+        if notInClassesTaken or inCurrentSemester:
             met = False
             break
     return met
@@ -95,7 +92,7 @@ def checkOfferedSemester(course, ssf):
     @param ssf: the Spring, Summer, Fall, offering attribute of the Course
     '''
     offered = False
-    if course.semester == ssf or course.semester == 'All':
+    if course.course_semester == ssf or course.course_semester == 'All':
         offered = True
     return offered
 
@@ -107,8 +104,10 @@ def checkCourseValid(course, classesTaken, semesterCourses, ssf): #checkCourseVa
     @parm scheduledClasses: a list of Course (objects) the scheduling algorithm has accounted for already
     @param ssf: the Spring, Summer, Fall, offering attribute of the Course
     '''
+    print("course:" % course)
     valid = False
-    prereqs = course.prereqs_courses.all()
+    prereqs = getCoursePrereqs(course)
+    print( "prereqs:" % prereqs)
     prereqsMet = checkPrereqsMet(prereqs, classesTaken, semesterCourses)
     offered = checkOfferedSemester(course, ssf)
     if prereqsMet and offered:
@@ -170,7 +169,7 @@ def createSchedule(uID):
     maxLoopCount = 35
     reqTracker = [] #used to track if Req credit quotas have been met
     requiredClasses = getCoursesForUser(uID)
-    print( "requiredClasses:" % requiredClasses )
+    print("requiredClasses:" % requiredClasses)
     reqs = getDegreeReqs(Degree.objects.filter(degree_users=uID))
     for r in reqs:
         reqID = r.id
@@ -179,9 +178,9 @@ def createSchedule(uID):
         reqStart = 0
         reqTracker.append([reqID, reqName, reqCredits, reqStart])
     classesTaken = getCompletedByUser(uID)
-    print("classesTaken:" % classesTaken)
+    print( "classesTaken:" % classesTaken)
     neededClasses = removeCoursesTaken( requiredClasses, classesTaken )
-    print("preliminary neededCourses:" % neededClasses)
+    print( "neededClasses:" % neededClasses)
     schedule = []
     currentMonth = datetime.now().month
     currentYear = datetime.now().year
@@ -193,7 +192,6 @@ def createSchedule(uID):
         for r in reqTracker:  # determine which Req this course falls under
             if c in Req.objects.get(id=r[0]).course.all():
                 r[4] += c.credits  # increment the completed running total for that Req
-    print( "neededClasses:" % neededClasses)
     while neededClasses != [] and loopCount < maxLoopCount:
         loopCount+=1
         for nc in neededClasses:
@@ -214,7 +212,6 @@ def createSchedule(uID):
                 if r[3] > r[4]:
                     scheduleComplete = False
         if scheduleComplete:
-            print( "BREAKING FREEEEEEE!!!!")
             break
     return schedule
 
@@ -243,6 +240,24 @@ def getReqCourses(req):
             if r.id is req.id and c not in courses:
                 courses.append(c)
     return courses
+
+def getCoursePrereqs(course):
+    '''
+    @getCoursePrereqs returns a list of prereqs required for a course in the logical form:
+        ex: [[courseA, courseB], [courseC, CourseD], [courseE]]
+        where subset lists represent logical ORs and the larger list joined by logical ANDs.
+        The above list would have prereqs: (courseA OR courseB) AND (courseC OR courseD) AND courseE
+    @param course: the Course under test
+    '''
+    prereqs = []
+    for p in Prereq.objects.all():
+        if p.prereq_course is course:
+            options = []
+            for option in Prereq.prereq_prereqs:
+                options.append(option)
+            prereqs.append(options)
+    return prereqs
+
 
 def generateCheckBoxEntities(uID):
     '''
@@ -409,6 +424,12 @@ def createuser(request):
             while True:
                 diploma = 'id_d-diploma-' + str(i)
                 major = 'id_d-major-' + str(i)
+                if i==1 and major not in request.POST:
+                    return render(request, 'landing/createuser.html',
+                                  {'diplomas': generateDiplomaDD(), 'majors': generateMajorDD(),
+                                   'minors': generateMinorDD(),
+                                   'concentrations': generateConcentrationsDD(), 'errorCode': 1}
+                                  )
                 if major in request.POST:
                     dip = request.POST[diploma]
                     maj = request.POST[major]
@@ -459,15 +480,15 @@ def createuser(request):
             up.save()
             return HttpResponseRedirect(reverse('landing:selectcourses', args=(userID,)))
         else:
-            message = "Email already taken"
             return render(request, 'landing/createuser.html',
                           {'diplomas': generateDiplomaDD(), 'majors': generateMajorDD(), 'minors': generateMinorDD(),
-                           'concentrations': generateConcentrationsDD(), 'message':message}
+                           'concentrations': generateConcentrationsDD(), 'errorCode': 2}
                           )
     else:
         return render(request, 'landing/createuser.html',
-                      {'diplomas':generateDiplomaDD(), 'majors':generateMajorDD(), 'minors':generateMinorDD(), 'concentrations':generateConcentrationsDD() }
-                      )
+                        {'diplomas':generateDiplomaDD(), 'majors':generateMajorDD(), 'minors':generateMinorDD(),
+                          'concentrations':generateConcentrationsDD(), 'errorCode': 0 }
+                        )
 
 def selectcourses(request, pk):
     '''
@@ -493,15 +514,20 @@ def nextsemesterpreferences(request, pk):
     '''
     if request.method == "POST":
         cu = User.objects.get(pk=pk)
-        up = UserPreferences.objects.get(pref_user=cu)
-        up.pref_nextSSF = request.POST['id_d-ssf']
-        up.pref_nextYear = request.POST['id_d-year']
-        up.pref_nextSemMinCredit = request.POST['nextSemMin']
-        up.pref_nextSemMaxCredit = request.POST['nextSemMax']
-        up.save()
-        return HttpResponseRedirect(reverse('landing:schedule', args=(pk,)))
+        ssf = 'id_d-ssf'
+        year = 'id_d-year'
+        if ssf in request.POST and year in request.POST:
+            up = UserPreferences.objects.get(pref_user=cu)
+            up.pref_nextSSF = request.POST['id_d-ssf']
+            up.pref_nextYear = request.POST['id_d-year']
+            up.pref_nextSemMinCredit = request.POST['nextSemMin']
+            up.pref_nextSemMaxCredit = request.POST['nextSemMax']
+            up.save()
+            return HttpResponseRedirect(reverse('landing:schedule', args=(pk,)))
+        else:
+            return render(request, 'landing/nextsemesterpreferences.html', {'years': generateYearDD(), 'errorCode': 3})
     else:
-        return render(request, 'landing/nextsemesterpreferences.html', {'years': generateYearDD()})
+        return render(request, 'landing/nextsemesterpreferences.html', {'years': generateYearDD(), 'errorCode': 0})
 
 def schedule(request, pk):
     '''
@@ -509,4 +535,5 @@ def schedule(request, pk):
     @param request: generates the response
     @param pk: primary key corresponding to active user
     '''
+    #TODO - if user.is_authenticated
     return render(request, 'landing/schedule.html', {'schedule': createSchedule(pk), 'userID': pk})

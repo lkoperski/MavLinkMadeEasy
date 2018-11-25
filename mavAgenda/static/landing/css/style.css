@@ -26,6 +26,14 @@
             opacity: .3;
         }
 
+        .errorMessage {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            font-size: 14pt;
+            font-style: normal;
+            color: #f71313;
+            font-weight: 250;
+        }
+
         p {
             margin: 8px;
             font-size: 12pt;
@@ -42,7 +50,6 @@
             font-style: normal;
             font-weight: 300;
         }
-
 
         img.center {
             display: block;

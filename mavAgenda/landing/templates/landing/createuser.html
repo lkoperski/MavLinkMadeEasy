@@ -8,7 +8,7 @@ function removeInfo(divID) {
     return false;
 }
 function notSelected( idBase, searchFor, num ) {
-    var previousSelected  = false
+    var previousSelected  = false;
     for ( var i =1; i<=num; i++ ){
         var id = idBase + i
         var select = document.getElementById(id);
@@ -156,7 +156,10 @@ function showConcentrationInfo(concentrations, num) {
 
         <h3 class="form-header">User information</h3>
         <div class="list">
-        <p class="errormessage" id="errormessage">{{message}}</p>
+
+        {% if errorCode == 2 %}
+            <p name="errorMessage">*Email already taken</p>
+        {% endif %}
 
         <p id="emailbox" name="emailbox" class="MAVselect">Email:<input id="email-input" name="email-input"
                minlength="1" required
@@ -175,8 +178,11 @@ function showConcentrationInfo(concentrations, num) {
 
         <div id="major-info" class="list" display="block">
 
-            <p name="major-opts" class="MAVselect">
-                Desired Diploma:
+            <div name="major-opts" class="MAVselect">
+                {% if errorCode == 1 %}
+                <p name="errorMessage">*Please select at least one major</p>
+                {% endif %}
+                Desired Diploma
                 <select name="id_d-diploma-1" id="id_d-diploma-1">
                     <option selected disabled>Choose here</option>
                     {% for d in diplomas %}
@@ -193,8 +199,8 @@ function showConcentrationInfo(concentrations, num) {
                         <option value="{{m}}">{{ m }}</option>
                     {% endfor %}
                 </select>
-            </p>
-    </div>
+            </div>
+        </div>
         <button type="button" class="MAVbuttonSmall" name="add-major-button" class="MAVbutton" onclick="showMajorInfo( {{diplomas}}, {{majors}}, 1 )">add major</button>
 
         <br><br><br>

@@ -11,6 +11,10 @@
 
         <div id="term-info" display="block">
 
+            {% if errorCode == 3 %}
+                <p name="errorMessage">*Please specify the semester and year of your next term</p>
+            {% endif %}
+
             <p name="term-opts" class="MAVselect">
                 Next Semester:
                 <select name="id_d-ssf" id="id_d-ssf">
