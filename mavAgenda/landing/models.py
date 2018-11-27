@@ -165,13 +165,6 @@ class Offering(models.Model):
     offering_sectionNum = models.IntegerField()
     offering_instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
 
-class PrereqCourse(models.Model):
-    """
-    @PrereqCourse  holds classes that are viable condition fulfilling options (prereq classes),
-            referring to the Course object itself
-    """
-    prereqcourse_course = models.ManyToManyField(Course)
-
 class Prereq(models.Model):
     """
     @Prereq  holds conditions that are prerequisites to other classes,
@@ -186,7 +179,14 @@ class Prereq(models.Model):
     )
     prereq_type = models.CharField(max_length=20, choices=REQ_CHOICE, null=True)
     prereq_course = models.ManyToManyField(Course)
-    prereq_prereqs = models.ManyToManyField(PrereqCourse)
+
+class PrereqCourse(models.Model):
+    """
+    @PrereqCourse  holds classes that are viable condition fulfilling options (prereq classes),
+            referring to the Course object itself
+    """
+    prereqcourse_prereqs = models.ManyToManyField(Prereq)
+    prereqcourse_course = models.ManyToManyField(Course)
 
 class Complete(models.Model):
     """
