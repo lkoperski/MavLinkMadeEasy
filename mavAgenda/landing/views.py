@@ -203,30 +203,35 @@ def createSchedule(uID):
         for r in reqTracker:  # determine which Req this course falls under
             if c in Req.objects.get(id=r[0]).course.all():
                 r[4] += c.credits  # increment the completed running total for that Req
+    numClassesChecked = 0
     while neededClasses != [] and loopCount < maxLoopCount:
         loopCount+=1
         for nc in neededClasses:
             if ( checkCourseValid( nc, classesTaken, currentSemester[2], ssfSemester ) ):
-                currentSemester[2].append(nc)
+                value = [nc.course_subject + " " + nc.course_num + " " + nc.course_name, nc.course_requirements]
+                currentSemester[2].append(value)
                 classesTaken.append(nc)
                 neededClasses.remove(nc)
-                #for r in reqTracker: # determine which Req this course falls under
-                    #if nc in Requirement.objects.get(id=r[0]).course.all():
                 reqsFilled = nc.course_requirements.all()
                 for rf in reqsFilled:
                     for r in reqTracker:
                         if r[0] == rf.id:
                             r[3]+=nc.course_credits # increment the completed running total for that Req
-            if ( neededClasses != [] and isFull(semester[2])):
+            numClassesChecked += 1
+            if neededClasses != [] and ( isFull(semester[2]) or numClassesChecked == len(neededClasses) ):
                 schedule.append(semester[:])
                 semester = generateNewSemester(semester)
+                numClassesChecked = 0
                 break
             scheduleComplete = True
             for r in reqTracker:
                 if r[2] > r[3]:
                     scheduleComplete = False
         if scheduleComplete:
+            if not isFull(semester[2]): #TODO - not theoretically tested yet
+                schedule.append(semester[:])
             break
+    print( "schedule", schedule )
     return schedule
 
 def getDegreeReqs(degrees):
