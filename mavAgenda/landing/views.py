@@ -168,7 +168,7 @@ def isFull(courseList):
     full = False
     totalCredits = 0
     for c in courseList:
-        totalCredits+= c.course_credits
+        totalCredits += c[1]
     if totalCredits >= 12 and totalCredits <= 16:
         full = True
     return full
@@ -208,7 +208,7 @@ def createSchedule(uID):
         loopCount+=1
         for nc in neededClasses:
             if ( checkCourseValid( nc, classesTaken, currentSemester[2], ssfSemester ) ):
-                value = [nc.course_subject + " " + nc.course_num + " " + nc.course_name, nc.course_requirements]
+                value = [nc.course_subject + " " + nc.course_num + " " + nc.course_name, nc.course_credits]
                 currentSemester[2].append(value)
                 classesTaken.append(nc)
                 neededClasses.remove(nc)
