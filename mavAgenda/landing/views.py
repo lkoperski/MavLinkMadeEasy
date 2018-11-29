@@ -127,19 +127,6 @@ def checkCourseValid(course, classesTaken, semesterCourses, ssf): #checkCourseVa
         valid = True
     return valid
 
-def getSemesterByMonthYear( m ):
-    '''
-    @getSemesterByMonthYear determines semester (Spring, Summer, Fall) according to current month
-    @param m: current month
-    '''
-    if  m < 5 :
-        title = "Spring"
-    elif  m < 8 :
-        title = "Summer"
-    else:
-        title = "Fall"
-    return title
-
 def generateNewSemester(semester):
     '''
     @generateNewSemester creates a new logical semester
@@ -193,11 +180,10 @@ def createSchedule(uID):
     classesTaken = getCompletedByUser(uID)
     neededClasses = removeCoursesTaken( requiredClasses, classesTaken )
     schedule = []
-    currentMonth = datetime.now().month
-    currentYear = datetime.now().year
-    ssfSemester = getSemesterByMonthYear(currentMonth)
+    currentYear = UserPreferences.objects.get(id=uID).pref_nextYear
+    ssfSemester = UserPreferences.objects.get(id=uID).pref_nextSSF
     semester = [ssfSemester, currentYear, []]
-    currentSemester = generateNewSemester(semester)
+    currentSemester = [ssfSemester, currentYear, []]
     scheduleComplete = True
     for c in classesTaken:
         for r in reqTracker:  # determine which Req this course falls under
@@ -207,9 +193,12 @@ def createSchedule(uID):
     while neededClasses != [] and loopCount < maxLoopCount:
         loopCount+=1
         for nc in neededClasses:
+            print("evaluating nc:", nc)
             if ( checkCourseValid( nc, classesTaken, currentSemester[2], ssfSemester ) ):
+                print("course valid!")
                 value = [nc.course_subject + " " + nc.course_num + " " + nc.course_name, nc.course_credits]
                 currentSemester[2].append(value)
+                print( "new current semester...", currentSemester)
                 classesTaken.append(nc)
                 neededClasses.remove(nc)
                 reqsFilled = nc.course_requirements.all()
@@ -218,9 +207,11 @@ def createSchedule(uID):
                         if r[0] == rf.id:
                             r[3]+=nc.course_credits # increment the completed running total for that Req
             numClassesChecked += 1
-            if neededClasses != [] and ( isFull(semester[2]) or numClassesChecked == len(neededClasses) ):
+            if isFull(semester[2]) or numClassesChecked == len(neededClasses) : #neededClasses != []
                 schedule.append(semester[:])
+                print("appending semseter... new schedule", schedule)
                 semester = generateNewSemester(semester)
+                print("resetting semester")
                 numClassesChecked = 0
                 break
             scheduleComplete = True
@@ -228,8 +219,6 @@ def createSchedule(uID):
                 if r[2] > r[3]:
                     scheduleComplete = False
         if scheduleComplete:
-            if not isFull(semester[2]): #TODO - not theoretically tested yet
-                schedule.append(semester[:])
             break
     print( "schedule", schedule )
     return schedule
@@ -411,6 +400,7 @@ def login(request):
     '''
     if request.method == "POST":
         e = request.POST['email-input']
+        #p = request.POST['password-input']
         if emailFound(e):
             u = getUserByEmail(e)
             userID = u.id

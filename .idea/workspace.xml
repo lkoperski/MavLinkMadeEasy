@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6a63500-b22f-4d8b-ae80-cbe995352251" name="Default" comment="schedule doesn't error out, but not right">
+    <list default="true" id="c6a63500-b22f-4d8b-ae80-cbe995352251" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mavAgenda/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mavAgenda/landing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/templates/landing/schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/templates/landing/schedule.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mavAgenda/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,79 +31,53 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="nextsemesterpreferences.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/nextsemesterpreferences.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="createuser.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2703">
-                  <caret line="159" column="7" selection-start-line="159" selection-start-column="7" selection-end-line="161" selection-end-column="19" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="205" column="25" lean-forward="true" selection-start-line="205" selection-start-column="25" selection-end-line="205" selection-end-column="25" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="387">
-                  <caret line="186" column="7" lean-forward="true" selection-start-line="186" selection-start-column="7" selection-end-line="186" selection-end-column="7" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="cleanup.sh" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mavAgenda/cleanup.sh">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="schedule.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/schedule.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="595">
-                  <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="schedule.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/schedule.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="158">
-                  <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="nextsemesterpreferences.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/nextsemesterpreferences.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createuser.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2703">
+              <caret line="159" column="7" selection-start-line="159" selection-start-column="7" selection-end-line="161" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="402" column="9" selection-start-line="402" selection-start-column="9" selection-end-line="402" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -165,15 +139,15 @@
         <option value="$PROJECT_DIR$/mavAgenda/landing/admin.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/forms.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/base.html" />
-        <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/selectcourses.html" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html" />
         <option value="$PROJECT_DIR$/mavAgenda/static/landing/css/style.css" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/nextsemesterpreferences.html" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/schedule.html" />
-        <option value="$PROJECT_DIR$/mavAgenda/landing/views.py" />
         <option value="$PROJECT_DIR$/mavAgenda/cleanup.sh" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/models.py" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/views.py" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html" />
       </list>
     </option>
   </component>
@@ -187,15 +161,16 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="-10" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -219,13 +194,6 @@
               <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
               <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
               <item name="landing" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="landing" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -235,30 +203,11 @@
               <item name="landing" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="landing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
-              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -564,7 +513,28 @@
       <option name="project" value="LOCAL" />
       <updated>1543186320009</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="update DB for prereq, prereqcourse, and course relationship">
+      <created>1543349527155</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1543349527155</updated>
+    </task>
+    <task id="LOCAL-00041" summary="schedule work and update to models">
+      <created>1543349628312</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1543349628312</updated>
+    </task>
+    <task id="LOCAL-00042" summary="displaying some course information - woot woot!">
+      <created>1543350651972</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1543350651972</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -576,8 +546,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986577" weight="0.3298969" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32935917" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.25036818" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16040269" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.34167895" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16442953" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -601,9 +571,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="better version of schedule algorithm (limit loop)" />
-    <MESSAGE value="determine Req credit quota logic for scheduling" />
-    <MESSAGE value="accounting for non-req-specific courses needed in schedule" />
     <MESSAGE value="updated db for reqs and applied tracking to reqs" />
     <MESSAGE value="clean up some of the printing/extraneous work in the logic" />
     <MESSAGE value="eliminate blank semester at end of schedule" />
@@ -625,8 +592,11 @@
     <MESSAGE value="some initial updates to schedule functionality - nonoperational!" />
     <MESSAGE value="update models!!!!" />
     <MESSAGE value="perform error checking for create user, next semester... and schedule start" />
+    <MESSAGE value="update DB for prereq, prereqcourse, and course relationship" />
     <MESSAGE value="schedule doesn't error out, but not right" />
-    <option name="LAST_COMMIT_MESSAGE" value="schedule doesn't error out, but not right" />
+    <MESSAGE value="schedule work and update to models" />
+    <MESSAGE value="displaying some course information - woot woot!" />
+    <option name="LAST_COMMIT_MESSAGE" value="displaying some course information - woot woot!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -900,13 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/CSVPreprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -935,27 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2703">
-          <caret line="159" column="7" selection-start-line="159" selection-start-column="7" selection-end-line="161" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/nextsemesterpreferences.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="205" column="25" lean-forward="true" selection-start-line="205" selection-start-column="25" selection-end-line="205" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/cleanup.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -963,17 +905,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="186" column="7" lean-forward="true" selection-start-line="186" selection-start-column="7" selection-end-line="186" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/schedule.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2703">
+          <caret line="159" column="7" selection-start-line="159" selection-start-column="7" selection-end-line="161" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/nextsemesterpreferences.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="402" column="9" selection-start-line="402" selection-start-column="9" selection-end-line="402" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
         </state>
       </provider>
     </entry>
