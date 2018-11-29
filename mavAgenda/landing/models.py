@@ -20,10 +20,12 @@ class Degree(models.Model):
     MAJ = 'Major'
     MIN = 'Minor'
     CON = 'Concentration'
+    CERT = 'Certification'
     TYPE_CHOICE = (
         (MAJ, 'Major'),
         (MIN, 'Minor'),
         (CON, 'Concentration'),
+        (CERT, 'Certification')
     )
     degree_type = models.CharField(max_length=50, choices=TYPE_CHOICE, default=MAJ)
     CSCI = 'Computer Science'
@@ -39,6 +41,7 @@ class Degree(models.Model):
         (CYBR, 'Cybersecurity'),
     )
     degree_track = models.CharField(max_length=50, choices=TRACK_CHOICE, default=CSCI)
+    degree_additional_track = models.CharField(max_length=50, default='')
     degree_users = models.ManyToManyField(User)
 
 
@@ -50,7 +53,7 @@ class Requirement(models.Model):
     """
     req_name = models.CharField(max_length=50)
     req_credits = models.IntegerField()
-    req_degrees = models.ManyToManyField(Degree)
+    re_degrees = models.ManyToManyField(Degree)
 
 
 class Course(models.Model):
