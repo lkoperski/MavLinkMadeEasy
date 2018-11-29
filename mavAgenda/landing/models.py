@@ -53,7 +53,7 @@ class Requirement(models.Model):
     """
     req_name = models.CharField(max_length=50)
     req_credits = models.IntegerField()
-    re_degrees = models.ManyToManyField(Degree)
+    req_degrees = models.ManyToManyField(Degree)
 
 
 class Course(models.Model):
