@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Degree(models.Model):
     """
     @Degree holds the degree a user would have, this includes the
@@ -19,10 +20,12 @@ class Degree(models.Model):
     MAJ = 'Major'
     MIN = 'Minor'
     CON = 'Concentration'
+    CERT = 'Certification'
     TYPE_CHOICE = (
         (MAJ, 'Major'),
         (MIN, 'Minor'),
         (CON, 'Concentration'),
+        (CERT, 'Certification')
     )
     degree_type = models.CharField(max_length=50, choices=TYPE_CHOICE, default=MAJ)
     CSCI = 'Computer Science'
@@ -38,7 +41,9 @@ class Degree(models.Model):
         (CYBR, 'Cybersecurity'),
     )
     degree_track = models.CharField(max_length=50, choices=TRACK_CHOICE, default=CSCI)
+    degree_additional_track = models.CharField(max_length=50, default='')
     degree_users = models.ManyToManyField(User)
+
 
 class Requirement(models.Model):
     """
@@ -49,6 +54,7 @@ class Requirement(models.Model):
     req_name = models.CharField(max_length=50)
     req_credits = models.IntegerField()
     req_degrees = models.ManyToManyField(Degree)
+
 
 class Course(models.Model):
     """
@@ -91,6 +97,7 @@ class Course(models.Model):
     course_comment = models.CharField(max_length=200, blank=True)
     course_requirements = models.ManyToManyField(Requirement)
 
+
 class Campus(models.Model):
     """
     @Campus holds where classes are held, this includes the
@@ -109,6 +116,7 @@ class Campus(models.Model):
     )
     campus_name = models.CharField(max_length=30, choices=SPECIAL_TYPE_CHOICE, default=None)
 
+
 class Building(models.Model):
     """
     @Campus holds where classes are held, this includes the
@@ -119,6 +127,7 @@ class Building(models.Model):
     building_roomNumber = models.CharField(max_length=8)
     building_campus = models.ManyToManyField(Campus)
 
+
 class Instructor(models.Model):
     """
     @Instructor holds what teachers teach a class, this includes the
@@ -127,6 +136,7 @@ class Instructor(models.Model):
     """
     instructor_firstName = models.CharField(max_length=20)
     instructor_lastName = models.CharField(max_length=30)
+
 
 class Weekday(models.Model):
     """
@@ -165,6 +175,7 @@ class Offering(models.Model):
     offering_sectionNum = models.IntegerField()
     offering_instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
 
+
 class Prereq(models.Model):
     """
     @Prereq  holds conditions that are prerequisites to other classes,
@@ -180,6 +191,7 @@ class Prereq(models.Model):
     prereq_type = models.CharField(max_length=20, choices=REQ_CHOICE, null=True)
     prereq_course = models.ManyToManyField(Course)
 
+
 class PrereqCourse(models.Model):
     """
     @PrereqCourse  holds classes that are viable condition fulfilling options (prereq classes),
@@ -188,6 +200,7 @@ class PrereqCourse(models.Model):
     prereqcourse_prereqs = models.ManyToManyField(Prereq)
     prereqcourse_course = models.ManyToManyField(Course)
 
+
 class Complete(models.Model):
     """
     @Complete  holds classes that a specific user has completed,
@@ -195,6 +208,7 @@ class Complete(models.Model):
     """
     complete_user = models.ForeignKey(User, on_delete=models.CASCADE)
     complete_courses = models.ManyToManyField(Course)
+
 
 class UserPreferences(models.Model):
     """
