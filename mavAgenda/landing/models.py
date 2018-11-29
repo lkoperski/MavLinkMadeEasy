@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Degree(models.Model):
     """
     @Degree holds the degree a user would have, this includes the
@@ -40,6 +41,7 @@ class Degree(models.Model):
     degree_track = models.CharField(max_length=50, choices=TRACK_CHOICE, default=CSCI)
     degree_users = models.ManyToManyField(User)
 
+
 class Requirement(models.Model):
     """
     @Requirement holds the required classes for a specific degree, this includes the
@@ -49,6 +51,7 @@ class Requirement(models.Model):
     req_name = models.CharField(max_length=50)
     req_credits = models.IntegerField()
     req_degrees = models.ManyToManyField(Degree)
+
 
 class Course(models.Model):
     """
@@ -91,6 +94,7 @@ class Course(models.Model):
     course_comment = models.CharField(max_length=200, blank=True)
     course_requirements = models.ManyToManyField(Requirement)
 
+
 class Campus(models.Model):
     """
     @Campus holds where classes are held, this includes the
@@ -109,6 +113,7 @@ class Campus(models.Model):
     )
     campus_name = models.CharField(max_length=30, choices=SPECIAL_TYPE_CHOICE, default=None)
 
+
 class Building(models.Model):
     """
     @Campus holds where classes are held, this includes the
@@ -119,6 +124,7 @@ class Building(models.Model):
     building_roomNumber = models.CharField(max_length=8)
     building_campus = models.ManyToManyField(Campus)
 
+
 class Instructor(models.Model):
     """
     @Instructor holds what teachers teach a class, this includes the
@@ -127,6 +133,7 @@ class Instructor(models.Model):
     """
     instructor_firstName = models.CharField(max_length=20)
     instructor_lastName = models.CharField(max_length=30)
+
 
 class Weekday(models.Model):
     """
@@ -165,9 +172,10 @@ class Offering(models.Model):
     offering_sectionNum = models.IntegerField()
     offering_instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
 
+
 class Prereq(models.Model):
     """
-    @Prereq  holds classes that are prerequisites to other classes,
+    @Prereq  holds conditions that are prerequisites to other classes,
             this includes the type (i.e Corequisite or Prerequisite) and a foreign key reference
             back to the Course table.
     """
@@ -178,7 +186,17 @@ class Prereq(models.Model):
         (P, "Prerequisite"),
     )
     prereq_type = models.CharField(max_length=20, choices=REQ_CHOICE, null=True)
-    prereq_courses = models.ManyToManyField(Course)
+    prereq_course = models.ManyToManyField(Course)
+
+
+class PrereqCourse(models.Model):
+    """
+    @PrereqCourse  holds classes that are viable condition fulfilling options (prereq classes),
+            referring to the Course object itself
+    """
+    prereqcourse_prereqs = models.ManyToManyField(Prereq)
+    prereqcourse_course = models.ManyToManyField(Course)
+
 
 class Complete(models.Model):
     """
@@ -187,6 +205,7 @@ class Complete(models.Model):
     """
     complete_user = models.ForeignKey(User, on_delete=models.CASCADE)
     complete_courses = models.ManyToManyField(Course)
+
 
 class UserPreferences(models.Model):
     """

@@ -436,57 +436,86 @@ class YourTestClass(TestCase):
         flag = True
         testCase = emailFound("cdog@test")
         self.assertTrue(flag == testCase)
-# '''
-# @saveClassesToUser updates database with a list of the user has taken
-# @param classesChecked: list of courses the user specified as having taken
-# @param uID: pk of the associated active user
+
+    # '''
+    # @saveClassesToUser updates database with a list of the user has taken
+    # @param classesChecked: list of courses the user specified as having taken
+    # @param uID: pk of the associated active user
+    # '''
+    #   def saveClassesToUser(classesChecked, uID):
+    # u = User.objects.get(pk=uID)
+    # if u in Complete.objects.all():
+    # completed = Complete.objects.get(user_id=u)
+    # else:
+    # completed = Complete(user=u)
+    # completed.save()
+    # for cc in classesChecked:
+    # c = Course.objects.get(num=cc)
+    # completed.complete.add(c)
+    # completed.save()
+    # def test_saveClassesToUser(self):
+    # email = "cdog@test"
+    # p = "secure"
+    # testUser = User(username = email, password = p)
+    # testUser.save()
+
+    # '''
+    # @removeUserCompletedEntries updates database to remove courses completed from a particular user
+    # @param uID: pk of the associated active user
+    # '''
+    #    def removeUserCompletedEnteries(uID):
+
+    ########################################################################################################################
+    ########################################################################################################################
+
+    # '''
+    # @createuser send a request to render the createuser.html page
+    # @param request: generates the response
+    # '''
+    #   def createuser(request):
+
+    # @selectcourses send a request to render the selectcourses.html page
+    # @param request: generates the response
+    # @param pk: primary key corresponding to active user
+    # '''
+    #   def selectcourses(request, pk):
+
+    # @removeUserCompletedEnteries updates database to remove courses completed from a particular user
+    # @param uID: pk of the associated active user
+    # '''
+    #   def removeUserCompletedEnteries(uID):
+    def test_removeUserCompletedEnteries(self):
+        email = "cdog@test"
+        p = "secure"
+        testUser = User(username=email, password=p)
+        testUser.save()
+        newTestUser = User.objects.filter(username="cdog@test")
+
+        # next ... lines create data to be called upon by Complete.objects.all()
+        completed = Complete(user=newTestUser)
+        completed.save()
+
+# def removeUserCompletedEnteries(uID):
+#    u = User.objects.get(pk=uID)
+#    completedTable = Complete.objects.all()
+#    for ce in completedTable:
+#        if ce.complete_user == u:
+#            ce.delete()
+
+
+# @saveClassesToUser ...description...
+# @param classesChecked:	...description...
+# @param uID:	...description...
 # '''
 #   def saveClassesToUser(classesChecked, uID):
-# u = User.objects.get(pk=uID)
-# if u in Complete.objects.all():
-# completed = Complete.objects.get(user_id=u)
-# else:
-# completed = Complete(user=u)
-# completed.save()
-# for cc in classesChecked:
-# c = Course.objects.get(num=cc)
-# completed.complete.add(c)
-# completed.save()
 # def test_saveClassesToUser(self):
-# email = "cdog@test"
-# p = "secure"
-# testUser = User(username = email, password = p)
-# testUser.save()
 
 
+# @generateCheckBoxEntities ...description...
+# @param uID:	...description...
 # '''
-# @removeUserCompletedEntries updates database to remove courses completed from a particular user
-# @param uID: pk of the associated active user
-# '''
-#    def removeUserCompletedEnteries(uID):
-
-
-########################################################################################################################
-########################################################################################################################
-
-# '''
-# @login send a request to render the login.html page
-# @param request: generates the response
-# '''
-#   def login(request):
-
-
-# '''
-# @createuser send a request to render the createuser.html page
-# @param request: generates the response
-# '''
-#   def createuser(request):
-
-# @selectcourses send a request to render the selectcourses.html page
-# @param request: generates the response
-# @param pk: primary key corresponding to active user
-# '''
-#   def selectcourses(request, pk):
+#   def generateCheckBoxEntities(uID):
+# def test_generateCheckBoxEntities(self):
 
 
 # '''
@@ -495,3 +524,10 @@ class YourTestClass(TestCase):
 # @param pk: primary key corresponding to active user
 # '''
 #   def schedule(request, pk):
+
+
+# '''
+# @login send a request to render the login.html page
+# @param request: generates the response
+# '''
+#   def login(request):

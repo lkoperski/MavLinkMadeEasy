@@ -1,23 +1,26 @@
 import os
-import sys
+from mavAgenda.settings import BASE_DIR
 import csv
 import re
 import django
 
-sys.path.insert(0, "C:\\Users\\ekbuc\\PycharmProjects\\MavLinkMadeEasy\\mavAgenda\\landing")
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mavAgenda.settings")
 django.setup()
 
 from landing.models import *
 
 # hard-coded file paths
-course_path = "C:\\Users\\ekbuc\\Desktop\\Class List for Capstone v2.csv"
-credits_path = "C:\\Users\\ekbuc\\Desktop\\Course Credits.csv"
-reqs_path = "C:\\Users\\ekbuc\\Desktop\\Course Requirements.csv"
+course_path = '\\landing\\degreeData\\Class List.csv'
+credits_path = '\\landing\\degreeData\\Course Credits.csv'
+reqs_path = '\\landing\\degreeData\\Course Requirements.csv'
 
 '''
 dictionary of buildings to campuses
 '''
+
+degrees = {
+    'Computer Science'
+}
 
 buildings_to_campuses = {
     'HPER': 'N',
@@ -153,7 +156,7 @@ def read_csvs():
 
 
 def read_course_csv():
-    with open(course_path) as f:
+    with open(BASE_DIR + course_path) as f:
         reader = csv.reader(f)
         semester = 'A'
 
@@ -218,6 +221,7 @@ def read_course_csv():
                 l = Building(building_name=building, building_roomNumber=roomNumber)
                 l.save()
                 l.building_campus.set(campus)
+                l.save()
             else:
                 l = location[0]
 
@@ -266,7 +270,7 @@ def read_course_csv():
 
 
 def read_credit_csv():
-    with open(credits_path) as f:
+    with open(BASE_DIR + credits_path) as f:
         reader = csv.reader(f)
         next(f)
         for row in reader:
@@ -280,21 +284,57 @@ def read_credit_csv():
 
 
 def read_reqs_csv():
-    with open(reqs_path) as f:
-        print(course_id_to_course)
+    with open(BASE_DIR + reqs_path) as f:
+        #print(course_id_to_course)
         reader = csv.reader(f)
         next(f)
+
         for row in reader:
             if row[5] == 'CRSE':
-                if row[0].lstrip('0') in course_id_to_course:
+                if row[0].lstrip('0') in course_id_to_course and row[17].lstrip('0') in course_id_to_course:
                     subject = course_id_to_course[row[0].lstrip('0')]['subject']
                     num = course_id_to_course[row[0].lstrip('0')]['num']
                     course = Course.objects.filter(course_subject=subject, course_num=num)
-                    prereq = Prereq(
-                        prereq_type=row[8][0],
-                    )
-                    prereq.save()
-                    prereq.prereq_courses.set(course)
-                    prereq.save()
+
+                    if row[26] == 'OR':
+                        # check if prereq object already exists for prereq course
+                        prec = PrereqCourse.objects.filter(prereqcourse_prereqs=prereq.pk)
+                        if not prec:
+                            prereq = Prereq(
+                                prereq_type=row[8][0],
+                            )
+                            prereq.save()
+                            prereq.prereq_course.set(course)
+                            prereq.save()
+
+                        subject = course_id_to_course[row[17].lstrip('0')]['subject']
+                        num = course_id_to_course[row[17].lstrip('0')]['num']
+                        p = Course.objects.filter(course_subject=subject, course_num=num)
+
+                        # generate the new prereqcourse
+                        prereqcourse = PrereqCourse()
+                        prereqcourse.save()
+                        prereqcourse.prereqcourse_prereqs.add(prereq)
+                        prereqcourse.prereqcourse_course.add(p[0])
+                        prereqcourse.save()
+
+                    else:
+                        if row[17].lstrip('0') in course_id_to_course:
+                            prereq = Prereq(
+                                prereq_type=row[8][0],
+                            )
+                            prereq.save()
+                            prereq.prereq_course.set(course)
+                            prereq.save()
+
+                            subject = course_id_to_course[row[17].lstrip('0')]['subject']
+                            num = course_id_to_course[row[17].lstrip('0')]['num']
+                            p = Course.objects.filter(course_subject=subject, course_num=num)
+
+                            prereqcourse = PrereqCourse()
+                            prereqcourse.save()
+                            prereqcourse.prereqcourse_prereqs.add(prereq)
+                            prereqcourse.prereqcourse_course.add(p[0])
+                            prereqcourse.save()
 
         f.close()
