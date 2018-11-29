@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c6a63500-b22f-4d8b-ae80-cbe995352251" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mavAgenda/landing/degreeData/Course Credits.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mavAgenda/landing/degreeData/Course Credits.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/CSVPreprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/CSVPreprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/degreeData/Class List.csv" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/degreeData/Class List.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/degreeData/Course Requirements.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/tests/test_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/tests/test_logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/matriculationProcessing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/matriculationProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/DegreeRequirementsPreprocessing.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1367255970">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="csv" value="6" />
+          <entry key="gitignore" value="2" />
+          <entry key="html" value="2" />
+          <entry key="py" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSV" value="5" />
+          <entry key="HTML" value="2" />
+          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="Python" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gitignore" value="41" />
+          <entry key="py" value="1923" />
+          <entry key="txt" value="357" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="398" />
+          <entry key="Python" value="1923" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.remote" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/CSVPreprocessing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="289" selection-start-line="289" selection-end-line="289" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/DegreeRequirementsPreprocessing.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/tests/test_logic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="495" column="8" selection-start-line="495" selection-start-column="8" selection-end-line="495" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/manage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/mavAgenda/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="71" selection-start-line="11" selection-start-column="71" selection-end-line="11" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1292">
+              <caret line="76" column="38" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getCour</find>
+      <find>generateC</find>
+      <find>Course</find>
+      <find>create</find>
+      <find>getCourses</find>
+      <find>createSch</find>
+      <find>total</find>
+      <find>createschedule</find>
+      <find>checkcoursevalid</find>
+      <find>c</find>
+      <find>remove</find>
+      <find>Prereq</find>
+      <find>showMajor</find>
+      <find>generate</find>
+      <find>generateDiplo</find>
+      <find>getDe</find>
+      <find>getDegree</find>
+      <find>email</find>
+      <find>Add a m</find>
+      <find>getUser</find>
+      <find>DegreeR</find>
+      <find>ManyTo</find>
+      <find>null</find>
+      <find>generateY</find>
+      <find>datetime</find>
+      <find>Summin</find>
+      <find>getDegreeReq</find>
+      <find>set</find>
+      <find>print</find>
+      <find>PRereq</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="emma-m2" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/schedule.html" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/tests/test_UI.py" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/usersettings.html" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/base.html" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html" />
+        <option value="$PROJECT_DIR$/mavAgenda/static/landing/css/style.css" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/admin.py" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/urls.py" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/nextsemesterpreferences.html" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/forms.py" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/apps.py" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/views.py" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/selectcourses.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/mavAgenda/matriculationProcessing.py" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/tests/test_logic.py" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/models.py" />
+        <option value="$PROJECT_DIR$/mavAgenda/CSVPreprocessing.py" />
+        <option value="$PROJECT_DIR$/mavAgenda/DegreeRequirementsPreprocessing.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1905" />
+    <option name="width" value="1950" />
+    <option name="height" value="2075" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
+              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
+              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
+              <item name="landing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
+              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
+              <item name="landing" type="462c0819:PsiDirectoryNode" />
+              <item name="degreeData" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs.jest.jest_package" value="" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ekbuc\PycharmProjects\MavLinkMadeEasy\mavAgenda\landing\degreeData" />
+      <recent name="C:\Users\ekbuc\PycharmProjects\MavLinkMadeEasy\mavAgenda\landing\tests" />
+      <recent name="C:\Users\ekbuc\PycharmProjects\MavLinkMadeEasy\mavAgenda\csvs" />
+      <recent name="C:\Users\ekbuc\PycharmProjects\MavLinkMadeEasy\mavAgenda" />
+      <recent name="C:\Users\lauren\PycharmProjects\MavLinkMadeEasy\mavAgenda\landing\degreeData" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ekbuc\PycharmProjects\MavLinkMadeEasy\mavAgenda\landing\degreeData" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.CSVPreprocessing">
+    <configuration name="CSVPreprocessing" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MavLinkMadeEasy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mavAgenda" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mavAgenda/CSVPreprocessing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MavLinkMadeEasy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mavAgenda/landing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mavAgenda/landing/models.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.models" />
+      <item itemvalue="Python.CSVPreprocessing" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.CSVPreprocessing" />
+        <item itemvalue="Python.models" />
+        <item itemvalue="Python.models" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6a63500-b22f-4d8b-ae80-cbe995352251" name="Default" comment="" />
+      <created>1532476234034</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532476234034</updated>
+    </task>
+    <task id="LOCAL-00002" summary="updated major drop down to account for spaces in value tag">
+      <created>1532483365454</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1532483365454</updated>
+    </task>
+    <task id="LOCAL-00003" summary="provided additional functions for selectcourses checkbox logic">
+      <created>1532484892820</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1532484892820</updated>
+    </task>
+    <task id="LOCAL-00004" summary="select courses now has dynamic check boxes yay!">
+      <created>1532485614709</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1532485614709</updated>
+    </task>
+    <task id="LOCAL-00005" summary="figure out how to save the classes marked as completed to Complete">
+      <created>1532486442072</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1532486442072</updated>
+    </task>
+    <task id="LOCAL-00006" summary="attempt to figure out what's going on with saveClassesToUser - Katie">
+      <created>1532652523364</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1532652523364</updated>
+    </task>
+    <task id="LOCAL-00007" summary="updated doxygen documentation folder; updated save courses to user">
+      <created>1533077569017</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1533077569017</updated>
+    </task>
+    <task id="LOCAL-00008" summary="updated doxygen documentation folder">
+      <created>1533077643270</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1533077643270</updated>
+    </task>
+    <task id="LOCAL-00009" summary="strong basis for schedule page! yay!!!!">
+      <created>1533328313316</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1533328313316</updated>
+    </task>
+    <task id="LOCAL-00010" summary="updated to account for update in classes completed">
+      <created>1533396136050</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1533396136050</updated>
+    </task>
+    <task id="LOCAL-00011" summary="correct link for schedule -&gt; selectcourses; template for major">
+      <created>1533396983806</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1533396983806</updated>
+    </task>
+    <task id="LOCAL-00012" summary="updated scheduling logic (still broken), updated CSS for login pg">
+      <created>1533484021247</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1533484021247</updated>
+    </task>
+    <task id="LOCAL-00013" summary="better version of schedule algorithm (limit loop)">
+      <created>1533600314309</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1533600314309</updated>
+    </task>
+    <task id="LOCAL-00014" summary="determine Req credit quota logic for scheduling">
+      <created>1533646505864</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1533646505864</updated>
+    </task>
+    <task id="LOCAL-00015" summary="accounting for non-req-specific courses needed in schedule">
+      <created>1533649179907</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1533649179907</updated>
+    </task>
+    <task id="LOCAL-00016" summary="updated db for reqs and applied tracking to reqs">
+      <created>1533652964029</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1533652964029</updated>
+    </task>
+    <task id="LOCAL-00017" summary="clean up some of the printing/extraneous work in the logic">
+      <created>1533653304216</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1533653304216</updated>
+    </task>
+    <task id="LOCAL-00018" summary="eliminate blank semester at end of schedule">
+      <created>1533653885666</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1533653885666</updated>
+    </task>
+    <task id="LOCAL-00019" summary="update so prereqs for course and course aren't concurrent">
+      <created>1533654334113</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1533654334113</updated>
+    </task>
+    <task id="LOCAL-00020" summary="update test suite, provide test for new checkPrereqsMet signature">
+      <created>1533681707906</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1533681707906</updated>
+    </task>
+    <task id="LOCAL-00021" summary="update checkPrereqsMetTest">
+      <created>1533681867991</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1533681867991</updated>
+    </task>
+    <task id="LOCAL-00022" summary="remove unnecessary imports">
+      <created>1533681949364</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1533681949364</updated>
+    </task>
+    <task id="LOCAL-00023" summary="get UI tests working again :)">
+      <created>1533696597654</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1533696597654</updated>
+    </task>
+    <task id="LOCAL-00024" summary="pushing lauren-dev to master">
+      <created>1534877736017</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1534877736017</updated>
+    </task>
+    <task id="LOCAL-00025" summary="update page footer to point to Lauren's github repo">
+      <created>1535048445610</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1535048445610</updated>
+    </task>
+    <task id="LOCAL-00026" summary="create add major button - only partially working">
+      <created>1537470384114</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1537470384114</updated>
+    </task>
+    <task id="LOCAL-00027" summary="second draft of db - attempting to address bugs">
+      <created>1538076533617</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1538076533617</updated>
+    </task>
+    <task id="LOCAL-00028" summary="working on connecting UI for createuser to db">
+      <created>1538276326274</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1538276326274</updated>
+    </task>
+    <task id="LOCAL-00029" summary="create user object upon createuser - still need to associate degree">
+      <created>1538502032603</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1538502032603</updated>
+    </task>
+    <task id="LOCAL-00030" summary="correct flow for login -&gt; createuser">
+      <created>1538507448598</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1538507448598</updated>
+    </task>
+    <task id="LOCAL-00031" summary="updated login page to have email box and added CSS">
+      <created>1538509729766</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1538509729766</updated>
+    </task>
+    <task id="LOCAL-00032" summary="updated login page to have email box and added CSS">
+      <created>1538511315953</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1538511315953</updated>
+    </task>
+    <task id="LOCAL-00033" summary="updated login page to have email box and added CSS">
+      <created>1538511528690</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1538511528690</updated>
+    </task>
+    <task id="LOCAL-00034" summary="db sync happened">
+      <created>1538511822894</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1538511822894</updated>
+    </task>
+    <task id="LOCAL-00035" summary="allows for multiple major, minors, concentrations associated to user">
+      <created>1538796073045</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1538796073045</updated>
+    </task>
+    <task id="LOCAL-00036" summary="code cleanup from saving degrees">
+      <created>1538796558653</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1538796558653</updated>
+    </task>
+    <task id="LOCAL-00037" summary="associate a user to user preferences">
+      <created>1539032729193</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1539032729193</updated>
+    </task>
+    <task id="LOCAL-00038" summary="update logic for if user email already taken">
+      <created>1539050129822</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1539050129822</updated>
+    </task>
+    <task id="LOCAL-00039" summary="combine Coltin's test coverage for updated logic">
+      <created>1539117497697</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1539117497698</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Update CSS for create user page buttons">
+      <created>1539283611479</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1539283611479</updated>
+    </task>
+    <task id="LOCAL-00041" summary="added data from registrar's office to the project">
+      <created>1539877556796</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1539877556796</updated>
+    </task>
+    <task id="LOCAL-00042" summary="update database models for additional future functionality :)">
+      <created>1540316090070</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1540316090070</updated>
+    </task>
+    <task id="LOCAL-00043" summary="update database models for additional future functionality :)">
+      <created>1540316404277</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1540316404277</updated>
+    </task>
+    <task id="LOCAL-00044" summary="update database models for additional future functionality :)">
+      <created>1540316640662</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1540316640662</updated>
+    </task>
+    <task id="LOCAL-00045" summary="added view for next semester preferences">
+      <created>1540324215508</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1540324215508</updated>
+    </task>
+    <task id="LOCAL-00046" summary="updated year for next semester prefs and save user's next sem prefs">
+      <created>1540338329609</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1540338329609</updated>
+    </task>
+    <task id="LOCAL-00047" summary="update comments for doxygen">
+      <created>1541299004658</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1541299004658</updated>
+    </task>
+    <task id="LOCAL-00048" summary="potential first render of selectcourses complete">
+      <created>1541306585366</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1541306585366</updated>
+    </task>
+    <task id="LOCAL-00049" summary="add remote to Campuses">
+      <created>1541535518035</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1541535518035</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Course CSVs added to project, matriculationProcessing initialized, gitignore includes workspace.xml">
+      <created>1542311566562</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1542311566562</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990476" visible="true" weight="0.15852048" />
+      <window_info id="Structure" order="1" sideWeight="0.50095236" side_tool="true" weight="0.15852048" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32904148" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32904148" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986577" weight="0.3286119" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32904148" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49530202" visible="true" weight="0.25637394" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.504698" side_tool="true" weight="0.2746781" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22214764" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986577" weight="0.3298969" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32935917" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.4138439" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5033557" side_tool="true" weight="0.2827688" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="get UI tests working again :)" />
+    <MESSAGE value="pushing lauren-dev to master" />
+    <MESSAGE value="update page footer to point to Lauren's github repo" />
+    <MESSAGE value="create add major button - only partially working" />
+    <MESSAGE value="second draft of db - attempting to address bugs" />
+    <MESSAGE value="working on connecting UI for createuser to db" />
+    <MESSAGE value="create user object upon createuser - still need to associate degree" />
+    <MESSAGE value="correct flow for login -&gt; createuser" />
+    <MESSAGE value="updated login page to have email box and added CSS" />
+    <MESSAGE value="db sync happened" />
+    <MESSAGE value="allows for multiple major, minors, concentrations associated to user" />
+    <MESSAGE value="code cleanup from saving degrees" />
+    <MESSAGE value="associate a user to user preferences" />
+    <MESSAGE value="update logic for if user email already taken" />
+    <MESSAGE value="combine Coltin's test coverage for updated logic" />
+    <MESSAGE value="Update CSS for create user page buttons" />
+    <MESSAGE value="added data from registrar's office to the project" />
+    <MESSAGE value="update database models for additional future functionality :)" />
+    <MESSAGE value="added view for next semester preferences" />
+    <MESSAGE value="updated year for next semester prefs and save user's next sem prefs" />
+    <MESSAGE value="update comments for doxygen" />
+    <MESSAGE value="potential first render of selectcourses complete" />
+    <MESSAGE value="add remote to Campuses" />
+    <MESSAGE value="Course CSVs added to project, matriculationProcessing initialized, gitignore includes workspace.xml" />
+    <MESSAGE value="Prereq and PrereqCourse models changed, PrereqCourses relates to Prereq objects, and CSVPreprocessing prereq input is changed to match. CSVs read from the project, not locally." />
+    <option name="LAST_COMMIT_MESSAGE" value="Prereq and PrereqCourse models changed, PrereqCourses relates to Prereq objects, and CSVPreprocessing prereq input is changed to match. CSVs read from the project, not locally." />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/django/urls/resolvers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="635" selection-start-line="635" selection-end-line="635" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/django/db/models/query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6511">
+          <caret line="406" column="47" selection-start-line="406" selection-start-column="47" selection-end-line="406" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/usersettings.html" />
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/tests/test_UI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="54" column="54" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/django/contrib/admin/sites.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="107" column="23" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/django/forms/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="265" selection-start-line="265" selection-end-line="265" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/schedule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/mavAgenda/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/django/db/models/fields/related_descriptors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="941" column="54" selection-start-line="941" selection-start-column="54" selection-end-line="941" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/test_logic.py" />
+    <entry file="file://$PROJECT_DIR$/mavAgenda/mavAgenda/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/django/db/backends/sqlite3/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5202">
+          <caret line="306" column="33" selection-start-line="306" selection-start-column="33" selection-end-line="306" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/nextsemesterpreferences.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/cleanup.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/static/landing/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="142" column="9" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/selectcourses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/matriculationProcessing.py" />
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/degreeData/Course Requirements.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/degreeData/Class List.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/mavAgenda/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="71" selection-start-line="11" selection-start-column="71" selection-end-line="11" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="76" column="38" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/degreeData/Course Credits.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/tests/test_logic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="495" column="8" selection-start-line="495" selection-start-column="8" selection-end-line="495" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/CSVPreprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="289" selection-start-line="289" selection-end-line="289" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/DegreeRequirementsPreprocessing.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>
