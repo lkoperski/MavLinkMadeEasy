@@ -240,18 +240,26 @@ def getDegreeReqs(degrees):
                 requirements.append(r)
     return requirements
 
-def getReqCourses(req):
+def getReqCourses(reqs):
     '''
-    @getReqCourses returns a list of courses for all requireements related to a degree a user has selected
+    @getReqCourses returns a list of courses (enforced and non-enforced) for a requirements related to a degree a user has selected
     @param reqs: a list of requirements associated with the user's desired degree
     '''
-    courses = []
+    cats = []
+    for r in reqs:
+        cats.append([r.id, r.req_name, r.req_credits, []])
     for c in Course.objects.all():
-        rSet = c.course_requirements.all()
-        for r in rSet:
-            if r.id is req.id and c not in courses:
-                courses.append(c)
-    return courses
+        enforced = c.course_enforced_for.all()
+        elective = c.course_counts_toward.all()
+        for t in cats:
+            for en in enforced:
+                if en.req_name == t[1]:
+                    t[3].append([c.id, c.course_subject, c.course_num, c.course_name, c.course_credits, 'EN'])
+        for s in cats:
+            for el in elective:
+                if el.req_name == s[1]:
+                    s[3].append( [c.id, c.course_subject, c.course_num, c.course_name, c.course_credits, 'EL'])
+    return cats
 
 def getCoursePrereqs(course):
     '''
@@ -278,20 +286,9 @@ def generateCheckBoxEntities(uID):
     '''
     degrees = Degree.objects.filter(degree_users=uID)
     reqs = getDegreeReqs(degrees)
-    checkBoxEntities = []
-    for r in reqs:
-        reqID = r.id
-        reqName = r.req_name
-        reqCredits = r.req_credits
-        catalog = getReqCourses(r)
-        courseList = []
-        for c in catalog:
-            number = c.course_num
-            subject = c.course_subject
-            name = c.course_name
-            creds = c.course_credits
-            courseList.append([subject,number,name,creds])
-        checkBoxEntities.append([reqID, reqName, reqCredits, courseList])
+    checkBoxEntities = getReqCourses(reqs)
+    for cb in checkBoxEntities:
+        print( cb )
     return checkBoxEntities
 
 def generateMajorDD():
