@@ -160,16 +160,8 @@ def isFull(courseList):
         full = True
     return full
 
-def createSchedule(uID):
-    '''
-    @createSchedule generates semester-by-semester schedule for User's needed Courses according to Degree
-    @param uID: primary key associated with active user
-    '''
-    loopCount = 0
-    maxLoopCount = 35
-    reqTracker = [] #used to track if Req credit quotas have been met
-    reqClasses = getCoursesForUser(uID)
-    requiredClasses = translateCourseInfoToCourse(reqClasses)
+def setupReqTracker(uID):
+    reqTracker = []
     reqs = getDegreeReqs(Degree.objects.filter(degree_users=uID))
     for r in reqs:
         reqID = r.id
@@ -177,6 +169,18 @@ def createSchedule(uID):
         reqCredits = r.req_credits
         reqStart = 0
         reqTracker.append([reqID, reqName, reqCredits, reqStart])
+    return reqTracker
+
+def createSchedule(uID):
+    '''
+    @createSchedule generates semester-by-semester schedule for User's needed Courses according to Degree
+    @param uID: primary key associated with active user
+    '''
+    #loopCount = 0
+    #maxLoopCount = 35
+    reqTracker = setupReqTracker(uID)  # used to track if Req credit quotas have been met
+    reqCourses = getCoursesForUser(uID)
+    requiredClasses = translateCourseInfoToCourse(reqCourses)
     classesTaken = getCompletedByUser(uID)
     neededClasses = removeCoursesTaken( requiredClasses, classesTaken )
     schedule = []
