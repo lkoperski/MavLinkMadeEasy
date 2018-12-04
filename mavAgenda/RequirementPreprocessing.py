@@ -39,23 +39,29 @@ gen_ed_requirements = {
 #####################
 # Gen Ed Requirements
 #####################
+
+# only add us div, math, and public speaking as requirements on all degrees
 d = Degree.objects.all()
 for gen_ed in gen_ed_requirements.items():
     r = Requirement(req_name=gen_ed[0], req_credits=gen_ed[1]['credit'])
     r.save()
-    r.req_degrees.set(d)
-    r.save()
+    if r.req_name == 'US Diversity' or r.req_name == 'Mathematics' or r.req_name == 'Public Speaking':
+        r.req_degrees.set(d)
+        r.save()
 
 ####################
 # Computer Science
 ####################
 
 compsci_maj_requirements = {
+    'English Composition': {
+        'credit': 9
+    },
     'Humanities': {
-        'credit': 3
+        'credit': 9
     },
     'Social Science': {
-        'credit': 3
+        'credit': 9
     },
     'IS&T Core': {
         'credit': 18
@@ -119,6 +125,13 @@ for req in compsci_maj_requirements.items():
     r.req_degrees.set(csci)
     r.save()
 
+r = Requirement.objects.filter(req_name="Natural/Physical Science", req_credits=7)
+r[0].req_degrees.add(csci[0])
+r[0].save()
+r = Requirement.objects.filter(req_name="Global Diversity", req_credits=3)
+r[0].req_degrees.add(csci[0])
+r[0].save()
+
 # Minor
 csci = Degree.objects.filter(degree_diploma='BS', degree_type='MIN', degree_track='CSCI')
 for req in compsci_min_requirements.items():
@@ -142,11 +155,14 @@ for req in compsci_con_requirements.items():
 ################################
 
 mis_maj_requirements = {
+    'English Composition': {
+        'credit': 9
+    },
     'Humanities': {
-        'credit': 3
+        'credit': 9
     },
     'Social Science': {
-        'credit': 3
+        'credit': 9
     },
     'Global Diversity': {
         'credit': 3
@@ -258,6 +274,10 @@ for req in mis_maj_requirements.items():
     r.req_degrees.set(mis)
     r.save()
 
+r = Requirement.objects.filter(req_name="Natural/Physical Science", req_credits=7)
+r[0].req_degrees.add(mis[0])
+r[0].save()
+
 # Minor
 mis = Degree.objects.filter(degree_diploma='BS', degree_type='MIN', degree_track='MIS')
 for req in mis_min_requirements.items():
@@ -289,8 +309,11 @@ for req in mis_cert_requirements.items():
 ####################
 
 bioi_maj_requirements = {
+    'English Composition': {
+        'credit': 9
+    },
     'Humanities': {
-        'credit': 3
+        'credit': 9
     },
     'Natural/Physical Science': {
         'credit': 7
@@ -327,16 +350,26 @@ for req in bioi_maj_requirements.items():
     r.req_degrees.set(bioi)
     r.save()
 
+r = Requirement.objects.filter(req_name="Social Science", req_credits=9)
+r[0].req_degrees.add(bioi[0])
+r[0].save()
+r = Requirement.objects.filter(req_name="Global Diversity", req_credits=3)
+r[0].req_degrees.add(bioi[0])
+r[0].save()
+
 ####################
 # Cyber Security
 ####################
 
 cybr_maj_requirements = {
+    'English Composition': {
+        'credit': 9
+    },
     'Humanities': {
-        'credit': 3
+        'credit': 9
     },
     'Social Science': {
-        'credit': 6
+        'credit': 9
     },
     'Global Diversity': {
         'credit': 3
@@ -388,6 +421,10 @@ for req in cybr_maj_requirements.items():
     r.req_degrees.set(cybr)
     r.save()
 
+r = Requirement.objects.filter(req_name="Natural/Physical Science", req_credits=7)
+r[0].req_degrees.add(cybr[0])
+r[0].save()
+
 # Minor
 mis = Degree.objects.filter(degree_diploma='BS', degree_type='MIN', degree_track='CYBR')
 for req in cybr_min_requirements.items():
@@ -401,11 +438,14 @@ for req in cybr_min_requirements.items():
 ####################
 
 itin_maj_requirements = {
+    'English Composition': {
+        'credit': 9
+    },
     'Humanities': {
-        'credit': 3
+        'credit': 9
     },
     'Social Science': {
-        'credit': 3
+        'credit': 9
     },
     'Global Diversity': {
         'credit': 3
@@ -441,6 +481,10 @@ for req in itin_maj_requirements.items():
     r.save()
     r.req_degrees.set(itin)
     r.save()
+
+r = Requirement.objects.filter(req_name="Natural/Physical Science", req_credits=7)
+r[0].req_degrees.add(itin[0])
+r[0].save()
 
 # Minor
 itin = Degree.objects.filter(degree_diploma='BS', degree_type='MIN', degree_track='ITIN')
