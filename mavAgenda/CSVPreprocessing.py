@@ -18,10 +18,6 @@ reqs_path = '\\landing\\degreeData\\Course Requirements.csv'
 dictionary of buildings to campuses
 '''
 
-degrees = {
-    'Computer Science'
-}
-
 buildings_to_campuses = {
     'HPER': 'N',
     'HPERTBA': 'N',

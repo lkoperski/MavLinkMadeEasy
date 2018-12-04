@@ -95,7 +95,8 @@ class Course(models.Model):
     )
     course_special = models.CharField(max_length=15, choices=SPECIAL_TYPE_CHOICE, default=None)
     course_comment = models.CharField(max_length=200, blank=True)
-    course_requirements = models.ManyToManyField(Requirement)
+    course_enforced_for = models.ManyToManyField(Requirement, related_name='enforced_for')
+    course_counts_toward = models.ManyToManyField(Requirement, related_name='counted_toward')
 
 
 class Campus(models.Model):
