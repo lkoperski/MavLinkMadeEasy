@@ -146,19 +146,6 @@ def generateNewSemester(semester):
     semester[2] = []
     return semester
 
-def isFull(courseList):
-    '''
-    @isFull determines if a semester has hit the maximum number of credits allowable
-    @param courseList: list of Course (objects) the user is scheduled to take during current semester
-    '''
-    full = False
-    totalCredits = 0
-    for c in courseList:
-        totalCredits += c[1]
-    if totalCredits >= 12 and totalCredits <= 16:
-        full = True
-    return full
-
 def setupReqTracker(uID):
     '''
     @setupReqTracker sets up a list of requirements and progress tracking values (i.e., credits needed)
@@ -297,15 +284,25 @@ def createSchedule(uID):
     updateReqTrackerForCompletedCourses(completedCourses, reqTracker)
     loopCount = 0
     while not checkReqsMet(reqTracker) and loopCount < 10:
-        for en in enforcedCourses:
-            if courseValid( en, completedCourses, semesterCourses, ssf):
-                semesterCourses.append(en)
-                semesterSchedule.append([en.course_subject + " " + en.course_num + " " + en.course_name, en.course_credits])
-                completedCourses.append(en)
-                enforcedCourses.remove(en)
-                countCourseTowardReqs(en, reqTracker)
-            if prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)):
-                 break
+        if enforcedCourses != []:
+            for en in enforcedCourses:
+                if courseValid( en, completedCourses, semesterCourses, ssf):
+                    semesterCourses.append(en)
+                    semesterSchedule.append([en.course_subject + " " + en.course_num + " " + en.course_name, en.course_credits, 'EN'])
+                    completedCourses.append(en)
+                    enforcedCourses.remove(en)
+                    countCourseTowardReqs(en, reqTracker)
+                if prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)):
+                     break
+        if not prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)):
+            # use similar logic for the non-enforced classes... create dropdowns.. has to be done by requirement (to account for a req being fulfilled)
+            print("went through all the enforced classes, but there's still room in the semester for classes")
+        else:
+            print("the semester is full")
+            # schedule.append(semester[:])
+            # semester = generateNewSemester(semester)
+            # semesterCourses = []
+            # semesterSchedule = semester[2]
         loopCount+=1
     print( "schedule", schedule )
     return schedule

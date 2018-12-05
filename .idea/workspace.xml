@@ -33,8 +33,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="307" column="8" selection-start-line="307" selection-start-column="8" selection-end-line="307" selection-end-column="8" />
+                <state relative-caret-position="122">
+                  <caret line="297" column="151" selection-start-line="297" selection-start-column="151" selection-end-line="297" selection-end-column="151" />
                   <folding>
                     <element signature="e#0#54#0" expanded="true" />
                   </folding>
@@ -77,7 +77,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>show</find>
       <find>showminor</find>
       <find>row</find>
       <find>Summax</find>
@@ -107,6 +106,7 @@
       <find>schedule</find>
       <find>semester</find>
       <find>additional</find>
+      <find>isFul</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -551,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543984832091</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="logic to account for user credit number preferences">
+      <created>1543990533153</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1543990533153</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -627,7 +634,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update so prereqs for course and course aren't concurrent" />
     <MESSAGE value="update test suite, provide test for new checkPrereqsMet signature" />
     <MESSAGE value="update checkPrereqsMetTest" />
     <MESSAGE value="remove unnecessary imports" />
@@ -652,7 +658,8 @@
     <MESSAGE value="saving info before pulling data" />
     <MESSAGE value="update checkbox page to pull all the dataz" />
     <MESSAGE value="updates to scheduling logic - enforced and elective classes correct" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates to scheduling logic - enforced and elective classes correct" />
+    <MESSAGE value="logic to account for user credit number preferences" />
+    <option name="LAST_COMMIT_MESSAGE" value="logic to account for user credit number preferences" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -998,8 +1005,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="307" column="8" selection-start-line="307" selection-start-column="8" selection-end-line="307" selection-end-column="8" />
+        <state relative-caret-position="122">
+          <caret line="297" column="151" selection-start-line="297" selection-start-column="151" selection-end-line="297" selection-end-column="151" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
