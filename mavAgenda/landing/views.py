@@ -111,7 +111,7 @@ def checkOfferedSemester(course, ssf):
         offered = True
     return offered
 
-def checkCourseValid(course, classesTaken, semesterCourses, ssf): #checkCourseValid( nc, classesTaken, semesterCourses, ssfSemester )
+def courseValid(course, classesTaken, semesterCourses, ssf):
     '''
     @checkCourseValid determines if a given Course can be taken during a given semester
     @param course: the Course under test
@@ -161,6 +161,10 @@ def isFull(courseList):
     return full
 
 def setupReqTracker(uID):
+    '''
+    @setupReqTracker sets up a list of requirements and progress tracking values (i.e., credits needed)
+    @param uID: user ID of the user requesting the req tracker; needed to determine requirements needed
+    '''
     reqTracker = []
     reqs = getDegreeReqs(Degree.objects.filter(degree_users=uID))
     for r in reqs:
@@ -171,59 +175,111 @@ def setupReqTracker(uID):
         reqTracker.append([reqID, reqName, reqCredits, reqStart])
     return reqTracker
 
+def getEnforcedCourses(uID):
+    '''
+    @getEnforcedCourses gets a list of courses that are enforced by requirements for the user's degree
+    @param uID: user ID of the user requesting the enforced courses
+    '''
+    enCourses = []
+    reqs = getDegreeReqs(Degree.objects.filter(degree_users=uID))
+    for c in Course.objects.all():
+        enforcedFor = c.course_enforced_for.all()
+        for r in reqs:
+            for en in enforcedFor:
+                if en is r:
+                    enCourses.append(c)
+    return enCourses
+
+def getElectiveCourses(uID):
+    '''
+    @getEnforcedCourses gets a list of courses that are enforced by requirements for the user's degree
+    @param uID: user ID of the user requesting the enforced courses
+    '''
+    elCourses = []
+    reqs = getDegreeReqs(Degree.objects.filter(degree_users=uID))
+    for c in Course.objects.all():
+        countsToward = c.course_counts_toward.all()
+        for r in reqs:
+            for el in countsToward:
+                if el is r:
+                    elCourses.append(c)
+    return elCourses
+
+def setupSchedule(uID):
+    '''
+    @setupSchedule creates a template for generating an schedule
+    @param uID: user ID of the user requesting the schedule
+    '''
+    currentYear = UserPreferences.objects.get(id=uID).pref_nextYear
+    ssfSemester = UserPreferences.objects.get(id=uID).pref_nextSSF
+    semester = [ssfSemester, currentYear, []]
+    schedule = [semester]
+    return schedule
+
+def countCourseTowardReqs(course, reqTracker):
+    '''
+    @countCourseTowardReqs credits the user for courses fulfilling their necessary requirements
+    @param course: the course to be counted for credit
+    @param reqTracker: the array of requirements needed for the user's desired degree
+    '''
+    enforcedFor = course.course_enforced_for.all()
+    for en in enforcedFor:
+        for r in reqTracker:
+            if en.req_name == r[1]:
+                r[3] += course.course_credits
+    countsToward = course.course_counts_toward.all()
+    for ct in countsToward:
+        for r in reqTracker:
+            if ct.req_name == r[1]:
+                r[3] += course.course_credits
+
+def updateReqTrackerForCompletedCourses(coursesCompleted, reqTracker):
+    '''
+    @updateReqTrackerForCompletedCourses provides credit to a user for completing a number of courses
+    @param course: the courses to be counted for credit toward their requirements
+    @param reqTracker: the array of requirements needed for the user's desired degree
+    '''
+    for c in coursesCompleted:
+        countCourseTowardReqs(c, reqTracker)
+
+def checkReqsMet(reqTracker):
+    '''
+    @checkReqsMet returns True if all requirements for the user's desired degree have been met
+    @param reqTracker: the array of requirements needed for the user's desired degree
+    '''
+    reqsMet = True
+    for r in reqTracker:
+        if r[2] > r[3]:
+            reqsMet = False
+            break
+    return reqsMet
+
 def createSchedule(uID):
     '''
     @createSchedule generates semester-by-semester schedule for User's needed Courses according to Degree
     @param uID: primary key associated with active user
     '''
-    #loopCount = 0
-    #maxLoopCount = 35
     reqTracker = setupReqTracker(uID)  # used to track if Req credit quotas have been met
-    reqCourses = getCoursesForUser(uID)
-    requiredClasses = translateCourseInfoToCourse(reqCourses)
-    classesTaken = getCompletedByUser(uID)
-    neededClasses = removeCoursesTaken( requiredClasses, classesTaken )
-    schedule = []
-    currentYear = UserPreferences.objects.get(id=uID).pref_nextYear
-    ssfSemester = UserPreferences.objects.get(id=uID).pref_nextSSF
-    semester = [ssfSemester, currentYear, []]
-    currentSemester = [ssfSemester, currentYear, []]
-    scheduleComplete = True
-    for c in classesTaken:
-        for r in reqTracker:  # determine which Req this course falls under
-            if c in Req.objects.get(id=r[0]).course.all():
-                r[4] += c.credits  # increment the completed running total for that Req
-    numClassesChecked = 0
-    while neededClasses != [] and loopCount < maxLoopCount:
-        loopCount+=1
-        for nc in neededClasses:
-            print("evaluating nc:", nc)
-            if ( checkCourseValid( nc, classesTaken, currentSemester[2], ssfSemester ) ):
-                print("course valid!")
-                value = [nc.course_subject + " " + nc.course_num + " " + nc.course_name, nc.course_credits]
-                currentSemester[2].append(value)
-                print( "new current semester...", currentSemester)
-                classesTaken.append(nc)
-                neededClasses.remove(nc)
-                reqsFilled = nc.course_requirements.all()
-                for rf in reqsFilled:
-                    for r in reqTracker:
-                        if r[0] == rf.id:
-                            r[3]+=nc.course_credits # increment the completed running total for that Req
-            numClassesChecked += 1
-            if isFull(semester[2]) or numClassesChecked == len(neededClasses) : #neededClasses != []
-                schedule.append(semester[:])
-                print("appending semseter... new schedule", schedule)
-                semester = generateNewSemester(semester)
-                print("resetting semester")
-                numClassesChecked = 0
-                break
-            scheduleComplete = True
-            for r in reqTracker:
-                if r[2] > r[3]:
-                    scheduleComplete = False
-        if scheduleComplete:
-            break
+    print("reqTracker:", reqTracker)
+    enforcedCourses = getEnforcedCourses(uID)
+    print("enforcedCourses:", enforcedCourses)
+    electiveCourses = getElectiveCourses(uID)
+    print("electiveCourses:", electiveCourses)
+    completedCourses = getCompletedByUser(uID)
+    print("completedCourses:", completedCourses)
+    schedule = setupSchedule(uID)
+    semester = schedule[0]
+    semesterCourses = semester[2]
+    updateReqTrackerForCompletedCourses(completedCourses, reqTracker)
+    print(reqTracker)
+    print(checkReqsMet(reqTracker))
+    while not checkReqsMet(reqTracker):
+        for en in enforcedCourses:
+            if courseValid( en, completedCourses, semester[2], semester[0]):
+                semester[2].append([en.course_subject + " " + en.course_num + " " + en.course_name, en.course_credits])
+                completedCourses.append(en)
+                enforcedCourses.remove(en)
+                countCourseTowardReqs(en, reqTracker)
     print( "schedule", schedule )
     return schedule
 
