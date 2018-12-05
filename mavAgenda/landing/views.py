@@ -176,18 +176,17 @@ def getEnforcedCourses(uID, reqTracker):
                     enCourses.append(c)
     return enCourses
 
-def getElectiveCourses(uID, reqTracker):
+def getElectiveCourses(req):
     '''
     @getEnforcedCourses gets a list of courses that are enforced by requirements for the user's degree
-    @param uID: user ID of the user requesting the enforced courses
+    @param req: the Requirement for which the user wishes to take elective courses
     '''
     elCourses = []
     for c in Course.objects.all():
         countsToward = c.course_counts_toward.all()
-        for r in reqTracker:
-            for el in countsToward:
-                if el.req_name == r[1]:
-                    elCourses.append(c)
+        for el in countsToward:
+            if el.req_name == req.req_name:
+                elCourses.append(c)
     return elCourses
 
 def setupSchedule(uID):
@@ -279,7 +278,6 @@ def createSchedule(uID):
     '''
     reqTracker = setupReqTracker(uID)  # used to track if Req credit quotas have been met
     enforcedCourses = getEnforcedCourses(uID, reqTracker)
-    electiveCourses = getElectiveCourses(uID, reqTracker)
     completedCourses = getCompletedByUser(uID)
     schedule = setupSchedule(uID)
     semester = schedule[0]
@@ -301,6 +299,13 @@ def createSchedule(uID):
                      break
         if not prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)):
             # use similar logic for the non-enforced classes... create dropdowns.. has to be done by requirement (to account for a req being fulfilled)
+            # for requirement in reqTracker
+                # req = Requirement.objects.get(pk=requirement[1])
+                # electiveCourses = getElectiveCourses(req)
+                # requirement[3] += (determine how to get the right number of credits?)
+                # determine how to count this class as one entity for determining if it stays within the credit preferences of the user
+                # if prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)):
+                    # break
             print("went through all the enforced classes, but there's still room in the semester for classes")
         else:
             print("the semester is full")
@@ -311,6 +316,7 @@ def createSchedule(uID):
         loopCount+=1
     print( "schedule", schedule )
     return schedule
+    # TODO - the first semester is always blank?
 
 def getDegreeReqs(degrees):
     '''
