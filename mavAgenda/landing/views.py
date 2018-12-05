@@ -244,9 +244,11 @@ def tallyNumberCreditsTaken(courses):
     @tallyNumberCreditsTaken returns the total number of credits scheduled for a semester
     @param courses: the list of Course objects scheduled for the semester
     '''
+    print("In tally number credits taken... courses:", courses)
     totalCredits = 0
     for c in courses:
         totalCredits+=c.course_credits
+    print( "total credits:", totalCredits)
     return totalCredits
 
 def prefNumCreditsMet(uID, ssf, numberCreditsTaken):
@@ -263,8 +265,11 @@ def prefNumCreditsMet(uID, ssf, numberCreditsTaken):
     else:
         prefMax = UserPreferences.objects.get(pk=uID).pref_maxCredits
         prefMin = UserPreferences.objects.get(pk=uID).pref_minCredits
-    if numberCreditsTaken < prefMax and numberCreditsTaken > prefMin:
+    if numberCreditsTaken <= prefMax and numberCreditsTaken >= prefMin:
         met = True
+    print("ssf:", ssf)
+    print("max credits desired:", prefMax)
+    print("min credits desired:", prefMin)
     return met
 
 def createSchedule(uID):
@@ -299,10 +304,10 @@ def createSchedule(uID):
             print("went through all the enforced classes, but there's still room in the semester for classes")
         else:
             print("the semester is full")
-            # schedule.append(semester[:])
-            # semester = generateNewSemester(semester)
-            # semesterCourses = []
-            # semesterSchedule = semester[2]
+            schedule.append(semester[:])
+            semester = generateNewSemester(semester)
+            semesterCourses = []
+            semesterSchedule = semester[2]
         loopCount+=1
     print( "schedule", schedule )
     return schedule
@@ -351,7 +356,6 @@ def getCoursePrereqs(course):
     '''
     prereqs = []
     for p in Prereq.objects.all():
-        print("p.prereq_course:", p.prereq_course)
         if p.prereq_course is course:
             options = []
             for pc in PrereqCourse.objects.filter(prereqcourse_prereqs=p.id):
@@ -551,6 +555,9 @@ def createuser(request):
             if prefSummer: #this part isn't working 100% yet
                 sumMin = request.POST['Summin']
                 sumMax = request.POST['Summax']
+            else:
+                sumMin = 0
+                sumMax = 0
             up = UserPreferences(
                 pref_minCredits = request.POST['FSmin'],
                 pref_maxCredits = request.POST['FSmax'],
@@ -559,6 +566,10 @@ def createuser(request):
                 pref_summerMaxCredits = sumMax,
                 pref_user = u
             )
+            print("FSmin:", request.POST['FSmin'])
+            print("FSmax:", request.POST['FSmax'])
+            print("Summin:", request.POST['Summin'])
+            print("Summax:", request.POST['Summax'])
             up.save()
             return HttpResponseRedirect(reverse('landing:selectcourses', args=(userID,)))
         else:
