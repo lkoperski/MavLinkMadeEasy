@@ -79,20 +79,19 @@ def removeCoursesTaken( requiredClasses, classesTaken ):
             validCourses.append(rc)
     return validCourses
 
-def checkPrereqsMet(preqreqs, classesTaken, currentSemester):
+def checkPrereqsMet(conditions, classesTaken, currentSemester):
     '''
     @checkPrereqsMet determines if the User has met all Prereqs for a particular Course
-    @param prereqs: a list of Course (objects) corresponding to Prereqs for a given Course
+    @param coditions: a list of lists of Course (objects) corresponding to Prereqs for a given Course
     @param classesTaken: a list of Course (objects) that the User has already completed
     @parm scheduledClasses: a list of Course (objects) the scheduling algorithm has accounted for already
     '''
     met = True
-    for pr in preqreqs:
-        notInClassesTaken = pr.prereq not in classesTaken and pr.this_or not in classesTaken
-        inCurrentSemester = pr.prereq in currentSemester or pr.this_or in currentSemester
-        if notInClassesTaken or inCurrentSemester:
-            met = False
-            break
+    for c in conditions:
+        for o in c:
+            if o not in classesTaken and o not in currentSemester:
+                met = False
+                break
     return met
 
 def checkOfferedSemester(course, ssf):
@@ -244,7 +243,7 @@ def updateReqTrackerForCompletedCourses(coursesCompleted, reqTracker):
 def checkReqsMet(reqTracker):
     '''
     @checkReqsMet returns True if all requirements for the user's desired degree have been met
-    @param reqTracker: the array of requirements needed for the user's desired degree
+    @param reqTracker: the list of requirements needed for the user's desired degree
     '''
     reqsMet = True
     for r in reqTracker:
@@ -252,6 +251,34 @@ def checkReqsMet(reqTracker):
             reqsMet = False
             break
     return reqsMet
+
+def tallyNumberCreditsTaken(courses):
+    '''
+    @tallyNumberCreditsTaken returns the total number of credits scheduled for a semester
+    @param courses: the list of Course objects scheduled for the semester
+    '''
+    totalCredits = 0
+    for c in courses:
+        totalCredits+=c.course_credits
+    return totalCredits
+
+def prefNumCreditsMet(uID, ssf, numberCreditsTaken):
+    '''
+    @prefNumCreditsMet returns True if the number of credits scheduled for a semester is within the user's desired constraints
+    @param uID: the id of the user whose schedule is being processed
+    @param ssf: denotes the spring, summer, or fall semester
+    @numberCreditsTaken: the number of credits taken during the semester
+    '''
+    met = False
+    if ssf == "Summer":
+        prefMax = UserPreferences.objects.get(pk=uID).pref_summerMaxCredits
+        prefMin = UserPreferences.objects.get(pk=uID).pref_summerMinCredits
+    else:
+        prefMax = UserPreferences.objects.get(pk=uID).pref_maxCredits
+        prefMin = UserPreferences.objects.get(pk=uID).pref_minCredits
+    if numberCreditsTaken < prefMax and numberCreditsTaken > prefMin:
+        met = True
+    return met
 
 def createSchedule(uID):
     '''
@@ -264,16 +291,21 @@ def createSchedule(uID):
     completedCourses = getCompletedByUser(uID)
     schedule = setupSchedule(uID)
     semester = schedule[0]
-    semesterCourses = semester[2]
+    ssf = semester[0]
+    semesterSchedule = semester[2]
+    semesterCourses = []
     updateReqTrackerForCompletedCourses(completedCourses, reqTracker)
     loopCount = 0
     while not checkReqsMet(reqTracker) and loopCount < 10:
         for en in enforcedCourses:
-            if courseValid( en, completedCourses, semester[2], semester[0]):
-                semester[2].append([en.course_subject + " " + en.course_num + " " + en.course_name, en.course_credits])
+            if courseValid( en, completedCourses, semesterCourses, ssf):
+                semesterCourses.append(en)
+                semesterSchedule.append([en.course_subject + " " + en.course_num + " " + en.course_name, en.course_credits])
                 completedCourses.append(en)
                 enforcedCourses.remove(en)
                 countCourseTowardReqs(en, reqTracker)
+            if prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)):
+                 break
         loopCount+=1
     print( "schedule", schedule )
     return schedule
@@ -322,10 +354,11 @@ def getCoursePrereqs(course):
     '''
     prereqs = []
     for p in Prereq.objects.all():
+        print("p.prereq_course:", p.prereq_course)
         if p.prereq_course is course:
             options = []
-            for option in Prereq.prereq_prereqs:
-                options.append(option)
+            for pc in PrereqCourse.objects.filter(prereqcourse_prereqs=p.id):
+                options.append([pc.prereqcourse_course])
             prereqs.append(options)
     return prereqs
 
@@ -338,8 +371,6 @@ def generateCheckBoxEntities(uID):
     degrees = Degree.objects.filter(degree_users=uID)
     reqs = getDegreeReqs(degrees)
     checkBoxEntities = getReqCourses(reqs)
-    for cb in checkBoxEntities:
-        print( cb )
     return checkBoxEntities
 
 def generateMajorDD():
