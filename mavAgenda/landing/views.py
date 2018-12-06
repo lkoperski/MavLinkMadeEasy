@@ -179,19 +179,18 @@ def setupReqTracker(uID):
         reqTracker.append([reqID, reqName, reqCredits, reqStart])
     return reqTracker
 
-def getEnforcedCourses(uID, reqTracker):
+def getEnforcedCourses(reqTracker):
     '''
     @getEnforcedCourses gets a list of courses that are enforced by requirements for the user's degree
-    @param uID: user ID of the user requesting the enforced courses
     @param reqTracker: a list of requirements the user must complete to receive their degree
     '''
     enCourses = []
-    for c in Course.objects.all():
-        enforcedFor = c.course_enforced_for.all()
-        for r in reqTracker:
-            for en in enforcedFor:
-                if en.req_name == r[1]:
-                    enCourses.append(c)
+    for r in reqTracker:
+        req = Requirement.objects.get(pk=r[0])
+        courses = req.enforced_for.all()
+        for c in courses:
+            if c not in enCourses:
+                enCourses.append(c)
     return enCourses
 
 def getElectiveCourses(req):
@@ -199,13 +198,7 @@ def getElectiveCourses(req):
     @getEnforcedCourses gets a list of courses that are enforced by requirements for the user's degree
     @param req: the Requirement for which the user wishes to take elective courses
     '''
-    elCourses = []
-    for c in Course.objects.all():
-        countsToward = c.course_counts_toward.all()
-        for el in countsToward:
-            if el.req_name == req.req_name:
-                elCourses.append(c)
-    return elCourses
+    return req.course_counted_toward.all()
 
 def setupSchedule(uID):
     '''
@@ -226,16 +219,17 @@ def countCourseTowardReqs(course, reqTracker):
     @param course: the course to be counted for credit
     @param reqTracker: the array of requirements needed for the user's desired degree
     '''
-    enforcedFor = course.course_enforced_for.all()
-    for en in enforcedFor:
-        for r in reqTracker:
-            if en.req_name == r[1]:
-                r[3] += course.course_credits
-    countsToward = course.course_counts_toward.all()
-    for ct in countsToward:
-        for r in reqTracker:
-            if ct.req_name == r[1]:
-                r[3] += course.course_credits
+    reqsFilled = course.course_enforced_for.all()
+    for r in reqTracker:
+        for rf in reqsFilled:
+            if r[1] == rf.req_name:
+                r[3]+=course.course_credits
+    reqsFilled = course.course_counts_toward.all()
+    for r in reqTracker:
+        for rf in reqsFilled:
+            if r[1] == rf.req_name:
+                r[3]+=course.course_credits
+
 
 def updateReqTrackerForCompletedCourses(coursesCompleted, reqTracker):
     '''
@@ -263,11 +257,9 @@ def tallyNumberCreditsTaken(courses):
     @tallyNumberCreditsTaken returns the total number of credits scheduled for a semester
     @param courses: the list of Course objects scheduled for the semester
     '''
-    print("In tally number credits taken... courses:", courses)
     totalCredits = 0
     for c in courses:
         totalCredits+=c.course_credits
-    print( "total credits:", totalCredits)
     return totalCredits
 
 def prefNumCreditsMet(uID, ssf, numberCreditsTaken):
@@ -296,7 +288,7 @@ def createSchedule(uID):
     @param uID: primary key associated with active user
     '''
     reqTracker = setupReqTracker(uID)  # used to track if Req credit quotas have been met
-    enforcedCourses = getEnforcedCourses(uID, reqTracker)
+    enforcedCourses = getEnforcedCourses(reqTracker)
     completedCourses = getCompletedByUser(uID)
     schedule = setupSchedule(uID)
     semester = schedule[0]
@@ -305,7 +297,7 @@ def createSchedule(uID):
     semesterCourses = []
     updateReqTrackerForCompletedCourses(completedCourses, reqTracker)
     loopCount = 0
-    while not checkReqsMet(reqTracker) and loopCount < 10:
+    while not checkReqsMet(reqTracker) and loopCount < 20:
         if enforcedCourses != []:
             for en in enforcedCourses:
                 if courseValid( en, completedCourses, semesterCourses, ssf):
@@ -333,7 +325,6 @@ def createSchedule(uID):
             semesterCourses = []
             semesterSchedule = semester[2]
         loopCount+=1
-    print( "schedule", schedule )
     return schedule
     # TODO - the first semester is always blank?
 
@@ -375,12 +366,13 @@ def getCoursePrereqs(course):
     @param course: the Course under test
     '''
     prereqs = []
-    for p in Prereq.objects.all():
-        if p.prereq_course is course:
-            options = []
-            for pc in PrereqCourse.objects.filter(prereqcourse_prereqs=p.id):
-                options.append([pc.prereqcourse_course])
-            prereqs.append(options)
+    pReqs = Prereq.objects.filter(prereq_course=course)
+    for p in pReqs:
+        conditions = p.prereqcourse_set.all()
+        options = []
+        for c in conditions:
+            options.append(list(c.prereqcourse_course.all()))
+        prereqs.append(options)
     return prereqs
 
 def generateCheckBoxEntities(uID):
@@ -465,7 +457,6 @@ def generateYearDD(default):
             years.append(['S', year])
         else:
             years.append(['X', year])
-    print(years)
     return years
 
 def generateSemesterDD(default):
@@ -545,7 +536,6 @@ def getDefaultPreferences(uID):
         minCredit = up.pref_summerMinCredits
         maxCredit = up.pref_summerMaxCredits
     elif getNextSemesterTitle(semester) == "Spring":
-        print("Next semester will be spring...")
         nextSem = "Spring"
         nextYear = year + 1
         minCredit = up.pref_minCredits
@@ -656,7 +646,6 @@ def createuser(request):
                 pref_user = u
             )
             up.save()
-            print(up)
             return HttpResponseRedirect(reverse('landing:selectcourses', args=(userID,)))
         else:
             return render(request, 'landing/createuser.html',
