@@ -343,10 +343,9 @@ def getDegreeReqs(degrees):
     @param degrees: a list of degrees associated with the user
     '''
     requirements = []
-    for r in Requirement.objects.all():
-        dSet = r.req_degrees.all()
-        for d in dSet:
-            if d in degrees and r not in requirements:
+    for d in degrees:
+        for r in d.requirement_set.all():
+            if r not in requirements:
                 requirements.append(r)
     return requirements
 
@@ -355,21 +354,17 @@ def getReqCourses(reqs):
     @getReqCourses returns a list of courses (enforced and non-enforced) for a requirements related to a degree a user has selected
     @param reqs: a list of requirements associated with the user's desired degree
     '''
-    cats = []
+    requiredCourses = []
     for r in reqs:
-        cats.append([r.id, r.req_name, r.req_credits, []])
-    for c in Course.objects.all():
-        enforced = c.course_enforced_for.all()
-        elective = c.course_counts_toward.all()
-        for t in cats:
-            for en in enforced:
-                if en.req_name == t[1]:
-                    t[3].append([c.id, c.course_subject, c.course_num, c.course_name, c.course_credits, 'EN'])
-        for s in cats:
-            for el in elective:
-                if el.req_name == s[1]:
-                    s[3].append( [c.id, c.course_subject, c.course_num, c.course_name, c.course_credits, 'EL'])
-    return cats
+        courses = []
+        enforced = r.enforced_for.all()
+        electives = r.counted_toward.all()
+        for en in enforced:
+            courses.append([en.id, en.course_subject, en.course_num, en.course_name, en.course_credits, 'EN'])
+        for el in electives:
+            courses.append([el.id, el.course_subject, el.course_num, el.course_name, el.course_credits, 'EL'])
+        requiredCourses.append([r.id, r.req_name, r.req_credits, courses])
+    return requiredCourses
 
 def getCoursePrereqs(course):
     '''
@@ -387,7 +382,6 @@ def getCoursePrereqs(course):
                 options.append([pc.prereqcourse_course])
             prereqs.append(options)
     return prereqs
-
 
 def generateCheckBoxEntities(uID):
     '''
@@ -690,7 +684,7 @@ def selectcourses(request, pk):
         return HttpResponseRedirect(reverse('landing:nextsemesterpreferences', args=(pk,)))
     else:
         checkBoxes = generateCheckBoxEntities(pk)
-        # might need to write some logic here to determine if boxes have already been checked :)
+        #TODO - might need to write some logic here to determine if boxes have already been checked :)
     return render(request, 'landing/selectcourses.html', {'checkBoxes': generateCheckBoxEntities(pk)})
 
 def nextsemesterpreferences(request, pk):
