@@ -349,6 +349,19 @@ def getDegreeReqs(degrees):
                 requirements.append(r)
     return requirements
 
+def sortCoursesBySubNum(courses):
+    '''
+    @sortCoursesBySubNum takes a list of course information and sorts them course information according to subject and number
+    @param courses: list of courses information pieces that need to be stored for the checkbox page
+    '''
+    numCourses = len(courses)
+    for c in range(numCourses):
+        for j in range(0,numCourses-c-1):
+            oneCourse =  courses[j][1] + " " + courses[j][2]
+            twoCourse = courses[j+1][1] + " " + courses[j+1][2]
+            if oneCourse > twoCourse:
+                courses[j], courses[j+1] = courses[j+1], courses[j]
+
 def getReqCourses(reqs):
     '''
     @getReqCourses returns a list of courses (enforced and non-enforced) for a requirements related to a degree a user has selected
@@ -363,6 +376,7 @@ def getReqCourses(reqs):
             courses.append([en.id, en.course_subject, en.course_num, en.course_name, en.course_credits, 'EN'])
         for el in electives:
             courses.append([el.id, el.course_subject, el.course_num, el.course_name, el.course_credits, 'EL'])
+        sortCoursesBySubNum(courses)
         requiredCourses.append([r.id, r.req_name, r.req_credits, courses])
     return requiredCourses
 
@@ -566,6 +580,7 @@ def login(request):
     @login send a request to render the login.html page
     @param request: generates the response
     '''
+    # TODO - the login will fail if the user has not gone through the selectcourese page and clicked submit (regardless of whether or not courses were actually completed)
     if request.method == "POST":
         e = request.POST['email-input']
         #p = request.POST['password-input']
