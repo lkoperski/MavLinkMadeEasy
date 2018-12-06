@@ -9,12 +9,13 @@
     {% for r in checkBoxes %}
         <p><b>{{ r.1 }}</b> | <i>{{ r.2 }} credits needed</i></p>
         <hr>
+        <div class="row">
         {% for cb in r.3 %}
-            <p><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}">{% if cb.5 == "EL" %}*{%endif%}<b>{{cb.1}} {{cb.2}}</b> {{cb.3}} <i>({{cb.4}} credits)</i></input></p>
+            <div class="column"><p><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}">{% if cb.5 == "O" %}*{%endif%}<b>{{cb.1}} {{cb.2}}</b> {{cb.3}}</br><i>({{cb.4}} credits)</i></input></p></div>
         {% endfor %}
-        <br>
+        </div>
     {% endfor %}
-    <br>
+    </br>
 	<button name="submit" type="submit" class="MAVbutton">Submit</button>
 </form>
 

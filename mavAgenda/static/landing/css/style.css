@@ -18,6 +18,19 @@
             margin: auto;
         }*/
 
+
+        .column {
+            box-sizing: border-box;
+            float: left;
+            width: 33%;
+            padding: 10px;
+        }
+        .row:after {
+            box-sizing: border-box;
+            content: "";
+            display: table;
+            clear: both;
+        }
         .icons {
             float: right;
             margin-top: 6px;
