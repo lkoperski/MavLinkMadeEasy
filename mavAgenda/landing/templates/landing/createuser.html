@@ -227,49 +227,27 @@ function showConcentrationInfo(concentrations, num) {
 
 
             <p class="MAVselect">Minimum number of credit hours:
-            <select name="FSmin">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12" selected>12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-            </select>
+                <select name="FSmin">
+                    {% for fsmin in fsMinCredits %}
+                        {% if fsmin.0 == 'S'%}
+                            <option value="{{fsmin.1}}" selected> {{fsmin.1}}</option>
+                        {% else %}
+                            <option value="{{fsmin.1}}">{{ fsmin.1 }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
             </p>
 
             <p class="MAVselect">Maximum number of credit hours:
-            <select name="FSmax">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18" selected>18</option>
-            </select>
+                <select name="FSmax">
+                    {% for fsmax in fsMaxCredits %}
+                        {% if fsmax.0 == 'S'%}
+                            <option value="{{fsmax.1}}" selected> {{fsmax.1}}</option>
+                        {% else %}
+                            <option value="{{fsmax.1}}">{{ fsmax.1 }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
             </p>
         <br>
 
@@ -281,51 +259,27 @@ function showConcentrationInfo(concentrations, num) {
         <div id="summer-info">
 
             <p class="MAVselect">Minimum number of credit hours:
-            <select name="Summin">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3" selected>3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7"">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-            </select>
+                <select name="Summax">
+                    {% for summax in sumMaxCredits %}
+                        {% if summax.0 == 'S'%}
+                            <option value="{{summax.1}}" selected> {{summax.1}}</option>
+                        {% else %}
+                            <option value="{{summax.1}}">{{ summax.1 }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
             </p>
 
             <p class="MAVselect">Maximum number of credit hours:
-            <select name="Summax">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6" selected>6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-            </select>
+            <select name="Summin">
+                    {% for summin in sumMinCredits %}
+                        {% if summin.0 == 'S'%}
+                            <option value="{{summin.1}}" selected> {{summin.1}}</option>
+                        {% else %}
+                            <option value="{{summin.1}}">{{ summin.1 }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
             </p>
 
         </div>

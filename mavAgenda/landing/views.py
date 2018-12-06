@@ -20,6 +20,19 @@ def getUserByEmail(e):
         if cu.username == e:
             return cu
 
+def getSemesterByMonth( m ):
+    '''
+    @getSemesterByMonthYear determines semester (Spring, Summer, Fall) according to current month
+    @param m: current month
+    '''
+    if  m < 5 :
+        title = "Spring"
+    elif  m < 8 :
+        title = "Summer"
+    else:
+        title = "Fall"
+    return title
+
 def getDegree(diploma, type, track):
     '''
     @getDegree searches the Degree table to find the Degree object with corresponding degree and major
@@ -126,21 +139,26 @@ def courseValid(course, classesTaken, semesterCourses, ssf):
         valid = True
     return valid
 
+def getNextSemesterTitle(ssf):
+    nextSemester = ""
+    if ssf == "Spring":
+        nextSemester = "Summer"
+    elif ssf == "Summer":
+        nextSemester = "Fall"
+    else:
+        nextSemester = "Spring"
+    return nextSemester
+
 def generateNewSemester(semester):
     '''
     @generateNewSemester creates a new logical semester
     @param semester: previous semester list
     '''
     ssf = semester[0]
-    nextSemester = ""
+    nextSemester = getNextSemesterTitle(ssf)
     y = semester[1]
-    if ssf == "Spring" :
-        nextSemester = "Summer"
-    elif ssf == "Summer" :
-        nextSemester = "Fall"
-    else:
-        nextSemester ="Spring"
-        y += 1
+    if nextSemester == "Spring":
+        y+=1
     semester[0] = nextSemester
     semester[1] = y
     semester[2] = []
@@ -194,8 +212,10 @@ def setupSchedule(uID):
     @setupSchedule creates a template for generating an schedule
     @param uID: user ID of the user requesting the schedule
     '''
-    currentYear = UserPreferences.objects.get(id=uID).pref_nextYear
-    ssfSemester = UserPreferences.objects.get(id=uID).pref_nextSSF
+    u = User.objects.get(pk=uID)
+    up = UserPreferences.objects.get(pref_user=u)
+    currentYear = up.pref_nextYear
+    ssfSemester = up.pref_nextSSF
     semester = [ssfSemester, currentYear, []]
     schedule = [semester]
     return schedule
@@ -257,18 +277,17 @@ def prefNumCreditsMet(uID, ssf, numberCreditsTaken):
     @param ssf: denotes the spring, summer, or fall semester
     @numberCreditsTaken: the number of credits taken during the semester
     '''
+    u = User.objects.get(pk=uID)
+    up = UserPreferences.objects.get(pref_user=u)
     met = False
     if ssf == "Summer":
-        prefMax = UserPreferences.objects.get(pk=uID).pref_summerMaxCredits
-        prefMin = UserPreferences.objects.get(pk=uID).pref_summerMinCredits
+        prefMax = up.pref_summerMaxCredits
+        prefMin = up.pref_summerMinCredits
     else:
-        prefMax = UserPreferences.objects.get(pk=uID).pref_maxCredits
-        prefMin = UserPreferences.objects.get(pk=uID).pref_minCredits
+        prefMax = up.pref_maxCredits
+        prefMin = up.pref_minCredits
     if numberCreditsTaken <= prefMax and numberCreditsTaken >= prefMin:
         met = True
-    print("ssf:", ssf)
-    print("max credits desired:", prefMax)
-    print("min credits desired:", prefMin)
     return met
 
 def createSchedule(uID):
@@ -424,18 +443,49 @@ def generateDiplomaDD():
             diplomas.append(d.degree_diploma)
     return diplomas
 
-def generateYearDD():
+def generateNumCreditsDD(lo, hi, default):
+    '''
+    @generateNumCreditsDD generates a dropdown for the number of credits the user can take
+    @param lo: the lowest number of credits possible
+    @param hi: the highest number of credits possible
+    @param default: the value of the number credits dropdown that ahould be selected automatically as a default
+    '''
+    credits = []
+    for credit in range(lo, hi+1):
+        if credit is default:
+            credits.append(['S', credit])
+        else:
+            credits.append(['X', credit])
+    return credits
+
+
+def generateYearDD(default):
     '''
     @generateYearDD creates a list of upcoming years for use on the createuser page
+    @parm default: the year value to be selected by default
     '''
     years = []
-    date = datetime.now()
-    currentYear = date.year
-    years.append(currentYear)
-    years.append(currentYear+1)
-    years.append(currentYear+2)
-    years.append(currentYear+3)
+    currentYear = datetime.now().year
+    for year in range(currentYear, currentYear+4):
+        if year == default:
+            years.append(['S', year])
+        else:
+            years.append(['X', year])
+    print(years)
     return years
+
+def generateSemesterDD(default):
+    '''
+    @generateSemesterDD creates a list of upcoming semester for use on the createuser page
+    @parm default: the year value to be selected by default
+    '''
+    sems = []
+    for s in ['Fall', 'Spring', 'Summer']:
+        if s is default:
+            sems.append(['S', s])
+        else:
+            sems.append(['X', s])
+    return sems
 
 def emailFound(email):
     '''
@@ -479,6 +529,40 @@ def removeUserCompletedEnteries(uID):
         if ce.complete_user == u:
             ce.delete()
 
+def getDefaultPreferences(uID):
+    u = User.objects.get(pk=uID)
+    up = UserPreferences.objects.get(pref_user=u)
+    summerClass = up.pref_summer
+    month = datetime.now().month
+    year = datetime.now().year
+    semester = getSemesterByMonth(month)
+    nextYear = ""
+    nextSem = ""
+    minCredit = ""
+    maxCredit = ""
+    if getNextSemesterTitle(semester) == "Summer" and not summerClass:
+        nextSem = "Fall"
+        nextYear = year
+        minCredit = up.pref_minCredits
+        maxCredit = up.pref_maxCredits
+    elif getNextSemesterTitle(semester) == "Summer":
+        nexSem = "Summer"
+        nextYear = year
+        minCredit = up.pref_summerMinCredits
+        maxCredit = up.pref_summerMaxCredits
+    elif getNextSemesterTitle(semester) == "Spring":
+        print("Next semester will be spring...")
+        nextSem = "Spring"
+        nextYear = year + 1
+        minCredit = up.pref_minCredits
+        maxCredit = up.pref_maxCredits
+    else:
+        nextSem = getNextSemesterTitle(semester)
+        nextYear = year
+        minCredit = up.pref_minCredits
+        maxCredit = up.pref_maxCredits
+    return [nextSem, nextYear, minCredit, maxCredit]
+
 
 ########################################################################################################################
 ########################################################################################################################
@@ -521,7 +605,9 @@ def createuser(request):
                     return render(request, 'landing/createuser.html',
                                   {'diplomas': generateDiplomaDD(), 'majors': generateMajorDD(),
                                    'minors': generateMinorDD(),
-                                   'concentrations': generateConcentrationsDD(), 'errorCode': 1}
+                                   'concentrations': generateConcentrationsDD(), 'errorCode': 1, 'fsMinCredits':generateNumCreditsDD(1,18,12),
+                                   'fsMaxCredits':generateNumCreditsDD(1,18,18), 'sumMinCredits':generateNumCreditsDD(1,18,3),
+                                   'sumMaxCredits':generateNumCreditsDD(1,18,6)}
                                   )
                 if major in request.POST:
                     dip = request.POST[diploma]
@@ -558,7 +644,10 @@ def createuser(request):
             prefSummer = request.POST['summer-course']
             sumMin = 0
             sumMax = 0
-            if prefSummer: #this part isn't working 100% yet
+            summerClasses = True
+            if prefSummer == 'no':
+                summerClasses = False
+            if summerClasses: #this part isn't working 100% yet
                 sumMin = request.POST['Summin']
                 sumMax = request.POST['Summax']
             else:
@@ -567,26 +656,25 @@ def createuser(request):
             up = UserPreferences(
                 pref_minCredits = request.POST['FSmin'],
                 pref_maxCredits = request.POST['FSmax'],
-                pref_summer = prefSummer,
+                pref_summer = summerClasses,
                 pref_summerMinCredits = sumMin,
                 pref_summerMaxCredits = sumMax,
                 pref_user = u
             )
-            print("FSmin:", request.POST['FSmin'])
-            print("FSmax:", request.POST['FSmax'])
-            print("Summin:", request.POST['Summin'])
-            print("Summax:", request.POST['Summax'])
             up.save()
+            print(up)
             return HttpResponseRedirect(reverse('landing:selectcourses', args=(userID,)))
         else:
             return render(request, 'landing/createuser.html',
                           {'diplomas': generateDiplomaDD(), 'majors': generateMajorDD(), 'minors': generateMinorDD(),
-                           'concentrations': generateConcentrationsDD(), 'errorCode': 2}
+                           'concentrations': generateConcentrationsDD(), 'errorCode': 2, 'fsMinCredits':generateNumCreditsDD(1,18,12),
+                          'fsMaxCredits':generateNumCreditsDD(1,18,18), 'sumMinCredits':generateNumCreditsDD(1,18,3), 'sumMaxCredits':generateNumCreditsDD(1,18,6)}
                           )
     else:
         return render(request, 'landing/createuser.html',
                         {'diplomas':generateDiplomaDD(), 'majors':generateMajorDD(), 'minors':generateMinorDD(),
-                          'concentrations':generateConcentrationsDD(), 'errorCode': 0 }
+                          'concentrations':generateConcentrationsDD(), 'errorCode': 0, 'fsMinCredits':generateNumCreditsDD(1,18,12),
+                          'fsMaxCredits':generateNumCreditsDD(1,18,18), 'sumMinCredits':generateNumCreditsDD(1,18,3), 'sumMaxCredits':generateNumCreditsDD(1,18,6) }
                         )
 
 def selectcourses(request, pk):
@@ -626,7 +714,10 @@ def nextsemesterpreferences(request, pk):
         else:
             return render(request, 'landing/nextsemesterpreferences.html', {'years': generateYearDD(), 'errorCode': 3})
     else:
-        return render(request, 'landing/nextsemesterpreferences.html', {'years': generateYearDD(), 'errorCode': 0})
+        prefs = getDefaultPreferences(pk)
+        return render(request, 'landing/nextsemesterpreferences.html', {'years': generateYearDD(prefs[1]),
+                                                                        'sem':generateSemesterDD(prefs[0]), 'minCred':generateNumCreditsDD(1,18,prefs[2]),
+                                                                        'maxCred':generateNumCreditsDD(1,18,prefs[3])})
 
 def schedule(request, pk):
     '''
