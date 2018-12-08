@@ -3,6 +3,7 @@
 <br>
 <h3>Select Courses Completed</h3>
 <p align="center">Place a check mark next to the classes you've already taken</p>
+<p align="center">Note:  an asterick (*) implies the course is required</p>
 <br><br>
 <form method="POST" class="usercompleted-form">
     {% csrf_token %}
@@ -11,7 +12,27 @@
         <hr>
         <div class="row">
         {% for cb in r.3 %}
-            <div class="column"><p><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}">{% if cb.5 == "O" %}*{%endif%}<b>{{cb.1}} {{cb.2}}</b> {{cb.3}}</br><i>({{cb.4}} credits)</i></input></p></div>
+            {% if cb.5 == "M" %}
+                {% if cb.2.0 == "1" %}
+                    <p class="column"><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}"><b>*{{cb.1}} {{cb.2}}</b> {{cb.3}}</br><i>({{cb.4}} credits)</i></input></p>
+                {% elif cb.2.0 == "2" %}
+                    <p class="column"><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}"><b>*{{cb.1}} {{cb.2}}</b> {{cb.3}}</br><i>({{cb.4}} credits)</i></input></p>
+                {% elif cb.2.0 == 3%}
+                    <p class="column"><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}"><b>*{{cb.1}} {{cb.2}}</b> {{cb.3}}</br><i>({{cb.4}} credits)</i></input></p>
+                {% else %}
+                    <p class="column"><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}"><b>*{{cb.1}} {{cb.2}}</b> {{cb.3}}</br><i>({{cb.4}} credits)</i></input></p>
+                {% endif %}
+            {% else %}
+                {% if cb.2.0 == "1" %}
+                    <p class="column"><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}"><b>{{cb.1}} {{cb.2}}</b> {{cb.3}}</br><i>({{cb.4}} credits)</i></input></p>
+                {% elif cb.2.0 == "2" %}
+                    <p class="column"><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}"><b>{{cb.1}} {{cb.2}}</b> {{cb.3}}</br><i>({{cb.4}} credits)</i></input></p>
+                {% elif cb.2.0 == 3%}
+                    <p class="column"><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}"><b>{{cb.1}} {{cb.2}}</b> {{cb.3}}</br><i>({{cb.4}} credits)</i></input></p>
+                {% else %}
+                    <p class="column"><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}"><b>{{cb.1}} {{cb.2}}</b> {{cb.3}}</br><i>({{cb.4}} credits)</i></input></p>
+                {% endif %}
+            {% endif %}
         {% endfor %}
         </div>
     {% endfor %}
