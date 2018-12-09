@@ -140,6 +140,11 @@ def courseValid(course, classesTaken, semesterCourses, ssf):
     return valid
 
 def getNextSemesterTitle(ssf):
+    '''
+    @getNextSemseterTitle determines which semester will be the next semester (Spring, Summer, Fall)
+    @param ssf: the title of the current semester
+    '''
+    #TODO - take user prefs into account
     nextSemester = ""
     if ssf == "Spring":
         nextSemester = "Summer"
@@ -179,31 +184,32 @@ def setupReqTracker(uID):
         reqTracker.append([reqID, reqName, reqCredits, reqStart])
     return reqTracker
 
-def getEnforcedCourses(uID, reqTracker):
+def getEnforcedCourses(reqTracker):
     '''
     @getEnforcedCourses gets a list of courses that are enforced by requirements for the user's degree
     @param uID: user ID of the user requesting the enforced courses
     @param reqTracker: a list of requirements the user must complete to receive their degree
     '''
     enCourses = []
-    for c in Course.objects.all():
-        enforcedFor = c.course_enforced_for.all()
-        for r in reqTracker:
-            for en in enforcedFor:
-                if en.req_name == r[1]:
-                    enCourses.append(c)
+    for r in reqTracker:
+        req = Requirement.objects.get(pk=r[0])
+        courses = req.enforced_for.all()
+        for c in courses:
+            if c not in enCourses:
+                enCourses.append(c)
     return enCourses
 
-def getElectiveCourses(req):
+def getElectiveCourses(reqTracker):
     '''
     @getEnforcedCourses gets a list of courses that are enforced by requirements for the user's degree
-    @param req: the Requirement for which the user wishes to take elective courses
+    @param reqTracker: a list of requirements the user must complete to receive their degree
     '''
     elCourses = []
-    for c in Course.objects.all():
-        countsToward = c.course_counts_toward.all()
-        for el in countsToward:
-            if el.req_name == req.req_name:
+    for r in reqTracker:
+        req = Requirement.objects.get(pk=r[0])
+        courses = req.counted_toward.all()
+        for c in courses:
+            if c not in elCourses:
                 elCourses.append(c)
     return elCourses
 
@@ -263,11 +269,9 @@ def tallyNumberCreditsTaken(courses):
     @tallyNumberCreditsTaken returns the total number of credits scheduled for a semester
     @param courses: the list of Course objects scheduled for the semester
     '''
-    print("In tally number credits taken... courses:", courses)
     totalCredits = 0
     for c in courses:
         totalCredits+=c.course_credits
-    print( "total credits:", totalCredits)
     return totalCredits
 
 def prefNumCreditsMet(uID, ssf, numberCreditsTaken):
@@ -290,14 +294,30 @@ def prefNumCreditsMet(uID, ssf, numberCreditsTaken):
         met = True
     return met
 
+def combineEnforcedAndElectiveCourses(enforcedCourses, electiveCourses):
+    '''
+    @combineEnforcedAndElectiveCourses ensures there are no duplicates listed between the enforced and elective courses
+    @param enforcedCourses: a list of the course objects that are enforced
+    @param electiveCourses: a list of the courses objects that can be taken as electives
+    '''
+    potential = [enforcedCourses,[]]
+    for el in electiveCourses:
+        if el not in enforcedCourses:
+            potential[1].append(el)
+    return potential
+
 def createSchedule(uID):
     '''
     @createSchedule generates semester-by-semester schedule for User's needed Courses according to Degree
     @param uID: primary key associated with active user
     '''
     reqTracker = setupReqTracker(uID)  # used to track if Req credit quotas have been met
-    enforcedCourses = getEnforcedCourses(uID, reqTracker)
+    enforcedCourses = getEnforcedCourses(reqTracker)
+    electiveCourses = getElectiveCourses(reqTracker)
+    potentialCourses = combineEnforcedAndElectiveCourses(enforcedCourses, electiveCourses)
     completedCourses = getCompletedByUser(uID)
+    placeholder = Course.objects.get(course_name="placeholder", course_num="0000")
+    completedCourses.append(placeholder)
     schedule = setupSchedule(uID)
     semester = schedule[0]
     ssf = semester[0]
@@ -305,35 +325,41 @@ def createSchedule(uID):
     semesterCourses = []
     updateReqTrackerForCompletedCourses(completedCourses, reqTracker)
     loopCount = 0
-    while not checkReqsMet(reqTracker) and loopCount < 10:
-        if enforcedCourses != []:
-            for en in enforcedCourses:
-                if courseValid( en, completedCourses, semesterCourses, ssf):
+    enforcedNeeded = (potentialCourses[0] != [])
+    electivesAvailabile = (potentialCourses[1] != [])
+    while not checkReqsMet(reqTracker) and loopCount < 3:
+        while not prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)):
+            print("credits not met")
+            for en in potentialCourses[0]:
+                if prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)):
+                    break
+                if courseValid(en, completedCourses, semesterCourses, ssf):
+                    print( "appending enforced course!")
                     semesterCourses.append(en)
                     semesterSchedule.append([en.course_subject + " " + en.course_num + " " + en.course_name, en.course_credits, 'EN'])
                     completedCourses.append(en)
-                    enforcedCourses.remove(en)
+                    potentialCourses[0].remove(en)
                     countCourseTowardReqs(en, reqTracker)
+            for el in potentialCourses[1]:
+                print("checking electives...")
                 if prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)):
-                     break
-        if not prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)):
-            # use similar logic for the non-enforced classes... create dropdowns.. has to be done by requirement (to account for a req being fulfilled)
-            # for requirement in reqTracker
-                # req = Requirement.objects.get(pk=requirement[1])
-                # electiveCourses = getElectiveCourses(req)
-                # requirement[3] += (determine how to get the right number of credits?)
-                # determine how to count this class as one entity for determining if it stays within the credit preferences of the user
-                # if prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)):
-                    # break
-            print("went through all the enforced classes, but there's still room in the semester for classes")
-        else:
-            print("the semester is full")
+                    print( "psych!")
+                    break
+                if courseValid(el, completedCourses, semesterCourses, ssf):
+                    print("appending elective course")
+                    semesterCourses.append(el)
+                    semesterSchedule.append(["***" + el.course_subject + " " + el.course_num + " " + el.course_name, el.course_credits, 'EL'])
+                    completedCourses.append(el)
+                    potentialCourses[1].remove(el)
+                    countCourseTowardReqs(el, reqTracker)
+            # append the semester to the schedule
+            print("appending semester to schedule!")
             schedule.append(semester[:])
             semester = generateNewSemester(semester)
             semesterCourses = []
             semesterSchedule = semester[2]
-        loopCount+=1
-    print( "schedule", schedule )
+        loopCount += 1
+        print(loopCount)
     return schedule
     # TODO - the first semester is always blank?
 
@@ -390,12 +416,11 @@ def getCoursePrereqs(course):
     @param course: the Course under test
     '''
     prereqs = []
-    for p in Prereq.objects.all():
-        if p.prereq_course is course:
-            options = []
-            for pc in PrereqCourse.objects.filter(prereqcourse_prereqs=p.id):
-                options.append([pc.prereqcourse_course])
-            prereqs.append(options)
+    for p in course.prereq_set.all():
+        options = []
+        for pc in p.prereqcourse_set.all():
+            options.append([pc.prereqcourse_course.all()])
+        prereqs.append(options)
     return prereqs
 
 def generateCheckBoxEntities(uID):
