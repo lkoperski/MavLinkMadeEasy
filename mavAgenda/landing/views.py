@@ -379,6 +379,7 @@ def createSchedule(uID):
             semester = generateNewSemester(semester)
             semesterCourses = []
             semesterSchedule = semester[2]
+        # check to see if all requirements are met to break out of inner while loop and check prereqs.
         loopCount += 1
     return schedule
     # TODO - the first semester is always blank?
