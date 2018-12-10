@@ -245,21 +245,31 @@ def getReqCourses(reqs):
     @getReqCourses returns a list of courses (enforced and non-enforced) for a requirements related to a degree a user has selected
     @param reqs: a list of requirements associated with the user's desired degree
     '''
-    cats = []
+    requiredCourses = []
     for r in reqs:
-        cats.append([r.id, r.req_name, r.req_credits, []])
-    for c in Course.objects.all():
-        enforced = c.course_enforced_for.all()
-        elective = c.course_counts_toward.all()
-        for t in cats:
-            for en in enforced:
-                if en.req_name == t[1]:
-                    t[3].append([c.id, c.course_subject, c.course_num, c.course_name, c.course_credits, 'EN'])
-        for s in cats:
-            for el in elective:
-                if el.req_name == s[1]:
-                    s[3].append( [c.id, c.course_subject, c.course_num, c.course_name, c.course_credits, 'EL'])
-    return cats
+        courses = []
+        enforced = r.enforced_for.all()
+        electives = r.counted_toward.all()
+        for en in enforced:
+            if int(en.course_num) < 2000:
+                courses.append([en.id, en.course_subject, en.course_num, en.course_name, en.course_credits, 'EN'])
+            if int(en.course_num) < 3000:
+                courses.append([en.id, en.course_subject, en.course_num, en.course_name, en.course_credits, 'EN'])
+            if int(en.course_num) < 4000:
+                courses.append([en.id, en.course_subject, en.course_num, en.course_name, en.course_credits, 'EN'])
+            if int(en.course_num) < 5000:
+                courses.append([en.id, en.course_subject, en.course_num, en.course_name, en.course_credits, 'EN'])
+        for el in electives:
+            if int(el.course_num) < 2000:
+                courses.append([el.id, el.course_subject, el.course_num, el.course_name, el.course_credits, 'EL'])
+            if int(el.course_num) < 3000:
+                courses.append([el.id, el.course_subject, el.course_num, el.course_name, el.course_credits, 'EL'])
+            if int(el.course_num) < 4000:
+                courses.append([el.id, el.course_subject, el.course_num, el.course_name, el.course_credits, 'EL'])
+            if int(el.course_num) < 5000:
+                courses.append([el.id, el.course_subject, el.course_num, el.course_name, el.course_credits, 'EL'])
+        requiredCourses.append([r.id, r.req_name, r.req_credits, courses])
+    return requiredCourses
 
 def getCoursePrereqs(course):
     '''

@@ -2,16 +2,47 @@
 {% block content %}
 <br>
 <h3>Select Courses Completed</h3>
-<p align="center">Place a check mark next to the classes you've already taken</p>
+<p class="list">Place a check mark next to the courses you've already taken<br> * signifies required courses for the degree</p>
 <br><br>
 <form method="POST" class="usercompleted-form">
     {% csrf_token %}
     {% for r in checkBoxes %}
         <p><b>{{ r.1 }}</b> | <i>{{ r.2 }} credits needed</i></p>
         <hr>
+    <div class="row">
+        <div class="column">
+            <p style="text-align: center"><b>1000 Level Courses</b></p><br>
         {% for cb in r.3 %}
-            <p><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}">{% if cb.5 == "EL" %}*{%endif%}<b>{{cb.1}} {{cb.2}}</b> {{cb.3}} <i>({{cb.4}} credits)</i></input></p>
-        {% endfor %}
+            {% if cb.2.0 == '1' %}
+            <p><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}">{% if cb.5 == "EN" %}*{%endif%}<b>{{cb.1}} {{cb.2}}</b> <br><p style="margin-left: 20px; margin-bottom: 15px;">{{cb.3}}</p></input></p>
+            {% endif %}
+            {% endfor %}
+        </div>
+            <div class="column" style="background-color: #F5F5F5; height:100%;">
+                <p style="text-align: center"><b>2000 Level Courses</b></p><br>
+        {% for cb in r.3 %}
+            {% if cb.2.0 == '2' %}
+                <p><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}">{% if cb.5 == "EN" %}*{%endif%}<b>{{cb.1}} {{cb.2}}</b> <br><p style="margin-left: 20px; margin-bottom: 15px;">{{cb.3}}</p></input></p>
+            {% endif %}
+            {% endfor %}
+        </div>
+            <div class="column">
+                <p style="text-align: center"><b>3000 Level Courses</b></p><br>
+        {% for cb in r.3 %}
+            {% if cb.2.0 == '3' %}
+            <p><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}">{% if cb.5 == "EN" %}*{%endif%}<b>{{cb.1}} {{cb.2}}</b> <br><p style="margin-left: 20px; margin-bottom: 15px;">{{cb.3}}</p></input></p>
+            {% endif %}
+            {% endfor %}
+        </div>
+            <div class="column"  style="background-color: #F5F5F5">
+                <p style="text-align: center"><b>4000 Level Courses and Above</b></p><br>
+        {% for cb in r.3 %}
+            {% if cb.2.0 != '1' and cb.2.0 != '2' and cb.2.0 != '3' %}
+            <p><input type="checkbox" name ="chexmix" value="{{cb.1}} {{cb.2}}">{% if cb.5 == "EN" %}*{%endif%}<b>{{cb.1}} {{cb.2}}</b> <br><p style="margin-left: 20px; margin-bottom: 15px;">{{cb.3}}</p></input></p>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
         <br>
     {% endfor %}
     <br>
