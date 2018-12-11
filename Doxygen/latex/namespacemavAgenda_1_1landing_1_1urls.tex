@@ -1,0 +1,43 @@
+\hypertarget{namespacemavAgenda_1_1landing_1_1urls}{}\section{mav\+Agenda.\+landing.\+urls Namespace Reference}
+\label{namespacemavAgenda_1_1landing_1_1urls}\index{mav\+Agenda.\+landing.\+urls@{mav\+Agenda.\+landing.\+urls}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacemavAgenda_1_1landing_1_1urls_a4bc1db00cea15957f98970fab4609df2}{app\+\_\+name}} = \textquotesingle{}landing\textquotesingle{}
+\item 
+list \mbox{\hyperlink{namespacemavAgenda_1_1landing_1_1urls_a051f6413acbecd83be1f2869c7221337}{urlpatterns}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemavAgenda_1_1landing_1_1urls_a4bc1db00cea15957f98970fab4609df2}\label{namespacemavAgenda_1_1landing_1_1urls_a4bc1db00cea15957f98970fab4609df2}} 
+\index{mav\+Agenda\+::landing\+::urls@{mav\+Agenda\+::landing\+::urls}!app\+\_\+name@{app\+\_\+name}}
+\index{app\+\_\+name@{app\+\_\+name}!mav\+Agenda\+::landing\+::urls@{mav\+Agenda\+::landing\+::urls}}
+\subsubsection{\texorpdfstring{app\+\_\+name}{app\_name}}
+{\footnotesize\ttfamily string mav\+Agenda.\+landing.\+urls.\+app\+\_\+name = \textquotesingle{}landing\textquotesingle{}}
+
+
+
+Definition at line 6 of file urls.\+py.
+
+\mbox{\Hypertarget{namespacemavAgenda_1_1landing_1_1urls_a051f6413acbecd83be1f2869c7221337}\label{namespacemavAgenda_1_1landing_1_1urls_a051f6413acbecd83be1f2869c7221337}} 
+\index{mav\+Agenda\+::landing\+::urls@{mav\+Agenda\+::landing\+::urls}!urlpatterns@{urlpatterns}}
+\index{urlpatterns@{urlpatterns}!mav\+Agenda\+::landing\+::urls@{mav\+Agenda\+::landing\+::urls}}
+\subsubsection{\texorpdfstring{urlpatterns}{urlpatterns}}
+{\footnotesize\ttfamily list mav\+Agenda.\+landing.\+urls.\+urlpatterns}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  [
+2     path(\textcolor{stringliteral}{''}, views.login, name=\textcolor{stringliteral}{'login'}),
+3     path(\textcolor{stringliteral}{'selectcourses/<int:pk>'}, views.selectcourses, name=\textcolor{stringliteral}{'selectcourses'}),
+4     path(\textcolor{stringliteral}{'nextsemesterpreferences/<int:pk>'}, views.nextsemesterpreferences, name=\textcolor{stringliteral}{'nextsemesterpreferences'})
+      ,
+5     path(\textcolor{stringliteral}{'schedule/<int:pk>'}, views.schedule, name=\textcolor{stringliteral}{'schedule'}),
+6     path(\textcolor{stringliteral}{'createuser/'}, views.createuser, name=\textcolor{stringliteral}{'createuser'}),
+7 ]
+\end{DoxyCode}
+
+
+Definition at line 7 of file urls.\+py.
+

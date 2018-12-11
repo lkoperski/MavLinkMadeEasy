@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['landingconfig',['LandingConfig',['../classlanding_1_1apps_1_1_landing_config.html',1,'landing::apps']]]
+  ['instructor',['Instructor',['../classmavAgenda_1_1landing_1_1models_1_1Instructor.html',1,'mavAgenda::landing::models']]]
 ];

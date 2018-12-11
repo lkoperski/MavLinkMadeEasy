@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['elec',['ELEC',['../classlanding_1_1models_1_1_req.html#a7841a645b71d3013ca2b3b21f314a462',1,'landing::models::Req']]],
-  ['email',['email',['../classlanding_1_1models_1_1_user.html#ad7e7d28654e0dda92e9e055eaab3cd6b',1,'landing::models::User']]]
+  ['enforced_5ffor_5fcourses',['enforced_for_courses',['../namespacemavAgenda_1_1CoursesToRequirements.html#ae73dd5db36ec9c5e9ef0d4457022cf12',1,'mavAgenda::CoursesToRequirements']]],
+  ['eng_5freq',['eng_req',['../namespacemavAgenda_1_1CoursesToRequirements.html#a9c2b2fe8d45b47b61c06ecfc704c4b95',1,'mavAgenda::CoursesToRequirements']]],
+  ['english',['english',['../namespacemavAgenda_1_1CoursesToRequirements.html#ac47922c7a0e06cded34bb418cb06b47f',1,'mavAgenda::CoursesToRequirements']]]
 ];

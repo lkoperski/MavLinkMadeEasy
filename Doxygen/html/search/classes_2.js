@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['emailform',['EmailForm',['../classlanding_1_1forms_1_1_email_form.html',1,'landing::forms']]]
+  ['degree',['Degree',['../classmavAgenda_1_1landing_1_1models_1_1Degree.html',1,'mavAgenda::landing::models']]]
 ];

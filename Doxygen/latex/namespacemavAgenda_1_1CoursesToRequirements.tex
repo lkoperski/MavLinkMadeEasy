@@ -1,0 +1,164 @@
+\hypertarget{namespacemavAgenda_1_1CoursesToRequirements}{}\section{mav\+Agenda.\+Courses\+To\+Requirements Namespace Reference}
+\label{namespacemavAgenda_1_1CoursesToRequirements}\index{mav\+Agenda.\+Courses\+To\+Requirements@{mav\+Agenda.\+Courses\+To\+Requirements}}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+dictionary \mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_a921d8c4725c512515a269cd5c93346ff}{counts\+\_\+toward\+\_\+courses}}
+\begin{DoxyCompactList}\small\item\em Non-\/\+Required Courses. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_a5f1f1f8ae3b0c76cd6127f1efff347fb}{course}} = Course.\+objects.\+filter(course\+\_\+subject=\mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_a6b8eea6e735b0b2719a9119de39befec}{subject}}, course\+\_\+num=\mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_a14f52ce76e8c121c2e688e47bee5bc9c}{number}})
+\item 
+\mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_a544a2a7847bda3c0d90036d8dcf27d56}{course\+\_\+req}} = Requirement.\+objects.\+filter(req\+\_\+name=section)
+\item 
+dictionary \mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_ae73dd5db36ec9c5e9ef0d4457022cf12}{enforced\+\_\+for\+\_\+courses}}
+\begin{DoxyCompactList}\small\item\em Required Courses. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_a9c2b2fe8d45b47b61c06ecfc704c4b95}{eng\+\_\+req}} = Requirement.\+objects.\+filter(req\+\_\+name=\textquotesingle{}English Composition\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_ac47922c7a0e06cded34bb418cb06b47f}{english}} = Course.\+objects.\+filter(course\+\_\+subject=\textquotesingle{}E\+N\+GL\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em General Education. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_a4af825ad30ed8317fceb0bbebc3b0a13}{math}} = Course.\+objects.\+filter(course\+\_\+subject=\textquotesingle{}M\+A\+TH\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_ad9489607b48eea343e60fae9cab9f5a1}{math\+\_\+req}} = Requirement.\+objects.\+filter(req\+\_\+name=\textquotesingle{}Mathematics\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_a14f52ce76e8c121c2e688e47bee5bc9c}{number}} = item.\+split(\textquotesingle{} \textquotesingle{})\mbox{[}1\mbox{]}
+\item 
+\mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_a6df14428002caf79678b430a4f2a3a3c}{ps}} = Course.\+objects.\+filter(course\+\_\+subject=\textquotesingle{}C\+M\+ST\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_a14c74c27f6ae7698604d50f053677cea}{ps\+\_\+req}} = Requirement.\+objects.\+filter(req\+\_\+name=\textquotesingle{}Public Speaking\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_a6b8eea6e735b0b2719a9119de39befec}{subject}} = item.\+split(\textquotesingle{} \textquotesingle{})\mbox{[}0\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemavAgenda_1_1CoursesToRequirements_a921d8c4725c512515a269cd5c93346ff}\label{namespacemavAgenda_1_1CoursesToRequirements_a921d8c4725c512515a269cd5c93346ff}} 
+\index{mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}!counts\+\_\+toward\+\_\+courses@{counts\+\_\+toward\+\_\+courses}}
+\index{counts\+\_\+toward\+\_\+courses@{counts\+\_\+toward\+\_\+courses}!mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}}
+\subsubsection{\texorpdfstring{counts\+\_\+toward\+\_\+courses}{counts\_toward\_courses}}
+{\footnotesize\ttfamily dictionary mav\+Agenda.\+Courses\+To\+Requirements.\+counts\+\_\+toward\+\_\+courses}
+
+
+
+Non-\/\+Required Courses. 
+
+
+
+Definition at line 41 of file Courses\+To\+Requirements.\+py.
+
+\mbox{\Hypertarget{namespacemavAgenda_1_1CoursesToRequirements_a5f1f1f8ae3b0c76cd6127f1efff347fb}\label{namespacemavAgenda_1_1CoursesToRequirements_a5f1f1f8ae3b0c76cd6127f1efff347fb}} 
+\index{mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}!course@{course}}
+\index{course@{course}!mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}}
+\subsubsection{\texorpdfstring{course}{course}}
+{\footnotesize\ttfamily mav\+Agenda.\+Courses\+To\+Requirements.\+course = Course.\+objects.\+filter(course\+\_\+subject=\mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_a6b8eea6e735b0b2719a9119de39befec}{subject}}, course\+\_\+num=\mbox{\hyperlink{namespacemavAgenda_1_1CoursesToRequirements_a14f52ce76e8c121c2e688e47bee5bc9c}{number}})}
+
+
+
+Definition at line 1528 of file Courses\+To\+Requirements.\+py.
+
+\mbox{\Hypertarget{namespacemavAgenda_1_1CoursesToRequirements_a544a2a7847bda3c0d90036d8dcf27d56}\label{namespacemavAgenda_1_1CoursesToRequirements_a544a2a7847bda3c0d90036d8dcf27d56}} 
+\index{mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}!course\+\_\+req@{course\+\_\+req}}
+\index{course\+\_\+req@{course\+\_\+req}!mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}}
+\subsubsection{\texorpdfstring{course\+\_\+req}{course\_req}}
+{\footnotesize\ttfamily mav\+Agenda.\+Courses\+To\+Requirements.\+course\+\_\+req = Requirement.\+objects.\+filter(req\+\_\+name=section)}
+
+
+
+Definition at line 1529 of file Courses\+To\+Requirements.\+py.
+
+\mbox{\Hypertarget{namespacemavAgenda_1_1CoursesToRequirements_ae73dd5db36ec9c5e9ef0d4457022cf12}\label{namespacemavAgenda_1_1CoursesToRequirements_ae73dd5db36ec9c5e9ef0d4457022cf12}} 
+\index{mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}!enforced\+\_\+for\+\_\+courses@{enforced\+\_\+for\+\_\+courses}}
+\index{enforced\+\_\+for\+\_\+courses@{enforced\+\_\+for\+\_\+courses}!mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}}
+\subsubsection{\texorpdfstring{enforced\+\_\+for\+\_\+courses}{enforced\_for\_courses}}
+{\footnotesize\ttfamily dictionary mav\+Agenda.\+Courses\+To\+Requirements.\+enforced\+\_\+for\+\_\+courses}
+
+
+
+Required Courses. 
+
+
+
+Definition at line 1137 of file Courses\+To\+Requirements.\+py.
+
+\mbox{\Hypertarget{namespacemavAgenda_1_1CoursesToRequirements_a9c2b2fe8d45b47b61c06ecfc704c4b95}\label{namespacemavAgenda_1_1CoursesToRequirements_a9c2b2fe8d45b47b61c06ecfc704c4b95}} 
+\index{mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}!eng\+\_\+req@{eng\+\_\+req}}
+\index{eng\+\_\+req@{eng\+\_\+req}!mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}}
+\subsubsection{\texorpdfstring{eng\+\_\+req}{eng\_req}}
+{\footnotesize\ttfamily mav\+Agenda.\+Courses\+To\+Requirements.\+eng\+\_\+req = Requirement.\+objects.\+filter(req\+\_\+name=\textquotesingle{}English Composition\textquotesingle{})}
+
+
+
+Definition at line 16 of file Courses\+To\+Requirements.\+py.
+
+\mbox{\Hypertarget{namespacemavAgenda_1_1CoursesToRequirements_ac47922c7a0e06cded34bb418cb06b47f}\label{namespacemavAgenda_1_1CoursesToRequirements_ac47922c7a0e06cded34bb418cb06b47f}} 
+\index{mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}!english@{english}}
+\index{english@{english}!mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}}
+\subsubsection{\texorpdfstring{english}{english}}
+{\footnotesize\ttfamily mav\+Agenda.\+Courses\+To\+Requirements.\+english = Course.\+objects.\+filter(course\+\_\+subject=\textquotesingle{}E\+N\+GL\textquotesingle{})}
+
+
+
+General Education. 
+
+
+
+Definition at line 15 of file Courses\+To\+Requirements.\+py.
+
+\mbox{\Hypertarget{namespacemavAgenda_1_1CoursesToRequirements_a4af825ad30ed8317fceb0bbebc3b0a13}\label{namespacemavAgenda_1_1CoursesToRequirements_a4af825ad30ed8317fceb0bbebc3b0a13}} 
+\index{mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}!math@{math}}
+\index{math@{math}!mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}}
+\subsubsection{\texorpdfstring{math}{math}}
+{\footnotesize\ttfamily mav\+Agenda.\+Courses\+To\+Requirements.\+math = Course.\+objects.\+filter(course\+\_\+subject=\textquotesingle{}M\+A\+TH\textquotesingle{})}
+
+
+
+Definition at line 23 of file Courses\+To\+Requirements.\+py.
+
+\mbox{\Hypertarget{namespacemavAgenda_1_1CoursesToRequirements_ad9489607b48eea343e60fae9cab9f5a1}\label{namespacemavAgenda_1_1CoursesToRequirements_ad9489607b48eea343e60fae9cab9f5a1}} 
+\index{mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}!math\+\_\+req@{math\+\_\+req}}
+\index{math\+\_\+req@{math\+\_\+req}!mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}}
+\subsubsection{\texorpdfstring{math\+\_\+req}{math\_req}}
+{\footnotesize\ttfamily mav\+Agenda.\+Courses\+To\+Requirements.\+math\+\_\+req = Requirement.\+objects.\+filter(req\+\_\+name=\textquotesingle{}Mathematics\textquotesingle{})}
+
+
+
+Definition at line 24 of file Courses\+To\+Requirements.\+py.
+
+\mbox{\Hypertarget{namespacemavAgenda_1_1CoursesToRequirements_a14f52ce76e8c121c2e688e47bee5bc9c}\label{namespacemavAgenda_1_1CoursesToRequirements_a14f52ce76e8c121c2e688e47bee5bc9c}} 
+\index{mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}!number@{number}}
+\index{number@{number}!mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}}
+\subsubsection{\texorpdfstring{number}{number}}
+{\footnotesize\ttfamily mav\+Agenda.\+Courses\+To\+Requirements.\+number = item.\+split(\textquotesingle{} \textquotesingle{})\mbox{[}1\mbox{]}}
+
+
+
+Definition at line 1527 of file Courses\+To\+Requirements.\+py.
+
+\mbox{\Hypertarget{namespacemavAgenda_1_1CoursesToRequirements_a6df14428002caf79678b430a4f2a3a3c}\label{namespacemavAgenda_1_1CoursesToRequirements_a6df14428002caf79678b430a4f2a3a3c}} 
+\index{mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}!ps@{ps}}
+\index{ps@{ps}!mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}}
+\subsubsection{\texorpdfstring{ps}{ps}}
+{\footnotesize\ttfamily mav\+Agenda.\+Courses\+To\+Requirements.\+ps = Course.\+objects.\+filter(course\+\_\+subject=\textquotesingle{}C\+M\+ST\textquotesingle{})}
+
+
+
+Definition at line 31 of file Courses\+To\+Requirements.\+py.
+
+\mbox{\Hypertarget{namespacemavAgenda_1_1CoursesToRequirements_a14c74c27f6ae7698604d50f053677cea}\label{namespacemavAgenda_1_1CoursesToRequirements_a14c74c27f6ae7698604d50f053677cea}} 
+\index{mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}!ps\+\_\+req@{ps\+\_\+req}}
+\index{ps\+\_\+req@{ps\+\_\+req}!mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}}
+\subsubsection{\texorpdfstring{ps\+\_\+req}{ps\_req}}
+{\footnotesize\ttfamily mav\+Agenda.\+Courses\+To\+Requirements.\+ps\+\_\+req = Requirement.\+objects.\+filter(req\+\_\+name=\textquotesingle{}Public Speaking\textquotesingle{})}
+
+
+
+Definition at line 32 of file Courses\+To\+Requirements.\+py.
+
+\mbox{\Hypertarget{namespacemavAgenda_1_1CoursesToRequirements_a6b8eea6e735b0b2719a9119de39befec}\label{namespacemavAgenda_1_1CoursesToRequirements_a6b8eea6e735b0b2719a9119de39befec}} 
+\index{mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}!subject@{subject}}
+\index{subject@{subject}!mav\+Agenda\+::\+Courses\+To\+Requirements@{mav\+Agenda\+::\+Courses\+To\+Requirements}}
+\subsubsection{\texorpdfstring{subject}{subject}}
+{\footnotesize\ttfamily mav\+Agenda.\+Courses\+To\+Requirements.\+subject = item.\+split(\textquotesingle{} \textquotesingle{})\mbox{[}0\mbox{]}}
+
+
+
+Definition at line 1526 of file Courses\+To\+Requirements.\+py.
+

@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['p',['P',['../classlanding_1_1models_1_1_prereq.html#ab99082a563d5a9e30793d92d38cf4b5a',1,'landing::models::Prereq']]],
-  ['p_5fstring',['p_string',['../namespacetest.html#a5c2a72e8bf34cbecb251dfb910bfecc6',1,'test']]],
-  ['path',['path',['../classlanding_1_1apps_1_1_landing_config.html#a5e24228e720bc543458d2f18d457077c',1,'landing::apps::LandingConfig']]],
-  ['patt',['patt',['../namespacetest.html#aaaf53edd3eaffb34d42528d483908a81',1,'test']]],
-  ['prereq',['prereq',['../classlanding_1_1models_1_1_prereq.html#a5a6b973363c6df06d34df7c660b337a2',1,'landing::models::Prereq']]],
-  ['prereqs',['prereqs',['../classlanding_1_1models_1_1_course.html#a72e197ef956c8c162ad8a67da847fc2b',1,'landing::models::Course']]],
-  ['programs',['programs',['../namespacetest.html#a41110e26af9a29431f856ff8e6e63389',1,'test']]],
-  ['project_5fdir',['PROJECT_DIR',['../namespacemav_agenda_1_1settings.html#ab4ce42a5401340f89c8d454623c34d5e',1,'mavAgenda::settings']]]
+  ['offering_5fcourse',['offering_course',['../classmavAgenda_1_1landing_1_1models_1_1Offering.html#a5bc0a7b2c9fdc892d7b2a1150db5ab0e',1,'mavAgenda::landing::models::Offering']]],
+  ['offering_5fdays',['offering_days',['../classmavAgenda_1_1landing_1_1models_1_1Offering.html#ae73b33d9b47f9afc6c24bb2f64cdbb65',1,'mavAgenda::landing::models::Offering']]],
+  ['offering_5finstructor',['offering_instructor',['../classmavAgenda_1_1landing_1_1models_1_1Offering.html#acfcb59c9b41a8f86bfab07d2b61c7930',1,'mavAgenda::landing::models::Offering']]],
+  ['offering_5flocation',['offering_location',['../classmavAgenda_1_1landing_1_1models_1_1Offering.html#a9aed58e7fc7aa3e45cc904c544ee93c7',1,'mavAgenda::landing::models::Offering']]],
+  ['offering_5fsectionnum',['offering_sectionNum',['../classmavAgenda_1_1landing_1_1models_1_1Offering.html#a6f2544bb41a458d2b500c6878428bed1',1,'mavAgenda::landing::models::Offering']]],
+  ['offering_5ftime',['offering_time',['../classmavAgenda_1_1landing_1_1models_1_1Offering.html#ab39dc674156698916244ba97ad8c3ba1',1,'mavAgenda::landing::models::Offering']]],
+  ['operations',['operations',['../classmavAgenda_1_1landing_1_1migrations_1_10001__initial_1_1Migration.html#a9aee007040722d543adaeb5651d6fc00',1,'mavAgenda::landing::migrations::0001_initial::Migration']]]
 ];

@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">MavLinkMadeEasy
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">MavLink semester scheduling</div>
   </td>
@@ -48,6 +56,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('namespacemembers_func.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -63,89 +87,225 @@ $(function() {
 </div>
 
 <div class="contents">
-&#160;<ul>
+&#160;
+
+<h3><a id="index_a"></a>- a -</h3><ul>
 <li>addReqSection()
 : <a class="el" href="namespacescrape.html#ac72ffc4d789a94d65b548726045faa93">scrape</a>
 </li>
-<li>checkCourseValid()
-: <a class="el" href="namespacelanding_1_1views.html#aa2a6f90e1c87a4c8f20f66b6b11d81cf">landing.views</a>
-</li>
+</ul>
+
+
+<h3><a id="index_c"></a>- c -</h3><ul>
 <li>checkOfferedSemester()
-: <a class="el" href="namespacelanding_1_1views.html#a2f54a8ff8d9bcec3589d12b6e7fb9b73">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ace0cc2158ed96baa96aed788e8a79ba0">mavAgenda.landing.views</a>
 </li>
 <li>checkPrereqsMet()
-: <a class="el" href="namespacelanding_1_1views.html#ae39a544ed120a346d1173db21fe17ef3">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ab39ff28312a049e51783d4b5c09c2889">mavAgenda.landing.views</a>
+</li>
+<li>checkReqsMet()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#afdf8c77f4b035382e2b1b73912edf180">mavAgenda.landing.views</a>
+</li>
+<li>combineEnforcedAndElectiveCourses()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a49d702ba4703d34075928e3b50d40137">mavAgenda.landing.views</a>
+</li>
+<li>countCourseTowardReqs()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a760ef282377a3ca2be7eaf4254a99296">mavAgenda.landing.views</a>
+</li>
+<li>courseValid()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ac91e55945f21284a5dc9abd24cac6690">mavAgenda.landing.views</a>
 </li>
 <li>createSchedule()
-: <a class="el" href="namespacelanding_1_1views.html#aa4736d3c8ed65938a640bd054c1fb588">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ae8b8edf7cc479127adfdee3c0ff1e9fe">mavAgenda.landing.views</a>
 </li>
 <li>createuser()
-: <a class="el" href="namespacelanding_1_1views.html#acd4507dea8fb635a81455db7918ee43c">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#aa998c2a3a45470fbe34a8d653246f471">mavAgenda.landing.views</a>
 </li>
+</ul>
+
+
+<h3><a id="index_e"></a>- e -</h3><ul>
 <li>emailFound()
-: <a class="el" href="namespacelanding_1_1views.html#a54774f163c70feb2df73511f76bfd877">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a6a9fc857408512125072955d505bf8f3">mavAgenda.landing.views</a>
 </li>
+</ul>
+
+
+<h3><a id="index_g"></a>- g -</h3><ul>
 <li>generateCheckBoxEntities()
-: <a class="el" href="namespacelanding_1_1views.html#a0d4c1e9d73373e8f2956340085eb50b2">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a877af026df9866f8e1a7a106ea9809d2">mavAgenda.landing.views</a>
+</li>
+<li>generateConcentrationsDD()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a5a6480f4f25fb397610881b3e96e20a7">mavAgenda.landing.views</a>
+</li>
+<li>generateDiplomaDD()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a105948cc4eeb1f721d86f670a3020470">mavAgenda.landing.views</a>
 </li>
 <li>generateMajorDD()
-: <a class="el" href="namespacelanding_1_1views.html#acee7a550e05650013c2b9205bf9a2a88">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ab60f609329a57c41030685c032249fbb">mavAgenda.landing.views</a>
+</li>
+<li>generateMinorDD()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#aeefa9826cec239552cb7620c54e76450">mavAgenda.landing.views</a>
 </li>
 <li>generateNewSemester()
-: <a class="el" href="namespacelanding_1_1views.html#a219fcf8f07fa2eeaf2f31ad6d7fc6905">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a3ce0d3f74eb2fd5b10052c2c019478a1">mavAgenda.landing.views</a>
+</li>
+<li>generateNumCreditsDD()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a49e86f3d201ca31fde603a8555dac464">mavAgenda.landing.views</a>
+</li>
+<li>generateSemesterDD()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a19301baffd56440f07e157f4304bcfa7">mavAgenda.landing.views</a>
+</li>
+<li>generateYearDD()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a6d29704212cb7db9f5a2935dc1b037eb">mavAgenda.landing.views</a>
 </li>
 <li>getCompletedByUser()
-: <a class="el" href="namespacelanding_1_1views.html#ab8699575ba0ef576f40bd71e73a8530f">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a348cf64ede97168dfaacf49cb86396aa">mavAgenda.landing.views</a>
+</li>
+<li>getCoursePrereqs()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#aea033cb7fd4db6ad8582d9030adbd9eb">mavAgenda.landing.views</a>
 </li>
 <li>getCoursesForUser()
-: <a class="el" href="namespacelanding_1_1views.html#a35d744b4e891af5594e09cc3d0ed42bf">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#acf197252d8fc64ca8dabcd3ad86c44fa">mavAgenda.landing.views</a>
+</li>
+<li>getDefaultPreferences()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#abf63ccc16307602c6e3cd8cdd0a27439">mavAgenda.landing.views</a>
 </li>
 <li>getDegree()
-: <a class="el" href="namespacelanding_1_1views.html#a61fbcd00ed827ed89573b36b86e993ce">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a092514b579e6413adfe4dcc1ec5f5a81">mavAgenda.landing.views</a>
 </li>
-<li>getSemesterByMonthYear()
-: <a class="el" href="namespacelanding_1_1views.html#a205b22bd62d9457694957d93b53f35af">landing.views</a>
+<li>getDegreeReqs()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a744df9b524faa76fa7949ae1bb839cee">mavAgenda.landing.views</a>
+</li>
+<li>getElectiveCourses()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a093f67040145dbbb211f971ef3afb21c">mavAgenda.landing.views</a>
+</li>
+<li>getEnforcedCourses()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a5e53a5236a02d3bd8bcdd5864a1d5eb5">mavAgenda.landing.views</a>
+</li>
+<li>getNextSemesterTitle()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a1715b2bbbb2491f5c6171b58c0f1b013">mavAgenda.landing.views</a>
+</li>
+<li>getReqCourses()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ae93a61c9f4b55bee71f4753da73eae64">mavAgenda.landing.views</a>
+</li>
+<li>getSemesterByMonth()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a875d50bc3b626d8f6c1afa38bd5b646c">mavAgenda.landing.views</a>
 </li>
 <li>getUserByEmail()
-: <a class="el" href="namespacelanding_1_1views.html#a8d5dc6aa494a2a455d00898fe7c1a994">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a3ae48839d5de2bf530de0413865c6bfe">mavAgenda.landing.views</a>
 </li>
-<li>isFull()
-: <a class="el" href="namespacelanding_1_1views.html#a0c2f89f5183919eb35499eea63f159a1">landing.views</a>
-</li>
+</ul>
+
+
+<h3><a id="index_l"></a>- l -</h3><ul>
 <li>landing()
-: <a class="el" href="namespacemav_agenda_1_1views.html#a8653f38c95e8def94a868eeb549fd0c2">mavAgenda.views</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1views.html#ad9cb5be44183c0b001ee6e1b8fef5fbc">mavAgenda.mavAgenda.views</a>
 </li>
 <li>login()
-: <a class="el" href="namespacelanding_1_1views.html#a7b08070340297551acfaafde9d9376bb">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#aa1326a415f6c1e5ece0003f1db005087">mavAgenda.landing.views</a>
 </li>
+</ul>
+
+
+<h3><a id="index_m"></a>- m -</h3><ul>
 <li>main()
 : <a class="el" href="namespacescrape.html#a5653dd5601f9b92af6a260a7fab1ff43">scrape</a>
 </li>
+<li>mandatePrereqsForEnforcedCourses()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#abecce7b2d73935c98176d678866bfa1a">mavAgenda.landing.views</a>
+</li>
+</ul>
+
+
+<h3><a id="index_n"></a>- n -</h3><ul>
+<li>nextsemesterpreferences()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#afd6c90b52229e71e7b6fea7c5798cef7">mavAgenda.landing.views</a>
+</li>
+</ul>
+
+
+<h3><a id="index_p"></a>- p -</h3><ul>
+<li>prefNumCreditsMet()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a0244061e7eb138b3657aebe21a1cefbe">mavAgenda.landing.views</a>
+</li>
+</ul>
+
+
+<h3><a id="index_r"></a>- r -</h3><ul>
+<li>read_course_csv()
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a55df24ef15e8110c2aa1b3413eed36f9">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>read_credit_csv()
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a9653d802c569f94888256343d5f8bfd1">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>read_csvs()
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a0092c9e65194decbabf6bb32584c7d45">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>read_from_file()
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#abbb7d5587b5823e95cb282ce49899bdd">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>read_reqs_csv()
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a6b9b66f70f008c5046d3ad8264f50ab5">mavAgenda.CSVPreprocessing</a>
+</li>
 <li>removeCoursesTaken()
-: <a class="el" href="namespacelanding_1_1views.html#a0c09aa6ffb498dba6bae2f61fac3a37d">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a2027dcc5c86c3c172808656237104ac6">mavAgenda.landing.views</a>
 </li>
 <li>removeUserCompletedEnteries()
-: <a class="el" href="namespacelanding_1_1views.html#a15788f148f992f964f914e41cca3563a">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ad44762f7b7b87274ee5b2bdd07fdf25a">mavAgenda.landing.views</a>
 </li>
+</ul>
+
+
+<h3><a id="index_s"></a>- s -</h3><ul>
 <li>saveClassesToUser()
-: <a class="el" href="namespacelanding_1_1views.html#a474931c0129efca17c6aa8ba314af9e5">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a09ee653c730bd8eb540ef674eebf01d3">mavAgenda.landing.views</a>
 </li>
 <li>schedule()
-: <a class="el" href="namespacelanding_1_1views.html#acbb94e571697e7b28ad35bf2996fe01f">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a38b95502a945bfe5e450db9b88dd802f">mavAgenda.landing.views</a>
 </li>
 <li>selectcourses()
-: <a class="el" href="namespacelanding_1_1views.html#a36b36778d06e5903c4854cb15d5ac297">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a55d61c1738704e1297aa54c9c26fc31d">mavAgenda.landing.views</a>
 </li>
 <li>selectdegree()
-: <a class="el" href="namespacemav_agenda_1_1views.html#a64ca2f2eecfd09c44da85271651c9af2">mavAgenda.views</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1views.html#adf57950b610bf6e0b3720d2b62973c74">mavAgenda.mavAgenda.views</a>
+</li>
+<li>setupReqTracker()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a070695b43494f3b578bfdda9b8316a42">mavAgenda.landing.views</a>
+</li>
+<li>setupSchedule()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a0917de5383aa4bc5f500a44777916555">mavAgenda.landing.views</a>
+</li>
+<li>sortCoursesBySubNum()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a7bbfe5d43d84d134720962c7f10d1ffd">mavAgenda.landing.views</a>
+</li>
+</ul>
+
+
+<h3><a id="index_t"></a>- t -</h3><ul>
+<li>tallyNumberCreditsTaken()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a10751be31a0b978bcd8769ac78b55b8a">mavAgenda.landing.views</a>
+</li>
+<li>translateCourseInfoToCourse()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ac3facecfedd11b12fba64630c173fb1b">mavAgenda.landing.views</a>
+</li>
+</ul>
+
+
+<h3><a id="index_u"></a>- u -</h3><ul>
+<li>updateReqTrackerForCompletedCourses()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a71b49cd4a5899b4c459df2b7761cc1f2">mavAgenda.landing.views</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

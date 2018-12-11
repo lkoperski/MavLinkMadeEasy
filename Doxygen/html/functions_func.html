@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">MavLinkMadeEasy
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">MavLink semester scheduling</div>
   </td>
@@ -48,6 +56,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('functions_func.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -64,85 +88,73 @@ $(function() {
 
 <div class="contents">
 &#160;<ul>
-<li>__str__()
-: <a class="el" href="classlanding_1_1models_1_1_complete.html#a44fc3d77ef307f9b0b0213348bde49e7">landing.models.Complete</a>
-, <a class="el" href="classlanding_1_1models_1_1_course.html#aa4f68293b00eee57ad321d52d12db11d">landing.models.Course</a>
-, <a class="el" href="classlanding_1_1models_1_1_degree.html#a96504bd8bf8ab468746ff6b87078d570">landing.models.Degree</a>
-, <a class="el" href="classlanding_1_1models_1_1_prereq.html#ae77d9f8c9247da4228188a658afadadd">landing.models.Prereq</a>
-, <a class="el" href="classlanding_1_1models_1_1_req.html#aecc732d504a03f77e030bc11018959fd">landing.models.Req</a>
-, <a class="el" href="classlanding_1_1models_1_1_user.html#ab9d266b69a7797edc67996019777ed3c">landing.models.User</a>
-</li>
-<li>display_course_reqs()
-: <a class="el" href="classlanding_1_1models_1_1_degree.html#a399790c26a77d0e0c5546ded63c0681e">landing.models.Degree</a>
-</li>
-<li>display_courses_completed()
-: <a class="el" href="classlanding_1_1models_1_1_complete.html#a0ce83bf995dc720cccd86a8aaad19380">landing.models.Complete</a>
-</li>
-<li>display_courses_needed()
-: <a class="el" href="classlanding_1_1models_1_1_complete.html#ac66d7e3f5ac431d0ab36a95d75f4689b">landing.models.Complete</a>
-</li>
-<li>display_credits_earned()
-: <a class="el" href="classlanding_1_1models_1_1_complete.html#a5e84e161c3c6954f81c55389fb08893e">landing.models.Complete</a>
-</li>
-<li>display_credits_needed()
-: <a class="el" href="classlanding_1_1models_1_1_complete.html#adb3c3c353ea86a5a8edaa473d6f9329f">landing.models.Complete</a>
-</li>
-<li>display_degree()
-: <a class="el" href="classlanding_1_1models_1_1_complete.html#a0be3eaa57fd0d77a287cbafc5c2d1a1e">landing.models.Complete</a>
-, <a class="el" href="classlanding_1_1models_1_1_user.html#a6652ad6217bd9c50625cb9e912de753c">landing.models.User</a>
-</li>
-<li>display_degrees()
-: <a class="el" href="classlanding_1_1models_1_1_req.html#af84ca5d0e66c83f7992df1c067c7cb2f">landing.models.Req</a>
-</li>
-<li>display_dept()
-: <a class="el" href="classlanding_1_1models_1_1_course.html#a74f650a36abbbedea6dfd16b8cbdd659">landing.models.Course</a>
-</li>
-<li>display_no()
-: <a class="el" href="classlanding_1_1models_1_1_course.html#a851475897629dad76aa0632a206f8397">landing.models.Course</a>
-</li>
-<li>display_prereqs()
-: <a class="el" href="classlanding_1_1models_1_1_course.html#aad8e9518dcc2f4c81a1f3bde3b35fb70">landing.models.Course</a>
-</li>
-<li>display_recursive()
-: <a class="el" href="classlanding_1_1models_1_1_prereq.html#aeda5a3da2405af57ebdffb9292e0e10f">landing.models.Prereq</a>
-</li>
 <li>setUp()
-: <a class="el" href="classlanding_1_1tests_1_1test__logic_1_1_your_test_class.html#a8fc08e836ba1d71ef27e4fb442f9bf07">landing.tests.test_logic.YourTestClass</a>
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html#a52341724cc7e7454dc9c3d7b9a3cb9b4">mavAgenda.landing.tests.test_logic.YourTestClass</a>
 </li>
 <li>setUpClass()
-: <a class="el" href="classlanding_1_1tests_1_1test___u_i_1_1_u_i_tests.html#a63dc03589cdac58df8716fbb1fb3279b">landing.tests.test_UI.UITests</a>
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__UI_1_1UITests.html#a66041a2c1743ba6e5b8ed20180c4a586">mavAgenda.landing.tests.test_UI.UITests</a>
 </li>
 <li>tearDown()
-: <a class="el" href="classlanding_1_1tests_1_1test__logic_1_1_your_test_class.html#aa5874621de0a637a917adb181465565b">landing.tests.test_logic.YourTestClass</a>
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html#ac06b5ac32b334c6db8d20b28bff9dcd5">mavAgenda.landing.tests.test_logic.YourTestClass</a>
 </li>
 <li>tearDownClass()
-: <a class="el" href="classlanding_1_1tests_1_1test___u_i_1_1_u_i_tests.html#a2d3a96bc34095bed7567d567563e8d82">landing.tests.test_UI.UITests</a>
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__UI_1_1UITests.html#a650b4a7217f6c9ee98562af086085eb2">mavAgenda.landing.tests.test_UI.UITests</a>
 </li>
 <li>test_addclasses_form()
-: <a class="el" href="classlanding_1_1tests_1_1test___u_i_1_1_u_i_tests.html#ac3d481487cc39ef72303722c3fd779d7">landing.tests.test_UI.UITests</a>
-</li>
-<li>test_changemajor_form()
-: <a class="el" href="classlanding_1_1tests_1_1test___u_i_1_1_u_i_tests.html#ac4c44ad9b2ff549429cfb842dd53339a">landing.tests.test_UI.UITests</a>
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__UI_1_1UITests.html#a7cfdbe1460aac92541249bfcc1a9abef">mavAgenda.landing.tests.test_UI.UITests</a>
 </li>
 <li>test_createuser_form()
-: <a class="el" href="classlanding_1_1tests_1_1test___u_i_1_1_u_i_tests.html#a97adaea38b64567b0757f65c31770044">landing.tests.test_UI.UITests</a>
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__UI_1_1UITests.html#ae53ad10b481857ef10e977d43c3919e7">mavAgenda.landing.tests.test_UI.UITests</a>
 </li>
-<li>test_get_degree()
-: <a class="el" href="classlanding_1_1tests_1_1test__logic_1_1_your_test_class.html#a190eb6704ee516bdcd15e1b59805ceaf">landing.tests.test_logic.YourTestClass</a>
+<li>test_emailFound()
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html#ab211b3198abbb55213fbd449749cd7eb">mavAgenda.landing.tests.test_logic.YourTestClass</a>
 </li>
-<li>test_get_user_by_email()
-: <a class="el" href="classlanding_1_1tests_1_1test__logic_1_1_your_test_class.html#a2aa25fcc4af052ea73c7c50260062eef">landing.tests.test_logic.YourTestClass</a>
+<li>test_generate_new_semester()
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html#ae13fb320de9f7b8e11a657713ed28e3b">mavAgenda.landing.tests.test_logic.YourTestClass</a>
+</li>
+<li>test_generateConcentrationsDD()
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html#a92dd9e0d0f4c7721cc16cf6ad318e20c">mavAgenda.landing.tests.test_logic.YourTestClass</a>
+</li>
+<li>test_generateDiplomaDD()
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html#adcb1fa2a84938fbda1e95945e5fe7563">mavAgenda.landing.tests.test_logic.YourTestClass</a>
+</li>
+<li>test_generateMajorDD()
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html#a96eb626f5ff67d3bef7e4d6705937fd3">mavAgenda.landing.tests.test_logic.YourTestClass</a>
+</li>
+<li>test_generateMinorDD()
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html#a1cb83153767db996e15d9db71338a0af">mavAgenda.landing.tests.test_logic.YourTestClass</a>
+</li>
+<li>test_get_semester_by_month_year()
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html#a919098d14fd2ebdf36ebb1bcab559df9">mavAgenda.landing.tests.test_logic.YourTestClass</a>
+</li>
+<li>test_getDegree()
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html#a1027711c315b11bdb28b362052f7899c">mavAgenda.landing.tests.test_logic.YourTestClass</a>
+</li>
+<li>test_getUserByEmail()
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html#a350891680934199ae19c4dd9c17c2bc6">mavAgenda.landing.tests.test_logic.YourTestClass</a>
+</li>
+<li>test_is_full()
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html#aea8bc5604b3cad518ccb0a9a401a9531">mavAgenda.landing.tests.test_logic.YourTestClass</a>
+</li>
+<li>test_removeCoursesTaken()
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html#ade83dd9818234e7d8dfd23641c23b012">mavAgenda.landing.tests.test_logic.YourTestClass</a>
+</li>
+<li>test_removeUserCompletedEnteries()
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html#a2b1231c90d1e9b656ffd68eae5cc140a">mavAgenda.landing.tests.test_logic.YourTestClass</a>
 </li>
 <li>test_selectcourses_form()
-: <a class="el" href="classlanding_1_1tests_1_1test___u_i_1_1_u_i_tests.html#a2d1e2011a8c152e486dc0c415797fdc9">landing.tests.test_UI.UITests</a>
+: <a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__UI_1_1UITests.html#aabf40f86f8f79a11c5be81b894162a4d">mavAgenda.landing.tests.test_UI.UITests</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

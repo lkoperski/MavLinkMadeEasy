@@ -1,0 +1,292 @@
+\hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course}{}\section{mav\+Agenda.\+landing.\+models.\+Course Class Reference}
+\label{classmavAgenda_1_1landing_1_1models_1_1Course}\index{mav\+Agenda.\+landing.\+models.\+Course@{mav\+Agenda.\+landing.\+models.\+Course}}
+Inheritance diagram for mav\+Agenda.\+landing.\+models.\+Course\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmavAgenda_1_1landing_1_1models_1_1Course}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_ac88ad8d55bb2f4ce8395b5691a545cf7}{A}} = \char`\"{}All\char`\"{}
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a86e9d0e163b35f3cf2815ec9967a1a69}{course\+\_\+comment}} = models.\+Char\+Field(max\+\_\+length=200, blank=True)
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a16e98691d0bd9076788112493182023e}{course\+\_\+counts\+\_\+toward}} = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Requirement}{Requirement}}, related\+\_\+name=\textquotesingle{}counted\+\_\+toward\textquotesingle{})
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a9292fd2a8b1f5acd72a96b5e0ff2cda0}{course\+\_\+credits}} = models.\+Integer\+Field()
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_ab4dbdb33b64f85c6dd36539868a4d3ad}{course\+\_\+enforced\+\_\+for}} = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Requirement}{Requirement}}, related\+\_\+name=\textquotesingle{}enforced\+\_\+for\textquotesingle{})
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a9707b11f71fb228fb73e4b704157f2be}{course\+\_\+name}} = models.\+Char\+Field(max\+\_\+length=75)
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_ab7b44a82da024d5102f98f541a80985c}{course\+\_\+num}} = models.\+Char\+Field(max\+\_\+length=15)
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a55da9d20d80ec2c6616547fb1c674b78}{course\+\_\+semester}} = models.\+Char\+Field(max\+\_\+length=10, choices=\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_ae05d55465b858136d199cf3fb56c1cd9}{S\+E\+M\+\_\+\+C\+H\+O\+I\+CE}}, default=\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_ac88ad8d55bb2f4ce8395b5691a545cf7}{A}})
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a5f117674611634b01e100c61462d02a6}{course\+\_\+special}} = models.\+Char\+Field(max\+\_\+length=15, choices=\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a810babb1a1eb7ec206989017427fd2af}{S\+P\+E\+C\+I\+A\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE}}, default=None)
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a00f85c8e8f12e5f0bd4a1cfd3acdc1b2}{course\+\_\+subject}} = models.\+Char\+Field(max\+\_\+length=15)
+\item 
+string \mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a6e8ba2964bcec7c3717ba6fac5150282}{F}} = \char`\"{}Fall\char`\"{}
+\item 
+string \mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_aa13044ed40c5356c6de9f4d484e30f41}{H}} = \char`\"{}Fall/Summer\char`\"{}
+\item 
+string \mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a15987a8dfaa0f5fa4bc0e6a68c82eb13}{M}} = \char`\"{}Summer\char`\"{}
+\item 
+string \mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a4c7e3d50d00ac9a1edf1d19407259e58}{N}} = \char`\"{}No\char`\"{}
+\item 
+string \mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a8065cf384f5fed6bcb340179d2e8c2f6}{P}} = \char`\"{}Spring/Summer\char`\"{}
+\item 
+string \mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_ab149d36a98d8a629ce2a6e393abaf122}{S}} = \char`\"{}Spring\char`\"{}
+\item 
+tuple \mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_ae05d55465b858136d199cf3fb56c1cd9}{S\+E\+M\+\_\+\+C\+H\+O\+I\+CE}}
+\item 
+tuple \mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a810babb1a1eb7ec206989017427fd2af}{S\+P\+E\+C\+I\+A\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE}}
+\item 
+string \mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a81fad615d231e798df111c953407c255}{W}} = \char`\"{}Waiver\char`\"{}
+\item 
+string \mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a1bf10eebe4267736e6680c1ad015ee30}{Y}} = \char`\"{}Year-\/Only\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}@Course holds the systems classes, this includes the
+        name (i.e Java 1), subject (i.e. IS&T), semester it is offered in (i.e. Spring and Fall),
+        special flag if it has an extra requirement (i.e. lab), comment for any other special
+        characteristics (i.e. capstone must be taken in the last semester),
+        credits (i.e. 3), and num (1400).
+\end{DoxyVerb}
+ 
+
+Definition at line 59 of file models.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_ac88ad8d55bb2f4ce8395b5691a545cf7}\label{classmavAgenda_1_1landing_1_1models_1_1Course_ac88ad8d55bb2f4ce8395b5691a545cf7}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!A@{A}}
+\index{A@{A}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{A}{A}}
+{\footnotesize\ttfamily string mav\+Agenda.\+landing.\+models.\+Course.\+A = \char`\"{}All\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 70 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_a86e9d0e163b35f3cf2815ec9967a1a69}\label{classmavAgenda_1_1landing_1_1models_1_1Course_a86e9d0e163b35f3cf2815ec9967a1a69}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!course\+\_\+comment@{course\+\_\+comment}}
+\index{course\+\_\+comment@{course\+\_\+comment}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{course\+\_\+comment}{course\_comment}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Course.\+course\+\_\+comment = models.\+Char\+Field(max\+\_\+length=200, blank=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 97 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_a16e98691d0bd9076788112493182023e}\label{classmavAgenda_1_1landing_1_1models_1_1Course_a16e98691d0bd9076788112493182023e}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!course\+\_\+counts\+\_\+toward@{course\+\_\+counts\+\_\+toward}}
+\index{course\+\_\+counts\+\_\+toward@{course\+\_\+counts\+\_\+toward}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{course\+\_\+counts\+\_\+toward}{course\_counts\_toward}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Course.\+course\+\_\+counts\+\_\+toward = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Requirement}{Requirement}}, related\+\_\+name=\textquotesingle{}counted\+\_\+toward\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 99 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_a9292fd2a8b1f5acd72a96b5e0ff2cda0}\label{classmavAgenda_1_1landing_1_1models_1_1Course_a9292fd2a8b1f5acd72a96b5e0ff2cda0}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!course\+\_\+credits@{course\+\_\+credits}}
+\index{course\+\_\+credits@{course\+\_\+credits}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{course\+\_\+credits}{course\_credits}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Course.\+course\+\_\+credits = models.\+Integer\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 87 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_ab4dbdb33b64f85c6dd36539868a4d3ad}\label{classmavAgenda_1_1landing_1_1models_1_1Course_ab4dbdb33b64f85c6dd36539868a4d3ad}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!course\+\_\+enforced\+\_\+for@{course\+\_\+enforced\+\_\+for}}
+\index{course\+\_\+enforced\+\_\+for@{course\+\_\+enforced\+\_\+for}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{course\+\_\+enforced\+\_\+for}{course\_enforced\_for}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Course.\+course\+\_\+enforced\+\_\+for = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Requirement}{Requirement}}, related\+\_\+name=\textquotesingle{}enforced\+\_\+for\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 98 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_a9707b11f71fb228fb73e4b704157f2be}\label{classmavAgenda_1_1landing_1_1models_1_1Course_a9707b11f71fb228fb73e4b704157f2be}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!course\+\_\+name@{course\+\_\+name}}
+\index{course\+\_\+name@{course\+\_\+name}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{course\+\_\+name}{course\_name}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Course.\+course\+\_\+name = models.\+Char\+Field(max\+\_\+length=75)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 67 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_ab7b44a82da024d5102f98f541a80985c}\label{classmavAgenda_1_1landing_1_1models_1_1Course_ab7b44a82da024d5102f98f541a80985c}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!course\+\_\+num@{course\+\_\+num}}
+\index{course\+\_\+num@{course\+\_\+num}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{course\+\_\+num}{course\_num}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Course.\+course\+\_\+num = models.\+Char\+Field(max\+\_\+length=15)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 69 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_a55da9d20d80ec2c6616547fb1c674b78}\label{classmavAgenda_1_1landing_1_1models_1_1Course_a55da9d20d80ec2c6616547fb1c674b78}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!course\+\_\+semester@{course\+\_\+semester}}
+\index{course\+\_\+semester@{course\+\_\+semester}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{course\+\_\+semester}{course\_semester}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Course.\+course\+\_\+semester = models.\+Char\+Field(max\+\_\+length=10, choices=\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_ae05d55465b858136d199cf3fb56c1cd9}{S\+E\+M\+\_\+\+C\+H\+O\+I\+CE}}, default=\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_ac88ad8d55bb2f4ce8395b5691a545cf7}{A}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 86 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_a5f117674611634b01e100c61462d02a6}\label{classmavAgenda_1_1landing_1_1models_1_1Course_a5f117674611634b01e100c61462d02a6}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!course\+\_\+special@{course\+\_\+special}}
+\index{course\+\_\+special@{course\+\_\+special}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{course\+\_\+special}{course\_special}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Course.\+course\+\_\+special = models.\+Char\+Field(max\+\_\+length=15, choices=\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course_a810babb1a1eb7ec206989017427fd2af}{S\+P\+E\+C\+I\+A\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE}}, default=None)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 96 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_a00f85c8e8f12e5f0bd4a1cfd3acdc1b2}\label{classmavAgenda_1_1landing_1_1models_1_1Course_a00f85c8e8f12e5f0bd4a1cfd3acdc1b2}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!course\+\_\+subject@{course\+\_\+subject}}
+\index{course\+\_\+subject@{course\+\_\+subject}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{course\+\_\+subject}{course\_subject}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Course.\+course\+\_\+subject = models.\+Char\+Field(max\+\_\+length=15)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 68 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_a6e8ba2964bcec7c3717ba6fac5150282}\label{classmavAgenda_1_1landing_1_1models_1_1Course_a6e8ba2964bcec7c3717ba6fac5150282}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!F@{F}}
+\index{F@{F}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{F}{F}}
+{\footnotesize\ttfamily string mav\+Agenda.\+landing.\+models.\+Course.\+F = \char`\"{}Fall\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 72 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_aa13044ed40c5356c6de9f4d484e30f41}\label{classmavAgenda_1_1landing_1_1models_1_1Course_aa13044ed40c5356c6de9f4d484e30f41}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!H@{H}}
+\index{H@{H}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{H}{H}}
+{\footnotesize\ttfamily string mav\+Agenda.\+landing.\+models.\+Course.\+H = \char`\"{}Fall/Summer\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 76 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_a15987a8dfaa0f5fa4bc0e6a68c82eb13}\label{classmavAgenda_1_1landing_1_1models_1_1Course_a15987a8dfaa0f5fa4bc0e6a68c82eb13}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!M@{M}}
+\index{M@{M}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{M}{M}}
+{\footnotesize\ttfamily string mav\+Agenda.\+landing.\+models.\+Course.\+M = \char`\"{}Summer\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 73 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_a4c7e3d50d00ac9a1edf1d19407259e58}\label{classmavAgenda_1_1landing_1_1models_1_1Course_a4c7e3d50d00ac9a1edf1d19407259e58}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!N@{N}}
+\index{N@{N}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily string mav\+Agenda.\+landing.\+models.\+Course.\+N = \char`\"{}No\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 88 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_a8065cf384f5fed6bcb340179d2e8c2f6}\label{classmavAgenda_1_1landing_1_1models_1_1Course_a8065cf384f5fed6bcb340179d2e8c2f6}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!P@{P}}
+\index{P@{P}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{P}{P}}
+{\footnotesize\ttfamily string mav\+Agenda.\+landing.\+models.\+Course.\+P = \char`\"{}Spring/Summer\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 75 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_ab149d36a98d8a629ce2a6e393abaf122}\label{classmavAgenda_1_1landing_1_1models_1_1Course_ab149d36a98d8a629ce2a6e393abaf122}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!S@{S}}
+\index{S@{S}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{S}{S}}
+{\footnotesize\ttfamily string mav\+Agenda.\+landing.\+models.\+Course.\+S = \char`\"{}Spring\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 71 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_ae05d55465b858136d199cf3fb56c1cd9}\label{classmavAgenda_1_1landing_1_1models_1_1Course_ae05d55465b858136d199cf3fb56c1cd9}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!S\+E\+M\+\_\+\+C\+H\+O\+I\+CE@{S\+E\+M\+\_\+\+C\+H\+O\+I\+CE}}
+\index{S\+E\+M\+\_\+\+C\+H\+O\+I\+CE@{S\+E\+M\+\_\+\+C\+H\+O\+I\+CE}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{S\+E\+M\+\_\+\+C\+H\+O\+I\+CE}{SEM\_CHOICE}}
+{\footnotesize\ttfamily tuple mav\+Agenda.\+landing.\+models.\+Course.\+S\+E\+M\+\_\+\+C\+H\+O\+I\+CE\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=  (
+        (A, \textcolor{stringliteral}{"All"}),
+        (S, \textcolor{stringliteral}{"Spring"}),
+        (F, \textcolor{stringliteral}{"Fall"}),
+        (M, \textcolor{stringliteral}{"Summer"}),
+        (Y, \textcolor{stringliteral}{"Year-Only"}),
+        (P, \textcolor{stringliteral}{"Spring/Summer"}),
+        (H, \textcolor{stringliteral}{"Fall/Summer"}),
+    )
+\end{DoxyCode}
+
+
+Definition at line 77 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_a810babb1a1eb7ec206989017427fd2af}\label{classmavAgenda_1_1landing_1_1models_1_1Course_a810babb1a1eb7ec206989017427fd2af}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!S\+P\+E\+C\+I\+A\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE@{S\+P\+E\+C\+I\+A\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE}}
+\index{S\+P\+E\+C\+I\+A\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE@{S\+P\+E\+C\+I\+A\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{S\+P\+E\+C\+I\+A\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE}{SPECIAL\_TYPE\_CHOICE}}
+{\footnotesize\ttfamily tuple mav\+Agenda.\+landing.\+models.\+Course.\+S\+P\+E\+C\+I\+A\+L\+\_\+\+T\+Y\+P\+E\+\_\+\+C\+H\+O\+I\+CE\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=  (
+        (N, \textcolor{stringliteral}{"No"}),
+        (Y, \textcolor{stringliteral}{"Lab"}),
+        (W, \textcolor{stringliteral}{"Waiver"}),
+    )
+\end{DoxyCode}
+
+
+Definition at line 91 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_a81fad615d231e798df111c953407c255}\label{classmavAgenda_1_1landing_1_1models_1_1Course_a81fad615d231e798df111c953407c255}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!W@{W}}
+\index{W@{W}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{W}{W}}
+{\footnotesize\ttfamily string mav\+Agenda.\+landing.\+models.\+Course.\+W = \char`\"{}Waiver\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 90 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Course_a1bf10eebe4267736e6680c1ad015ee30}\label{classmavAgenda_1_1landing_1_1models_1_1Course_a1bf10eebe4267736e6680c1ad015ee30}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}!Y@{Y}}
+\index{Y@{Y}!mav\+Agenda\+::landing\+::models\+::\+Course@{mav\+Agenda\+::landing\+::models\+::\+Course}}
+\subsubsection{\texorpdfstring{Y}{Y}}
+{\footnotesize\ttfamily string mav\+Agenda.\+landing.\+models.\+Course.\+Y = \char`\"{}Year-\/Only\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 74 of file models.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lauren/\+Pycharm\+Projects/\+Mav\+Link\+Made\+Easy/mav\+Agenda/landing/\mbox{\hyperlink{models_8py}{models.\+py}}\end{DoxyCompactItemize}

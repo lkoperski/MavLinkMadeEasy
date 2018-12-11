@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">MavLinkMadeEasy
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">MavLink semester scheduling</div>
   </td>
@@ -48,6 +56,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classes.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,35 +91,43 @@ $(function() {
 <div class="title">Class Index</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="qindex"><a class="qindex" href="#letter_c">c</a>&#160;|&#160;<a class="qindex" href="#letter_d">d</a>&#160;|&#160;<a class="qindex" href="#letter_e">e</a>&#160;|&#160;<a class="qindex" href="#letter_l">l</a>&#160;|&#160;<a class="qindex" href="#letter_m">m</a>&#160;|&#160;<a class="qindex" href="#letter_p">p</a>&#160;|&#160;<a class="qindex" href="#letter_r">r</a>&#160;|&#160;<a class="qindex" href="#letter_u">u</a>&#160;|&#160;<a class="qindex" href="#letter_y">y</a></div>
+<div class="qindex"><a class="qindex" href="#letter_b">b</a>&#160;|&#160;<a class="qindex" href="#letter_c">c</a>&#160;|&#160;<a class="qindex" href="#letter_d">d</a>&#160;|&#160;<a class="qindex" href="#letter_i">i</a>&#160;|&#160;<a class="qindex" href="#letter_l">l</a>&#160;|&#160;<a class="qindex" href="#letter_m">m</a>&#160;|&#160;<a class="qindex" href="#letter_o">o</a>&#160;|&#160;<a class="qindex" href="#letter_p">p</a>&#160;|&#160;<a class="qindex" href="#letter_r">r</a>&#160;|&#160;<a class="qindex" href="#letter_u">u</a>&#160;|&#160;<a class="qindex" href="#letter_w">w</a>&#160;|&#160;<a class="qindex" href="#letter_y">y</a></div>
 <table class="classindex">
-<tr><td rowspan="2" valign="bottom"><a name="letter_c"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;c&#160;&#160;</div></td></tr></table>
-</td><td valign="top"><a class="el" href="classlanding_1_1admin_1_1_degree_admin.html">DegreeAdmin</a> (<a class="el" href="namespacelanding_1_1admin.html">landing.admin</a>)&#160;&#160;&#160;</td><td rowspan="2" valign="bottom"><a name="letter_m"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;m&#160;&#160;</div></td></tr></table>
-</td><td rowspan="2" valign="bottom"><a name="letter_r"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;r&#160;&#160;</div></td></tr></table>
-</td><td rowspan="2" valign="bottom"><a name="letter_y"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;y&#160;&#160;</div></td></tr></table>
-</td></tr>
-<tr><td valign="top"><a class="el" href="classlanding_1_1forms_1_1_degree_form.html">DegreeForm</a> (<a class="el" href="namespacelanding_1_1forms.html">landing.forms</a>)&#160;&#160;&#160;</td></tr>
-<tr><td valign="top"><a class="el" href="classlanding_1_1models_1_1_complete.html">Complete</a> (<a class="el" href="namespacelanding_1_1models.html">landing.models</a>)&#160;&#160;&#160;</td><td rowspan="2" valign="bottom"><a name="letter_e"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;e&#160;&#160;</div></td></tr></table>
-</td><td valign="top"><a class="el" href="classlanding_1_1forms_1_1_user_completed_form_1_1_meta.html">UserCompletedForm.Meta</a> (<a class="el" href="namespacelanding_1_1forms.html">landing.forms</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classlanding_1_1models_1_1_req.html">Req</a> (<a class="el" href="namespacelanding_1_1models.html">landing.models</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classlanding_1_1tests_1_1test__logic_1_1_your_test_class.html">YourTestClass</a> (<a class="el" href="namespacelanding_1_1tests_1_1test__logic.html">landing.tests.test_logic</a>)&#160;&#160;&#160;</td></tr>
-<tr><td valign="top"><a class="el" href="classlanding_1_1models_1_1_course.html">Course</a> (<a class="el" href="namespacelanding_1_1models.html">landing.models</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classlanding_1_1forms_1_1_email_form_1_1_meta.html">EmailForm.Meta</a> (<a class="el" href="namespacelanding_1_1forms.html">landing.forms</a>)&#160;&#160;&#160;</td><td rowspan="2" valign="bottom"><a name="letter_u"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;u&#160;&#160;</div></td></tr></table>
+<tr><td rowspan="2" valign="bottom"><a name="letter_b"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;b&#160;&#160;</div></td></tr></table>
+</td><td rowspan="2" valign="bottom"><a name="letter_i"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;i&#160;&#160;</div></td></tr></table>
+</td><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1migrations_1_10001__initial_1_1Migration.html">Migration</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1migrations_1_10001__initial.html">mavAgenda.landing.migrations.0001_initial</a>)&#160;&#160;&#160;</td><td rowspan="2" valign="bottom"><a name="letter_u"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;u&#160;&#160;</div></td></tr></table>
 </td><td></td></tr>
-<tr><td valign="top"><a class="el" href="classlanding_1_1admin_1_1_course_admin.html">CourseAdmin</a> (<a class="el" href="namespacelanding_1_1admin.html">landing.admin</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classlanding_1_1forms_1_1_email_form.html">EmailForm</a> (<a class="el" href="namespacelanding_1_1forms.html">landing.forms</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classlanding_1_1forms_1_1_degree_form_1_1_meta.html">DegreeForm.Meta</a> (<a class="el" href="namespacelanding_1_1forms.html">landing.forms</a>)&#160;&#160;&#160;</td><td></td></tr>
-<tr><td rowspan="2" valign="bottom"><a name="letter_d"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;d&#160;&#160;</div></td></tr></table>
+<tr><td rowspan="2" valign="bottom"><a name="letter_o"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;o&#160;&#160;</div></td></tr></table>
+</td><td></td></tr>
+<tr><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1models_1_1Building.html">Building</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1models.html">mavAgenda.landing.models</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1models_1_1Instructor.html">Instructor</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1models.html">mavAgenda.landing.models</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__UI_1_1UITests.html">UITests</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1tests_1_1test__UI.html">mavAgenda.landing.tests.test_UI</a>)&#160;&#160;&#160;</td><td></td></tr>
+<tr><td rowspan="2" valign="bottom"><a name="letter_c"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;c&#160;&#160;</div></td></tr></table>
 </td><td rowspan="2" valign="bottom"><a name="letter_l"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;l&#160;&#160;</div></td></tr></table>
-</td><td valign="top"><a class="el" href="classlanding_1_1migrations_1_10001__initial_1_1_migration.html">Migration</a> (<a class="el" href="namespacelanding_1_1migrations_1_10001__initial.html">landing.migrations.0001_initial</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classlanding_1_1tests_1_1test___u_i_1_1_u_i_tests.html">UITests</a> (<a class="el" href="namespacelanding_1_1tests_1_1test___u_i.html">landing.tests.test_UI</a>)&#160;&#160;&#160;</td><td></td></tr>
+</td><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1models_1_1Offering.html">Offering</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1models.html">mavAgenda.landing.models</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1forms_1_1UserForm.html">UserForm</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1forms.html">mavAgenda.landing.forms</a>)&#160;&#160;&#160;</td><td></td></tr>
 <tr><td rowspan="2" valign="bottom"><a name="letter_p"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;p&#160;&#160;</div></td></tr></table>
-</td><td valign="top"><a class="el" href="classlanding_1_1models_1_1_user.html">User</a> (<a class="el" href="namespacelanding_1_1models.html">landing.models</a>)&#160;&#160;&#160;</td><td></td></tr>
-<tr><td valign="top"><a class="el" href="classlanding_1_1models_1_1_degree.html">Degree</a> (<a class="el" href="namespacelanding_1_1models.html">landing.models</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classlanding_1_1apps_1_1_landing_config.html">LandingConfig</a> (<a class="el" href="namespacelanding_1_1apps.html">landing.apps</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classlanding_1_1forms_1_1_user_completed_form.html">UserCompletedForm</a> (<a class="el" href="namespacelanding_1_1forms.html">landing.forms</a>)&#160;&#160;&#160;</td><td></td></tr>
-<tr><td></td><td></td><td valign="top"><a class="el" href="classlanding_1_1models_1_1_prereq.html">Prereq</a> (<a class="el" href="namespacelanding_1_1models.html">landing.models</a>)&#160;&#160;&#160;</td><td></td><td></td></tr>
+</td><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1models_1_1UserPreferences.html">UserPreferences</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1models.html">mavAgenda.landing.models</a>)&#160;&#160;&#160;</td><td></td></tr>
+<tr><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1models_1_1Campus.html">Campus</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1models.html">mavAgenda.landing.models</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1apps_1_1LandingConfig.html">LandingConfig</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1apps.html">mavAgenda.landing.apps</a>)&#160;&#160;&#160;</td><td rowspan="2" valign="bottom"><a name="letter_w"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;w&#160;&#160;</div></td></tr></table>
+</td><td></td></tr>
+<tr><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1models_1_1Complete.html">Complete</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1models.html">mavAgenda.landing.models</a>)&#160;&#160;&#160;</td><td rowspan="2" valign="bottom"><a name="letter_m"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;m&#160;&#160;</div></td></tr></table>
+</td><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1models_1_1Prereq.html">Prereq</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1models.html">mavAgenda.landing.models</a>)&#160;&#160;&#160;</td><td></td></tr>
+<tr><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1models_1_1Course.html">Course</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1models.html">mavAgenda.landing.models</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1models_1_1PrereqCourse.html">PrereqCourse</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1models.html">mavAgenda.landing.models</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1models_1_1Weekday.html">Weekday</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1models.html">mavAgenda.landing.models</a>)&#160;&#160;&#160;</td><td></td></tr>
+<tr><td rowspan="2" valign="bottom"><a name="letter_d"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;d&#160;&#160;</div></td></tr></table>
+</td><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1forms_1_1UserForm_1_1Meta.html">UserForm.Meta</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1forms.html">mavAgenda.landing.forms</a>)&#160;&#160;&#160;</td><td rowspan="2" valign="bottom"><a name="letter_r"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;r&#160;&#160;</div></td></tr></table>
+</td><td rowspan="2" valign="bottom"><a name="letter_y"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;y&#160;&#160;</div></td></tr></table>
+</td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1models_1_1Degree.html">Degree</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1models.html">mavAgenda.landing.models</a>)&#160;&#160;&#160;</td><td></td><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1models_1_1Requirement.html">Requirement</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1models.html">mavAgenda.landing.models</a>)&#160;&#160;&#160;</td><td valign="top"><a class="el" href="classmavAgenda_1_1landing_1_1tests_1_1test__logic_1_1YourTestClass.html">YourTestClass</a> (<a class="el" href="namespacemavAgenda_1_1landing_1_1tests_1_1test__logic.html">mavAgenda.landing.tests.test_logic</a>)&#160;&#160;&#160;</td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
-<div class="qindex"><a class="qindex" href="#letter_c">c</a>&#160;|&#160;<a class="qindex" href="#letter_d">d</a>&#160;|&#160;<a class="qindex" href="#letter_e">e</a>&#160;|&#160;<a class="qindex" href="#letter_l">l</a>&#160;|&#160;<a class="qindex" href="#letter_m">m</a>&#160;|&#160;<a class="qindex" href="#letter_p">p</a>&#160;|&#160;<a class="qindex" href="#letter_r">r</a>&#160;|&#160;<a class="qindex" href="#letter_u">u</a>&#160;|&#160;<a class="qindex" href="#letter_y">y</a></div>
+<div class="qindex"><a class="qindex" href="#letter_b">b</a>&#160;|&#160;<a class="qindex" href="#letter_c">c</a>&#160;|&#160;<a class="qindex" href="#letter_d">d</a>&#160;|&#160;<a class="qindex" href="#letter_i">i</a>&#160;|&#160;<a class="qindex" href="#letter_l">l</a>&#160;|&#160;<a class="qindex" href="#letter_m">m</a>&#160;|&#160;<a class="qindex" href="#letter_o">o</a>&#160;|&#160;<a class="qindex" href="#letter_p">p</a>&#160;|&#160;<a class="qindex" href="#letter_r">r</a>&#160;|&#160;<a class="qindex" href="#letter_u">u</a>&#160;|&#160;<a class="qindex" href="#letter_w">w</a>&#160;|&#160;<a class="qindex" href="#letter_y">y</a></div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

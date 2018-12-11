@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -22,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">MavLinkMadeEasy
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
    <div id="projectbrief">MavLink semester scheduling</div>
   </td>
@@ -48,6 +56,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('namespacemembers.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -70,26 +94,35 @@ $(function() {
 : <a class="el" href="namespacescrape.html#ac72ffc4d789a94d65b548726045faa93">scrape</a>
 </li>
 <li>ALLOWED_HOSTS
-: <a class="el" href="namespacemav_agenda_1_1settings.html#a4610b713f82b38669b6a415cb65fcf99">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#ae6b895f9afe49d0e51d3f345ff7c5525">mavAgenda.mavAgenda.settings</a>
 </li>
 <li>alt
 : <a class="el" href="namespacetest.html#a292455049888b41870b9f53769925dc5">test</a>
 </li>
 <li>app_name
-: <a class="el" href="namespacelanding_1_1urls.html#a19bbbacd154bcd98ff83cc70831e086a">landing.urls</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1urls.html#a4bc1db00cea15957f98970fab4609df2">mavAgenda.landing.urls</a>
 </li>
 <li>application
-: <a class="el" href="namespacemav_agenda_1_1wsgi.html#aae226973e60e3685aded7ce165fbe8a0">mavAgenda.wsgi</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1wsgi.html#a8df9e9048cc8d3c0368585caa40d8cc4">mavAgenda.mavAgenda.wsgi</a>
 </li>
 <li>AUTH_PASSWORD_VALIDATORS
-: <a class="el" href="namespacemav_agenda_1_1settings.html#a168b84f6e963453be6cd21c6135b5d28">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#a555250124fcbb58436b50248c49b55b6">mavAgenda.mavAgenda.settings</a>
 </li>
 </ul>
 
 
 <h3><a id="index_b"></a>- b -</h3><ul>
 <li>BASE_DIR
-: <a class="el" href="namespacemav_agenda_1_1settings.html#a4c1c25aebe0c84efbeb882ae68410153">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#ac2a1051d132263e80427d9680d0c7e6c">mavAgenda.mavAgenda.settings</a>
+</li>
+<li>bioi
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#a824c0ea7215b8ff5c2ae2b4aa7d368df">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>bioi_maj_requirements
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#a2a45381406f868362d36391ee1698d2f">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>buildings_to_campuses
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a8d579c58a5e31d40300b86af3a85fbee">mavAgenda.CSVPreprocessing</a>
 </li>
 </ul>
 
@@ -98,39 +131,104 @@ $(function() {
 <li>catalog
 : <a class="el" href="namespacetest.html#a558bb89ee60dd0d0cdc82c89fd7db764">test</a>
 </li>
-<li>checkCourseValid()
-: <a class="el" href="namespacelanding_1_1views.html#aa2a6f90e1c87a4c8f20f66b6b11d81cf">landing.views</a>
+<li>centerStreet
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a70bee8b29fdeaeb2e85705af945d962b">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>cert
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#afa39381ac882387b6ad6329eed4ef3f1">mavAgenda.RequirementPreprocessing</a>
 </li>
 <li>checkOfferedSemester()
-: <a class="el" href="namespacelanding_1_1views.html#a2f54a8ff8d9bcec3589d12b6e7fb9b73">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ace0cc2158ed96baa96aed788e8a79ba0">mavAgenda.landing.views</a>
 </li>
 <li>checkPrereqsMet()
-: <a class="el" href="namespacelanding_1_1views.html#ae39a544ed120a346d1173db21fe17ef3">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ab39ff28312a049e51783d4b5c09c2889">mavAgenda.landing.views</a>
+</li>
+<li>checkReqsMet()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#afdf8c77f4b035382e2b1b73912edf180">mavAgenda.landing.views</a>
+</li>
+<li>combineEnforcedAndElectiveCourses()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a49d702ba4703d34075928e3b50d40137">mavAgenda.landing.views</a>
+</li>
+<li>compsci_con_requirements
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#a1d35efe669305d75d4f7fb75b546a5f4">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>compsci_maj_requirements
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#a1c7ad9a1d23fb567c61aa4db3c9166df">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>compsci_min_requirements
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#a9d9ed0140986f282669121f70be9708e">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>con
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#ad63f688072e5be75854ab9d4371ce7b2">mavAgenda.RequirementPreprocessing</a>
 </li>
 <li>conc
 : <a class="el" href="namespacetest.html#a8d2404d0b6835bb0517fc1271e2b0b3c">test</a>
 </li>
+<li>concentration_tracks
+: <a class="el" href="namespacemavAgenda_1_1DegreePreprocessing.html#aa0f413e2b6b55f9271b32afe01250fd6">mavAgenda.DegreePreprocessing</a>
+</li>
+<li>countCourseTowardReqs()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a760ef282377a3ca2be7eaf4254a99296">mavAgenda.landing.views</a>
+</li>
+<li>counts_toward_courses
+: <a class="el" href="namespacemavAgenda_1_1CoursesToRequirements.html#a921d8c4725c512515a269cd5c93346ff">mavAgenda.CoursesToRequirements</a>
+</li>
 <li>course
-: <a class="el" href="namespacetest.html#aef2c5d7bd8ec9fc2ba0447263d36cbc5">test</a>
+: <a class="el" href="namespacemavAgenda_1_1CoursesToRequirements.html#a5f1f1f8ae3b0c76cd6127f1efff347fb">mavAgenda.CoursesToRequirements</a>
+, <a class="el" href="namespacetest.html#aef2c5d7bd8ec9fc2ba0447263d36cbc5">test</a>
+</li>
+<li>course_id_to_course
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a08d29c8e6cd25f22c4198b5aaa8f856e">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>course_path
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a7508b5d8720b54268375efad733be37d">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>course_req
+: <a class="el" href="namespacemavAgenda_1_1CoursesToRequirements.html#a544a2a7847bda3c0d90036d8dcf27d56">mavAgenda.CoursesToRequirements</a>
+</li>
+<li>courseValid()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ac91e55945f21284a5dc9abd24cac6690">mavAgenda.landing.views</a>
 </li>
 <li>createSchedule()
-: <a class="el" href="namespacelanding_1_1views.html#aa4736d3c8ed65938a640bd054c1fb588">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ae8b8edf7cc479127adfdee3c0ff1e9fe">mavAgenda.landing.views</a>
 </li>
 <li>createuser()
-: <a class="el" href="namespacelanding_1_1views.html#acd4507dea8fb635a81455db7918ee43c">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#aa998c2a3a45470fbe34a8d653246f471">mavAgenda.landing.views</a>
+</li>
+<li>credits_path
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#ae2f7181cf52865e6929440b0d164d67f">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>csci
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#a1981c721791f4f2441162665525dffc1">mavAgenda.RequirementPreprocessing</a>
 </li>
 <li>curr_response
 : <a class="el" href="namespacetest.html#aebc4c0e0da8bb665062857db50b59f27">test</a>
+</li>
+<li>cybr
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#ad7cf7d47ad0cfa6bc49f64afeac2513b">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>cybr_maj_requirements
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#ae6ef10b512ef3afb1ff5e4cd56501a46">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>cybr_min_requirements
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#a81f8244b0823bb403303f4a441891f16">mavAgenda.RequirementPreprocessing</a>
 </li>
 </ul>
 
 
 <h3><a id="index_d"></a>- d -</h3><ul>
+<li>d
+: <a class="el" href="namespacemavAgenda_1_1DegreePreprocessing.html#a9391b9dbb13717ada260004b0d8ce62b">mavAgenda.DegreePreprocessing</a>
+, <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#afb09ed787f26710dd4bc556a0a850114">mavAgenda.RequirementPreprocessing</a>
+</li>
 <li>DATABASES
-: <a class="el" href="namespacemav_agenda_1_1settings.html#a90bba01c6fcb83baced6119ef2086795">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#a7523f638d8f5aa5b8938f2100fe672b0">mavAgenda.mavAgenda.settings</a>
 </li>
 <li>DEBUG
-: <a class="el" href="namespacemav_agenda_1_1settings.html#aaa092728fcb45002a379980f9bf58b0b">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#a074f2dc4c13952db560d3f41d8a90809">mavAgenda.mavAgenda.settings</a>
+</li>
+<li>degrees
+: <a class="el" href="namespacemavAgenda_1_1DegreePreprocessing.html#a9211e5530909400d8a6c686011822a43">mavAgenda.DegreePreprocessing</a>
 </li>
 <li>desc
 : <a class="el" href="namespacetest.html#a07d6347d922b6f2fe5cfdd79f0a8ec7c">test</a>
@@ -140,55 +238,119 @@ $(function() {
 
 <h3><a id="index_e"></a>- e -</h3><ul>
 <li>emailFound()
-: <a class="el" href="namespacelanding_1_1views.html#a54774f163c70feb2df73511f76bfd877">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a6a9fc857408512125072955d505bf8f3">mavAgenda.landing.views</a>
+</li>
+<li>enforced_for_courses
+: <a class="el" href="namespacemavAgenda_1_1CoursesToRequirements.html#ae73dd5db36ec9c5e9ef0d4457022cf12">mavAgenda.CoursesToRequirements</a>
+</li>
+<li>eng_req
+: <a class="el" href="namespacemavAgenda_1_1CoursesToRequirements.html#a9c2b2fe8d45b47b61c06ecfc704c4b95">mavAgenda.CoursesToRequirements</a>
+</li>
+<li>english
+: <a class="el" href="namespacemavAgenda_1_1CoursesToRequirements.html#ac47922c7a0e06cded34bb418cb06b47f">mavAgenda.CoursesToRequirements</a>
+</li>
+</ul>
+
+
+<h3><a id="index_f"></a>- f -</h3><ul>
+<li>friday
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#ae91b56837d83865dc0c5a722552a8498">mavAgenda.CSVPreprocessing</a>
 </li>
 </ul>
 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
+<li>gen_ed_requirements
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#a77979346bcc0af61a1840b0c69addb7a">mavAgenda.RequirementPreprocessing</a>
+</li>
 <li>generateCheckBoxEntities()
-: <a class="el" href="namespacelanding_1_1views.html#a0d4c1e9d73373e8f2956340085eb50b2">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a877af026df9866f8e1a7a106ea9809d2">mavAgenda.landing.views</a>
+</li>
+<li>generateConcentrationsDD()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a5a6480f4f25fb397610881b3e96e20a7">mavAgenda.landing.views</a>
+</li>
+<li>generateDiplomaDD()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a105948cc4eeb1f721d86f670a3020470">mavAgenda.landing.views</a>
 </li>
 <li>generateMajorDD()
-: <a class="el" href="namespacelanding_1_1views.html#acee7a550e05650013c2b9205bf9a2a88">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ab60f609329a57c41030685c032249fbb">mavAgenda.landing.views</a>
+</li>
+<li>generateMinorDD()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#aeefa9826cec239552cb7620c54e76450">mavAgenda.landing.views</a>
 </li>
 <li>generateNewSemester()
-: <a class="el" href="namespacelanding_1_1views.html#a219fcf8f07fa2eeaf2f31ad6d7fc6905">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a3ce0d3f74eb2fd5b10052c2c019478a1">mavAgenda.landing.views</a>
+</li>
+<li>generateNumCreditsDD()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a49e86f3d201ca31fde603a8555dac464">mavAgenda.landing.views</a>
+</li>
+<li>generateSemesterDD()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a19301baffd56440f07e157f4304bcfa7">mavAgenda.landing.views</a>
+</li>
+<li>generateYearDD()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a6d29704212cb7db9f5a2935dc1b037eb">mavAgenda.landing.views</a>
 </li>
 <li>getCompletedByUser()
-: <a class="el" href="namespacelanding_1_1views.html#ab8699575ba0ef576f40bd71e73a8530f">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a348cf64ede97168dfaacf49cb86396aa">mavAgenda.landing.views</a>
+</li>
+<li>getCoursePrereqs()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#aea033cb7fd4db6ad8582d9030adbd9eb">mavAgenda.landing.views</a>
 </li>
 <li>getCoursesForUser()
-: <a class="el" href="namespacelanding_1_1views.html#a35d744b4e891af5594e09cc3d0ed42bf">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#acf197252d8fc64ca8dabcd3ad86c44fa">mavAgenda.landing.views</a>
+</li>
+<li>getDefaultPreferences()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#abf63ccc16307602c6e3cd8cdd0a27439">mavAgenda.landing.views</a>
 </li>
 <li>getDegree()
-: <a class="el" href="namespacelanding_1_1views.html#a61fbcd00ed827ed89573b36b86e993ce">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a092514b579e6413adfe4dcc1ec5f5a81">mavAgenda.landing.views</a>
 </li>
-<li>getSemesterByMonthYear()
-: <a class="el" href="namespacelanding_1_1views.html#a205b22bd62d9457694957d93b53f35af">landing.views</a>
+<li>getDegreeReqs()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a744df9b524faa76fa7949ae1bb839cee">mavAgenda.landing.views</a>
+</li>
+<li>getElectiveCourses()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a093f67040145dbbb211f971ef3afb21c">mavAgenda.landing.views</a>
+</li>
+<li>getEnforcedCourses()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a5e53a5236a02d3bd8bcdd5864a1d5eb5">mavAgenda.landing.views</a>
+</li>
+<li>getNextSemesterTitle()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a1715b2bbbb2491f5c6171b58c0f1b013">mavAgenda.landing.views</a>
+</li>
+<li>getReqCourses()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ae93a61c9f4b55bee71f4753da73eae64">mavAgenda.landing.views</a>
+</li>
+<li>getSemesterByMonth()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a875d50bc3b626d8f6c1afa38bd5b646c">mavAgenda.landing.views</a>
 </li>
 <li>getUserByEmail()
-: <a class="el" href="namespacelanding_1_1views.html#a8d5dc6aa494a2a455d00898fe7c1a994">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a3ae48839d5de2bf530de0413865c6bfe">mavAgenda.landing.views</a>
 </li>
 </ul>
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
 <li>INSTALLED_APPS
-: <a class="el" href="namespacemav_agenda_1_1settings.html#a8dd26f1a92700761e22c785c57781d4c">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#abef116c8f28b211dcef5b323688ede86">mavAgenda.mavAgenda.settings</a>
 </li>
-<li>isFull()
-: <a class="el" href="namespacelanding_1_1views.html#a0c2f89f5183919eb35499eea63f159a1">landing.views</a>
+<li>itin
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#ae97c34915a96370651628305d87909c2">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>itin_maj_requirements
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#ac0a28a38bf1a9adfddfb79876e568219">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>itin_min_requirements
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#a0b1ac9c2ba9386bff64a0f3ef032cfeb">mavAgenda.RequirementPreprocessing</a>
 </li>
 </ul>
 
 
 <h3><a id="index_l"></a>- l -</h3><ul>
 <li>landing()
-: <a class="el" href="namespacemav_agenda_1_1views.html#a8653f38c95e8def94a868eeb549fd0c2">mavAgenda.views</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1views.html#ad9cb5be44183c0b001ee6e1b8fef5fbc">mavAgenda.mavAgenda.views</a>
 </li>
 <li>LANGUAGE_CODE
-: <a class="el" href="namespacemav_agenda_1_1settings.html#ab80769734fc5d1e7b02e6e7796463770">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#ad7952a2ee938e38fe5569abad32d3dda">mavAgenda.mavAgenda.settings</a>
 </li>
 <li>list_patt
 : <a class="el" href="namespacetest.html#a2463c97fe84ef96959bb4270464142e8">test</a>
@@ -203,7 +365,7 @@ $(function() {
 : <a class="el" href="namespacetest.html#aa935a14b351dde1a77f8a9fdf62ab9e4">test</a>
 </li>
 <li>login()
-: <a class="el" href="namespacelanding_1_1views.html#a7b08070340297551acfaafde9d9376bb">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#aa1326a415f6c1e5ece0003f1db005087">mavAgenda.landing.views</a>
 </li>
 </ul>
 
@@ -221,14 +383,58 @@ $(function() {
 <li>majors
 : <a class="el" href="namespacetest.html#aac866171a3a2f476bc4ee9c246332d20">test</a>
 </li>
+<li>mandatePrereqsForEnforcedCourses()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#abecce7b2d73935c98176d678866bfa1a">mavAgenda.landing.views</a>
+</li>
+<li>math
+: <a class="el" href="namespacemavAgenda_1_1CoursesToRequirements.html#a4af825ad30ed8317fceb0bbebc3b0a13">mavAgenda.CoursesToRequirements</a>
+</li>
+<li>math_req
+: <a class="el" href="namespacemavAgenda_1_1CoursesToRequirements.html#ad9489607b48eea343e60fae9cab9f5a1">mavAgenda.CoursesToRequirements</a>
+</li>
 <li>meets
 : <a class="el" href="namespacetest.html#a091ffed22add46378587d16bdaa4ce6c">test</a>
 </li>
 <li>MIDDLEWARE
-: <a class="el" href="namespacemav_agenda_1_1settings.html#a5c0140137432ceb328494a9284398f75">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#af9a82d96da5e11b79f4d87886a52c8d5">mavAgenda.mavAgenda.settings</a>
 </li>
 <li>minor
 : <a class="el" href="namespacetest.html#a6facd83236fb50c287bb03f98341bc17">test</a>
+</li>
+<li>minor_tracks
+: <a class="el" href="namespacemavAgenda_1_1DegreePreprocessing.html#a7248b951059f4a9ad766000590ecb727">mavAgenda.DegreePreprocessing</a>
+</li>
+<li>mis
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#a209da90cd996d028eb448979246e2d92">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>mis_cert_requirements
+: <a class="el" href="namespacemavAgenda_1_1DegreePreprocessing.html#a0dc9af5c79d9e5db222b8eb43ea009ce">mavAgenda.DegreePreprocessing</a>
+, <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#a8e814a7f1dbf40609b15287050470d6b">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>mis_con_requirements
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#ae9bada3e8377999d95fc386798504e88">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>mis_maj_requirements
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#af446bec540ec117f39618e9d9e193597">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>mis_min_requirements
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#aca78a5da4630f662aeedafb9ef7a863c">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>monday
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#aff5ab6fc6ce433184d4ca55f3914f5e3">mavAgenda.CSVPreprocessing</a>
+</li>
+</ul>
+
+
+<h3><a id="index_n"></a>- n -</h3><ul>
+<li>nextsemesterpreferences()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#afd6c90b52229e71e7b6fea7c5798cef7">mavAgenda.landing.views</a>
+</li>
+<li>north
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#ab6cf4ddc7f83f922672f170e54214548">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>number
+: <a class="el" href="namespacemavAgenda_1_1CoursesToRequirements.html#a14f52ce76e8c121c2e688e47bee5bc9c">mavAgenda.CoursesToRequirements</a>
 </li>
 </ul>
 
@@ -240,49 +446,112 @@ $(function() {
 <li>patt
 : <a class="el" href="namespacetest.html#aaaf53edd3eaffb34d42528d483908a81">test</a>
 </li>
+<li>placeholder_instructor
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#af7622418113e0566d9ed272c024fe4b5">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>prefNumCreditsMet()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a0244061e7eb138b3657aebe21a1cefbe">mavAgenda.landing.views</a>
+</li>
 <li>programs
 : <a class="el" href="namespacetest.html#a41110e26af9a29431f856ff8e6e63389">test</a>
 </li>
 <li>PROJECT_DIR
-: <a class="el" href="namespacemav_agenda_1_1settings.html#ab4ce42a5401340f89c8d454623c34d5e">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#a430f2b0e8bf474dabb9115742e1a867c">mavAgenda.mavAgenda.settings</a>
+</li>
+<li>ps
+: <a class="el" href="namespacemavAgenda_1_1CoursesToRequirements.html#a6df14428002caf79678b430a4f2a3a3c">mavAgenda.CoursesToRequirements</a>
+</li>
+<li>ps_req
+: <a class="el" href="namespacemavAgenda_1_1CoursesToRequirements.html#a14c74c27f6ae7698604d50f053677cea">mavAgenda.CoursesToRequirements</a>
 </li>
 </ul>
 
 
 <h3><a id="index_r"></a>- r -</h3><ul>
+<li>r
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#afd34b3418f5b1e45bb01e7abfe14429f">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>read_course_csv()
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a55df24ef15e8110c2aa1b3413eed36f9">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>read_credit_csv()
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a9653d802c569f94888256343d5f8bfd1">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>read_csvs()
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a0092c9e65194decbabf6bb32584c7d45">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>read_from_file()
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#abbb7d5587b5823e95cb282ce49899bdd">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>read_reqs_csv()
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a6b9b66f70f008c5046d3ad8264f50ab5">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>remote
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a405277d557b4baad33fb2e0f2fd7dc24">mavAgenda.CSVPreprocessing</a>
+</li>
 <li>removeCoursesTaken()
-: <a class="el" href="namespacelanding_1_1views.html#a0c09aa6ffb498dba6bae2f61fac3a37d">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a2027dcc5c86c3c172808656237104ac6">mavAgenda.landing.views</a>
 </li>
 <li>removeUserCompletedEnteries()
-: <a class="el" href="namespacelanding_1_1views.html#a15788f148f992f964f914e41cca3563a">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ad44762f7b7b87274ee5b2bdd07fdf25a">mavAgenda.landing.views</a>
+</li>
+<li>reqs_path
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#acc4cb6a0d200078b9c98638956257bb1">mavAgenda.CSVPreprocessing</a>
 </li>
 <li>ROOT_URLCONF
-: <a class="el" href="namespacemav_agenda_1_1settings.html#ae5a898fc55f1f73439d8deb40b39143b">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#aa9dd696dea6a3f711130e29e20d43189">mavAgenda.mavAgenda.settings</a>
 </li>
 </ul>
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>s
+: <a class="el" href="namespacemavAgenda_1_1RequirementPreprocessing.html#a8a823232792345a3486a1ce30c051626">mavAgenda.RequirementPreprocessing</a>
+</li>
+<li>saturday
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#abd9daa930fde25e0745526e146dca121">mavAgenda.CSVPreprocessing</a>
+</li>
 <li>saveClassesToUser()
-: <a class="el" href="namespacelanding_1_1views.html#a474931c0129efca17c6aa8ba314af9e5">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a09ee653c730bd8eb540ef674eebf01d3">mavAgenda.landing.views</a>
 </li>
 <li>schedule()
-: <a class="el" href="namespacelanding_1_1views.html#acbb94e571697e7b28ad35bf2996fe01f">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a38b95502a945bfe5e450db9b88dd802f">mavAgenda.landing.views</a>
 </li>
 <li>SECRET_KEY
-: <a class="el" href="namespacemav_agenda_1_1settings.html#a62ddce1502d30dbbeec3818fcaf9eeda">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#abbb11ce5f3c93991b3c03f980c434d9c">mavAgenda.mavAgenda.settings</a>
 </li>
 <li>selectcourses()
-: <a class="el" href="namespacelanding_1_1views.html#a36b36778d06e5903c4854cb15d5ac297">landing.views</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a55d61c1738704e1297aa54c9c26fc31d">mavAgenda.landing.views</a>
 </li>
 <li>selectdegree()
-: <a class="el" href="namespacemav_agenda_1_1views.html#a64ca2f2eecfd09c44da85271651c9af2">mavAgenda.views</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1views.html#adf57950b610bf6e0b3720d2b62973c74">mavAgenda.mavAgenda.views</a>
+</li>
+<li>semesters
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a2ebca8434f9e001ddfb8ee05ae7cf228">mavAgenda.CSVPreprocessing</a>
+</li>
+<li>setupReqTracker()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a070695b43494f3b578bfdda9b8316a42">mavAgenda.landing.views</a>
+</li>
+<li>setupSchedule()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a0917de5383aa4bc5f500a44777916555">mavAgenda.landing.views</a>
+</li>
+<li>sortCoursesBySubNum()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a7bbfe5d43d84d134720962c7f10d1ffd">mavAgenda.landing.views</a>
+</li>
+<li>south
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a1b43ae026d497a500c1a9724bbef6c3c">mavAgenda.CSVPreprocessing</a>
 </li>
 <li>STATIC_ROOT
-: <a class="el" href="namespacemav_agenda_1_1settings.html#a22094b6f2b02c5fe2c669169df0df2c1">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#a0eaec5fd14613d117c7c2a800ee327bb">mavAgenda.mavAgenda.settings</a>
 </li>
 <li>STATIC_URL
-: <a class="el" href="namespacemav_agenda_1_1settings.html#ad7fe7173caa4166bb75d132316ea1a88">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#a7ea6c02e923fbbf572b530af31ef1bda">mavAgenda.mavAgenda.settings</a>
+</li>
+<li>subject
+: <a class="el" href="namespacemavAgenda_1_1CoursesToRequirements.html#a6b8eea6e735b0b2719a9119de39befec">mavAgenda.CoursesToRequirements</a>
+</li>
+<li>sunday
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a0c32041c26fbdb8edc1589d96e46859a">mavAgenda.CSVPreprocessing</a>
 </li>
 </ul>
 
@@ -291,42 +560,63 @@ $(function() {
 <li>tags
 : <a class="el" href="namespacetest.html#a2a46bc1425db9915e0922da341e3011c">test</a>
 </li>
+<li>tallyNumberCreditsTaken()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a10751be31a0b978bcd8769ac78b55b8a">mavAgenda.landing.views</a>
+</li>
 <li>TEMPLATES
-: <a class="el" href="namespacemav_agenda_1_1settings.html#a17e29897dc668b9f2955407bd489d8ef">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#a4c3ff903ca3c3d39a0f2721eaf4a9638">mavAgenda.mavAgenda.settings</a>
+</li>
+<li>thursday
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#aaf0e778e0fb90387108e258bacac80ea">mavAgenda.CSVPreprocessing</a>
 </li>
 <li>TIME_ZONE
-: <a class="el" href="namespacemav_agenda_1_1settings.html#aeec2d025595944833c019a8bd08c85b7">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#a2f9c69f77469f2e2cc5a6a4cb89efa55">mavAgenda.mavAgenda.settings</a>
+</li>
+<li>translateCourseInfoToCourse()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#ac3facecfedd11b12fba64630c173fb1b">mavAgenda.landing.views</a>
+</li>
+<li>tuesday
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a91a0dac68d4bca3478f4966a6b5f1c81">mavAgenda.CSVPreprocessing</a>
 </li>
 </ul>
 
 
 <h3><a id="index_u"></a>- u -</h3><ul>
+<li>updateReqTrackerForCompletedCourses()
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1views.html#a71b49cd4a5899b4c459df2b7761cc1f2">mavAgenda.landing.views</a>
+</li>
 <li>urlpatterns
-: <a class="el" href="namespacelanding_1_1urls.html#ac0bd14d2987799b6383f0a1058f7043e">landing.urls</a>
+: <a class="el" href="namespacemavAgenda_1_1landing_1_1urls.html#a051f6413acbecd83be1f2869c7221337">mavAgenda.landing.urls</a>
 </li>
 <li>USE_I18N
-: <a class="el" href="namespacemav_agenda_1_1settings.html#ab54da7bb0c511891167b05e421e69b01">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#a9d9e3f36136019728fb859e3dcd2f7bf">mavAgenda.mavAgenda.settings</a>
 </li>
 <li>USE_L10N
-: <a class="el" href="namespacemav_agenda_1_1settings.html#a6386f16d03828cf70fa9694a6e68514f">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#a665cba5189ee13923df1b4efedb9824c">mavAgenda.mavAgenda.settings</a>
 </li>
 <li>USE_TZ
-: <a class="el" href="namespacemav_agenda_1_1settings.html#a50a659e1989784a0d7429b153a4054e1">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#a9f4d0422f4a89cc0c4ef202db4f8754b">mavAgenda.mavAgenda.settings</a>
 </li>
 </ul>
 
 
 <h3><a id="index_w"></a>- w -</h3><ul>
+<li>wednesday
+: <a class="el" href="namespacemavAgenda_1_1CSVPreprocessing.html#a41bcd79684eee2d826705a1f2f68e722">mavAgenda.CSVPreprocessing</a>
+</li>
 <li>WSGI_APPLICATION
-: <a class="el" href="namespacemav_agenda_1_1settings.html#a7ea9722c5dbe55143f70dc7eda97a8d0">mavAgenda.settings</a>
+: <a class="el" href="namespacemavAgenda_1_1mavAgenda_1_1settings.html#a24a5ac1785232156f5b8a18983653ea8">mavAgenda.mavAgenda.settings</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

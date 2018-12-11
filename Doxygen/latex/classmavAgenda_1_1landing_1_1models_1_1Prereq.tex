@@ -1,0 +1,97 @@
+\hypertarget{classmavAgenda_1_1landing_1_1models_1_1Prereq}{}\section{mav\+Agenda.\+landing.\+models.\+Prereq Class Reference}
+\label{classmavAgenda_1_1landing_1_1models_1_1Prereq}\index{mav\+Agenda.\+landing.\+models.\+Prereq@{mav\+Agenda.\+landing.\+models.\+Prereq}}
+Inheritance diagram for mav\+Agenda.\+landing.\+models.\+Prereq\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmavAgenda_1_1landing_1_1models_1_1Prereq}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Prereq_addf5211dcaf1971dd0cca476d7ed9e14}{C}} = \char`\"{}Corequisite\char`\"{}
+\item 
+string \mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Prereq_af35ddd9df5e0a2abaa462d090fd507b5}{P}} = \char`\"{}Prerequisite\char`\"{}
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Prereq_ad766b43af7f45acb941a884f8eaa1c0c}{prereq\+\_\+course}} = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course}{Course}})
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Prereq_ac496f0f4d66a6777102ac8fd8f33746f}{prereq\+\_\+type}} = models.\+Char\+Field(max\+\_\+length=20, choices=\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Prereq_af85f9fea720c6735fecfce55e751b538}{R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE}}, null=True)
+\item 
+tuple \mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Prereq_af85f9fea720c6735fecfce55e751b538}{R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}@Prereq  holds conditions that are prerequisites to other classes,
+        this includes the type (i.e Corequisite or Prerequisite) and a foreign key reference
+        back to the Course table.
+\end{DoxyVerb}
+ 
+
+Definition at line 180 of file models.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Prereq_addf5211dcaf1971dd0cca476d7ed9e14}\label{classmavAgenda_1_1landing_1_1models_1_1Prereq_addf5211dcaf1971dd0cca476d7ed9e14}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Prereq@{mav\+Agenda\+::landing\+::models\+::\+Prereq}!C@{C}}
+\index{C@{C}!mav\+Agenda\+::landing\+::models\+::\+Prereq@{mav\+Agenda\+::landing\+::models\+::\+Prereq}}
+\subsubsection{\texorpdfstring{C}{C}}
+{\footnotesize\ttfamily string mav\+Agenda.\+landing.\+models.\+Prereq.\+C = \char`\"{}Corequisite\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 186 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Prereq_af35ddd9df5e0a2abaa462d090fd507b5}\label{classmavAgenda_1_1landing_1_1models_1_1Prereq_af35ddd9df5e0a2abaa462d090fd507b5}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Prereq@{mav\+Agenda\+::landing\+::models\+::\+Prereq}!P@{P}}
+\index{P@{P}!mav\+Agenda\+::landing\+::models\+::\+Prereq@{mav\+Agenda\+::landing\+::models\+::\+Prereq}}
+\subsubsection{\texorpdfstring{P}{P}}
+{\footnotesize\ttfamily string mav\+Agenda.\+landing.\+models.\+Prereq.\+P = \char`\"{}Prerequisite\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 187 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Prereq_ad766b43af7f45acb941a884f8eaa1c0c}\label{classmavAgenda_1_1landing_1_1models_1_1Prereq_ad766b43af7f45acb941a884f8eaa1c0c}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Prereq@{mav\+Agenda\+::landing\+::models\+::\+Prereq}!prereq\+\_\+course@{prereq\+\_\+course}}
+\index{prereq\+\_\+course@{prereq\+\_\+course}!mav\+Agenda\+::landing\+::models\+::\+Prereq@{mav\+Agenda\+::landing\+::models\+::\+Prereq}}
+\subsubsection{\texorpdfstring{prereq\+\_\+course}{prereq\_course}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Prereq.\+prereq\+\_\+course = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course}{Course}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 193 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Prereq_ac496f0f4d66a6777102ac8fd8f33746f}\label{classmavAgenda_1_1landing_1_1models_1_1Prereq_ac496f0f4d66a6777102ac8fd8f33746f}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Prereq@{mav\+Agenda\+::landing\+::models\+::\+Prereq}!prereq\+\_\+type@{prereq\+\_\+type}}
+\index{prereq\+\_\+type@{prereq\+\_\+type}!mav\+Agenda\+::landing\+::models\+::\+Prereq@{mav\+Agenda\+::landing\+::models\+::\+Prereq}}
+\subsubsection{\texorpdfstring{prereq\+\_\+type}{prereq\_type}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Prereq.\+prereq\+\_\+type = models.\+Char\+Field(max\+\_\+length=20, choices=\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Prereq_af85f9fea720c6735fecfce55e751b538}{R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE}}, null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 192 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Prereq_af85f9fea720c6735fecfce55e751b538}\label{classmavAgenda_1_1landing_1_1models_1_1Prereq_af85f9fea720c6735fecfce55e751b538}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Prereq@{mav\+Agenda\+::landing\+::models\+::\+Prereq}!R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE@{R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE}}
+\index{R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE@{R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE}!mav\+Agenda\+::landing\+::models\+::\+Prereq@{mav\+Agenda\+::landing\+::models\+::\+Prereq}}
+\subsubsection{\texorpdfstring{R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE}{REQ\_CHOICE}}
+{\footnotesize\ttfamily tuple mav\+Agenda.\+landing.\+models.\+Prereq.\+R\+E\+Q\+\_\+\+C\+H\+O\+I\+CE\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=  (
+        (C, \textcolor{stringliteral}{"Corequisite"}),
+        (P, \textcolor{stringliteral}{"Prerequisite"}),
+    )
+\end{DoxyCode}
+
+
+Definition at line 188 of file models.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lauren/\+Pycharm\+Projects/\+Mav\+Link\+Made\+Easy/mav\+Agenda/landing/\mbox{\hyperlink{models_8py}{models.\+py}}\end{DoxyCompactItemize}

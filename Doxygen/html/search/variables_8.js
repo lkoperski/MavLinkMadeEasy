@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['language_5fcode',['LANGUAGE_CODE',['../namespacemav_agenda_1_1settings.html#ab80769734fc5d1e7b02e6e7796463770',1,'mavAgenda::settings']]],
-  ['list_5fdisplay',['list_display',['../classlanding_1_1admin_1_1_degree_admin.html#add2bf53c6f37934795975ab9e16fb9b6',1,'landing.admin.DegreeAdmin.list_display()'],['../classlanding_1_1admin_1_1_course_admin.html#a9e88398163df03690e976f6c5daf72bd',1,'landing.admin.CourseAdmin.list_display()']]],
-  ['list_5ffilter',['list_filter',['../classlanding_1_1admin_1_1_degree_admin.html#a8bcf036e12b42e89529aa84881706378',1,'landing.admin.DegreeAdmin.list_filter()'],['../classlanding_1_1admin_1_1_course_admin.html#a83c223078d8954cc7bb4a9e3a209749e',1,'landing.admin.CourseAdmin.list_filter()']]],
-  ['list_5fpatt',['list_patt',['../namespacetest.html#a2463c97fe84ef96959bb4270464142e8',1,'test']]],
-  ['list_5fresponse',['list_response',['../namespacetest.html#a8b6b8ae2b5255348f5053214f923315a',1,'test']]],
-  ['list_5ftxt',['list_txt',['../namespacetest.html#a8a1b8f17c829fb2fd08d4a41ad9cf087',1,'test']]],
-  ['listing',['listing',['../namespacetest.html#aa935a14b351dde1a77f8a9fdf62ab9e4',1,'test']]]
+  ['initial',['initial',['../classmavAgenda_1_1landing_1_1migrations_1_10001__initial_1_1Migration.html#ab7532a2b45110859158e4e0b62006e3b',1,'mavAgenda::landing::migrations::0001_initial::Migration']]],
+  ['installed_5fapps',['INSTALLED_APPS',['../namespacemavAgenda_1_1mavAgenda_1_1settings.html#abef116c8f28b211dcef5b323688ede86',1,'mavAgenda::mavAgenda::settings']]],
+  ['instructor_5ffirstname',['instructor_firstName',['../classmavAgenda_1_1landing_1_1models_1_1Instructor.html#a817a5ee8e4bee3d4711b43945b6a7019',1,'mavAgenda::landing::models::Instructor']]],
+  ['instructor_5flastname',['instructor_lastName',['../classmavAgenda_1_1landing_1_1models_1_1Instructor.html#ae220496393374d12b87a2041e43cea02',1,'mavAgenda::landing::models::Instructor']]],
+  ['itin',['ITIN',['../classmavAgenda_1_1landing_1_1models_1_1Degree.html#acfcc1fd31eead8c418c5a40eca903eda',1,'mavAgenda.landing.models.Degree.ITIN()'],['../namespacemavAgenda_1_1RequirementPreprocessing.html#ae97c34915a96370651628305d87909c2',1,'mavAgenda.RequirementPreprocessing.itin()']]],
+  ['itin_5fmaj_5frequirements',['itin_maj_requirements',['../namespacemavAgenda_1_1RequirementPreprocessing.html#ac0a28a38bf1a9adfddfb79876e568219',1,'mavAgenda::RequirementPreprocessing']]],
+  ['itin_5fmin_5frequirements',['itin_min_requirements',['../namespacemavAgenda_1_1RequirementPreprocessing.html#a0b1ac9c2ba9386bff64a0f3ef032cfeb',1,'mavAgenda::RequirementPreprocessing']]]
 ];

@@ -1,0 +1,102 @@
+\hypertarget{classmavAgenda_1_1landing_1_1models_1_1Offering}{}\section{mav\+Agenda.\+landing.\+models.\+Offering Class Reference}
+\label{classmavAgenda_1_1landing_1_1models_1_1Offering}\index{mav\+Agenda.\+landing.\+models.\+Offering@{mav\+Agenda.\+landing.\+models.\+Offering}}
+Inheritance diagram for mav\+Agenda.\+landing.\+models.\+Offering\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmavAgenda_1_1landing_1_1models_1_1Offering}
+\end{center}
+\end{figure}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Offering_a5bc0a7b2c9fdc892d7b2a1150db5ab0e}{offering\+\_\+course}} = models.\+Foreign\+Key(\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course}{Course}}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Offering_ae73b33d9b47f9afc6c24bb2f64cdbb65}{offering\+\_\+days}} = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Weekday}{Weekday}})
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Offering_acfcb59c9b41a8f86bfab07d2b61c7930}{offering\+\_\+instructor}} = models.\+Foreign\+Key(\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Instructor}{Instructor}}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Offering_a9aed58e7fc7aa3e45cc904c544ee93c7}{offering\+\_\+location}} = models.\+Foreign\+Key(\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Building}{Building}}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Offering_a6f2544bb41a458d2b500c6878428bed1}{offering\+\_\+section\+Num}} = models.\+Integer\+Field()
+\item 
+\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Offering_ab39dc674156698916244ba97ad8c3ba1}{offering\+\_\+time}} = models.\+Char\+Field(max\+\_\+length=20)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}@Offering holds the specific class scheduling information labeled above.
+        This is not implemented due to time limits given in the Capstone class,
+        however, it is coded to show that the application is extensible.
+\end{DoxyVerb}
+ 
+
+Definition at line 166 of file models.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Offering_a5bc0a7b2c9fdc892d7b2a1150db5ab0e}\label{classmavAgenda_1_1landing_1_1models_1_1Offering_a5bc0a7b2c9fdc892d7b2a1150db5ab0e}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Offering@{mav\+Agenda\+::landing\+::models\+::\+Offering}!offering\+\_\+course@{offering\+\_\+course}}
+\index{offering\+\_\+course@{offering\+\_\+course}!mav\+Agenda\+::landing\+::models\+::\+Offering@{mav\+Agenda\+::landing\+::models\+::\+Offering}}
+\subsubsection{\texorpdfstring{offering\+\_\+course}{offering\_course}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Offering.\+offering\+\_\+course = models.\+Foreign\+Key(\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Course}{Course}}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 172 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Offering_ae73b33d9b47f9afc6c24bb2f64cdbb65}\label{classmavAgenda_1_1landing_1_1models_1_1Offering_ae73b33d9b47f9afc6c24bb2f64cdbb65}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Offering@{mav\+Agenda\+::landing\+::models\+::\+Offering}!offering\+\_\+days@{offering\+\_\+days}}
+\index{offering\+\_\+days@{offering\+\_\+days}!mav\+Agenda\+::landing\+::models\+::\+Offering@{mav\+Agenda\+::landing\+::models\+::\+Offering}}
+\subsubsection{\texorpdfstring{offering\+\_\+days}{offering\_days}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Offering.\+offering\+\_\+days = models.\+Many\+To\+Many\+Field(\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Weekday}{Weekday}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 175 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Offering_acfcb59c9b41a8f86bfab07d2b61c7930}\label{classmavAgenda_1_1landing_1_1models_1_1Offering_acfcb59c9b41a8f86bfab07d2b61c7930}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Offering@{mav\+Agenda\+::landing\+::models\+::\+Offering}!offering\+\_\+instructor@{offering\+\_\+instructor}}
+\index{offering\+\_\+instructor@{offering\+\_\+instructor}!mav\+Agenda\+::landing\+::models\+::\+Offering@{mav\+Agenda\+::landing\+::models\+::\+Offering}}
+\subsubsection{\texorpdfstring{offering\+\_\+instructor}{offering\_instructor}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Offering.\+offering\+\_\+instructor = models.\+Foreign\+Key(\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Instructor}{Instructor}}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 177 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Offering_a9aed58e7fc7aa3e45cc904c544ee93c7}\label{classmavAgenda_1_1landing_1_1models_1_1Offering_a9aed58e7fc7aa3e45cc904c544ee93c7}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Offering@{mav\+Agenda\+::landing\+::models\+::\+Offering}!offering\+\_\+location@{offering\+\_\+location}}
+\index{offering\+\_\+location@{offering\+\_\+location}!mav\+Agenda\+::landing\+::models\+::\+Offering@{mav\+Agenda\+::landing\+::models\+::\+Offering}}
+\subsubsection{\texorpdfstring{offering\+\_\+location}{offering\_location}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Offering.\+offering\+\_\+location = models.\+Foreign\+Key(\mbox{\hyperlink{classmavAgenda_1_1landing_1_1models_1_1Building}{Building}}, on\+\_\+delete=models.\+C\+A\+S\+C\+A\+DE)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 174 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Offering_a6f2544bb41a458d2b500c6878428bed1}\label{classmavAgenda_1_1landing_1_1models_1_1Offering_a6f2544bb41a458d2b500c6878428bed1}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Offering@{mav\+Agenda\+::landing\+::models\+::\+Offering}!offering\+\_\+section\+Num@{offering\+\_\+section\+Num}}
+\index{offering\+\_\+section\+Num@{offering\+\_\+section\+Num}!mav\+Agenda\+::landing\+::models\+::\+Offering@{mav\+Agenda\+::landing\+::models\+::\+Offering}}
+\subsubsection{\texorpdfstring{offering\+\_\+section\+Num}{offering\_sectionNum}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Offering.\+offering\+\_\+section\+Num = models.\+Integer\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 176 of file models.\+py.
+
+\mbox{\Hypertarget{classmavAgenda_1_1landing_1_1models_1_1Offering_ab39dc674156698916244ba97ad8c3ba1}\label{classmavAgenda_1_1landing_1_1models_1_1Offering_ab39dc674156698916244ba97ad8c3ba1}} 
+\index{mav\+Agenda\+::landing\+::models\+::\+Offering@{mav\+Agenda\+::landing\+::models\+::\+Offering}!offering\+\_\+time@{offering\+\_\+time}}
+\index{offering\+\_\+time@{offering\+\_\+time}!mav\+Agenda\+::landing\+::models\+::\+Offering@{mav\+Agenda\+::landing\+::models\+::\+Offering}}
+\subsubsection{\texorpdfstring{offering\+\_\+time}{offering\_time}}
+{\footnotesize\ttfamily mav\+Agenda.\+landing.\+models.\+Offering.\+offering\+\_\+time = models.\+Char\+Field(max\+\_\+length=20)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 173 of file models.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lauren/\+Pycharm\+Projects/\+Mav\+Link\+Made\+Easy/mav\+Agenda/landing/\mbox{\hyperlink{models_8py}{models.\+py}}\end{DoxyCompactItemize}

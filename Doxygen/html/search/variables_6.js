@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['gene',['GENE',['../classlanding_1_1models_1_1_req.html#a151bfa897da87bf95593513b9427e8a2',1,'landing::models::Req']]],
-  ['gr',['GR',['../classlanding_1_1models_1_1_degree.html#a46022128dd90af4b4d6f4820dd539b53',1,'landing::models::Degree']]]
+  ['gen_5fed_5frequirements',['gen_ed_requirements',['../namespacemavAgenda_1_1RequirementPreprocessing.html#a77979346bcc0af61a1840b0c69addb7a',1,'mavAgenda::RequirementPreprocessing']]]
 ];
