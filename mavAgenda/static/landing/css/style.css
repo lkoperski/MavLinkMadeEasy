@@ -18,12 +18,34 @@
             margin: auto;
         }*/
 
+
+        .column {
+            box-sizing: border-box;
+            float: left;
+            width: 25%;
+            padding: 10px;
+            height:100%;
+        }
+        .row:after {
+            box-sizing: border-box;
+            content: "";
+            display: table;
+            clear: both;
+        }
         .icons {
             float: right;
             margin-top: 6px;
             margin-bottom: 4px;
             position:absolute;
             opacity: .3;
+        }
+
+        .errorMessage {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            font-size: 14pt;
+            font-style: normal;
+            color: #f71313;
+            font-weight: 250;
         }
 
         p {
@@ -42,7 +64,6 @@
             font-style: normal;
             font-weight: 300;
         }
-
 
         img.center {
             display: block;
@@ -173,12 +194,12 @@
 
         .list {
             text-align: left;
-            padding-left: 33%;
+            padding-left: 39%;
         }
 
         .form-header {
             text-align: left;
-            padding-left: 30%;
+            padding-left: 36%;
         }
 
 @media only screen and (max-width: 768px) {

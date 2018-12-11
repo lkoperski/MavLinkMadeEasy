@@ -10,7 +10,7 @@
         <!-- print the Spring/Summer/Fall Semester and Year -->
         <p class="boxheader">{{ semester.0 }} {{ semester.1 }}</p>
         {% for course in semester.2 %}
-        <p>{{ course }} >>> {{ course.credits }} credits </p>
+        <p>{{ course.0 }} >>> {{ course.1 }} credits </p>
         {% endfor %}
     </div>
 <br>
@@ -20,6 +20,14 @@
 
     <p align="center">
     <input name="updateCourses" type="submit" value="update courses completed" class="MAVbutton"/>
+    </p>
+
+</form>
+
+<form class="joinnow" id = "joinnow" action="{% url 'landing:nextsemesterpreferences' pk=userID %}" method="get">
+
+    <p align="center">
+    <input name="updateCourses" type="submit" value="change preferences for first scheduled semester" class="MAVbutton"/>
     </p>
 
 </form>

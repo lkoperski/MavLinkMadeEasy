@@ -8,7 +8,7 @@ function removeInfo(divID) {
     return false;
 }
 function notSelected( idBase, searchFor, num ) {
-    var previousSelected  = false
+    var previousSelected  = false;
     for ( var i =1; i<=num; i++ ){
         var id = idBase + i
         var select = document.getElementById(id);
@@ -33,6 +33,12 @@ function showMajorInfo( diplomas, majors, num ) {
     var space = document.createElement("nbsp");
     dip.id = "id_d-diploma-" + (num+1);
     dip.name = "id_d-diploma-" + (num+1);
+    var dipC = document.createElement("option");
+    dipC.value = "Choose here";
+    dipC.text = "Choose here";
+    dipC.setAttribute("selected", "");
+    dipC.setAttribute("disabled", "");
+    dip.appendChild(dipC);
     for (i=0; i<diplomas.length; i++ ) {
             var dipChoice = document.createElement("option");
             dipChoice.value = diplomas[i];
@@ -43,6 +49,12 @@ function showMajorInfo( diplomas, majors, num ) {
     var maj = document.createElement("select");
     maj.id = "id_d-major-" + (num+1);
     maj.name = "id_d-major-" + (num+1);
+    var majC = document.createElement("option");
+    majC.value = "Choose here";
+    majC.text = "Choose here";
+    majC.setAttribute("selected", "");
+    majC.setAttribute("disabled", "");
+    maj.appendChild(majC);
     for (i=0; i<majors.length; i++ ) {
         if ( notSelected("id_d-major-", majors[i], num) ) {
             var majChoice = document.createElement("option");
@@ -74,6 +86,12 @@ function showMinorInfo(minors, num) {
     var space = document.createElement("nbsp");
     min.id = "id_d-minor-" + (num+1);
     min.name = "id_d-minor-" + (num+1);
+    var minC = document.createElement("option");
+    minC.value = "Choose here";
+    minC.text = "Choose here";
+    minC.setAttribute("selected", "");
+    minC.setAttribute("disabled", "");
+    min.appendChild(minC);
     for (i=0; i<minors.length; i++ ) {
         if (notSelected("id_d-minor-", minors[i], num)) {
             var minChoice = document.createElement("option");
@@ -102,6 +120,12 @@ function showConcentrationInfo(concentrations, num) {
     var space = document.createElement("nbsp");
     con.id = "id_d-concentration-" + (num+1);
     con.name = "id_d-concentration-" + (num+1);
+    var conC = document.createElement("option");
+    conC.value = "Choose here";
+    conC.text = "Choose here";
+    conC.setAttribute("selected", "");
+    conC.setAttribute("disabled", "");
+    con.appendChild(conC);
     for (i=0; i<concentrations.length; i++ ) {
         if (notSelected("id_d-concentration-", concentrations[i], num)) {
             var conChoice = document.createElement("option");
@@ -132,7 +156,10 @@ function showConcentrationInfo(concentrations, num) {
 
         <h3 class="form-header">User information</h3>
         <div class="list">
-        <p class="errormessage" id="errormessage">{{message}}</p>
+
+        {% if errorCode == 2 %}
+            <p name="errorMessage">*Email already taken</p>
+        {% endif %}
 
         <p id="emailbox" name="emailbox" class="MAVselect">Email:<input id="email-input" name="email-input"
                minlength="1" required
@@ -151,8 +178,11 @@ function showConcentrationInfo(concentrations, num) {
 
         <div id="major-info" class="list" display="block">
 
-            <p name="major-opts" class="MAVselect">
-                Desired Diploma:
+            <div name="major-opts" class="MAVselect">
+                {% if errorCode == 1 %}
+                <p name="errorMessage">*Please select at least one major</p>
+                {% endif %}
+                Desired Diploma
                 <select name="id_d-diploma-1" id="id_d-diploma-1">
                     <option selected disabled>Choose here</option>
                     {% for d in diplomas %}
@@ -169,8 +199,8 @@ function showConcentrationInfo(concentrations, num) {
                         <option value="{{m}}">{{ m }}</option>
                     {% endfor %}
                 </select>
-            </p>
-    </div>
+            </div>
+        </div>
         <button type="button" class="MAVbuttonSmall" name="add-major-button" class="MAVbutton" onclick="showMajorInfo( {{diplomas}}, {{majors}}, 1 )">add major</button>
 
         <br><br><br>
@@ -197,49 +227,27 @@ function showConcentrationInfo(concentrations, num) {
 
 
             <p class="MAVselect">Minimum number of credit hours:
-            <select name="FSmin">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="1">5</option>
-                <option value="2">6</option>
-                <option value="3">7</option>
-                <option value="4">8</option>
-                <option value="1">9</option>
-                <option value="2">10</option>
-                <option value="3">11</option>
-                <option value="4" selected>12</option>
-                <option value="3">13</option>
-                <option value="4">14</option>
-                <option value="1">15</option>
-                <option value="2">16</option>
-                <option value="3">17</option>
-                <option value="4">18</option>
-            </select>
+                <select name="FSmin">
+                    {% for fsmin in fsMinCredits %}
+                        {% if fsmin.0 == 'S'%}
+                            <option value="{{fsmin.1}}" selected> {{fsmin.1}}</option>
+                        {% else %}
+                            <option value="{{fsmin.1}}">{{ fsmin.1 }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
             </p>
 
             <p class="MAVselect">Maximum number of credit hours:
-            <select name="FSmax">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="1">5</option>
-                <option value="2">6</option>
-                <option value="3">7</option>
-                <option value="4">8</option>
-                <option value="1">9</option>
-                <option value="2">10</option>
-                <option value="3">11</option>
-                <option value="4">12</option>
-                <option value="3">13</option>
-                <option value="4">14</option>
-                <option value="1">15</option>
-                <option value="2">16</option>
-                <option value="3">17</option>
-                <option value="4" selected>18</option>
-            </select>
+                <select name="FSmax">
+                    {% for fsmax in fsMaxCredits %}
+                        {% if fsmax.0 == 'S'%}
+                            <option value="{{fsmax.1}}" selected> {{fsmax.1}}</option>
+                        {% else %}
+                            <option value="{{fsmax.1}}">{{ fsmax.1 }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
             </p>
         <br>
 
@@ -251,51 +259,27 @@ function showConcentrationInfo(concentrations, num) {
         <div id="summer-info">
 
             <p class="MAVselect">Minimum number of credit hours:
-            <select name="Summin">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3" selected>3</option>
-                <option value="4">4</option>
-                <option value="1">5</option>
-                <option value="2">6</option>
-                <option value="3">7</option>
-                <option value="4">8</option>
-                <option value="1">9</option>
-                <option value="2">10</option>
-                <option value="3">11</option>
-                <option value="4">12</option>
-                <option value="3">13</option>
-                <option value="4">14</option>
-                <option value="1">15</option>
-                <option value="2">16</option>
-                <option value="3">17</option>
-                <option value="4">18</option>
-            </select>
+                <select name="Summax">
+                    {% for summax in sumMaxCredits %}
+                        {% if summax.0 == 'S'%}
+                            <option value="{{summax.1}}" selected> {{summax.1}}</option>
+                        {% else %}
+                            <option value="{{summax.1}}">{{ summax.1 }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
             </p>
 
             <p class="MAVselect">Maximum number of credit hours:
-            <select name="Summax">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="1">5</option>
-                <option value="2" selected>6</option>
-                <option value="3">7</option>
-                <option value="4">8</option>
-                <option value="1">9</option>
-                <option value="2">10</option>
-                <option value="3">11</option>
-                <option value="4">12</option>
-                <option value="3">13</option>
-                <option value="4">14</option>
-                <option value="1">15</option>
-                <option value="2">16</option>
-                <option value="3">17</option>
-                <option value="4">18</option>
-            </select>
+            <select name="Summin">
+                    {% for summin in sumMinCredits %}
+                        {% if summin.0 == 'S'%}
+                            <option value="{{summin.1}}" selected> {{summin.1}}</option>
+                        {% else %}
+                            <option value="{{summin.1}}">{{ summin.1 }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
             </p>
 
         </div>

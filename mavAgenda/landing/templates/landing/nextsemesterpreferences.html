@@ -7,25 +7,32 @@
     <br>
     <div class="select" id="selectMajor">
 
-        <h3>Preferences for your next semester</h3>
+        <h3 class="form-header">Next semester will be</h3>
 
-        <div id="term-info" display="block">
+
+        <div id="term-info" display="block" class="list">
 
             <p name="term-opts" class="MAVselect">
                 Next Semester:
                 <select name="id_d-ssf" id="id_d-ssf">
-                    <option selected disabled>Term</option>
-                    <option>Fall</option>
-                    <option>Summer</option>
-                    <option>Spring</option>
+                    {% for s in sem %}
+                        {% if s.0 == 'S'%}
+                            <option value="{{s.1}}" selected> {{s.1}}</option>
+                        {% else %}
+                            <option value="{{s.1}}">{{ s.1 }}</option>
+                        {% endif %}
+                    {% endfor %}
                 </select>
 
                 <nbsp></nbsp>
 
                 <select name="id_d-year" id="id_d-year">
-                    <option selected disabled>Year</option>
                     {% for y in years %}
-                        <option value="{{y}}">{{ y }}</option>
+                        {% if y.0 == 'S'%}
+                            <option value="{{y.1}}" selected> {{y.1}}</option>
+                        {% else %}
+                            <option value="{{y.1}}">{{ y.1 }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
             </p>
@@ -34,53 +41,33 @@
 
         <br><br>
 
-        <h3>Prefered credits for this coming semester</h3>
-
+        <h3 class="form-header">Prefered credits for next semester</h3>
+        <div class="list">
         <p class="MAVselect">Minimum number of credit hours:
         <select name="nextSemMin">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12" selected>12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
+            {% for min in minCred %}
+                {% if min.0 == 'S'%}
+                    <option value="{{min.1}}" selected> {{min.1}}</option>
+                {% else %}
+                    <option value="{{min.1}}">{{ min.1 }}</option>
+                {% endif %}
+            {% endfor %}
         </select>
         </p>
 
         <p class="MAVselect">Maximum number of credit hours:
         <select name="nextSemMax">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18" selected>18</option>
+            {% for max in maxCred %}
+                {% if max.0 == 'S'%}
+                    <option value="{{max.1}}" selected> {{max.1}}</option>
+                {% else %}
+                    <option value="{{max.1}}">{{ max.1 }}</option>
+                {% endif %}
+            {% endfor %}
         </select>
-
+        </div>
+        <br>
+        <br>
         <button type="submit" name="submit" value="submit" class="MAVbutton">submit</button>
     </div>
 
