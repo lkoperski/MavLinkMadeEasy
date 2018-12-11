@@ -342,8 +342,8 @@ def createSchedule(uID):
     loopCount = 0
     enforcedNeeded = (potentialCourses[0] != []) #list of enforced classes still needed
     electivesAvailabile = (potentialCourses[1] != []) #list of electives still needed
-    while not checkReqsMet(reqTracker) and loopCount < 5:
-        while not prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)) and loopCount < 5:
+    while not checkReqsMet(reqTracker) and loopCount < 3:
+        while not prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)) and loopCount < 3:
             print("credits not met")
             if enforcedNeeded: # if still need enforced courses
                 for en in potentialCourses[0]: #en is a course object out of the list of enforced courses
@@ -379,8 +379,8 @@ def createSchedule(uID):
             semester = generateNewSemester(semester)
             semesterCourses = []
             semesterSchedule = semester[2]
+            loopCount += 1
         # check to see if all requirements are met to break out of inner while loop and check prereqs.
-        loopCount += 1
     return schedule
     # TODO - the first semester is always blank?
 
