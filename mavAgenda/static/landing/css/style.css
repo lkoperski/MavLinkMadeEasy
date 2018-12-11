@@ -24,6 +24,7 @@
             float: left;
             width: 25%;
             padding: 10px;
+            height:100%;
         }
         .row:after {
             box-sizing: border-box;
