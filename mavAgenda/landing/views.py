@@ -333,31 +333,31 @@ def createSchedule(uID):
     completedCourses = getCompletedByUser(uID)
     placeholder = Course.objects.get(course_name="placeholder", course_num="0000")
     completedCourses.append(placeholder)
-    schedule = setupSchedule(uID)
+    schedule = setupSchedule(uID) # get user degree information, semester information etc
     semester = schedule[0]
-    ssf = semester[0]
+    ssf = semester[0] #summer spring fall
     semesterSchedule = semester[2]
     semesterCourses = []
     updateReqTrackerForCompletedCourses(completedCourses, reqTracker)
     loopCount = 0
-    enforcedNeeded = (potentialCourses[0] != [])
-    electivesAvailabile = (potentialCourses[1] != [])
+    enforcedNeeded = (potentialCourses[0] != []) #list of enforced classes still needed
+    electivesAvailabile = (potentialCourses[1] != []) #list of electives still needed
     while not checkReqsMet(reqTracker) and loopCount < 5:
-        while not prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)) and loopCount <5:
+        while not prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)) and loopCount < 5:
             print("credits not met")
-            if enforcedNeeded:
-                for en in potentialCourses[0]:
-                    if prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)):
+            if enforcedNeeded: # if still need enforced courses
+                for en in potentialCourses[0]: #en is a course object out of the list of enforced courses
+                    if prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)): #if number of credits in single semester is met
                         break
-                    if courseValid(en, completedCourses, semesterCourses, ssf):
+                    if courseValid(en, completedCourses, semesterCourses, ssf): #if a course can be scheduled
                         print( "appending enforced course!")
-                        semesterCourses.append(en)
+                        semesterCourses.append(en) #append course to a semester
                         print("semester Courses:", semesterCourses)
-                        semesterSchedule.append([en.course_subject + " " + en.course_num + " " + en.course_name, en.course_credits, 'EN'])
-                        completedCourses.append(en)
-                        potentialCourses[0].remove(en)
-                        countCourseTowardReqs(en, reqTracker)
-                enforcedNeeded = (potentialCourses[0] != [])
+                        semesterSchedule.append([en.course_subject + " " + en.course_num + " " + en.course_name, en.course_credits, 'EN']) #output to screen
+                        completedCourses.append(en) # save semester schedule as completed so can continue scheduling
+                        potentialCourses[0].remove(en) # remove the scheduled course from the potential course list
+                        countCourseTowardReqs(en, reqTracker) # update the reqTracker with the scheduled course
+                enforcedNeeded = (potentialCourses[0] != []) #boolean telling if all enforced courses have been scheduled
             #if electivesAvailabile:
                 #for el in potentialCourses[1]:
                     #print("checking electives...")
@@ -404,7 +404,7 @@ def sortCoursesBySubNum(courses):
     numCourses = len(courses)
     for c in range(numCourses):
         for j in range(0,numCourses-c-1):
-            oneCourse =  courses[j][5] + " " + courses[j][1] + " " + courses[j][2]
+            oneCourse = courses[j][5] + " " + courses[j][1] + " " + courses[j][2]
             twoCourse = courses[j+1][5] + " " +courses[j+1][1] + " " + courses[j+1][2]
             if oneCourse > twoCourse:
                 courses[j], courses[j+1] = courses[j+1], courses[j]
