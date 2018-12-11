@@ -20,6 +20,19 @@ def getUserByEmail(e):
         if cu.username == e:
             return cu
 
+def getSemesterByMonth( m ):
+    '''
+    @getSemesterByMonthYear determines semester (Spring, Summer, Fall) according to current month
+    @param m: current month
+    '''
+    if  m < 5 :
+        title = "Spring"
+    elif  m < 8 :
+        title = "Summer"
+    else:
+        title = "Fall"
+    return title
+
 def getDegree(diploma, type, track):
     '''
     @getDegree searches the Degree table to find the Degree object with corresponding degree and major
@@ -79,20 +92,19 @@ def removeCoursesTaken( requiredClasses, classesTaken ):
             validCourses.append(rc)
     return validCourses
 
-def checkPrereqsMet(preqreqs, classesTaken, currentSemester):
+def checkPrereqsMet(conditions, classesTaken, currentSemester):
     '''
     @checkPrereqsMet determines if the User has met all Prereqs for a particular Course
-    @param prereqs: a list of Course (objects) corresponding to Prereqs for a given Course
+    @param coditions: a list of lists of Course (objects) corresponding to Prereqs for a given Course
     @param classesTaken: a list of Course (objects) that the User has already completed
     @parm scheduledClasses: a list of Course (objects) the scheduling algorithm has accounted for already
     '''
     met = True
-    for pr in preqreqs:
-        notInClassesTaken = pr.prereq not in classesTaken and pr.this_or not in classesTaken
-        inCurrentSemester = pr.prereq in currentSemester or pr.this_or in currentSemester
-        if notInClassesTaken or inCurrentSemester:
-            met = False
-            break
+    for c in conditions:
+        for o in c:
+            if o not in classesTaken and o not in currentSemester:
+                met = False
+                break
     return met
 
 def checkOfferedSemester(course, ssf):
@@ -111,7 +123,7 @@ def checkOfferedSemester(course, ssf):
         offered = True
     return offered
 
-def checkCourseValid(course, classesTaken, semesterCourses, ssf): #checkCourseValid( nc, classesTaken, semesterCourses, ssfSemester )
+def courseValid(course, classesTaken, semesterCourses, ssf):
     '''
     @checkCourseValid determines if a given Course can be taken during a given semester
     @param course: the Course under test
@@ -127,40 +139,41 @@ def checkCourseValid(course, classesTaken, semesterCourses, ssf): #checkCourseVa
         valid = True
     return valid
 
+def getNextSemesterTitle(ssf):
+    '''
+    @getNextSemseterTitle determines which semester will be the next semester (Spring, Summer, Fall)
+    @param ssf: the title of the current semester
+    '''
+    #TODO - take user prefs into account
+    nextSemester = ""
+    if ssf == "Spring":
+        nextSemester = "Summer"
+    elif ssf == "Summer":
+        nextSemester = "Fall"
+    else:
+        nextSemester = "Spring"
+    return nextSemester
+
 def generateNewSemester(semester):
     '''
     @generateNewSemester creates a new logical semester
     @param semester: previous semester list
     '''
     ssf = semester[0]
-    nextSemester = ""
+    nextSemester = getNextSemesterTitle(ssf)
     y = semester[1]
-    if ssf == "Spring" :
-        nextSemester = "Summer"
-    elif ssf == "Summer" :
-        nextSemester = "Fall"
-    else:
-        nextSemester ="Spring"
-        y += 1
+    if nextSemester == "Spring":
+        y+=1
     semester[0] = nextSemester
     semester[1] = y
     semester[2] = []
     return semester
 
-def isFull(courseList):
-    '''
-    @isFull determines if a semester has hit the maximum number of credits allowable
-    @param courseList: list of Course (objects) the user is scheduled to take during current semester
-    '''
-    full = False
-    totalCredits = 0
-    for c in courseList:
-        totalCredits += c[1]
-    if totalCredits >= 12 and totalCredits <= 16:
-        full = True
-    return full
-
 def setupReqTracker(uID):
+    '''
+    @setupReqTracker sets up a list of requirements and progress tracking values (i.e., credits needed)
+    @param uID: user ID of the user requesting the req tracker; needed to determine requirements needed
+    '''
     reqTracker = []
     reqs = getDegreeReqs(Degree.objects.filter(degree_users=uID))
     for r in reqs:
@@ -171,61 +184,205 @@ def setupReqTracker(uID):
         reqTracker.append([reqID, reqName, reqCredits, reqStart])
     return reqTracker
 
+def getEnforcedCourses(reqTracker):
+    '''
+    @getEnforcedCourses gets a list of courses that are enforced by requirements for the user's degree
+    @param uID: user ID of the user requesting the enforced courses
+    @param reqTracker: a list of requirements the user must complete to receive their degree
+    '''
+    enCourses = []
+    for r in reqTracker:
+        req = Requirement.objects.get(pk=r[0])
+        courses = req.enforced_for.all()
+        for c in courses:
+            if c not in enCourses:
+                enCourses.append(c)
+    return enCourses
+
+def getElectiveCourses(reqTracker):
+    '''
+    @getEnforcedCourses gets a list of courses that are enforced by requirements for the user's degree
+    @param reqTracker: a list of requirements the user must complete to receive their degree
+    '''
+    elCourses = []
+    for r in reqTracker:
+        req = Requirement.objects.get(pk=r[0])
+        courses = req.counted_toward.all()
+        for c in courses:
+            if c not in elCourses:
+                elCourses.append(c)
+    return elCourses
+
+def setupSchedule(uID):
+    '''
+    @setupSchedule creates a template for generating an schedule
+    @param uID: user ID of the user requesting the schedule
+    '''
+    u = User.objects.get(pk=uID)
+    up = UserPreferences.objects.get(pref_user=u)
+    currentYear = up.pref_nextYear
+    ssfSemester = up.pref_nextSSF
+    semester = [ssfSemester, currentYear, []]
+    schedule = [semester]
+    return schedule
+
+def countCourseTowardReqs(course, reqTracker):
+    '''
+    @countCourseTowardReqs credits the user for courses fulfilling their necessary requirements
+    @param course: the course to be counted for credit
+    @param reqTracker: the array of requirements needed for the user's desired degree
+    '''
+    enforcedFor = course.course_enforced_for.all()
+    for en in enforcedFor:
+        for r in reqTracker:
+            if en.req_name == r[1]:
+                r[3] += course.course_credits
+    countsToward = course.course_counts_toward.all()
+    for ct in countsToward:
+        for r in reqTracker:
+            if ct.req_name == r[1]:
+                r[3] += course.course_credits
+
+def updateReqTrackerForCompletedCourses(coursesCompleted, reqTracker):
+    '''
+    @updateReqTrackerForCompletedCourses provides credit to a user for completing a number of courses
+    @param course: the courses to be counted for credit toward their requirements
+    @param reqTracker: the array of requirements needed for the user's desired degree
+    '''
+    for c in coursesCompleted:
+        countCourseTowardReqs(c, reqTracker)
+
+def checkReqsMet(reqTracker):
+    '''
+    @checkReqsMet returns True if all requirements for the user's desired degree have been met
+    @param reqTracker: the list of requirements needed for the user's desired degree
+    '''
+    reqsMet = True
+    for r in reqTracker:
+        if r[2] > r[3]:
+            reqsMet = False
+            break
+    return reqsMet
+
+def tallyNumberCreditsTaken(courses):
+    '''
+    @tallyNumberCreditsTaken returns the total number of credits scheduled for a semester
+    @param courses: the list of Course objects scheduled for the semester
+    '''
+    totalCredits = 0
+    for c in courses:
+        totalCredits+=c.course_credits
+    return totalCredits
+
+def prefNumCreditsMet(uID, ssf, numberCreditsTaken):
+    '''
+    @prefNumCreditsMet returns True if the number of credits scheduled for a semester is within the user's desired constraints
+    @param uID: the id of the user whose schedule is being processed
+    @param ssf: denotes the spring, summer, or fall semester
+    @numberCreditsTaken: the number of credits taken during the semester
+    '''
+    u = User.objects.get(pk=uID)
+    up = UserPreferences.objects.get(pref_user=u)
+    met = False
+    if ssf == "Summer":
+        prefMax = up.pref_summerMaxCredits
+        prefMin = up.pref_summerMinCredits
+    else:
+        prefMax = up.pref_maxCredits
+        prefMin = up.pref_minCredits
+    if numberCreditsTaken <= prefMax and numberCreditsTaken >= prefMin:
+        met = True
+    return met
+
+def combineEnforcedAndElectiveCourses(enforcedCourses, electiveCourses):
+    '''
+    @combineEnforcedAndElectiveCourses ensures there are no duplicates listed between the enforced and elective courses
+    @param enforcedCourses: a list of the course objects that are enforced
+    @param electiveCourses: a list of the courses objects that can be taken as electives
+    '''
+    potential = [enforcedCourses,[]]
+    for el in electiveCourses:
+        if el not in enforcedCourses:
+            potential[1].append(el)
+    print("potential courses in combine....", potential)
+    return potential
+
+def mandatePrereqsForEnforcedCourses(enfCourses):
+    '''
+    @mandatePrereqsForEnforcedCourses determine if there are classes needed as Prereqs for beginning enforced courses and if not accounted for, schedules them
+    @param enfCourses: a list of Course objects that a user is required to take according to their desired Degree Requirements
+    '''
+    for en in enfCourses:
+        prereqs = getCoursePrereqs(en)
+        if prereqs != []:
+            for pr in prereqs:
+                if pr[0][0] not in enfCourses: #TODO - note that this only tests for the first course in an OR and might not be super time-efficient for the student
+                    enfCourses.append(pr[0][0])
+    return enfCourses
+
 def createSchedule(uID):
     '''
     @createSchedule generates semester-by-semester schedule for User's needed Courses according to Degree
     @param uID: primary key associated with active user
     '''
-    #loopCount = 0
-    #maxLoopCount = 35
     reqTracker = setupReqTracker(uID)  # used to track if Req credit quotas have been met
-    reqCourses = getCoursesForUser(uID)
-    requiredClasses = translateCourseInfoToCourse(reqCourses)
-    classesTaken = getCompletedByUser(uID)
-    neededClasses = removeCoursesTaken( requiredClasses, classesTaken )
-    schedule = []
-    currentYear = UserPreferences.objects.get(id=uID).pref_nextYear
-    ssfSemester = UserPreferences.objects.get(id=uID).pref_nextSSF
-    semester = [ssfSemester, currentYear, []]
-    currentSemester = [ssfSemester, currentYear, []]
-    scheduleComplete = True
-    for c in classesTaken:
-        for r in reqTracker:  # determine which Req this course falls under
-            if c in Req.objects.get(id=r[0]).course.all():
-                r[4] += c.credits  # increment the completed running total for that Req
-    numClassesChecked = 0
-    while neededClasses != [] and loopCount < maxLoopCount:
-        loopCount+=1
-        for nc in neededClasses:
-            print("evaluating nc:", nc)
-            if ( checkCourseValid( nc, classesTaken, currentSemester[2], ssfSemester ) ):
-                print("course valid!")
-                value = [nc.course_subject + " " + nc.course_num + " " + nc.course_name, nc.course_credits]
-                currentSemester[2].append(value)
-                print( "new current semester...", currentSemester)
-                classesTaken.append(nc)
-                neededClasses.remove(nc)
-                reqsFilled = nc.course_requirements.all()
-                for rf in reqsFilled:
-                    for r in reqTracker:
-                        if r[0] == rf.id:
-                            r[3]+=nc.course_credits # increment the completed running total for that Req
-            numClassesChecked += 1
-            if isFull(semester[2]) or numClassesChecked == len(neededClasses) : #neededClasses != []
-                schedule.append(semester[:])
-                print("appending semseter... new schedule", schedule)
-                semester = generateNewSemester(semester)
-                print("resetting semester")
-                numClassesChecked = 0
-                break
-            scheduleComplete = True
-            for r in reqTracker:
-                if r[2] > r[3]:
-                    scheduleComplete = False
-        if scheduleComplete:
-            break
-    print( "schedule", schedule )
+    enfCourses = getEnforcedCourses(reqTracker)
+    electiveCourses = getElectiveCourses(reqTracker)
+    enforcedCourses = mandatePrereqsForEnforcedCourses(enfCourses)
+    potentialCourses = combineEnforcedAndElectiveCourses(enforcedCourses, electiveCourses)
+    completedCourses = getCompletedByUser(uID)
+    placeholder = Course.objects.get(course_name="placeholder", course_num="0000")
+    completedCourses.append(placeholder)
+    schedule = setupSchedule(uID) # get user degree information, semester information etc
+    semester = schedule[0]
+    ssf = semester[0] #summer spring fall
+    semesterSchedule = semester[2]
+    semesterCourses = []
+    updateReqTrackerForCompletedCourses(completedCourses, reqTracker)
+    loopCount = 0
+    enforcedNeeded = (potentialCourses[0] != []) #list of enforced classes still needed
+    electivesAvailabile = (potentialCourses[1] != []) #list of electives still needed
+    while not checkReqsMet(reqTracker) and loopCount < 3:
+        while not prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)) and loopCount < 3:
+            print("credits not met")
+            if enforcedNeeded: # if still need enforced courses
+                for en in potentialCourses[0]: #en is a course object out of the list of enforced courses
+                    if prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)): #if number of credits in single semester is met
+                        break
+                    if courseValid(en, completedCourses, semesterCourses, ssf): #if a course can be scheduled
+                        print( "appending enforced course!")
+                        semesterCourses.append(en) #append course to a semester
+                        print("semester Courses:", semesterCourses)
+                        semesterSchedule.append([en.course_subject + " " + en.course_num + " " + en.course_name, en.course_credits, 'EN']) #output to screen
+                        completedCourses.append(en) # save semester schedule as completed so can continue scheduling
+                        potentialCourses[0].remove(en) # remove the scheduled course from the potential course list
+                        countCourseTowardReqs(en, reqTracker) # update the reqTracker with the scheduled course
+                enforcedNeeded = (potentialCourses[0] != []) #boolean telling if all enforced courses have been scheduled
+            #if electivesAvailabile:
+                #for el in potentialCourses[1]:
+                    #print("checking electives...")
+                    #if prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)):
+                        #print( "psych!")
+                        #break
+                    #if courseValid(el, completedCourses, semesterCourses, ssf):
+                        #print("appending elective course")
+                        #semesterCourses.append(el)
+                        #semesterSchedule.append(["***" + el.course_subject + " " + el.course_num + " " + el.course_name, el.course_credits, 'EL'])
+                        #completedCourses.append(el)
+                        #potentialCourses[1].remove(el)
+                        #countCourseTowardReqs(el, reqTracker)
+                #electivesAvailabile = (potentialCourses[1] != [])
+            # append the semester to the schedule
+            print("appending semester to schedule!")
+            schedule.append(semester[:])
+            print( "schedule:", schedule)
+            semester = generateNewSemester(semester)
+            semesterCourses = []
+            semesterSchedule = semester[2]
+            loopCount += 1
+        # check to see if all requirements are met to break out of inner while loop and check prereqs.
     return schedule
+    # TODO - the first semester is always blank?
 
 def getDegreeReqs(degrees):
     '''
@@ -233,33 +390,42 @@ def getDegreeReqs(degrees):
     @param degrees: a list of degrees associated with the user
     '''
     requirements = []
-    for r in Requirement.objects.all():
-        dSet = r.req_degrees.all()
-        for d in dSet:
-            if d in degrees and r not in requirements:
+    for d in degrees:
+        for r in d.requirement_set.all():
+            if r not in requirements:
                 requirements.append(r)
     return requirements
+
+def sortCoursesBySubNum(courses):
+    '''
+    @sortCoursesBySubNum takes a list of course information and sorts them course information according to subject and number
+    @param courses: list of courses information pieces that need to be stored for the checkbox page
+    '''
+    numCourses = len(courses)
+    for c in range(numCourses):
+        for j in range(0,numCourses-c-1):
+            oneCourse = courses[j][5] + " " + courses[j][1] + " " + courses[j][2]
+            twoCourse = courses[j+1][5] + " " +courses[j+1][1] + " " + courses[j+1][2]
+            if oneCourse > twoCourse:
+                courses[j], courses[j+1] = courses[j+1], courses[j]
 
 def getReqCourses(reqs):
     '''
     @getReqCourses returns a list of courses (enforced and non-enforced) for a requirements related to a degree a user has selected
     @param reqs: a list of requirements associated with the user's desired degree
     '''
-    cats = []
+    requiredCourses = []
     for r in reqs:
-        cats.append([r.id, r.req_name, r.req_credits, []])
-    for c in Course.objects.all():
-        enforced = c.course_enforced_for.all()
-        elective = c.course_counts_toward.all()
-        for t in cats:
-            for en in enforced:
-                if en.req_name == t[1]:
-                    t[3].append([c.id, c.course_subject, c.course_num, c.course_name, c.course_credits, 'EN'])
-        for s in cats:
-            for el in elective:
-                if el.req_name == s[1]:
-                    s[3].append( [c.id, c.course_subject, c.course_num, c.course_name, c.course_credits, 'EL'])
-    return cats
+        courses = []
+        enforced = r.enforced_for.all()
+        electives = r.counted_toward.all()
+        for en in enforced:
+            courses.append([en.id, en.course_subject, en.course_num, en.course_name, en.course_credits, 'M'])
+        for el in electives:
+            courses.append([el.id, el.course_subject, el.course_num, el.course_name, el.course_credits, 'O'])
+        sortCoursesBySubNum(courses)
+        requiredCourses.append([r.id, r.req_name, r.req_credits, courses])
+    return requiredCourses
 
 def getCoursePrereqs(course):
     '''
@@ -270,14 +436,12 @@ def getCoursePrereqs(course):
     @param course: the Course under test
     '''
     prereqs = []
-    for p in Prereq.objects.all():
-        if p.prereq_course is course:
-            options = []
-            for option in Prereq.prereq_prereqs:
-                options.append(option)
-            prereqs.append(options)
+    for p in course.prereq_set.all():
+        options = []
+        for pc in p.prereqcourse_set.all():
+            options.append(list(pc.prereqcourse_course.all()))
+        prereqs.append(options)
     return prereqs
-
 
 def generateCheckBoxEntities(uID):
     '''
@@ -287,8 +451,6 @@ def generateCheckBoxEntities(uID):
     degrees = Degree.objects.filter(degree_users=uID)
     reqs = getDegreeReqs(degrees)
     checkBoxEntities = getReqCourses(reqs)
-    for cb in checkBoxEntities:
-        print( cb )
     return checkBoxEntities
 
 def generateMajorDD():
@@ -335,18 +497,48 @@ def generateDiplomaDD():
             diplomas.append(d.degree_diploma)
     return diplomas
 
-def generateYearDD():
+def generateNumCreditsDD(lo, hi, default):
+    '''
+    @generateNumCreditsDD generates a dropdown for the number of credits the user can take
+    @param lo: the lowest number of credits possible
+    @param hi: the highest number of credits possible
+    @param default: the value of the number credits dropdown that ahould be selected automatically as a default
+    '''
+    credits = []
+    for credit in range(lo, hi+1):
+        if credit is default:
+            credits.append(['S', credit])
+        else:
+            credits.append(['X', credit])
+    return credits
+
+
+def generateYearDD(default):
     '''
     @generateYearDD creates a list of upcoming years for use on the createuser page
+    @parm default: the year value to be selected by default
     '''
     years = []
-    date = datetime.now()
-    currentYear = date.year
-    years.append(currentYear)
-    years.append(currentYear+1)
-    years.append(currentYear+2)
-    years.append(currentYear+3)
+    currentYear = datetime.now().year
+    for year in range(currentYear, currentYear+4):
+        if year == default:
+            years.append(['S', year])
+        else:
+            years.append(['X', year])
     return years
+
+def generateSemesterDD(default):
+    '''
+    @generateSemesterDD creates a list of upcoming semester for use on the createuser page
+    @parm default: the year value to be selected by default
+    '''
+    sems = []
+    for s in ['Fall', 'Spring', 'Summer']:
+        if s is default:
+            sems.append(['S', s])
+        else:
+            sems.append(['X', s])
+    return sems
 
 def emailFound(email):
     '''
@@ -390,6 +582,39 @@ def removeUserCompletedEnteries(uID):
         if ce.complete_user == u:
             ce.delete()
 
+def getDefaultPreferences(uID):
+    u = User.objects.get(pk=uID)
+    up = UserPreferences.objects.get(pref_user=u)
+    summerClass = up.pref_summer
+    month = datetime.now().month
+    year = datetime.now().year
+    semester = getSemesterByMonth(month)
+    nextYear = ""
+    nextSem = ""
+    minCredit = ""
+    maxCredit = ""
+    if getNextSemesterTitle(semester) == "Summer" and not summerClass:
+        nextSem = "Fall"
+        nextYear = year
+        minCredit = up.pref_minCredits
+        maxCredit = up.pref_maxCredits
+    elif getNextSemesterTitle(semester) == "Summer":
+        nexSem = "Summer"
+        nextYear = year
+        minCredit = up.pref_summerMinCredits
+        maxCredit = up.pref_summerMaxCredits
+    elif getNextSemesterTitle(semester) == "Spring":
+        nextSem = "Spring"
+        nextYear = year + 1
+        minCredit = up.pref_minCredits
+        maxCredit = up.pref_maxCredits
+    else:
+        nextSem = getNextSemesterTitle(semester)
+        nextYear = year
+        minCredit = up.pref_minCredits
+        maxCredit = up.pref_maxCredits
+    return [nextSem, nextYear, minCredit, maxCredit]
+
 
 ########################################################################################################################
 ########################################################################################################################
@@ -399,6 +624,7 @@ def login(request):
     @login send a request to render the login.html page
     @param request: generates the response
     '''
+    # TODO - the login will fail if the user has not gone through the selectcourese page and clicked submit (regardless of whether or not courses were actually completed)
     if request.method == "POST":
         e = request.POST['email-input']
         #p = request.POST['password-input']
@@ -432,7 +658,9 @@ def createuser(request):
                     return render(request, 'landing/createuser.html',
                                   {'diplomas': generateDiplomaDD(), 'majors': generateMajorDD(),
                                    'minors': generateMinorDD(),
-                                   'concentrations': generateConcentrationsDD(), 'errorCode': 1}
+                                   'concentrations': generateConcentrationsDD(), 'errorCode': 1, 'fsMinCredits':generateNumCreditsDD(1,18,12),
+                                   'fsMaxCredits':generateNumCreditsDD(1,18,18), 'sumMinCredits':generateNumCreditsDD(1,18,3),
+                                   'sumMaxCredits':generateNumCreditsDD(1,18,6)}
                                   )
                 if major in request.POST:
                     dip = request.POST[diploma]
@@ -469,13 +697,19 @@ def createuser(request):
             prefSummer = request.POST['summer-course']
             sumMin = 0
             sumMax = 0
-            if prefSummer: #this part isn't working 100% yet
+            summerClasses = True
+            if prefSummer == 'no':
+                summerClasses = False
+            if summerClasses: #this part isn't working 100% yet
                 sumMin = request.POST['Summin']
                 sumMax = request.POST['Summax']
+            else:
+                sumMin = 0
+                sumMax = 0
             up = UserPreferences(
                 pref_minCredits = request.POST['FSmin'],
                 pref_maxCredits = request.POST['FSmax'],
-                pref_summer = prefSummer,
+                pref_summer = summerClasses,
                 pref_summerMinCredits = sumMin,
                 pref_summerMaxCredits = sumMax,
                 pref_user = u
@@ -485,12 +719,14 @@ def createuser(request):
         else:
             return render(request, 'landing/createuser.html',
                           {'diplomas': generateDiplomaDD(), 'majors': generateMajorDD(), 'minors': generateMinorDD(),
-                           'concentrations': generateConcentrationsDD(), 'errorCode': 2}
+                           'concentrations': generateConcentrationsDD(), 'errorCode': 2, 'fsMinCredits':generateNumCreditsDD(1,18,12),
+                          'fsMaxCredits':generateNumCreditsDD(1,18,18), 'sumMinCredits':generateNumCreditsDD(1,18,3), 'sumMaxCredits':generateNumCreditsDD(1,18,6)}
                           )
     else:
         return render(request, 'landing/createuser.html',
                         {'diplomas':generateDiplomaDD(), 'majors':generateMajorDD(), 'minors':generateMinorDD(),
-                          'concentrations':generateConcentrationsDD(), 'errorCode': 0 }
+                          'concentrations':generateConcentrationsDD(), 'errorCode': 0, 'fsMinCredits':generateNumCreditsDD(1,18,12),
+                          'fsMaxCredits':generateNumCreditsDD(1,18,18), 'sumMinCredits':generateNumCreditsDD(1,18,3), 'sumMaxCredits':generateNumCreditsDD(1,18,6) }
                         )
 
 def selectcourses(request, pk):
@@ -506,7 +742,7 @@ def selectcourses(request, pk):
         return HttpResponseRedirect(reverse('landing:nextsemesterpreferences', args=(pk,)))
     else:
         checkBoxes = generateCheckBoxEntities(pk)
-        # might need to write some logic here to determine if boxes have already been checked :)
+        #TODO - might need to write some logic here to determine if boxes have already been checked :)
     return render(request, 'landing/selectcourses.html', {'checkBoxes': generateCheckBoxEntities(pk)})
 
 def nextsemesterpreferences(request, pk):
@@ -530,7 +766,10 @@ def nextsemesterpreferences(request, pk):
         else:
             return render(request, 'landing/nextsemesterpreferences.html', {'years': generateYearDD(), 'errorCode': 3})
     else:
-        return render(request, 'landing/nextsemesterpreferences.html', {'years': generateYearDD(), 'errorCode': 0})
+        prefs = getDefaultPreferences(pk)
+        return render(request, 'landing/nextsemesterpreferences.html', {'years': generateYearDD(prefs[1]),
+                                                                        'sem':generateSemesterDD(prefs[0]), 'minCred':generateNumCreditsDD(1,18,prefs[2]),
+                                                                        'maxCred':generateNumCreditsDD(1,18,prefs[3])})
 
 def schedule(request, pk):
     '''
