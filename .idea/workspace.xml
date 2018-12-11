@@ -3,316 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c6a63500-b22f-4d8b-ae80-cbe995352251" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/0001__initial_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/_r_e_a_d_m_e_8md.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/admin_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/annotated.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/apps_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/bc_s.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/bdwn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1admin_1_1_course_admin-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1admin_1_1_course_admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1admin_1_1_course_admin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1admin_1_1_degree_admin-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1admin_1_1_degree_admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1admin_1_1_degree_admin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1apps_1_1_landing_config-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1apps_1_1_landing_config.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1apps_1_1_landing_config.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1forms_1_1_degree_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1forms_1_1_degree_form.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1forms_1_1_degree_form_1_1_meta-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1forms_1_1_degree_form_1_1_meta.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1forms_1_1_email_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1forms_1_1_email_form.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1forms_1_1_email_form_1_1_meta-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1forms_1_1_email_form_1_1_meta.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1forms_1_1_user_completed_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1forms_1_1_user_completed_form.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1forms_1_1_user_completed_form_1_1_meta-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1forms_1_1_user_completed_form_1_1_meta.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1migrations_1_10001__initial_1_1_migration-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1migrations_1_10001__initial_1_1_migration.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1migrations_1_10001__initial_1_1_migration.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_complete-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_complete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_complete.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_course-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_course.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_course.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_degree-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_degree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_degree.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_prereq-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_prereq.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_prereq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_req-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_req.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_req.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_user-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_user.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1models_1_1_user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1tests_1_1test___u_i_1_1_u_i_tests-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1tests_1_1test___u_i_1_1_u_i_tests.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1tests_1_1test___u_i_1_1_u_i_tests.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1tests_1_1test__logic_1_1_your_test_class-members.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1tests_1_1test__logic_1_1_your_test_class.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/classlanding_1_1tests_1_1test__logic_1_1_your_test_class.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/closed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/css_2vendor_2select2_2_l_i_c_e_n_s_e-_s_e_l_e_c_t2_8md.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/dir_1a0679624626d07220f9e39d01b296cc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/dir_5b69edd46c332f1fee4844b9af02c4b0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/dir_69d2e51eeee70ff32fd10877f5cda3ec.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/dir_7169d3428e08a6e4e4db96b28a730c24.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/dir_934e9528977f3191d72caaf559ba22a4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/dir_9fcaa39da12ce50f9a56a4f437c8fb62.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/dir_df0b6ef09a239d84cab2fd5d4d63dcc8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/doc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/doxygen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/doxygen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/dynsections.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/files.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/folderclosed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/folderopen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/forms_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/functions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/functions_func.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/functions_vars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/hierarchy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/js_2vendor_2select2_2_l_i_c_e_n_s_e-_s_e_l_e_c_t2_8md.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/landing_2____init_____8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/landing_2migrations_2____init_____8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/landing_2tests_2____init_____8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/landing_2urls_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/landing_2views_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/manage_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/mav_agenda_2____init_____8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/mav_agenda_2urls_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/mav_agenda_2views_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/md__r_e_a_d_m_e.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/md_mav_agenda_static_admin_css_vendor_select2__l_i_c_e_n_s_e-_s_e_l_e_c_t2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/md_mav_agenda_static_admin_js_vendor_select2__l_i_c_e_n_s_e-_s_e_l_e_c_t2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/menu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/menudata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/models_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacelanding.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacelanding_1_1admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacelanding_1_1apps.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacelanding_1_1forms.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacelanding_1_1migrations.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacelanding_1_1migrations_1_10001__initial.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacelanding_1_1models.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacelanding_1_1tests.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacelanding_1_1tests_1_1test___u_i.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacelanding_1_1tests_1_1test__logic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacelanding_1_1urls.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacelanding_1_1views.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacemanage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacemav_agenda.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacemav_agenda_1_1settings.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacemav_agenda_1_1urls.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacemav_agenda_1_1views.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacemav_agenda_1_1wsgi.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacemembers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacemembers_func.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacemembers_vars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespaces.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacescrape.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacetemplates.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/namespacetest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/nav_f.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/nav_g.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/nav_h.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/open.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/pages.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/scrape_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_10.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_10.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_11.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_11.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_12.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_12.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_13.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_13.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_14.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_14.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_15.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_15.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_9.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_a.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_b.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_c.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_d.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_e.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_f.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/all_f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/classes_8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_9.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_a.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_b.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/files_b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_9.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_a.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_b.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/functions_b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/mag_sel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/namespaces_0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/namespaces_0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/namespaces_1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/namespaces_1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/namespaces_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/namespaces_2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/namespaces_3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/namespaces_3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/nomatches.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/pages_0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/pages_0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/pages_1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/pages_1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/search.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/search_l.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/search_m.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/search_r.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/searchdata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_10.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_10.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_11.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_11.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_12.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_12.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_9.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_a.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_b.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_c.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_d.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_e.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_f.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/search/variables_f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/settings_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/splitbar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/sync_off.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/sync_on.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/tab_a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/tab_b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/tab_h.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/tab_s.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/tabs.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/templates_2____init_____8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/test_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/test___u_i_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/test__logic_8py.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Doxygen/html/wsgi_8py.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mavAgenda/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavAgenda/landing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mavAgenda/landing/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -349,14 +41,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="schedule.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/schedule.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7072">
-              <caret line="426" column="70" selection-start-line="426" selection-start-column="70" selection-end-line="426" selection-end-column="70" />
-              <folding>
-                <element signature="e#0#54#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-788">
+              <caret line="301" column="7" lean-forward="true" selection-start-line="301" selection-start-column="7" selection-end-line="301" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -382,10 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Doxyfile" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Doxyfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Doxyfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="1326">
               <caret line="78" column="17" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
             </state>
           </provider>
@@ -402,14 +100,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getCour</find>
       <find>generateC</find>
       <find>Course</find>
       <find>create</find>
       <find>getCourses</find>
       <find>createSch</find>
       <find>total</find>
-      <find>print</find>
       <find>createschedule</find>
       <find>checkcoursevalid</find>
       <find>c</find>
@@ -432,6 +128,8 @@
       <find>id_d</find>
       <find>INPUT</find>
       <find>OUTPUT</find>
+      <find>schedule</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -447,7 +145,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/mavAgenda/landing/urls.py" />
-        <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/schedule.html" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/tests/test_UI.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/tests/test_logic.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/usersettings.html" />
@@ -457,9 +154,10 @@
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/login.html" />
         <option value="$PROJECT_DIR$/mavAgenda/static/landing/css/style.css" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/models.py" />
-        <option value="$PROJECT_DIR$/mavAgenda/landing/views.py" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html" />
         <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/selectcourses.html" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/templates/landing/schedule.html" />
+        <option value="$PROJECT_DIR$/mavAgenda/landing/views.py" />
       </list>
     </option>
   </component>
@@ -472,16 +170,18 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1374" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -494,11 +194,21 @@
               <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
               <item name="Doxygen" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
+              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MavLinkMadeEasy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MavLinkMadeEasy" type="462c0819:PsiDirectoryNode" />
+              <item name="mavAgenda" type="462c0819:PsiDirectoryNode" />
+              <item name="landing" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -781,11 +491,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541535297970</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="schedule styling">
+      <created>1544502549049</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1544502549049</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="781" height="830" extended-state="0" />
+    <frame x="-1374" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5033557" side_tool="true" weight="0.2827688" />
@@ -793,8 +510,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986577" weight="0.3298969" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32935917" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.3323398" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.42857143" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.35643566" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.30408472" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -805,29 +522,29 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32547864" />
-      <window_info anchor="bottom" id="Messages" order="13" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.22012103" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4966443" visible="true" weight="0.28217822" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5033557" side_tool="true" weight="0.2827688" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986577" weight="0.3298969" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
@@ -842,7 +559,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="strong basis for schedule page! yay!!!!" />
     <MESSAGE value="updated to account for update in classes completed" />
     <MESSAGE value="correct link for schedule -&gt; selectcourses; template for major" />
     <MESSAGE value="updated scheduling logic (still broken), updated CSS for login pg" />
@@ -867,11 +583,12 @@
     <MESSAGE value="updated login page to have email box and added CSS" />
     <MESSAGE value="Update CSS for Select Degree page" />
     <MESSAGE value="reestablished create user functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="reestablished create user functionality" />
+    <MESSAGE value="schedule styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="schedule styling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1141,13 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/schedule.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -1175,26 +885,6 @@
     <entry file="file://$PROJECT_DIR$/mavAgenda/cleanup.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7072">
-          <caret line="426" column="70" selection-start-line="426" selection-start-column="70" selection-end-line="426" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/createuser.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2754">
@@ -1214,8 +904,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Doxyfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="1326">
           <caret line="78" column="17" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/templates/landing/schedule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mavAgenda/landing/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-788">
+          <caret line="301" column="7" lean-forward="true" selection-start-line="301" selection-start-column="7" selection-end-line="301" selection-end-column="7" />
         </state>
       </provider>
     </entry>

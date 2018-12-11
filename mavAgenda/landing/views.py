@@ -304,7 +304,7 @@ def combineEnforcedAndElectiveCourses(enforcedCourses, electiveCourses):
     for el in electiveCourses:
         if el not in enforcedCourses:
             potential[1].append(el)
-    print("potential courses in combine....", potential)
+    # print("potential courses in combine....", potential)
     return potential
 
 def mandatePrereqsForEnforcedCourses(enfCourses):
@@ -342,17 +342,17 @@ def createSchedule(uID):
     loopCount = 0
     enforcedNeeded = (potentialCourses[0] != []) #list of enforced classes still needed
     electivesAvailabile = (potentialCourses[1] != []) #list of electives still needed
-    while not checkReqsMet(reqTracker) and loopCount < 3:
-        while not prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)) and loopCount < 3:
-            print("credits not met")
+    while not checkReqsMet(reqTracker) and loopCount < 12:
+        while not prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)) and loopCount < 12:
+            # print("credits not met")
             if enforcedNeeded: # if still need enforced courses
                 for en in potentialCourses[0]: #en is a course object out of the list of enforced courses
                     if prefNumCreditsMet(uID, ssf, tallyNumberCreditsTaken(semesterCourses)): #if number of credits in single semester is met
                         break
                     if courseValid(en, completedCourses, semesterCourses, ssf): #if a course can be scheduled
-                        print( "appending enforced course!")
+                        # print( "appending enforced course!")
                         semesterCourses.append(en) #append course to a semester
-                        print("semester Courses:", semesterCourses)
+                        # print("semester Courses:", semesterCourses)
                         semesterSchedule.append([en.course_subject + " " + en.course_num + " " + en.course_name, en.course_credits, 'EN']) #output to screen
                         completedCourses.append(en) # save semester schedule as completed so can continue scheduling
                         potentialCourses[0].remove(en) # remove the scheduled course from the potential course list
@@ -373,9 +373,9 @@ def createSchedule(uID):
                         #countCourseTowardReqs(el, reqTracker)
                 #electivesAvailabile = (potentialCourses[1] != [])
             # append the semester to the schedule
-            print("appending semester to schedule!")
+            # print("appending semester to schedule!")
             schedule.append(semester[:])
-            print( "schedule:", schedule)
+            # print( "schedule:", schedule)
             semester = generateNewSemester(semester)
             semesterCourses = []
             semesterSchedule = semester[2]
